@@ -1,0 +1,3 @@
+[submodule "Neotron-Common-Hardware"]
+	path = Neotron-Common-Hardware
+	url = ../Neotron-Common-Hardware.git
