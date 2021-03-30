@@ -12,7 +12,28 @@ The Raspberry Pi Pico is the core of the Neotron Pico. It uses PIO statemachines
 
 The Neotron Pico is designed to run the Neotron OS - a CP/M or MS-DOS alike OS written in Rust. But, being open-hardware, you can program your Neotron Pico to do pretty much anything.
 
-## Components
+## Specs
+
+* Dual Cortex-M0+
+  * One dedicated for video/audio
+  * One available for OS/Application use
+* 264 KiB SRAM
+* 2 MiB Boot ROM
+* SD Card slot for storage
+* 8V to 28V DC input
+* SPI and I²C based expansion bus
+  * Four externally accessible expansion slots
+  * Two internally accessible expansion slots
+* Dual PS/2 ports for Keyboard + Mouse
+* 16-bit 48 kHz stereo audio headphone out, line out, line in, and microphone in
+* 12-bit (4096 colour) VGA video output
+  * Capable of 40x25, 80x25 and 80x50 text modes
+  * Capable of 640x480 @ 60 Hz 16-colour and 320x240 @ 60 Hz 256-colour graphics modes
+* Designed to run the Neotron OS
+* Open Source Hardware
+* Designed for hand assembly
+
+## Components in detail
 
 ### Processor
 
@@ -160,7 +181,7 @@ The seven expansion sockets allow you to add on I²C or SPI based devices at a l
 
 The expansion slot is a simple 2x10 header. We suggest the use of a TE card-edge connector, but you could equally use two 1x10 pin-headers if desired.
 
-The pin functions are:
+The expansion connector pinout is:
 
 ```
      SPI_COPI   1    2   GND
@@ -175,7 +196,7 @@ The pin functions are:
           GND   19  20   GND
 ```
 
-Four expansion slots line up with the ATX case expansion brackets, allowing you to use cards with external connectors. Three of the expansion slots are internal use only.
+Four expansion slots line up with the ATX case expansion brackets, allowing you to use cards with external connectors. Note that these are aligned the "PCI way around" with components facing away from the board's I/O area, rather than the "ISA way around" which would have the components facing the I/O area. A further three of the expansion slots are available for internal use only.
 
 ## Expansion Ideas
 
@@ -203,6 +224,8 @@ These documents, schematics and PCB designs are Copyright (c) The Neotron Develo
 
 This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
+Please note that the models provided in the `3dmodels` directory are from various manufacturers. Terms and conditions for the use of the models remain with the original manufacturer.
+
 ## Contribution Agreement
 
 Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in the work by you, as defined in the Apache-2.0 license, shall be licensed as above, without any additional terms or conditions.
@@ -210,9 +233,16 @@ Unless you explicitly state otherwise, any contribution intentionally submitted 
 ## Datasheets and References
 
 * Raspberry Pi Pico
+  * <https://datasheets.raspberrypi.org/pico/pico-datasheet.pdf>
 * Raspberry Pi Silicon RP2040
+  * <https://datasheets.raspberrypi.org/rp2040/rp2040-datasheet.pdf>
 * ST Microelectronics STM32F031K6T6
+  * <https://www.st.com/resource/en/datasheet/stm32f031k6.pdf>
 * Morsun K7805-3AR3
+  * <https://www.mornsunpower.de/html/pdf/K7805-3AR3.html>
 * Texas Instruments TLV320AIC23B
+  * <https://www.ti.com/lit/ds/symlink/tlv320aic23b.pdf>
 * Texas Instruments THS7316
+  * <https://www.ti.com/lit/ds/symlink/ths7316.pdf>
 * Texas Instruments TPD7S019
+  * <https://www.ti.com/lit/ds/symlink/tpd7s019.pdf>
