@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name Neotron-Common-Hardware)(type Legacy)(uri /home/jonathan/Documents/programming/neotron-compute/Neotron-Pico/Neotron-Common-Hardware/Kicad/Neotron-Common-Hardware.lib)(options "")(descr ""))
+)
