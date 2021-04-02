@@ -52,7 +52,7 @@ The main processor module is the Raspberry Pi Pico, which features:
 * USB 2.0 Full-speed OTG micro-AB port
 * 4.00 USD / 3.60 GBP retail price
 
-The limited I/O on the Pico (we are using half the available pins just for the video output) is supplemented using a Microchip MCP23S17 SPI to GPIO expander, an octal buffer. The buffer allows the Pico to send its SPI bus data to either the MCP23S17 (to set  a specific Chip Select line), or the rest of the system. Without the buffer, it would be impossible to command the MCP23S17 to disable a chip-select line once it had been set, without the traffic also going to the selected expansion slot!
+The limited I/O on the Pico (we are using half the available pins just for the video output) is supplemented using a Microchip MCP23S17 SPI to GPIO expander, and an octal buffer. See the [I/O Expanders](#io-expanders) section for more details.
 
 | Pin  | Name | Signal         | Function                                           |
 | :--- | :--- | :------------- | :------------------------------------------------- |
@@ -133,33 +133,47 @@ Power-on Reset sequencing, soft shutdown, voltage monitoring and PS/2 interfacin
 * Runs from 3.3V stand-by regulator
 * I²C interface (with dedicated IRQ line) with main CPU
 
-| Pin  | Name | Signal        | Function                                                |
-| :--- | :--- | :------------ | :------------------------------------------------------ |
-| 14   | PB0  | -             | Spare                                                   |
-| 15   | PB1  | -             | Spare                                                   |
-| 26   | PB3  | -             | Spare                                                   |
-| 27   | PB4  | PS2_CLK1      | Mouse Clock Input                                       |
-| 28   | PB5  | PS2_DAT1      | Mouse Data Input                                        |
-| 29   | PB6  | I2C_SCL       | I²C Clock                                               |
-| 30   | PB7  | I2C_SDA       | I²C Data                                                |
-| 2    | PF0  | -             | Spare                                                   |
-| 3    | PF1  | -             | Spare                                                   |
-| 6    | PA0  | MON_3V3       | 3.3V rail monitor Input (1.65V nominal)                 |
-| 7    | PA1  | MON_5V        | 5.0V rail monitor Input (1.65V nominal)                 |
-| 8    | PA2  | UART_TX       | UART Data Output                                        |
-| 9    | PA3  | UART_RX       | UART Data Input                                         |
-| 10   | PA4  | /BUTTON_PWR   | Power Button Input                                      |
-| 11   | PA5  | STATUS_LED    | Status LED Output                                       |
-| 12   | PA6  | /BUTTON_RST   | Reset Button Input                                      |
-| 13   | PA7  | -             | Spare                                                   |
-| 18   | PA8  | /IRQ          | Interrupt Output                                        |
-| 19   | PA9  | PS2_DAT0      | Keyboard Data Input                                     |
-| 20   | PA10 | PS2_CLK0      | Keyboard Clock Input                                    |
-| 21   | PA11 | /RESET        | System Reset Output                                     |
-| 22   | PA12 | DC_ON         | PSU Enable Output                                       |
-| 23   | PA13 | SWDIO         | SWD Progamming Data Input                               |
-| 24   | PA14 | SWCLK_BOOT_TX | SWD Programming Clock Input OR Bootloader UART RX Input |
-| 25   | PA15 | BOOT_RX       | Bootloader UART TX Output                               |
+| Pin  | Name | Signal     | Function                                     |
+| :--- | :--- | :--------- | :------------------------------------------- |
+| 02   | PF0  | BUTTON_PWR | Power Button Input (active low)              |
+| 03   | PF1  | HOST_RST   | Reset Output to reset the rest of the system |
+| 06   | PA0  | MON_3V3    | 3.3V rail monitor Input (1.65V nominal)      |
+| 07   | PA1  | MON_5V     | 5.0V rail monitor Input (1.65V nominal)      |
+| 08   | PA2  | LED0       | PWM output for first Status LED              |
+| 09   | PA3  | LED1       | PWM output for second Status LED             |
+| 10   | PA4  | SPI1_NSS   | SPI Chip Select Input (active low)           |
+| 11   | PA5  | SPI1_SCK   | SPI Clock Input                              |
+| 12   | PA6  | SPI1_CIPO  | SPI Data Output                              |
+| 13   | PA7  | SPI1_COPI  | SPI Data Input                               |
+| 14   | PB0  | BUTTON_RST | Reset Button Input (active low)              |
+| 15   | PB1  | DC_ON      | PSU Enable Output                            |
+| 18   | PA8  | HOST_NIRQ  | Interrupt Output to the Host (active low)    |
+| 19   | PA9  | I2C1_SCL   | I²C Clock                                    |
+| 20   | PA10 | I2C1_SDA   | I²C Data                                     |
+| 21   | PA11 | USART1_CTS | UART Clear-to-Send Output                    |
+| 22   | PA12 | USART1_RTS | UART Ready-to-Receive Input                  |
+| 23   | PA13 | SWDIO      | SWD Progamming Data Input                    |
+| 24   | PA14 | SWCLK      | SWD Programming Clock Input                  |
+| 25   | PA15 | PS2_CLK0   | Keyboard Clock Input                         |
+| 26   | PB3  | PS2_CLK1   | Mouse Clock Input                            |
+| 27   | PB4  | PS2_DAT0   | Keyboard Data Input                          |
+| 28   | PB5  | PS2_DAT1   | Mouse Data Input                             |
+| 29   | PB6  | USART1_TX  | UART Transmit Output                         |
+| 30   | PB7  | USART1_TX  | UART Receive Input                           |
+
+Note that in the above table, the UART signals are wired as _Data Terminal Equipment (DTE)_.
+
+This design should also be pin-compatible with the following SoCs (although the software may need recompiling):
+
+* STM32F042K4Tx
+* STM32F042K6Tx
+* STM32L071KBTx
+* STM32L071KZTx
+* STM32L072KZTx
+* STM32L081KZTx
+* STM32L082KZTx
+
+Note that not all STM32 pins are 5V-tolerant, and the PS/2 protocol is a 5V open-collector system, so ensure that whichever part you pick has 5V-tolerant pins (marked `FT` or `FTt` in the datasheet) for the PS/2 signals. All of the parts above _should_ be OK, but they haven't been tested. Let us know if you try one!
 
 ### PS/2 Keyboard and Mouse
 
@@ -174,6 +188,64 @@ Power-on Reset sequencing, soft shutdown, voltage monitoring and PS/2 interfacin
 * 30mA 3.3V stand-by regulator (a micropower linear regulator)
 * 1A 3.3V regulator (a high-power 1117 type linear regulator)
 * Controlled by the Board Management Controller
+
+### I/O Expanders
+
+Because we used so many pins on the Pico for Audio and Video, we don't have enough pins to use for _Chip Select_ lines. Each device we wish to communicate with on the SPI bus must have a unique chip select line and so have limited lines means we could only have a limited number of SPI devices.
+
+However, in this design, we cheat and use a Microchip MCP23S17 I/O expander. This is an SPI peripheral with 16 GPIO pins that can be controlled by sending it commands over SPI. It also has an IRQ output which be programmed to fire when the input pins match a certain state.
+
+The problem would come when the Pico has finished talking to our select SPI device - how does it tell the MCP23S17 to release the current chip select, without the SPI bus traffic also going to the currently selected expansion slot? We resolve this by using a simple 8-bit buffer with an enable pin. This allows the Pico to disconnect all of the chip select signals at once, regardless of the output of the MCP23S17. Once this is disabled, we know we are talking to only the MCP23S17 and the Pico can command it to select the next chip select of interest to us.
+
+Interrupts are also processed through the MCP23S17. We configure the device to provide an IRQ (edge, active low) whenever any of the eight IRQ inputs are active (programmable for edge or level, active high/rising or low/falling). When the Pico receives an IRQ from the MCP23S17, it must do a read of the pins (using SPI) to find out which device actually raised the interrupt. This model is similar to that used in the IBM PC - where the Intel 8088 must talk to an Intel 8259A programmable interrupt controller over the ISA bus to find out which interrupt was raised - except that in our case, our CPU is very fast and our bus is pretty slow, so our interrupt latency isn't very good. Worse, if there is a big SPI transaction happening (such as transferring a 512 byte block from an SD card) when an interrupt fires, the Pico will have to wait for that to complete before it can talk to the MCP23S17 to handle the IRQ. That or it could just drop the SPI transaction mid-way through and re-try it later (if your expansion device can tolerate such rudeness).
+
+```
++------+                                  +-----+
+|      |----------BUFFER_EN-------------->|     |
+|      |                                  |     |
+|      |           +----------+           |     |
+|      |           |          |           |     |
+|      |           |          |----CS0--->|     |----CS0----------------------------------+
+|      |           |          |           |     |                                         |
+|      |           |          |----CS1--->|  B  |----CS1------------------------------+   |
+|      |           |          |           |  U  |                                     |   |
+|      |           |          |----CS2--->|  F  |----CS2--------------------------+   |   |
+|      |           |          |           |  F  |                                 |   |   |
+|      |           |          |----CS3--->|  E  |----CS3----------------------+   |   |   |
+|      |           |          |           |  R  |                             |   |   |   |
+|      |           |          |----CS4--->|     |----CS4------------------+   |   |   |   |
+|      |           |          |           |     |                         |   |   |   |   |
+|      |           |          |----CS5--->|     |----CS5--------------+   |   |   |   |   |
+|      |           |          |           |     |                     |   |   |   |   |   |
+|      |           |          |----CS6--->|     |----CS6----------+   |   |   |   |   |   |
+| Pico |           | MCP23S17 |           |     |                 |   |   |   |   |   |   |
+|      |           |          |----CS7--->|     |----CS7------+   |   |   |   |   |   |   |
+|      |           |          |           +-----+             v   v   v   v   v   v   v   v
+|      |           |          |                             +---+---+---+---+---+---+---+---+
+|      |----CS---->|          |                             | S | S | S | S | S | S | S | S |
+|      |<---IRQ----|          |                             | l | l | l | l | l | l | l | l |
+|      |<===SPI===>|          |<============SPI============>| o | o | o | o | o | o | o | o |
+|      |           |          |                             | t | t | t | t | t | t | t | t |
+|      |           |          |                             |   |   |   |   |   |   |   |   |
+|      |           |          |                             | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
+|      |           |          |                             +---+---+---+---+---+---+---+---+
+|      |           |          |<---IRQ7-----------------------+   |   |   |   |   |   |   |
+|      |           |          |                                   |   |   |   |   |   |   |
+|      |           |          |<---IRQ6---------------------------+   |   |   |   |   |   |
+|      |           |          |                                       |   |   |   |   |   |
+|      |           |          |<---IRQ5-------------------------------+   |   |   |   |   |
+|      |           |          |                                           |   |   |   |   |
+|      |           |          |<---IRQ4-----------------------------------+   |   |   |   |
+|      |           |          |                                               |   |   |   |
+|      |           |          |<---IRQ3---------------------------------------+   |   |   |
+|      |           |          |                                                   |   |   |
+|      |           |          |<---IRQ2-------------------------------------------+   |   |
+|      |           |          |                                                       |   |
+|      |           |          |<---IRQ1-----------------------------------------------+   |
+|      |           |          |                                                           |
+|      |           |          |<---IRQ0---------------------------------------------------+
++------+           +----------+
+```
 
 ## Expansion
 
