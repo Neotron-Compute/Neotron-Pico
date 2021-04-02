@@ -4,12 +4,12 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 5
-Title "Neotron Pico PCB"
-Date "2021-03-30"
+Title "Neotron Pico - Top Sheet"
+Date "2021-04-02"
 Rev "[Uncontrolled]"
 Comp "https://neotron-compute.github.io"
-Comment1 "Copyright (c) Jonathan 'theJPster' Pallant 2021"
-Comment2 "Licensed as CC-BY-SA"
+Comment1 "Licensed as CC-BY-SA"
+Comment2 "Copyright (c) The Neotron Deevelopers, 2021"
 Comment3 ""
 Comment4 ""
 $EndDescr
@@ -831,4 +831,15 @@ F3 "I2C_SDA" B L 6500 2500 50
 F4 "I2C_SCL" I L 6500 2600 50 
 F5 "~IRQ" O L 6500 2700 50 
 $EndSheet
+$Comp
+L RPi_Pico:Pico U?
+U 1 1 60676029
+P 2950 2400
+F 0 "U?" H 2950 3615 50  0000 C CNN
+F 1 "Pico" H 2950 3524 50  0000 C CNN
+F 2 "RPi_Pico:RPi_Pico_SMD_TH" V 2950 2400 50  0001 C CNN
+F 3 "" H 2950 2400 50  0001 C CNN
+	1    2950 2400
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
