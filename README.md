@@ -349,20 +349,21 @@ Unless you explicitly state otherwise, any contribution intentionally submitted 
 ## Datasheets and References
 
 * Raspberry Pi Pico
-  * <https://datasheets.raspberrypi.org/pico/pico-datasheet.pdf>
+  * Datasheet: <https://datasheets.raspberrypi.org/pico/pico-datasheet.pdf>
 * Raspberry Pi Silicon RP2040
-  * <https://datasheets.raspberrypi.org/rp2040/rp2040-datasheet.pdf>
+  * Datasheet: <https://datasheets.raspberrypi.org/rp2040/rp2040-datasheet.pdf>
+  * Hardware Design Guide: <https://datasheets.raspberrypi.org/rp2040/hardware-design-with-rp2040.pdf>
 * ST Microelectronics STM32F031K6T6
-  * <https://www.st.com/resource/en/datasheet/stm32f031k6.pdf>
+  * Datasheet: <https://www.st.com/resource/en/datasheet/stm32f031k6.pdf>
 * Morsun K7805-3AR3
-  * <https://www.mornsunpower.de/html/pdf/K7805-3AR3.html>
+  * Datasheet: <https://www.mornsunpower.de/html/pdf/K7805-3AR3.html>
 * Texas Instruments TLV320AIC23B
-  * <https://www.ti.com/lit/ds/symlink/tlv320aic23b.pdf>
+  * Datasheet: <https://www.ti.com/lit/ds/symlink/tlv320aic23b.pdf>
 * Texas Instruments THS7316
-  * <https://www.ti.com/lit/ds/symlink/ths7316.pdf>
+  * Datasheet: <https://www.ti.com/lit/ds/symlink/ths7316.pdf>
 * Texas Instruments TPD7S019
-  * <https://www.ti.com/lit/ds/symlink/tpd7s019.pdf>
+  * Datasheet: <https://www.ti.com/lit/ds/symlink/tpd7s019.pdf>
 * Microchip 24LC256 EEPROM
-  * <https://www.microchip.com/wwwproducts/en/24LC256>
+  * Info Page: <https://www.microchip.com/wwwproducts/en/24LC256>
 * Microchip MCP7940N Real-Time Clock
-  * <https://www.microchip.com/wwwproducts/en/MCP7940N>
+  * Info Page: <https://www.microchip.com/wwwproducts/en/MCP7940N>
