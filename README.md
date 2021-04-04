@@ -277,6 +277,18 @@ All I²C device address given below are 7-bit values. The first byte in a messag
 
 The memory addresses given are 8-bit values used to access the contents of an I²C device, and are usually supplied as the second byte in a message.
 
+* Device Address 0x50 - TLV320AIC23
+  * Memory Address 0x00 - Left line input channel volume control
+  * Memory Address 0x01 - Right line input channel volume control
+  * Memory Address 0x02 - Left channel headphone volume control
+  * Memory Address 0x03 - Right channel headphone volume control
+  * Memory Address 0x04 - Analog audio path control
+  * Memory Address 0x05 - Digital audio path control
+  * Memory Address 0x06 - Power down control
+  * Memory Address 0x07 - Digital audio interface format
+  * Memory Address 0x08 - Sample rate control
+  * Memory Address 0x09 - Digital interface activation
+  * Memory Address 0x0F - Reset register
 * Device Address 0x50 - VGA Monitor (DDC)
   * Memory Addresses 0x00..0xFF - Monitor Specifications in [EDID format](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data)
 * Device Address 0x51 - Slot 1 ID EEPROM
