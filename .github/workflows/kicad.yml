@@ -23,8 +23,8 @@ jobs:
       with:
         config: 'Kicad/docs.yml'
         dir: docs
-        schema: 'Kicad/Neotron-Pico.sch'
-        board: 'Kicad/Neotron-Pico.kicad_pcb'
+        schema: 'Kicad/neotron-pico.sch'
+        board: 'Kicad/neotron-pico.kicad_pcb'
     - name: upload results
       uses: actions/upload-artifact@v2
       with:
