@@ -17,7 +17,7 @@ $Sheet
 S 6000 1900 1075 775 
 U 5FDE6C5A
 F0 "Audio" 50
-F1 "../Neotron-Common-Hardware/Kicad/audio.sch" 50
+F1 "./Neotron-Common-Hardware/Kicad/audio.sch" 50
 F2 "I2C_SDA" B L 6000 2500 50 
 F3 "I2C_SCL" I L 6000 2600 50 
 F4 "AUDIO_DAC_DAT" I L 6000 2000 50 
@@ -270,7 +270,7 @@ $Sheet
 S 8700 775  725  900 
 U 5FEF6B08
 F0 "SD Card" 50
-F1 "../Neotron-Common-Hardware/Kicad/sdcard.sch" 50
+F1 "./Neotron-Common-Hardware/Kicad/sdcard.sch" 50
 F2 "DAT2" B L 8700 1075 50 
 F3 "DAT3" B L 8700 1175 50 
 F4 "CMD" I L 8700 1275 50 
@@ -725,7 +725,7 @@ $Sheet
 S 4550 675  575  800 
 U 60687F8A
 F0 "Video" 50
-F1 "../Neotron-Common-Hardware/Kicad/video12.sch" 50
+F1 "./Neotron-Common-Hardware/Kicad/video12.sch" 50
 F2 "DDC_SDA" B L 4550 1275 50 
 F3 "DDC_SCL" I L 4550 1375 50 
 F4 "VSYNC" I L 4550 1175 50 
@@ -833,7 +833,7 @@ $Sheet
 S 8750 2250 750  225 
 U 5FDE7599
 F0 "Power Supply" 50
-F1 "../Neotron-Common-Hardware/Kicad/powersupply.sch" 50
+F1 "./Neotron-Common-Hardware/Kicad/powersupply.sch" 50
 F2 "DC_ON" I L 8750 2350 50 
 $EndSheet
 Wire Wire Line
@@ -1101,7 +1101,7 @@ $Sheet
 S 6000 725  925  375 
 U 5FEF404D
 F0 "Real TIme Clock" 50
-F1 "../Neotron-Common-Hardware/Kicad/rtc.sch" 50
+F1 "./Neotron-Common-Hardware/Kicad/rtc.sch" 50
 F2 "I2C_SDA" B L 6000 800 50 
 F3 "I2C_SCL" I L 6000 900 50 
 $EndSheet
@@ -1702,7 +1702,7 @@ $Sheet
 S 7625 3025 1000 825 
 U 606F6368
 F0 "BMC" 50
-F1 "../Neotron-Common-Hardware/Kicad/bmc.sch" 50
+F1 "./Neotron-Common-Hardware/Kicad/bmc.sch" 50
 F2 "I2C_SCL" B L 7625 3200 50 
 F3 "I2C_SDA" B L 7625 3100 50 
 F4 "SPI_CLK" I L 7625 3375 50 
