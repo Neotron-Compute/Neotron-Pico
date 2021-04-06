@@ -19,6 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        submodules: recursive
     - uses: nerdyscout/kicad-exports@v2.2
       with:
         config: 'Kicad/docs.yml'
