@@ -103,7 +103,7 @@ Text Label 6575 3850 0    50   ~ 0
 ~CS7
 Wire Bus Line
 	6925 4050 7050 4050
-Text HLabel 5625 2125 2    50   Input ~ 0
+Text HLabel 5625 2100 2    50   Input ~ 0
 ~IRQ[0..7]
 Entry Wire Line
 	5500 2150 5400 2250
@@ -154,7 +154,7 @@ Text Label 5150 2850 0    50   ~ 0
 Text Label 5150 2950 0    50   ~ 0
 ~IRQ7
 Wire Bus Line
-	5500 2125 5625 2125
+	5500 2100 5625 2100
 $Comp
 L 74xx:74HC245 U1002
 U 1 1 60F0F5AC
@@ -346,8 +346,10 @@ Wire Wire Line
 Connection ~ 7900 2700
 Wire Wire Line
 	7900 2700 7900 2750
+Text Notes 8150 2950 0    50   ~ 0
+Decoupling. Place one near U1001\nPin 9, and one near U1002 Pin 20.
 Wire Bus Line
-	5500 2125 5500 2850
+	5500 2100 5500 2850
 Wire Bus Line
 	6925 3250 6925 4050
 $EndSCHEMATC

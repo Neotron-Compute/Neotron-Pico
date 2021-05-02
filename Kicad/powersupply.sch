@@ -583,7 +583,7 @@ F 7 "Stackpole" H 1550 5900 50  0001 C CNN "Manufacturer"
 	0    1    -1   0   
 $EndComp
 Text Notes 2800 6500 0    50   Italic 0
-~SHDN~ must be low at power-up\nto avoid DC-DC enabling temporarily.\n\n~SHDN~ raised to +VDC when DC_ON\nis high enough to switch on Qx01\n(above about 0.7V). 3.3V is plenty.
+~SHDN~ must be low at power-up\nto avoid DC-DC enabling temporarily.\n\n~SHDN~ raised to +VDC when DC_ON\nis high enough to switch on Q801\n(above about 0.7V). 3.3V is plenty.
 $Comp
 L Device:R R802
 U 1 1 607A18C2

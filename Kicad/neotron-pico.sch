@@ -20,11 +20,11 @@ F0 "Audio" 50
 F1 "audio.sch" 50
 F2 "I2C_SDA" B L 6000 2500 50 
 F3 "I2C_SCL" I L 6000 2600 50 
-F4 "AUDIO_DAC_DAT" I L 6000 2000 50 
-F5 "AUDIO_DAC_LR" B L 6000 2100 50 
-F6 "AUDIO_BIT_CLK" B L 6000 2200 50 
-F7 "AUDIO_ADC_DATA" O L 6000 2300 50 
-F8 "AUDIO_ADC_LR" B L 6000 2400 50 
+F4 "AUDIO_DAC_DAT" I L 6000 2400 50 
+F5 "AUDIO_DAC_LR" B L 6000 2300 50 
+F6 "AUDIO_BIT_CLK" B L 6000 2000 50 
+F7 "AUDIO_ADC_DATA" O L 6000 2200 50 
+F8 "AUDIO_ADC_LR" B L 6000 2100 50 
 $EndSheet
 $Comp
 L Mechanical:MountingHole_Pad H102
@@ -212,8 +212,8 @@ Text Notes 500  5950 0    100  Italic 20
 micro-ATX Mounting Holes
 Wire Notes Line
 	4450 5750 4450 7800
-Text Notes 850  725  0    100  Italic 20
-Common Sub-systems
+Text Notes 525  700  0    100  Italic 20
+Top Level Schematic
 Wire Notes Line
 	500  5750 11200 5750
 Text Notes 4450 5950 0    100  Italic 20
@@ -838,8 +838,8 @@ F2 "DC_ON" I L 8750 2350 50
 $EndSheet
 Wire Wire Line
 	3025 1625 3550 1625
-Text Notes 1800 1050 0    50   ~ 0
-The micro-AB USB port will supply 5V.\nDo not plug the Pico into a USB Host\nwith the USB_PWR jumper fitted!
+Text Notes 1500 1150 0    50   Italic 0
+WARNING: Do not plug the Pico into a\nUSB Host with the USB_PWR jumper\nfitted. The micro-AB USB port will\nsupply 5V!
 $Comp
 L Device:Jumper_NO_Small JP101
 U 1 1 606B6D4F
@@ -869,8 +869,6 @@ Text Label 3075 2525 0    50   ~ 0
 NoConn ~ 3025 1925
 NoConn ~ 3025 1825
 NoConn ~ 3025 2025
-Wire Wire Line
-	3025 2425 3500 2425
 Wire Wire Line
 	3025 2525 3500 2525
 Wire Wire Line
@@ -1020,35 +1018,9 @@ Wire Wire Line
 Wire Wire Line
 	4550 1375 4075 1375
 Wire Wire Line
-	3025 2125 3500 2125
-Wire Wire Line
-	3025 2325 3500 2325
-Wire Wire Line
-	3025 2625 3500 2625
-Wire Wire Line
-	6000 2000 5525 2000
-Wire Wire Line
-	6000 2100 5525 2100
-Wire Wire Line
-	6000 2200 5525 2200
-Wire Wire Line
-	6000 2300 5525 2300
-Wire Wire Line
-	6000 2400 5525 2400
-Wire Wire Line
 	6000 2500 5525 2500
 Wire Wire Line
 	6000 2600 5525 2600
-Text Label 5950 2200 2    50   ~ 0
-I2S_BCLK
-Text Label 5950 2100 2    50   ~ 0
-I2S_LRCLK
-Text Label 5950 2000 2    50   ~ 0
-I2S_DAC_DATA
-Text Label 5950 2400 2    50   ~ 0
-I2S_LRCLK
-Text Label 5950 2300 2    50   ~ 0
-I2S_ADC_DATA
 Wire Wire Line
 	3925 2825 3925 3225
 Wire Wire Line
@@ -1056,7 +1028,7 @@ Wire Wire Line
 Wire Wire Line
 	3025 2825 3925 2825
 Text Label 3075 2825 0    50   ~ 0
-OUTPUT_EN
+~OUTPUT_EN
 Text Label 5300 2925 0    50   ~ 0
 ~CS[0..7]
 Text Label 5300 3025 0    50   ~ 0
@@ -1732,7 +1704,7 @@ L Connector:Conn_01x06_Male J105
 U 1 1 607E546B
 P 9925 3525
 F 0 "J105" H 9897 3407 50  0000 R CNN
-F 1 "Conn_01x06_Male" H 9897 3498 50  0000 R CNN
+F 1 "Conn_01x06_Pins" H 9897 3498 50  0000 R CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 9925 3525 50  0001 C CNN
 F 3 "~" H 9925 3525 50  0001 C CNN
 	1    9925 3525
@@ -1790,8 +1762,39 @@ Wire Wire Line
 	9700 3750 9700 3725
 Text Notes 4200 1775 0    50   ~ 0
 We use BMC_I2C\nfor VGA DDC
-Text Notes 4575 2200 0    50   ~ 0
+Text Notes 5125 1950 0    50   ~ 0
 LRCLK and BCLK go\nfrom Pico to CODEC
+Wire Wire Line
+	3025 2125 4275 2125
+Wire Wire Line
+	4275 2000 4275 2125
+Wire Wire Line
+	4275 2000 6000 2000
+Wire Wire Line
+	4375 2325 4375 2100
+Wire Wire Line
+	4375 2100 5850 2100
+Wire Wire Line
+	3025 2325 4375 2325
+Wire Wire Line
+	5850 2300 5850 2100
+Wire Wire Line
+	5850 2300 6000 2300
+Connection ~ 5850 2100
+Wire Wire Line
+	5850 2100 6000 2100
+Wire Wire Line
+	4475 2425 4475 2200
+Wire Wire Line
+	3025 2425 4475 2425
+Wire Wire Line
+	4475 2200 6000 2200
+Wire Wire Line
+	4650 2625 4650 2400
+Wire Wire Line
+	4650 2400 6000 2400
+Wire Wire Line
+	3025 2625 4650 2625
 Wire Bus Line
 	1050 2675 1050 3025
 Wire Bus Line
