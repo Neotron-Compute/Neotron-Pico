@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MCP23S17_SO
+D 16-bit I/O expander, SPI, interrupts, w pull-ups, SOIC-28
+K SPI parallel port expander
+F http://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf
+$ENDCMP
+#
+#End Doc Library

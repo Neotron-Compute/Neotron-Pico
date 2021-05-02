@@ -6,7 +6,7 @@ The Neotron Pico is based around the idea of the [Neotron-32](https://github.com
 
 ## Design
 
-The Raspberry Pi Pico is the core of the Neotron Pico. It uses PIO statemachines to generate 12-bit Super VGA video, and digital 16 bit 48 kHz stereo audio. It also has both I²C and SPI buses. SPI chipselects and IRQs are handled by an SPI-to-GPIO expander. This provides eight chip-selects and eight IRQs, to support up to eight expansion slots or peripherals. The eight chip-selects are gated with a tri-state bus transceiver, allowing the Pico to talk to either the I/O exander, or the selected expansion slot. The board has an SD fitted in the 'Slot 7' position, leaving Slot 0 through to Slot 6 available for expansion. Each expansion slot has I²C and SPI with unique chip-select and IRQ signals. A separate Board Mangement Controller also sits on the I²C bus handling PS/2 devices, and controlling power and reset. The BMC uses IRQ 7.
+The Raspberry Pi Pico is the core of the Neotron Pico. It uses PIO statemachines to generate 12-bit Super VGA video, and digital 16 bit 48 kHz stereo audio. It also has both I²C and SPI buses. SPI chipselects and IRQs are handled by an SPI-to-GPIO expander. This provides eight chip-selects and eight IRQs, to support up to eight expansion slots or peripherals. The eight chip-selects are gated with a tri-state bus transceiver, allowing the Pico to talk to either the I/O exander, or the selected expansion slot. The board has an SD Card fitted in the 'Slot 0' position, and the Board Management Controller in the 'Slot 1' position, leaving 'Slot 2' through to 'Slot 7' available for expansion. Each expansion slot has both I²C and SPI, along with unique chip-select and IRQ signals.
 
 ## Software
 
@@ -131,7 +131,8 @@ Power-on Reset sequencing, soft shutdown, voltage monitoring and PS/2 interfacin
 * Controls system reset, soft-on and soft-off for main CPU
 * Can the main 5V regulator on and off
 * Runs from 3.3V stand-by regulator
-* I²C interface (with dedicated IRQ line) with main CPU
+* SPI interface (with dedicated IRQ line) with main CPU
+* Secondary I²C bus which can be controlled over SPI
 
 | Pin  | Name | Signal     | Function                                     |
 | :--- | :--- | :--------- | :------------------------------------------- |
@@ -159,7 +160,7 @@ Power-on Reset sequencing, soft shutdown, voltage monitoring and PS/2 interfacin
 | 27   | PB4  | PS2_DAT0   | Keyboard Data Input                          |
 | 28   | PB5  | PS2_DAT1   | Mouse Data Input                             |
 | 29   | PB6  | USART1_TX  | UART Transmit Output                         |
-| 30   | PB7  | USART1_TX  | UART Receive Input                           |
+| 30   | PB7  | USART1_RX  | UART Receive Input                           |
 
 Note that in the above table, the UART signals are wired as _Data Terminal Equipment (DTE)_.
 
@@ -270,6 +271,48 @@ The expansion connector pinout is:
 
 Four expansion slots line up with the ATX case expansion brackets, allowing you to use cards with external connectors. Note that these are aligned the "PCI way around" with components facing away from the board's I/O area, rather than the "ISA way around" which would have the components facing the I/O area. A further three of the expansion slots are available for internal use only.
 
+### I²C Bus
+
+All I²C device address given below are 7-bit values. The first byte in a message is the _control byte_; this is comprised of the device address in the top seven bits, and an extra bit at the bottom to indicate read (1) or write (0).
+
+The memory addresses given are 8-bit values used to access the contents of an I²C device, and are usually supplied as the second byte in a message.
+
+* Device Address 0x50 - TLV320AIC23
+  * Memory Address 0x00 - Left line input channel volume control
+  * Memory Address 0x01 - Right line input channel volume control
+  * Memory Address 0x02 - Left channel headphone volume control
+  * Memory Address 0x03 - Right channel headphone volume control
+  * Memory Address 0x04 - Analog audio path control
+  * Memory Address 0x05 - Digital audio path control
+  * Memory Address 0x06 - Power down control
+  * Memory Address 0x07 - Digital audio interface format
+  * Memory Address 0x08 - Sample rate control
+  * Memory Address 0x09 - Digital interface activation
+  * Memory Address 0x0F - Reset register
+* Device Address 0x50 - VGA Monitor (DDC)
+  * Memory Addresses 0x00..0xFF - Monitor Specifications in [EDID format](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data)
+* Device Address 0x51 - Slot 1 ID EEPROM
+  * Memory Addresses 0x00..0xFF - Expansion Card Specification in NEID (Neotron Expansion ID) format
+* Device Address 0x52 - Slot 2 ID EEPROM
+  * Memory Addresses as per Slot 1
+* Device Address 0x53 - Slot 3 ID EEPROM
+  * Memory Addresses as per Slot 1
+* Device Address 0x54 - Slot 4 ID EEPROM
+  * Memory Addresses as per Slot 1
+* Device Address 0x55 - Slot 5 ID EEPROM
+  * Memory Addresses as per Slot 1
+* Device Address 0x56 - Slot 6 ID EEPROM
+  * Memory Addresses as per Slot 1
+* Device Address 0x57 - Slot 7 ID EEPROM
+  * Memory Addresses as per Slot 1
+* Device Address 0x6F - Real-time Clock
+  * Memory Addresses 0x00..0x1F - Clock Configuration
+  * Memory Addresses 0x20..0x5F - Battery-backed SRAM
+
+### SPI Chip Selects
+
+### Interrupt Assignments
+
 ## Expansion Ideas
 
 Why not design and build your own expansion card? You could try designing:
@@ -288,6 +331,19 @@ Why not design and build your own expansion card? You could try designing:
 
 See [CHANGELOG.md](./CHANGELOG.md) for a list of detailed changes.
 
+## Git Setup
+
+We recommend you have the following Git config set:
+
+```
+$ git config --global filter.kicad_project.clean "sed -E 's/^update=.*$/update=Date/'"
+$ git config --global filter.kicad_project.smudge cat
+$ git config --global filter.kicad_sch.clean "sed -E 's/#(PWR|FLG)[0-9]+/#\1?/'"
+$ git config --global filter.kicad_sch.smudge cat
+```
+
+See https://jnavila.github.io/plotkicadsch/ for details.
+
 ## Licence
 
 These documents, schematics and PCB designs are Copyright (c) The Neotron Developers.
@@ -305,16 +361,21 @@ Unless you explicitly state otherwise, any contribution intentionally submitted 
 ## Datasheets and References
 
 * Raspberry Pi Pico
-  * <https://datasheets.raspberrypi.org/pico/pico-datasheet.pdf>
+  * Datasheet: <https://datasheets.raspberrypi.org/pico/pico-datasheet.pdf>
 * Raspberry Pi Silicon RP2040
-  * <https://datasheets.raspberrypi.org/rp2040/rp2040-datasheet.pdf>
+  * Datasheet: <https://datasheets.raspberrypi.org/rp2040/rp2040-datasheet.pdf>
+  * Hardware Design Guide: <https://datasheets.raspberrypi.org/rp2040/hardware-design-with-rp2040.pdf>
 * ST Microelectronics STM32F031K6T6
-  * <https://www.st.com/resource/en/datasheet/stm32f031k6.pdf>
+  * Datasheet: <https://www.st.com/resource/en/datasheet/stm32f031k6.pdf>
 * Morsun K7805-3AR3
-  * <https://www.mornsunpower.de/html/pdf/K7805-3AR3.html>
+  * Datasheet: <https://www.mornsunpower.de/html/pdf/K7805-3AR3.html>
 * Texas Instruments TLV320AIC23B
-  * <https://www.ti.com/lit/ds/symlink/tlv320aic23b.pdf>
+  * Datasheet: <https://www.ti.com/lit/ds/symlink/tlv320aic23b.pdf>
 * Texas Instruments THS7316
-  * <https://www.ti.com/lit/ds/symlink/ths7316.pdf>
+  * Datasheet: <https://www.ti.com/lit/ds/symlink/ths7316.pdf>
 * Texas Instruments TPD7S019
-  * <https://www.ti.com/lit/ds/symlink/tpd7s019.pdf>
+  * Datasheet: <https://www.ti.com/lit/ds/symlink/tpd7s019.pdf>
+* Microchip 24LC256 EEPROM
+  * Info Page: <https://www.microchip.com/wwwproducts/en/24LC256>
+* Microchip MCP7940N Real-Time Clock
+  * Info Page: <https://www.microchip.com/wwwproducts/en/MCP7940N>
