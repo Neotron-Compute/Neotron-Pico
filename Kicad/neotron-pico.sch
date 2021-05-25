@@ -842,7 +842,7 @@ F1 "powersupply.sch" 50
 F2 "DC_ON" I L 8750 2350 50 
 $EndSheet
 Wire Wire Line
-	3025 1625 3900 1625
+	3025 1625 3250 1625
 Text Notes 1625 1100 0    50   Italic 0
 WARNING: Do not plug the Pico into a\nUSB Host with the USB_PWR jumper\nfitted. The micro-AB USB port will\nsupply 5V!
 Wire Wire Line
@@ -1517,12 +1517,12 @@ BLUE[0..3]
 $Comp
 L power:PWR_FLAG #FLG0101
 U 1 1 60EC6E5D
-P 3150 1100
-F 0 "#FLG0101" H 3150 1175 50  0001 C CNN
-F 1 "PWR_FLAG" V 3150 1400 50  0000 C CNN
-F 2 "" H 3150 1100 50  0001 C CNN
-F 3 "~" H 3150 1100 50  0001 C CNN
-	1    3150 1100
+P 3300 1550
+F 0 "#FLG0101" H 3300 1625 50  0001 C CNN
+F 1 "PWR_FLAG" V 3300 1850 50  0000 C CNN
+F 2 "" H 3300 1550 50  0001 C CNN
+F 3 "~" H 3300 1550 50  0001 C CNN
+	1    3300 1550
 	0    1    1    0   
 $EndComp
 $Sheet
@@ -1821,15 +1821,30 @@ Wire Wire Line
 Connection ~ 3075 1250
 Wire Wire Line
 	3075 1250 3075 1525
-Wire Wire Line
-	3075 950  3075 1100
-Wire Wire Line
-	3150 1100 3075 1100
-Connection ~ 3075 1100
-Wire Wire Line
-	3075 1100 3075 1250
 Text Notes 4025 1675 0    50   Italic 0
 Q1 disconnects VSYS\nfrom +5V rail when\nVBUS has power.
+Wire Wire Line
+	3300 1550 3250 1550
+Wire Wire Line
+	3250 1550 3250 1625
+Connection ~ 3250 1625
+Wire Wire Line
+	3250 1625 3900 1625
+Wire Wire Line
+	3075 950  3075 1125
+$Comp
+L power:PWR_FLAG #FLG0103
+U 1 1 60B128D2
+P 3125 1125
+F 0 "#FLG0103" H 3125 1200 50  0001 C CNN
+F 1 "PWR_FLAG" V 3125 1425 50  0000 C CNN
+F 2 "" H 3125 1125 50  0001 C CNN
+F 3 "~" H 3125 1125 50  0001 C CNN
+	1    3125 1125
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3125 1125 3075 1125
 Wire Bus Line
 	1050 2675 1050 3025
 Wire Bus Line
@@ -1840,4 +1855,7 @@ Wire Bus Line
 	6225 2925 6225 3775
 Wire Bus Line
 	5725 3025 5725 3775
+Connection ~ 3075 1125
+Wire Wire Line
+	3075 1125 3075 1250
 $EndSCHEMATC
