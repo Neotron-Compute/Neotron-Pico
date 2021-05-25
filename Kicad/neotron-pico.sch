@@ -717,32 +717,37 @@ P 2325 2475
 F 0 "U101" H 2325 3690 50  0000 C CNN
 F 1 "Pico" H 2325 3599 50  0000 C CNN
 F 2 "RPi_Pico:RPi_Pico_SMD_TH" V 2325 2475 50  0001 C CNN
-F 3 "" H 2325 2475 50  0001 C CNN
+F 3 "https://datasheets.raspberrypi.org/pico/pico-datasheet.pdf" H 2325 2475 50  0001 C CNN
+F 4 "0" H 2325 2475 50  0001 C CNN "DNP"
+F 5 "2648-SC0915CT-ND" H 2325 2475 50  0001 C CNN "Digikey"
+F 6 "SC0915" H 2325 2475 50  0001 C CNN "MPN"
+F 7 "Raspberry Pi" H 2325 2475 50  0001 C CNN "Manufacturer"
+F 8 "~" H 2325 2475 50  0001 C CNN "Mouser"
 	1    2325 2475
 	1    0    0    -1  
 $EndComp
 $Sheet
-S 4550 675  575  800 
+S 5650 725  575  800 
 U 60687F8A
 F0 "Video" 50
 F1 "video12.sch" 50
-F2 "DDC_SDA" B L 4550 1275 50 
-F3 "DDC_SCL" I L 4550 1375 50 
-F4 "VSYNC" I L 4550 1175 50 
-F5 "HSYNC" I L 4550 1075 50 
-F6 "RED[0..3]" I L 4550 775 50 
-F7 "GREEN[0..3]" I L 4550 875 50 
-F8 "BLUE[0..3]" I L 4550 975 50 
+F2 "DDC_SDA" B L 5650 1325 50 
+F3 "DDC_SCL" I L 5650 1425 50 
+F4 "VSYNC" I L 5650 1225 50 
+F5 "HSYNC" I L 5650 1125 50 
+F6 "RED[0..3]" I L 5650 825 50 
+F7 "GREEN[0..3]" I L 5650 925 50 
+F8 "BLUE[0..3]" I L 5650 1025 50 
 $EndSheet
 $Comp
 L power:+5V #PWR0117
 U 1 1 6069D10C
-P 3550 1275
-F 0 "#PWR0117" H 3550 1125 50  0001 C CNN
-F 1 "+5V" H 3565 1448 50  0000 C CNN
-F 2 "" H 3550 1275 50  0001 C CNN
-F 3 "" H 3550 1275 50  0001 C CNN
-	1    3550 1275
+P 3900 850
+F 0 "#PWR0117" H 3900 700 50  0001 C CNN
+F 1 "+5V" H 3915 1023 50  0000 C CNN
+F 2 "" H 3900 850 50  0001 C CNN
+F 3 "" H 3900 850 50  0001 C CNN
+	1    3900 850 
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -837,33 +842,11 @@ F1 "powersupply.sch" 50
 F2 "DC_ON" I L 8750 2350 50 
 $EndSheet
 Wire Wire Line
-	3025 1625 3550 1625
-Text Notes 1500 1150 0    50   Italic 0
+	3025 1625 3250 1625
+Text Notes 1625 1100 0    50   Italic 0
 WARNING: Do not plug the Pico into a\nUSB Host with the USB_PWR jumper\nfitted. The micro-AB USB port will\nsupply 5V!
-$Comp
-L Device:Jumper_NO_Small JP101
-U 1 1 606B6D4F
-P 3250 1400
-F 0 "JP101" H 3250 1585 50  0000 C CNN
-F 1 "USB_PWR" H 3250 1494 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 3250 1400 50  0001 C CNN
-F 3 "~" H 3250 1400 50  0001 C CNN
-	1    3250 1400
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3550 1275 3550 1400
 Wire Wire Line
 	3025 1525 3075 1525
-Wire Wire Line
-	3350 1400 3550 1400
-Connection ~ 3550 1400
-Wire Wire Line
-	3550 1400 3550 1625
-Wire Wire Line
-	3075 1525 3075 1400
-Wire Wire Line
-	3075 1400 3150 1400
 Text Label 3075 2525 0    50   ~ 0
 ~RESET
 NoConn ~ 3025 1925
@@ -969,9 +952,9 @@ Wire Wire Line
 	3025 3025 4125 3025
 Wire Wire Line
 	3025 2925 4125 2925
-Text Label 5925 900  2    50   ~ 0
+Text Label 6925 1050 2    50   ~ 0
 PICO_SCL
-Text Label 5925 800  2    50   ~ 0
+Text Label 6925 950  2    50   ~ 0
 PICO_SDA
 Text Label 7525 3200 2    50   ~ 0
 BMC_SCL
@@ -1005,18 +988,18 @@ Text Label 7525 3475 2    50   ~ 0
 SPI_CIPO
 Text Label 7525 3375 2    50   ~ 0
 SPI_CLK
-Text Label 4475 1375 2    50   ~ 0
+Text Label 5575 1425 2    50   ~ 0
 BMC_SCL
-Text Label 4475 1275 2    50   ~ 0
+Text Label 5575 1325 2    50   ~ 0
 BMC_SDA
 Wire Wire Line
-	4550 1075 4075 1075
+	5650 1125 5175 1125
 Wire Wire Line
-	4550 1175 4075 1175
+	5650 1225 5175 1225
 Wire Wire Line
-	4550 1275 4075 1275
+	5650 1325 5175 1325
 Wire Wire Line
-	4550 1375 4075 1375
+	5650 1425 5175 1425
 Wire Wire Line
 	6000 2500 5525 2500
 Wire Wire Line
@@ -1037,21 +1020,21 @@ Text Label 5950 2600 2    50   ~ 0
 PICO_SCL
 Text Label 5950 2500 2    50   ~ 0
 PICO_SDA
-Text Label 4475 1075 2    50   ~ 0
+Text Label 5575 1125 2    50   ~ 0
 HSYNC
-Text Label 4475 1175 2    50   ~ 0
+Text Label 5575 1225 2    50   ~ 0
 VSYNC
 Wire Bus Line
-	4550 775  4000 775 
+	5650 825  5100 825 
 Wire Bus Line
-	4550 875  4000 875 
+	5650 925  5100 925 
 Wire Bus Line
-	4550 975  4000 975 
-Text Label 4475 775  2    50   ~ 0
+	5650 1025 5100 1025
+Text Label 5575 825  2    50   ~ 0
 RED[0..3]
-Text Label 4475 875  2    50   ~ 0
+Text Label 5575 925  2    50   ~ 0
 GREEN[0..3]
-Text Label 4475 975  2    50   ~ 0
+Text Label 5575 1025 2    50   ~ 0
 BLUE[0..3]
 Text Label 8600 1175 2    50   ~ 0
 ~CS1
@@ -1070,19 +1053,19 @@ SPI_CIPO
 Text Label 8600 1375 2    50   ~ 0
 SPI_CLK
 $Sheet
-S 6000 725  925  375 
+S 7000 875  925  375 
 U 5FEF404D
 F0 "Real TIme Clock" 50
 F1 "rtc.sch" 50
-F2 "I2C_SDA" B L 6000 800 50 
-F3 "I2C_SCL" I L 6000 900 50 
+F2 "I2C_SDA" B L 7000 950 50 
+F3 "I2C_SCL" I L 7000 1050 50 
 $EndSheet
 Wire Wire Line
 	8700 1475 8250 1475
 Wire Wire Line
-	6000 800  5575 800 
+	7000 950  6575 950 
 Wire Wire Line
-	6000 900  5575 900 
+	7000 1050 6575 1050
 Wire Wire Line
 	2075 4350 2125 4350
 Wire Wire Line
@@ -1534,19 +1517,14 @@ BLUE[0..3]
 $Comp
 L power:PWR_FLAG #FLG0101
 U 1 1 60EC6E5D
-P 3000 1300
-F 0 "#FLG0101" H 3000 1375 50  0001 C CNN
-F 1 "PWR_FLAG" H 3000 1473 50  0000 C CNN
-F 2 "" H 3000 1300 50  0001 C CNN
-F 3 "~" H 3000 1300 50  0001 C CNN
-	1    3000 1300
-	1    0    0    -1  
+P 3300 1550
+F 0 "#FLG0101" H 3300 1625 50  0001 C CNN
+F 1 "PWR_FLAG" V 3300 1850 50  0000 C CNN
+F 2 "" H 3300 1550 50  0001 C CNN
+F 3 "~" H 3300 1550 50  0001 C CNN
+	1    3300 1550
+	0    1    1    0   
 $EndComp
-Wire Wire Line
-	3000 1300 3000 1400
-Wire Wire Line
-	3000 1400 3075 1400
-Connection ~ 3075 1400
 $Sheet
 S 4125 2825 1125 875 
 U 6069D32A
@@ -1707,6 +1685,9 @@ F 0 "J105" H 9897 3407 50  0000 R CNN
 F 1 "Conn_01x06_Pins" H 9897 3498 50  0000 R CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 9925 3525 50  0001 C CNN
 F 3 "~" H 9925 3525 50  0001 C CNN
+F 4 "0" H 9925 3525 50  0001 C CNN "DNP"
+F 5 "~" H 9925 3525 50  0001 C CNN "Digikey"
+F 6 "~" H 9925 3525 50  0001 C CNN "MPN"
 	1    9925 3525
 	-1   0    0    1   
 $EndComp
@@ -1760,7 +1741,7 @@ Wire Wire Line
 	9725 3725 9700 3725
 Wire Wire Line
 	9700 3750 9700 3725
-Text Notes 4200 1775 0    50   ~ 0
+Text Notes 4700 750  0    50   ~ 0
 We use BMC_I2C\nfor VGA DDC
 Text Notes 5125 1950 0    50   ~ 0
 LRCLK and BCLK go\nfrom Pico to CODEC
@@ -1795,6 +1776,75 @@ Wire Wire Line
 	4650 2400 6000 2400
 Wire Wire Line
 	3025 2625 4650 2625
+Wire Wire Line
+	3900 850  3900 950 
+$Comp
+L Device:Q_PMOS_GSD Q101
+U 1 1 60AFB124
+P 3800 1250
+F 0 "Q101" H 4004 1296 50  0000 L CNN
+F 1 "DMG2305UX" H 4004 1205 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 4000 1350 50  0001 C CNN
+F 3 "https://www.diodes.com/assets/Datasheets/DMG2305UX.pdf" H 3800 1250 50  0001 C CNN
+F 4 "0" H 3800 1250 50  0001 C CNN "DNP"
+F 5 "DMG2305UX-13DICT-ND" H 3800 1250 50  0001 C CNN "Digikey"
+F 6 "DMG2305UX-13" H 3800 1250 50  0001 C CNN "MPN"
+F 7 "Diodes Inc" H 3800 1250 50  0001 C CNN "Manufacturer"
+	1    3800 1250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3075 950  3450 950 
+Wire Wire Line
+	3650 950  3900 950 
+$Comp
+L Device:Jumper_NO_Small JP101
+U 1 1 606B6D4F
+P 3550 950
+F 0 "JP101" H 3550 1135 50  0000 C CNN
+F 1 "USB_PWR" H 3550 1044 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 3550 950 50  0001 C CNN
+F 3 "~" H 3550 950 50  0001 C CNN
+F 4 "0" H 3550 950 50  0001 C CNN "DNP"
+F 5 "~" H 3550 950 50  0001 C CNN "Digikey"
+F 6 "~" H 3550 950 50  0001 C CNN "MPN"
+	1    3550 950 
+	1    0    0    -1  
+$EndComp
+Connection ~ 3900 950 
+Wire Wire Line
+	3900 950  3900 1050
+Wire Wire Line
+	3900 1450 3900 1625
+Wire Wire Line
+	3600 1250 3075 1250
+Connection ~ 3075 1250
+Wire Wire Line
+	3075 1250 3075 1525
+Text Notes 4025 1675 0    50   Italic 0
+Q1 disconnects VSYS\nfrom +5V rail when\nVBUS has power.
+Wire Wire Line
+	3300 1550 3250 1550
+Wire Wire Line
+	3250 1550 3250 1625
+Connection ~ 3250 1625
+Wire Wire Line
+	3250 1625 3900 1625
+Wire Wire Line
+	3075 950  3075 1125
+$Comp
+L power:PWR_FLAG #FLG0103
+U 1 1 60B128D2
+P 3125 1125
+F 0 "#FLG0103" H 3125 1200 50  0001 C CNN
+F 1 "PWR_FLAG" V 3125 1425 50  0000 C CNN
+F 2 "" H 3125 1125 50  0001 C CNN
+F 3 "~" H 3125 1125 50  0001 C CNN
+	1    3125 1125
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3125 1125 3075 1125
 Wire Bus Line
 	1050 2675 1050 3025
 Wire Bus Line
@@ -1805,4 +1855,7 @@ Wire Bus Line
 	6225 2925 6225 3775
 Wire Bus Line
 	5725 3025 5725 3775
+Connection ~ 3075 1125
+Wire Wire Line
+	3075 1125 3075 1250
 $EndSCHEMATC

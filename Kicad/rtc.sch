@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 11 11
+Sheet 9 11
 Title "Neotron Common Hardware - Real Time Clock"
 Date "2021-04-17"
 Rev "[Uncontrolled]"
@@ -73,11 +73,11 @@ F 0 "C903" H 7165 3396 50  0000 L CNN
 F 1 "100n" H 7165 3305 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 7088 3200 50  0001 C CNN
 F 3 "~" H 7050 3350 50  0001 C CNN
-F 4 "Vishay" H 0   0   50  0001 C CNN "Manufacturer"
+F 4 "CPL" H 0   0   50  0001 C CNN "Manufacturer"
 F 5 "0" H 7050 3350 50  0001 C CNN "DNP"
-F 6 "BC1150CT-ND" H 7050 3350 50  0001 C CNN "Digikey"
-F 7 "K104K15X7RF5TL2" H 7050 3350 50  0001 C CNN "MPN"
-F 8 "594-K104K15X7RF5TL2" H 7050 3350 50  0001 C CNN "Mouser"
+F 6 "" H 7050 3350 50  0001 C CNN "Digikey"
+F 7 "CPL-CAP-X7R-0805-100NF-50V" H 7050 3350 50  0001 C CNN "MPN"
+F 8 "" H 7050 3350 50  0001 C CNN "Mouser"
 	1    7050 3350
 	1    0    0    -1  
 $EndComp
