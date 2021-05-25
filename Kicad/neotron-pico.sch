@@ -717,7 +717,12 @@ P 2325 2475
 F 0 "U101" H 2325 3690 50  0000 C CNN
 F 1 "Pico" H 2325 3599 50  0000 C CNN
 F 2 "RPi_Pico:RPi_Pico_SMD_TH" V 2325 2475 50  0001 C CNN
-F 3 "" H 2325 2475 50  0001 C CNN
+F 3 "https://datasheets.raspberrypi.org/pico/pico-datasheet.pdf" H 2325 2475 50  0001 C CNN
+F 4 "0" H 2325 2475 50  0001 C CNN "DNP"
+F 5 "2648-SC0915CT-ND" H 2325 2475 50  0001 C CNN "Digikey"
+F 6 "SC0915" H 2325 2475 50  0001 C CNN "MPN"
+F 7 "Raspberry Pi" H 2325 2475 50  0001 C CNN "Manufacturer"
+F 8 "~" H 2325 2475 50  0001 C CNN "Mouser"
 	1    2325 2475
 	1    0    0    -1  
 $EndComp
@@ -1680,6 +1685,9 @@ F 0 "J105" H 9897 3407 50  0000 R CNN
 F 1 "Conn_01x06_Pins" H 9897 3498 50  0000 R CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 9925 3525 50  0001 C CNN
 F 3 "~" H 9925 3525 50  0001 C CNN
+F 4 "0" H 9925 3525 50  0001 C CNN "DNP"
+F 5 "~" H 9925 3525 50  0001 C CNN "Digikey"
+F 6 "~" H 9925 3525 50  0001 C CNN "MPN"
 	1    9925 3525
 	-1   0    0    1   
 $EndComp
@@ -1771,13 +1779,17 @@ Wire Wire Line
 Wire Wire Line
 	3900 850  3900 950 
 $Comp
-L Device:Q_PMOS_GSD Q1
+L Device:Q_PMOS_GSD Q101
 U 1 1 60AFB124
 P 3800 1250
-F 0 "Q1" H 4004 1296 50  0000 L CNN
+F 0 "Q101" H 4004 1296 50  0000 L CNN
 F 1 "DMG2305UX" H 4004 1205 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 4000 1350 50  0001 C CNN
 F 3 "https://www.diodes.com/assets/Datasheets/DMG2305UX.pdf" H 3800 1250 50  0001 C CNN
+F 4 "0" H 3800 1250 50  0001 C CNN "DNP"
+F 5 "DMG2305UX-13DICT-ND" H 3800 1250 50  0001 C CNN "Digikey"
+F 6 "DMG2305UX-13" H 3800 1250 50  0001 C CNN "MPN"
+F 7 "Diodes Inc" H 3800 1250 50  0001 C CNN "Manufacturer"
 	1    3800 1250
 	1    0    0    -1  
 $EndComp
@@ -1793,6 +1805,9 @@ F 0 "JP101" H 3550 1135 50  0000 C CNN
 F 1 "USB_PWR" H 3550 1044 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 3550 950 50  0001 C CNN
 F 3 "~" H 3550 950 50  0001 C CNN
+F 4 "0" H 3550 950 50  0001 C CNN "DNP"
+F 5 "~" H 3550 950 50  0001 C CNN "Digikey"
+F 6 "~" H 3550 950 50  0001 C CNN "MPN"
 	1    3550 950 
 	1    0    0    -1  
 $EndComp

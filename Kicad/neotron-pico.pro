@@ -1,4 +1,4 @@
-update=03/05/2021 22:05:25
+update=Tue 25 May 2021 22:12:22 BST
 version=1
 last_client=kicad
 [general]
@@ -248,7 +248,7 @@ dPairGap=0.25
 dPairViaGap=0.25
 [pcbnew/Netclasses/1]
 Name=AuxPower
-Clearance=0.25
+Clearance=0.2
 TrackWidth=0.5
 ViaDiameter=0.8
 ViaDrill=0.4
@@ -259,7 +259,7 @@ dPairGap=0.25
 dPairViaGap=0.25
 [pcbnew/Netclasses/2]
 Name=MainPower
-Clearance=0.5
+Clearance=0.2
 TrackWidth=1
 ViaDiameter=0.8
 ViaDrill=0.4
