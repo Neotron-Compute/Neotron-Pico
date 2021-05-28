@@ -279,7 +279,7 @@ All I²C device address given below are 7-bit values. The first byte in a messag
 
 The memory addresses given are 8-bit values used to access the contents of an I²C device, and are usually supplied as the second byte in a message.
 
-* Device Address 0x50 - TLV320AIC23
+* Device Address 0x1A - TLV320AIC23
   * Memory Address 0x00 - Left line input channel volume control
   * Memory Address 0x01 - Right line input channel volume control
   * Memory Address 0x02 - Left channel headphone volume control
@@ -320,7 +320,7 @@ The memory addresses given are 8-bit values used to access the contents of an I�
 Why not design and build your own expansion card? You could try designing:
 
 * A dual Atari/SEGA 9-pin Joypad Interface
-* A Mikro Eletronika Click adaptor, allow many of the range of [Click board](https://www.mikroe.com/click) to be fitted
+* A Mikro Electronika Click adaptor, allow many of the range of [Click boards](https://www.mikroe.com/click) to be fitted
 * A Wi-Fi/Bluetooth card, using an Espressif ESP32
 * A second processor card - perhaps with a RISC-V microcontroller, or classic Zilog Z80
 * An OPL2 or OPL3 based FM synthesiser card
@@ -354,7 +354,7 @@ These documents, schematics and PCB designs are Copyright (c) The Neotron Develo
 
 This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
-Please note that the models provided in the `3dmodels` directory are from various manufacturers. Terms and conditions for the use of the models remain with the original manufacturer.
+Please note that the models provided in the [Kicad/Models](./Kicad/Models) directory are from various manufacturers. Terms and conditions for the use of the models are as specified by the original manufacturer/author.
 
 ## Contribution Agreement
 
