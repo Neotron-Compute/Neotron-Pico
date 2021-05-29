@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 12 11
+Sheet 4 11
 Title ""
 Date "2021-04-17"
 Rev "[Uncontrolled]"
@@ -292,26 +292,18 @@ F 8 "595-TPD7S019-15DBQR" H 7000 5100 50  0001 C CNN "Mouser"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5650 3800 6050 3800
+	5650 3800 6150 3800
 Wire Wire Line
-	5650 4000 5950 4000
+	5650 4000 6250 4000
+Connection ~ 6050 3600
 Wire Wire Line
-	6350 4900 6150 4900
+	6150 5000 6350 5000
+Connection ~ 6250 4000
 Wire Wire Line
-	6150 3600 6150 4900
-Connection ~ 6150 3600
+	5650 3600 6050 3600
 Wire Wire Line
-	6050 5000 6350 5000
-Wire Wire Line
-	6350 5100 5950 5100
-Wire Wire Line
-	5950 5100 5950 4000
-Connection ~ 5950 4000
-Wire Wire Line
-	5650 3600 6150 3600
-Wire Wire Line
-	6050 3800 6050 5000
-Connection ~ 6050 3800
+	6150 3800 6150 5000
+Connection ~ 6150 3800
 $Comp
 L Neotron-Common-Hardware:TPF133A U401
 U 1 1 5FEAF8C1
@@ -661,11 +653,11 @@ Connection ~ 2300 6950
 Wire Wire Line
 	2300 6950 2300 6900
 Wire Wire Line
-	5950 4000 9050 4000
+	6250 4000 9050 4000
 Wire Wire Line
-	6050 3800 9050 3800
+	6150 3800 9050 3800
 Wire Wire Line
-	6150 3600 9050 3600
+	6050 3600 9050 3600
 $Comp
 L power:GND #PWR0413
 U 1 1 5FF22EAD
@@ -838,4 +830,12 @@ Wire Wire Line
 	9600 5250 7650 5250
 Wire Wire Line
 	9600 5250 11050 5250
+Wire Wire Line
+	6350 5100 6050 5100
+Wire Wire Line
+	6050 3600 6050 5100
+Wire Wire Line
+	6350 4900 6250 4900
+Wire Wire Line
+	6250 4900 6250 4000
 $EndSCHEMATC
