@@ -1,0 +1,363 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 10 11
+Title ""
+Date "2021-04-17"
+Rev "v0.1.0"
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L neotron-pico:MCP23S17_SO U1001
+U 1 1 60EED5B0
+P 4425 3050
+F 0 "U1001" H 3975 4025 50  0000 C CNN
+F 1 "MCP23S17_SO" H 4775 4025 50  0000 C CNN
+F 2 "Package_SO:SOIC-28W_7.5x17.9mm_P1.27mm" H 4625 2050 50  0001 L CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf" H 4625 1950 50  0001 L CNN
+F 4 "0" H 4425 3050 50  0001 C CNN "DNP"
+F 5 "MCP23S17T-E/SOCT-ND" H 4425 3050 50  0001 C CNN "Digikey"
+F 6 "MCP23S17T-E/SO" H 4425 3050 50  0001 C CNN "MPN"
+F 7 "Microchip" H 4425 3050 50  0001 C CNN "Manufacturer"
+	1    4425 3050
+	1    0    0    -1  
+$EndComp
+Text HLabel 7050 4050 2    50   Output ~ 0
+~CS[0..7]
+Text HLabel 3550 2450 0    50   Input ~ 0
+SPI_COPI
+Text HLabel 3550 2550 0    50   Output ~ 0
+SPI_CIPO
+Text HLabel 3550 2250 0    50   Input ~ 0
+~SPI_CS
+Text HLabel 3550 2850 0    50   Output ~ 0
+~IRQ
+Text HLabel 5425 4150 0    50   Input ~ 0
+~OUTPUT_EN
+Text HLabel 3550 2350 0    50   Input ~ 0
+SPI_CLK
+NoConn ~ 3725 2950
+Text HLabel 3600 3150 0    50   Input ~ 0
+~RESET
+Wire Wire Line
+	3600 3150 3725 3150
+Wire Wire Line
+	3725 2850 3550 2850
+Wire Wire Line
+	3725 2550 3550 2550
+Wire Wire Line
+	3550 2450 3725 2450
+Wire Wire Line
+	3725 2350 3550 2350
+Wire Wire Line
+	3550 2250 3725 2250
+Entry Wire Line
+	6825 3150 6925 3250
+Entry Wire Line
+	6825 3250 6925 3350
+Entry Wire Line
+	6825 3350 6925 3450
+Entry Wire Line
+	6825 3450 6925 3550
+Entry Wire Line
+	6825 3550 6925 3650
+Entry Wire Line
+	6825 3650 6925 3750
+Entry Wire Line
+	6825 3750 6925 3850
+Entry Wire Line
+	6825 3850 6925 3950
+Wire Wire Line
+	6550 3150 6825 3150
+Wire Wire Line
+	6550 3250 6825 3250
+Wire Wire Line
+	6550 3350 6825 3350
+Wire Wire Line
+	6550 3450 6825 3450
+Wire Wire Line
+	6550 3550 6825 3550
+Wire Wire Line
+	6550 3650 6825 3650
+Wire Wire Line
+	6550 3750 6825 3750
+Wire Wire Line
+	6550 3850 6825 3850
+Text Label 6575 3150 0    50   ~ 0
+~CS0
+Text Label 6575 3250 0    50   ~ 0
+~CS1
+Text Label 6575 3350 0    50   ~ 0
+~CS2
+Text Label 6575 3450 0    50   ~ 0
+~CS3
+Text Label 6575 3550 0    50   ~ 0
+~CS4
+Text Label 6575 3650 0    50   ~ 0
+~CS5
+Text Label 6575 3750 0    50   ~ 0
+~CS6
+Text Label 6575 3850 0    50   ~ 0
+~CS7
+Wire Bus Line
+	6925 4050 7050 4050
+Text HLabel 5625 2100 2    50   Input ~ 0
+~IRQ[0..7]
+Entry Wire Line
+	5500 2150 5400 2250
+Entry Wire Line
+	5500 2250 5400 2350
+Entry Wire Line
+	5500 2350 5400 2450
+Entry Wire Line
+	5500 2450 5400 2550
+Entry Wire Line
+	5500 2550 5400 2650
+Entry Wire Line
+	5500 2650 5400 2750
+Entry Wire Line
+	5500 2750 5400 2850
+Entry Wire Line
+	5500 2850 5400 2950
+Wire Wire Line
+	5125 2250 5400 2250
+Wire Wire Line
+	5125 2350 5400 2350
+Wire Wire Line
+	5125 2450 5400 2450
+Wire Wire Line
+	5125 2550 5400 2550
+Wire Wire Line
+	5125 2650 5400 2650
+Wire Wire Line
+	5125 2750 5400 2750
+Wire Wire Line
+	5125 2850 5400 2850
+Wire Wire Line
+	5125 2950 5400 2950
+Text Label 5150 2250 0    50   ~ 0
+~IRQ0
+Text Label 5150 2350 0    50   ~ 0
+~IRQ1
+Text Label 5150 2450 0    50   ~ 0
+~IRQ2
+Text Label 5150 2550 0    50   ~ 0
+~IRQ3
+Text Label 5150 2650 0    50   ~ 0
+~IRQ4
+Text Label 5150 2750 0    50   ~ 0
+~IRQ5
+Text Label 5150 2850 0    50   ~ 0
+~IRQ6
+Text Label 5150 2950 0    50   ~ 0
+~IRQ7
+Wire Bus Line
+	5500 2100 5625 2100
+$Comp
+L 74xx:74HC245 U1002
+U 1 1 60F0F5AC
+P 6050 3650
+F 0 "U1002" H 5800 4325 50  0000 C CNN
+F 1 "74HC245" H 6275 4325 50  0000 C CNN
+F 2 "Package_SO:SO-20_12.8x7.5mm_P1.27mm" H 6050 3650 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HC245" H 6050 3650 50  0001 C CNN
+F 4 "0" H 6050 3650 50  0001 C CNN "DNP"
+F 5 "296-8278-1-ND" H 6050 3650 50  0001 C CNN "Digikey"
+F 6 "SN74HC245NSR" H 6050 3650 50  0001 C CNN "MPN"
+F 7 "Texas Instruments" H 6050 3650 50  0001 C CNN "Manufacturer"
+	1    6050 3650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5425 4150 5550 4150
+$Comp
+L power:GND #PWR01005
+U 1 1 60F11A9D
+P 6050 4550
+F 0 "#PWR01005" H 6050 4300 50  0001 C CNN
+F 1 "GND" H 6055 4377 50  0000 C CNN
+F 2 "" H 6050 4550 50  0001 C CNN
+F 3 "" H 6050 4550 50  0001 C CNN
+	1    6050 4550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6050 4550 6050 4450
+$Comp
+L power:GND #PWR01003
+U 1 1 60F121EF
+P 5500 4550
+F 0 "#PWR01003" H 5500 4300 50  0001 C CNN
+F 1 "GND" H 5505 4377 50  0000 C CNN
+F 2 "" H 5500 4550 50  0001 C CNN
+F 3 "" H 5500 4550 50  0001 C CNN
+	1    5500 4550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5550 4050 5500 4050
+Wire Wire Line
+	5500 4050 5500 4550
+Wire Wire Line
+	5125 3150 5550 3150
+Wire Wire Line
+	5125 3250 5550 3250
+Wire Wire Line
+	5125 3350 5550 3350
+Wire Wire Line
+	5125 3450 5550 3450
+Wire Wire Line
+	5125 3550 5550 3550
+Wire Wire Line
+	5125 3650 5550 3650
+Wire Wire Line
+	5125 3750 5550 3750
+Wire Wire Line
+	5125 3850 5550 3850
+$Comp
+L power:+3.3V #PWR01001
+U 1 1 60F1A105
+P 4425 1875
+F 0 "#PWR01001" H 4425 1725 50  0001 C CNN
+F 1 "+3.3V" H 4440 2048 50  0000 C CNN
+F 2 "" H 4425 1875 50  0001 C CNN
+F 3 "" H 4425 1875 50  0001 C CNN
+	1    4425 1875
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4425 1875 4425 1950
+$Comp
+L power:+3.3V #PWR01004
+U 1 1 60F1ADA6
+P 6050 2775
+F 0 "#PWR01004" H 6050 2625 50  0001 C CNN
+F 1 "+3.3V" H 6065 2948 50  0000 C CNN
+F 2 "" H 6050 2775 50  0001 C CNN
+F 3 "" H 6050 2775 50  0001 C CNN
+	1    6050 2775
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6050 2775 6050 2850
+$Comp
+L power:GND #PWR01002
+U 1 1 60F1C2DF
+P 4425 4550
+F 0 "#PWR01002" H 4425 4300 50  0001 C CNN
+F 1 "GND" H 4430 4377 50  0000 C CNN
+F 2 "" H 4425 4550 50  0001 C CNN
+F 3 "" H 4425 4550 50  0001 C CNN
+	1    4425 4550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4425 4150 4425 4225
+Wire Wire Line
+	3725 3650 3550 3650
+Wire Wire Line
+	3550 3650 3550 3750
+Wire Wire Line
+	3550 4225 4425 4225
+Connection ~ 4425 4225
+Wire Wire Line
+	4425 4225 4425 4550
+Wire Wire Line
+	3725 3750 3550 3750
+Connection ~ 3550 3750
+Wire Wire Line
+	3550 3750 3550 3850
+Wire Wire Line
+	3725 3850 3550 3850
+Connection ~ 3550 3850
+Wire Wire Line
+	3550 3850 3550 4225
+$Comp
+L power:+3.3V #PWR01006
+U 1 1 60F1F612
+P 7900 2250
+F 0 "#PWR01006" H 7900 2100 50  0001 C CNN
+F 1 "+3.3V" H 7915 2423 50  0000 C CNN
+F 2 "" H 7900 2250 50  0001 C CNN
+F 3 "" H 7900 2250 50  0001 C CNN
+	1    7900 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR01007
+U 1 1 60F1F772
+P 7900 2750
+F 0 "#PWR01007" H 7900 2500 50  0001 C CNN
+F 1 "GND" H 7905 2577 50  0000 C CNN
+F 2 "" H 7900 2750 50  0001 C CNN
+F 3 "" H 7900 2750 50  0001 C CNN
+	1    7900 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 60F34F63
+P 7900 2500
+AR Path="/5FEF6B08/60F34F63" Ref="C?"  Part="1" 
+AR Path="/6069D32A/60F34F63" Ref="C1001"  Part="1" 
+F 0 "C1001" H 8015 2546 50  0000 L CNN
+F 1 "100n" H 8015 2455 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 7938 2350 50  0001 C CNN
+F 3 "~" H 7900 2500 50  0001 C CNN
+F 4 "0" H 7900 2500 50  0001 C CNN "DNP"
+F 5 "" H 7900 2500 50  0001 C CNN "Digikey"
+F 6 "CPL-CAP-X7R-0805-100NF-50V" H 7900 2500 50  0001 C CNN "MPN"
+F 7 "CPL" H 7900 2500 50  0001 C CNN "Manufacturer"
+F 8 "" H 7900 2500 50  0001 C CNN "Mouser"
+	1    7900 2500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7900 2250 7900 2300
+Wire Wire Line
+	7900 2650 7900 2700
+$Comp
+L Device:C C?
+U 1 1 60F36BE4
+P 8375 2500
+AR Path="/5FEF6B08/60F36BE4" Ref="C?"  Part="1" 
+AR Path="/6069D32A/60F36BE4" Ref="C1002"  Part="1" 
+F 0 "C1002" H 8490 2546 50  0000 L CNN
+F 1 "100n" H 8490 2455 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 8413 2350 50  0001 C CNN
+F 3 "~" H 8375 2500 50  0001 C CNN
+F 4 "0" H 8375 2500 50  0001 C CNN "DNP"
+F 5 "" H 8375 2500 50  0001 C CNN "Digikey"
+F 6 "CPL-CAP-X7R-0805-100NF-50V" H 8375 2500 50  0001 C CNN "MPN"
+F 7 "CPL" H 8375 2500 50  0001 C CNN "Manufacturer"
+F 8 "" H 8375 2500 50  0001 C CNN "Mouser"
+	1    8375 2500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7900 2300 8375 2300
+Wire Wire Line
+	8375 2300 8375 2350
+Connection ~ 7900 2300
+Wire Wire Line
+	7900 2300 7900 2350
+Wire Wire Line
+	8375 2650 8375 2700
+Wire Wire Line
+	8375 2700 7900 2700
+Connection ~ 7900 2700
+Wire Wire Line
+	7900 2700 7900 2750
+Text Notes 8150 2950 0    50   ~ 0
+Decoupling. Place one near U1001\nPin 9, and one near U1002 Pin 20.
+Wire Bus Line
+	5500 2100 5500 2850
+Wire Bus Line
+	6925 3250 6925 4050
+$EndSCHEMATC

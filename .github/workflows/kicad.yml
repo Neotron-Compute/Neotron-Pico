@@ -1,0 +1,34 @@
+name: Kicad
+
+on:
+  push:
+    paths:
+    - '**.sch'
+    - '**.lib'
+    - '**.kicad_mod'
+    - '**.kicad_pcb'
+  pull_request:
+    paths:
+      - '**.sch'
+      - '**.lib'
+      - '**.kicad_mod'
+      - '**.kicad_pcb'
+
+jobs:
+  Kicad:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+    - uses: nerdyscout/kicad-exports@v2.2
+      with:
+        config: 'Kicad/docs.yml'
+        dir: docs
+        schema: 'Kicad/neotron-pico.sch'
+        board: 'Kicad/neotron-pico.kicad_pcb'
+    - name: upload results
+      uses: actions/upload-artifact@v2
+      with:
+        name: docs
+        path: docs
