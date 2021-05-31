@@ -6,7 +6,7 @@ encoding utf-8
 Sheet 8 11
 Title "Neotron Common Hardware - Power Supply"
 Date "2021-04-17"
-Rev "[Uncontrolled]"
+Rev "v0.1.0"
 Comp "https://neotron-compute.github.io/"
 Comment1 "Licenced as CC BY-SA"
 Comment2 "Copyright (c) The Neotron Developers, 2021"
