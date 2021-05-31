@@ -6,7 +6,7 @@ encoding utf-8
 Sheet 3 11
 Title "Neotron Common Hardware - SD Card Slot"
 Date "2021-04-17"
-Rev "v0.1.0"
+Rev "[Uncontrolled]"
 Comp "https://neotron-compute.github.io/"
 Comment1 "Licenced as CC BY-SA"
 Comment2 "Copyright (c) The Neotron Developers, 2021"
