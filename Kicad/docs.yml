@@ -3,16 +3,17 @@ kibot:
 
 preflight:
   run_erc: true
-  run_drc: false
+  run_drc: true
   check_zone_fills: true
   ignore_unconnected: false
+  update_xml: true
 
 outputs:
   # For more information: https://github.com/INTI-CMNB/KiBoM
   - name: 'print schema'
     comment: "Print schematic (PDF)"
     type: pdf_sch_print
-    dir: docs
+    dir: pdfs
   
   - name: 'print board mechanics'
     comment: "Print board (PDF)"
@@ -21,11 +22,11 @@ outputs:
       - Dwgs.User
       - Edge.Cuts
       - F.CrtYd
-    dir: docs
+    dir: pdfs
     options:
-      drill_marks: full #[string='full'] what to use to indicate the drill places, can be none, small or full (for real scale).
-      output: '%f-mechanic.%x' #[string='%f-%i%v.%x'] filename for the output PDF (%i=layers, %x=pdf). Affected by global options.
-      plot_sheet_reference: true # [boolean=true] include the title-block.
+      drill_marks: full
+      output: '%f-mechanic-%r.%x'
+      plot_sheet_reference: true
 
   - name: 'print board documentation'
     comment: "Print board (PDF)"
@@ -34,7 +35,63 @@ outputs:
       - Edge.Cuts
       - Cmts.User
       - F.Fab
-    dir: docs
+    dir: pdfs
     options:
-      output: '%f-documentation.%x' #[string='%f-%i%v.%x'] filename for the output PDF (%i=layers, %x=pdf). Affected by global options.
-      plot_sheet_reference: true # [boolean=true] include the title-block.
+      output: '%f-documentation-%r.%x'
+      plot_sheet_reference: true
+
+  - name: 'generate gerbers'
+    comment: "Generate gerber files"
+    type: gerber
+    layers: 
+      - F.Cu
+      - In1.Cu
+      - In2.Cu
+      - B.Cu
+      - Edge.Cuts
+      - F.SilkS
+      - F.Paste
+      - F.Mask
+      - B.SilkS
+      - B.Paste
+      - B.Mask
+    dir: gerbers
+    options:
+      # generic layer options
+      exclude_edge_layer: false
+      exclude_pads_from_silkscreen: false
+      plot_sheet_reference: false
+      plot_footprint_refs: true
+      plot_footprint_values: true
+      force_plot_invisible_refs_vals: false
+      tent_vias: true
+      line_width: 0.15
+
+      # gerber options
+      use_aux_axis_as_origin: false
+      subtract_mask_from_silk: true
+      use_protel_extensions: false
+      gerber_precision: 4.5
+      create_gerber_job_file: true
+      use_gerber_x2_attributes: true
+      use_gerber_net_attributes: false
+
+  - name: 'generate drills'
+    comment: "Generate drill files"
+    type: excellon
+    dir: gerbers
+
+  - name: 'generate position'
+    comment: "Generate XY position files"
+    type: position
+    dir: gerbers
+
+  - name: 'generate BoM in CSV'
+    comment: "Generate bill-of-material files"
+    type: kibom
+    dir: gerbers
+
+  - name: 'generate BoM in HTML'
+    comment: "Generate assembly HTML page"
+    type: ibom
+    dir: ibom

@@ -36,16 +36,15 @@ jobs:
           release_name: Release ${{ github.ref }}
           draft: false
           prerelease: false
-      - name: Build zip file
+      - name: Build gerbers zip file
         run: |
-          zip -r --junk-paths neotron-pico-release.zip docs/
-      - name: Upload Release
-        id: upload-release-asset 
-        uses: actions/upload-release-asset@v1
+          zip -r --junk-paths neotron-pico-gerbers-${{ github.ref }}.zip gerbers/
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            neotron-pico-gerbers*.zip
+            pdfs/*.pdf
+            ibom/*.html
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing its ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-          asset_path: ./neotron-pico-release.zip
-          asset_name: neotron-pico-release.zip
-          asset_content_type: application/zip
