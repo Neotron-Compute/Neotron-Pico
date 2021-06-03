@@ -5,11 +5,11 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 11
 Title "Neotron Pico - Top Sheet"
-Date "2021-04-17"
+Date "2021-06-03"
 Rev "[Uncontrolled]"
 Comp "https://neotron-compute.github.io"
 Comment1 "Licensed as CC-BY-SA"
-Comment2 "Copyright (c) The Neotron Deevelopers, 2021"
+Comment2 "Copyright (c) The Neotron Developers, 2021"
 Comment3 ""
 Comment4 ""
 $EndDescr
