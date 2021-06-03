@@ -5,11 +5,11 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 10 11
 Title ""
-Date "2021-04-17"
+Date "2021-06-03"
 Rev "[Uncontrolled]"
 Comp ""
 Comment1 ""
-Comment2 ""
+Comment2 "Copyright (c) The Neotron Developers, 2021"
 Comment3 ""
 Comment4 ""
 $EndDescr
