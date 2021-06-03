@@ -14,32 +14,10 @@ outputs:
     comment: "Print schematic (PDF)"
     type: pdf_sch_print
     dir: pdfs
+    options:
+      output: '%f-schematic-%r.%x'
+      plot_sheet_reference: true
   
-  - name: 'print board mechanics'
-    comment: "Print board (PDF)"
-    type: pdf_pcb_print
-    layers:
-      - Dwgs.User
-      - Edge.Cuts
-      - F.CrtYd
-    dir: pdfs
-    options:
-      drill_marks: full
-      output: '%f-mechanic-%r.%x'
-      plot_sheet_reference: true
-
-  - name: 'print board documentation'
-    comment: "Print board (PDF)"
-    type: pdf_pcb_print
-    layers: 
-      - Edge.Cuts
-      - Cmts.User
-      - F.Fab
-    dir: pdfs
-    options:
-      output: '%f-documentation-%r.%x'
-      plot_sheet_reference: true
-
   - name: 'generate gerbers'
     comment: "Generate gerber files"
     type: gerber
