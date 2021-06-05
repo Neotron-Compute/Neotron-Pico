@@ -26,6 +26,7 @@ F 5 "296-26817-1-ND" H 2700 3500 50  0001 C CNN "Digikey"
 F 6 "TLV320AIC23BPW" H 2700 3500 50  0001 C CNN "MPN"
 F 7 "Texas Instruments" H 2700 3500 50  0001 C CNN "Manufacturer"
 F 8 "595-TLV320AIC23BPW" H 2700 3500 50  0001 C CNN "Mouser"
+F 9 "C9915" H 2700 3500 50  0001 C CNN "LCSC Part#"
 	1    2700 3500
 	1    0    0    -1  
 $EndComp
@@ -41,6 +42,7 @@ F 4 "1" H 10100 2050 50  0001 C CNN "DNP"
 F 5 "~" H 10100 2050 50  0001 C CNN "Digikey"
 F 6 "~" H 10100 2050 50  0001 C CNN "MPN"
 F 7 "~" H 10100 2050 50  0001 C CNN "Manufacturer"
+F 8 "~" H 10100 2050 50  0001 C CNN "LCSC Part#"
 	1    10100 2050
 	1    0    0    1   
 $EndComp
@@ -94,6 +96,7 @@ F 4 "1" H 8700 4900 50  0001 C CNN "DNP"
 F 5 "~" H 8700 4900 50  0001 C CNN "Digikey"
 F 6 "~" H 8700 4900 50  0001 C CNN "MPN"
 F 7 "~" H 8700 4900 50  0001 C CNN "Manufacturer"
+F 8 "~" H 8700 4900 50  0001 C CNN "LCSC Part#"
 	1    8700 4900
 	0    1    1    0   
 $EndComp
@@ -121,6 +124,7 @@ F 5 "2092-STX-4335-5BGP-S1-ND" H 10100 4050 50  0001 C CNN "Digikey"
 F 6 "STX-4335-5BGP-S1" H 10100 4050 50  0001 C CNN "MPN"
 F 7 "Kycon" H 10100 4050 50  0001 C CNN "Manufacturer"
 F 8 "806-STX-43355BGPS1" H 10100 4050 50  0001 C CNN "Mouser"
+F 9 "~" H 10100 4050 50  0001 C CNN "LCSC Part#"
 	1    10100 4050
 	1    0    0    1   
 $EndComp
@@ -142,6 +146,7 @@ F 4 "1" H 10150 1000 50  0001 C CNN "DNP"
 F 5 "~" H 10150 1000 50  0001 C CNN "Digikey"
 F 6 "~" H 10150 1000 50  0001 C CNN "MPN"
 F 7 "~" H 10150 1000 50  0001 C CNN "Manufacturer"
+F 8 "~" H 10150 1000 50  0001 C CNN "LCSC Part#"
 	1    10150 1000
 	1    0    0    -1  
 $EndComp
@@ -197,6 +202,7 @@ F 4 "0" H 4000 4350 50  0001 C CNN "DNP"
 F 5 "" H 4000 4350 50  0001 C CNN "Digikey"
 F 6 "CPL" H 4000 4350 50  0001 C CNN "Manufacturer"
 F 7 "CPL-CAP-X5R-0805-10UF-16V" H 4000 4350 50  0001 C CNN "MPN"
+F 8 "C15850" H 4000 4350 50  0001 C CNN "LCSC Part#"
 	1    4000 4350
 	1    0    0    -1  
 $EndComp
@@ -213,6 +219,7 @@ F 5 "" H 3600 4350 50  0001 C CNN "Digikey"
 F 6 "CPL" H 3600 4350 50  0001 C CNN "Manufacturer"
 F 7 "CPL-CAP-X7R-0805-100NF-50V" H 3600 4350 50  0001 C CNN "MPN"
 F 8 "" H 3600 4350 50  0001 C CNN "Mouser"
+F 9 "C49678" H 3600 4350 50  0001 C CNN "LCSC Part#"
 	1    3600 4350
 	1    0    0    -1  
 $EndComp
@@ -252,14 +259,15 @@ L Device:Crystal Y201
 U 1 1 5FE5EEB5
 P 1250 4350
 F 0 "Y201" H 1250 4618 50  0000 C CNN
-F 1 "12M" H 1250 4527 50  0000 C CNN
+F 1 "12M 20pF" H 1250 4527 50  0000 C CNN
 F 2 "Crystal:Crystal_SMD_5032-2Pin_5.0x3.2mm_HandSoldering" H 1250 4350 50  0001 C CNN
 F 3 "https://octopart.com/common-parts-library#CPL-OSC-CRY-12MHZ-18PF" H 1250 4350 50  0001 C CNN
 F 4 "0" H 1250 4350 50  0001 C CNN "DNP"
-F 5 "535-9116-1-ND" H 1250 4350 50  0001 C CNN "Digikey"
+F 5 "" H 1250 4350 50  0001 C CNN "Digikey"
 F 6 "CPL" H 1250 4350 50  0001 C CNN "Manufacturer"
 F 7 "CPL-OSC-CRY-12MHZ-18PF" H 1250 4350 50  0001 C CNN "MPN"
-F 8 "815-ABM3B-12-B2" H 1250 4350 50  0001 C CNN "Mouser"
+F 8 "" H 1250 4350 50  0001 C CNN "Mouser"
+F 9 "C90883" H 1250 4350 50  0001 C CNN "LCSC Part#"
 	1    1250 4350
 	1    0    0    -1  
 $EndComp
@@ -275,6 +283,7 @@ F 4 "0" H 1000 4550 50  0001 C CNN "DNP"
 F 5 "1276-1047-1-ND" H 1000 4550 50  0001 C CNN "Digikey"
 F 6 "CL21C220JBANNNC" H 1000 4550 50  0001 C CNN "MPN"
 F 7 "Samsung" H 1000 4550 50  0001 C CNN "Manufacturer"
+F 8 "C90883" H 1000 4550 50  0001 C CNN "LCSC Part#"
 	1    1000 4550
 	1    0    0    1   
 $EndComp
@@ -290,6 +299,7 @@ F 4 "0" H 1500 4550 50  0001 C CNN "DNP"
 F 5 "1276-1047-1-ND" H 1500 4550 50  0001 C CNN "Digikey"
 F 6 "CL21C220JBANNNC" H 1500 4550 50  0001 C CNN "MPN"
 F 7 "Samsung" H 1500 4550 50  0001 C CNN "Manufacturer"
+F 8 "C90883" H 1500 4550 50  0001 C CNN "LCSC Part#"
 	1    1500 4550
 	1    0    0    -1  
 $EndComp
@@ -337,6 +347,7 @@ F 4 "0" H 1600 1150 50  0001 C CNN "DNP"
 F 5 "" H 1600 1150 50  0001 C CNN "Digikey"
 F 6 "CPL" H 1600 1150 50  0001 C CNN "Manufacturer"
 F 7 "CPL-CAP-X5R-0805-10UF-16V" H 1600 1150 50  0001 C CNN "MPN"
+F 8 "C15850" H 1600 1150 50  0001 C CNN "LCSC Part#"
 	1    1600 1150
 	-1   0    0    -1  
 $EndComp
@@ -353,6 +364,7 @@ F 5 "" H 2050 1150 50  0001 C CNN "Digikey"
 F 6 "CPL" H 2050 1150 50  0001 C CNN "Manufacturer"
 F 7 "CPL-CAP-X7R-0805-100NF-50V" H 2050 1150 50  0001 C CNN "MPN"
 F 8 "" H 2050 1150 50  0001 C CNN "Mouser"
+F 9 "C49678" H 2050 1150 50  0001 C CNN "LCSC Part#"
 	1    2050 1150
 	-1   0    0    -1  
 $EndComp
@@ -372,6 +384,7 @@ F 4 "0" H 3100 1050 50  0001 C CNN "DNP"
 F 5 "" H 3100 1050 50  0001 C CNN "Digikey"
 F 6 "CPL" H 3100 1050 50  0001 C CNN "Manufacturer"
 F 7 "CPL-CAP-X5R-0805-10UF-16V" H 3100 1050 50  0001 C CNN "MPN"
+F 8 "C15850" H 3100 1050 50  0001 C CNN "LCSC Part#"
 	1    3100 1050
 	1    0    0    -1  
 $EndComp
@@ -388,6 +401,7 @@ F 5 "" H 2650 1050 50  0001 C CNN "Digikey"
 F 6 "CPL" H 2650 1050 50  0001 C CNN "Manufacturer"
 F 7 "CPL-CAP-X7R-0805-100NF-50V" H 2650 1050 50  0001 C CNN "MPN"
 F 8 "" H 2650 1050 50  0001 C CNN "Mouser"
+F 9 "C49678" H 2650 1050 50  0001 C CNN "LCSC Part#"
 	1    2650 1050
 	1    0    0    -1  
 $EndComp
@@ -418,6 +432,7 @@ F 5 "" H 1700 2000 50  0001 C CNN "Digikey"
 F 6 "CPL" H 1700 2000 50  0001 C CNN "Manufacturer"
 F 7 "CPL-CAP-X7R-0805-100NF-50V" H 1700 2000 50  0001 C CNN "MPN"
 F 8 "" H 1700 2000 50  0001 C CNN "Mouser"
+F 9 "C49678" H 1700 2000 50  0001 C CNN "LCSC Part#"
 	1    1700 2000
 	-1   0    0    -1  
 $EndComp
@@ -447,6 +462,7 @@ F 5 "" H 2150 2000 50  0001 C CNN "Digikey"
 F 6 "CPL" H 2150 2000 50  0001 C CNN "Manufacturer"
 F 7 "CPL-CAP-X7R-0805-100NF-50V" H 2150 2000 50  0001 C CNN "MPN"
 F 8 "" H 2150 2000 50  0001 C CNN "Mouser"
+F 9 "C49678" H 2150 2000 50  0001 C CNN "LCSC Part#"
 	1    2150 2000
 	-1   0    0    -1  
 $EndComp
@@ -604,6 +620,7 @@ F 4 "0" H 4600 1250 50  0001 C CNN "DNP"
 F 5 "" H 4600 1250 50  0001 C CNN "Digikey"
 F 6 "CPL-RES-0805-100-0.125W" H 4600 1250 50  0001 C CNN "MPN"
 F 7 "CPL" H 4600 1250 50  0001 C CNN "Manufacturer"
+F 8 "C17408" H 4600 1250 50  0001 C CNN "LCSC Part#"
 	1    4600 1250
 	0    1    1    0   
 $EndComp
@@ -620,6 +637,7 @@ F 5 "445-173276-1-ND" H 4300 1400 50  0001 C CNN "Digikey"
 F 6 "TDK" H 4300 1400 50  0001 C CNN "Manufacturer"
 F 7 "FG18X7R1H474KRT06" H 4300 1400 50  0001 C CNN "MPN"
 F 8 "810-FG18X7R1H474KRT6" H 4300 1400 50  0001 C CNN "Mouser"
+F 9 "C13967" H 4300 1400 50  0001 C CNN "LCSC Part#"
 	1    4300 1400
 	0    -1   -1   0   
 $EndComp
@@ -635,6 +653,7 @@ F 4 "0" H 4600 1400 50  0001 C CNN "DNP"
 F 5 "" H 4600 1400 50  0001 C CNN "Digikey"
 F 6 "CPL-RES-0805-100-0.125W" H 4600 1400 50  0001 C CNN "MPN"
 F 7 "CPL" H 4600 1400 50  0001 C CNN "Manufacturer"
+F 8 "C17408" H 4600 1400 50  0001 C CNN "LCSC Part#"
 	1    4600 1400
 	0    1    -1   0   
 $EndComp
@@ -652,6 +671,7 @@ F 4 "0" H 4850 1650 50  0001 C CNN "DNP"
 F 5 "RMCF0805FT47K5-ND" H 4850 1650 50  0001 C CNN "Digikey"
 F 6 "RMCF0805FT47K5" H 4850 1650 50  0001 C CNN "MPN"
 F 7 "Stackpole" H 4850 1650 50  0001 C CNN "Manufacturer"
+F 8 "C17713" H 4850 1650 50  0001 C CNN "LCSC Part#"
 	1    4850 1650
 	-1   0    0    -1  
 $EndComp
@@ -667,6 +687,7 @@ F 4 "0" H 5250 1650 50  0001 C CNN "DNP"
 F 5 "RMCF0805FT47K5-ND" H 5250 1650 50  0001 C CNN "Digikey"
 F 6 "RMCF0805FT47K5" H 5250 1650 50  0001 C CNN "MPN"
 F 7 "Stackpole" H 5250 1650 50  0001 C CNN "Manufacturer"
+F 8 "C17713" H 5250 1650 50  0001 C CNN "LCSC Part#"
 	1    5250 1650
 	-1   0    0    1   
 $EndComp
@@ -715,6 +736,7 @@ F 5 "445-173276-1-ND" H 4300 1250 50  0001 C CNN "Digikey"
 F 6 "TDK" H 4300 1250 50  0001 C CNN "Manufacturer"
 F 7 "FG18X7R1H474KRT06" H 4300 1250 50  0001 C CNN "MPN"
 F 8 "810-FG18X7R1H474KRT6" H 4300 1250 50  0001 C CNN "Mouser"
+F 9 "C13967" H 4300 1250 50  0001 C CNN "LCSC Part#"
 	1    4300 1250
 	0    -1   1    0   
 $EndComp
@@ -722,15 +744,16 @@ $Comp
 L Device:Ferrite_Bead_Small FB208
 U 1 1 5FF3900E
 P 6750 1400
-F 0 "FB208" V 6650 1250 50  0000 C CNN
-F 1 "330R@100MHz" V 6650 1550 50  0000 C CNN
+F 0 "FB208" V 6450 1425 50  0000 C CNN
+F 1 "330R@100MHz" V 6525 1425 50  0000 C CNN
 F 2 "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6680 1400 50  0001 C CNN
-F 3 "https://www.murata.com/en-us/products/en-us/products/productdata/8796738977822/ENFA0005.pdf" H 6750 1400 50  0001 C CNN
+F 3 "" H 6750 1400 50  0001 C CNN
 F 4 "CPL-IND-FER-330OHM-1.5A" H 6750 1400 50  0001 C CNN "MPN"
 F 5 "0" H 6750 1400 50  0001 C CNN "DNP"
 F 6 "" H 6750 1400 50  0001 C CNN "Digikey"
 F 7 "CPL" H 6750 1400 50  0001 C CNN "Manufacturer"
 F 8 "" H 6750 1400 50  0001 C CNN "Mouser"
+F 9 "C1017" H 6750 1400 50  0001 C CNN "LCSC Part#"
 	1    6750 1400
 	0    1    1    0   
 $EndComp
@@ -746,6 +769,7 @@ F 4 "0" H 4850 2850 50  0001 C CNN "DNP"
 F 5 "RMCF0805FT47K5-ND" H 4850 2850 50  0001 C CNN "Digikey"
 F 6 "RMCF0805FT47K5" H 4850 2850 50  0001 C CNN "MPN"
 F 7 "Stackpole" H 4850 2850 50  0001 C CNN "Manufacturer"
+F 8 "C17713" H 4850 2850 50  0001 C CNN "LCSC Part#"
 	1    4850 2850
 	-1   0    0    -1  
 $EndComp
@@ -761,6 +785,7 @@ F 4 "0" H 5250 2850 50  0001 C CNN "DNP"
 F 5 "RMCF0805FT47K5-ND" H 5250 2850 50  0001 C CNN "Digikey"
 F 6 "RMCF0805FT47K5" H 5250 2850 50  0001 C CNN "MPN"
 F 7 "Stackpole" H 5250 2850 50  0001 C CNN "Manufacturer"
+F 8 "C17713" H 5250 2850 50  0001 C CNN "LCSC Part#"
 	1    5250 2850
 	-1   0    0    1   
 $EndComp
@@ -818,6 +843,7 @@ F 5 "" H 4600 2450 50  0001 C CNN "Digikey"
 F 6 "CPL" H 4600 2450 50  0001 C CNN "Manufacturer"
 F 7 "CPL-CAP-ALU-RAD-220UF-50V" H 4600 2450 50  0001 C CNN "MPN"
 F 8 "" H 4600 2450 50  0001 C CNN "Mouser"
+F 9 "~" H 4600 2450 50  0001 C CNN "LCSC Part#"
 	1    4600 2450
 	0    -1   -1   0   
 $EndComp
@@ -834,6 +860,7 @@ F 5 "" H 4600 2600 50  0001 C CNN "Digikey"
 F 6 "CPL" H 4600 2600 50  0001 C CNN "Manufacturer"
 F 7 "CPL-CAP-ALU-RAD-220UF-50V" H 4600 2600 50  0001 C CNN "MPN"
 F 8 "" H 4600 2600 50  0001 C CNN "Mouser"
+F 9 "~" H 4600 2600 50  0001 C CNN "LCSC Part#"
 	1    4600 2600
 	0    -1   -1   0   
 $EndComp
@@ -924,12 +951,13 @@ P 1100 6100
 F 0 "FB201" V 863 6100 50  0000 C CNN
 F 1 "330R@100MHz" V 954 6100 50  0000 C CNN
 F 2 "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1030 6100 50  0001 C CNN
-F 3 "https://www.murata.com/en-us/products/en-us/products/productdata/8796738977822/ENFA0005.pdf" H 1100 6100 50  0001 C CNN
+F 3 "" H 1100 6100 50  0001 C CNN
 F 4 "CPL-IND-FER-330OHM-1.5A" H 1100 6100 50  0001 C CNN "MPN"
 F 5 "0" H 1100 6100 50  0001 C CNN "DNP"
 F 6 "" H 1100 6100 50  0001 C CNN "Digikey"
 F 7 "CPL" H 1100 6100 50  0001 C CNN "Manufacturer"
 F 8 "" H 1100 6100 50  0001 C CNN "Mouser"
+F 9 "C1017" H 1100 6100 50  0001 C CNN "LCSC Part#"
 	1    1100 6100
 	0    1    1    0   
 $EndComp
@@ -940,12 +968,13 @@ P 1100 7000
 F 0 "FB202" V 863 7000 50  0000 C CNN
 F 1 "330R@100MHz" V 954 7000 50  0000 C CNN
 F 2 "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1030 7000 50  0001 C CNN
-F 3 "https://www.murata.com/en-us/products/en-us/products/productdata/8796738977822/ENFA0005.pdf" H 1100 7000 50  0001 C CNN
+F 3 "" H 1100 7000 50  0001 C CNN
 F 4 "CPL-IND-FER-330OHM-1.5A" H 1100 7000 50  0001 C CNN "MPN"
 F 5 "0" H 1100 7000 50  0001 C CNN "DNP"
 F 6 "" H 1100 7000 50  0001 C CNN "Digikey"
 F 7 "CPL" H 1100 7000 50  0001 C CNN "Manufacturer"
 F 8 "" H 1100 7000 50  0001 C CNN "Mouser"
+F 9 "C1017" H 1100 7000 50  0001 C CNN "LCSC Part#"
 	1    1100 7000
 	0    1    1    0   
 $EndComp
@@ -961,6 +990,7 @@ F 4 "0" H 1700 6100 50  0001 C CNN "DNP"
 F 5 "RMCF0805FT2R20-ND" H 1700 6100 50  0001 C CNN "Digikey"
 F 6 "RMCF0805FT2R20" H 1700 6100 50  0001 C CNN "MPN"
 F 7 "Stackpole" H 1700 6100 50  0001 C CNN "Manufacturer"
+F 8 "C17521" H 1700 6100 50  0001 C CNN "LCSC Part#"
 	1    1700 6100
 	0    1    1    0   
 $EndComp
@@ -976,6 +1006,7 @@ F 4 "0" H 1700 7000 50  0001 C CNN "DNP"
 F 5 "RMCF0805FT2R20-ND" H 1700 7000 50  0001 C CNN "Digikey"
 F 6 "RMCF0805FT2R20" H 1700 7000 50  0001 C CNN "MPN"
 F 7 "Stackpole" H 1700 7000 50  0001 C CNN "Manufacturer"
+F 8 "C17521" H 1700 7000 50  0001 C CNN "LCSC Part#"
 	1    1700 7000
 	0    1    1    0   
 $EndComp
@@ -991,6 +1022,7 @@ F 4 "0" H 2000 7200 50  0001 C CNN "DNP"
 F 5 "" H 2000 7200 50  0001 C CNN "Digikey"
 F 6 "CPL" H 2000 7200 50  0001 C CNN "Manufacturer"
 F 7 "CPL-CAP-X5R-0805-10UF-16V" H 2000 7200 50  0001 C CNN "MPN"
+F 8 "C15850" H 2000 7200 50  0001 C CNN "LCSC Part#"
 	1    2000 7200
 	1    0    0    -1  
 $EndComp
@@ -1021,6 +1053,7 @@ F 4 "0" H 1400 6300 50  0001 C CNN "DNP"
 F 5 "" H 1400 6300 50  0001 C CNN "Digikey"
 F 6 "CPL" H 1400 6300 50  0001 C CNN "Manufacturer"
 F 7 "CPL-CAP-X5R-0805-10UF-16V" H 1400 6300 50  0001 C CNN "MPN"
+F 8 "C15850" H 1400 6300 50  0001 C CNN "LCSC Part#"
 	1    1400 6300
 	1    0    0    -1  
 $EndComp
@@ -1036,6 +1069,7 @@ F 4 "0" H 1400 7200 50  0001 C CNN "DNP"
 F 5 "" H 1400 7200 50  0001 C CNN "Digikey"
 F 6 "CPL" H 1400 7200 50  0001 C CNN "Manufacturer"
 F 7 "CPL-CAP-X5R-0805-10UF-16V" H 1400 7200 50  0001 C CNN "MPN"
+F 8 "C15850" H 1400 7200 50  0001 C CNN "LCSC Part#"
 	1    1400 7200
 	1    0    0    -1  
 $EndComp
@@ -1113,6 +1147,7 @@ F 4 "0" H 2000 6300 50  0001 C CNN "DNP"
 F 5 "" H 2000 6300 50  0001 C CNN "Digikey"
 F 6 "CPL" H 2000 6300 50  0001 C CNN "Manufacturer"
 F 7 "CPL-CAP-X5R-0805-10UF-16V" H 2000 6300 50  0001 C CNN "MPN"
+F 8 "C15850" H 2000 6300 50  0001 C CNN "LCSC Part#"
 	1    2000 6300
 	1    0    0    -1  
 $EndComp
@@ -1217,12 +1252,13 @@ P 3200 6100
 F 0 "FB203" V 2963 6100 50  0000 C CNN
 F 1 "330R@100MHz" V 3054 6100 50  0000 C CNN
 F 2 "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3130 6100 50  0001 C CNN
-F 3 "https://www.murata.com/en-us/products/en-us/products/productdata/8796738977822/ENFA0005.pdf" H 3200 6100 50  0001 C CNN
+F 3 "" H 3200 6100 50  0001 C CNN
 F 4 "CPL-IND-FER-330OHM-1.5A" H 3200 6100 50  0001 C CNN "MPN"
 F 5 "0" H 3200 6100 50  0001 C CNN "DNP"
 F 6 "" H 3200 6100 50  0001 C CNN "Digikey"
 F 7 "CPL" H 3200 6100 50  0001 C CNN "Manufacturer"
 F 8 "" H 3200 6100 50  0001 C CNN "Mouser"
+F 9 "C1017" H 3200 6100 50  0001 C CNN "LCSC Part#"
 	1    3200 6100
 	0    1    1    0   
 $EndComp
@@ -1238,6 +1274,7 @@ F 4 "0" H 3800 6100 50  0001 C CNN "DNP"
 F 5 "RMCF0805FT2R20-ND" H 3800 6100 50  0001 C CNN "Digikey"
 F 6 "RMCF0805FT2R20" H 3800 6100 50  0001 C CNN "MPN"
 F 7 "Stackpole" H 3800 6100 50  0001 C CNN "Manufacturer"
+F 8 "C17521" H 3800 6100 50  0001 C CNN "LCSC Part#"
 	1    3800 6100
 	0    1    1    0   
 $EndComp
@@ -1259,6 +1296,7 @@ F 4 "0" H 3500 6300 50  0001 C CNN "DNP"
 F 5 "" H 3500 6300 50  0001 C CNN "Digikey"
 F 6 "CPL" H 3500 6300 50  0001 C CNN "Manufacturer"
 F 7 "CPL-CAP-X5R-0805-10UF-16V" H 3500 6300 50  0001 C CNN "MPN"
+F 8 "C15850" H 3500 6300 50  0001 C CNN "LCSC Part#"
 	1    3500 6300
 	1    0    0    -1  
 $EndComp
@@ -1307,6 +1345,7 @@ F 4 "0" H 4100 6300 50  0001 C CNN "DNP"
 F 5 "" H 4100 6300 50  0001 C CNN "Digikey"
 F 6 "CPL" H 4100 6300 50  0001 C CNN "Manufacturer"
 F 7 "CPL-CAP-X5R-0805-10UF-16V" H 4100 6300 50  0001 C CNN "MPN"
+F 8 "C15850" H 4100 6300 50  0001 C CNN "LCSC Part#"
 	1    4100 6300
 	1    0    0    -1  
 $EndComp
@@ -1336,6 +1375,7 @@ F 4 "0" H 5200 4850 50  0001 C CNN "DNP"
 F 5 "" H 5200 4850 50  0001 C CNN "Digikey"
 F 6 "CPL-RES-0805-4.7K-0.125W" H 5200 4850 50  0001 C CNN "MPN"
 F 7 "CPL" H 5200 4850 50  0001 C CNN "Manufacturer"
+F 8 "C17673" H 5200 4850 50  0001 C CNN "LCSC Part#"
 	1    5200 4850
 	0    -1   1    0   
 $EndComp
@@ -1351,6 +1391,7 @@ F 4 "0" H 5550 4850 50  0001 C CNN "DNP"
 F 5 "" H 5550 4850 50  0001 C CNN "Digikey"
 F 6 "CPL" H 5550 4850 50  0001 C CNN "Manufacturer"
 F 7 "CPL-CAP-X7R-0805-1UF-25V" H 5550 4850 50  0001 C CNN "MPN"
+F 8 "C28323" H 5550 4850 50  0001 C CNN "LCSC Part#"
 	1    5550 4850
 	0    -1   -1   0   
 $EndComp
@@ -1366,6 +1407,7 @@ F 4 "0" H 6250 5100 50  0001 C CNN "DNP"
 F 5 "1276-1156-1-ND" H 6250 5100 50  0001 C CNN "Digikey"
 F 6 "CL21C470JBANNNC" H 6250 5100 50  0001 C CNN "MPN"
 F 7 "Samsung" H 6250 5100 50  0001 C CNN "Manufacturer"
+F 8 "C14857" H 6250 5100 50  0001 C CNN "LCSC Part#"
 	1    6250 5100
 	-1   0    0    1   
 $EndComp
@@ -1381,6 +1423,7 @@ F 4 "0" H 5200 4700 50  0001 C CNN "DNP"
 F 5 "RMCF0805FT2K20-ND" H 5200 4700 50  0001 C CNN "Digikey"
 F 6 "RMCF0805FT2K20" H 5200 4700 50  0001 C CNN "MPN"
 F 7 "Stackpole" H 5200 4700 50  0001 C CNN "Manufacturer"
+F 8 "C17520" H 5200 4700 50  0001 C CNN "LCSC Part#"
 	1    5200 4700
 	0    1    -1   0   
 $EndComp
@@ -1424,12 +1467,13 @@ P 6500 4850
 F 0 "FB207" V 6263 4850 50  0000 C CNN
 F 1 "330R@100MHz" V 6350 4850 50  0000 C CNN
 F 2 "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6430 4850 50  0001 C CNN
-F 3 "https://media.digikey.com/pdf/Data%20Sheets/Laird%20Technologies/EMI_Filtering_and_RF_Inductors.pdf" H 6500 4850 50  0001 C CNN
+F 3 "" H 6500 4850 50  0001 C CNN
 F 4 "CPL-IND-FER-330OHM-1.5A" V 6500 4850 50  0001 C CNN "MPN"
 F 5 "0" H 6500 4850 50  0001 C CNN "DNP"
 F 6 "" H 6500 4850 50  0001 C CNN "Digikey"
 F 7 "CPL" H 6500 4850 50  0001 C CNN "Manufacturer"
 F 8 "" H 6500 4850 50  0001 C CNN "Mouser"
+F 9 "C1017" H 6500 4850 50  0001 C CNN "LCSC Part#"
 	1    6500 4850
 	0    1    1    0   
 $EndComp
@@ -1453,6 +1497,7 @@ F 5 "~" H 6750 5100 50  0001 C CNN "Digikey"
 F 6 "~" H 6750 5100 50  0001 C CNN "MPN"
 F 7 "~" H 6750 5100 50  0001 C CNN "Manufacturer"
 F 8 "" H 6750 5100 50  0001 C CNN "Mouser"
+F 9 "~" H 6750 5100 50  0001 C CNN "LCSC Part#"
 	1    6750 5100
 	-1   0    0    1   
 $EndComp
@@ -1614,6 +1659,7 @@ F 4 "0" H 5100 3900 50  0001 C CNN "DNP"
 F 5 "" H 5100 3900 50  0001 C CNN "Digikey"
 F 6 "CPL-RES-0805-4.7K-0.125W" H 5100 3900 50  0001 C CNN "MPN"
 F 7 "CPL" H 5100 3900 50  0001 C CNN "Manufacturer"
+F 8 "C17673" H 5100 3900 50  0001 C CNN "LCSC Part#"
 	1    5100 3900
 	-1   0    0    -1  
 $EndComp
@@ -1645,6 +1691,7 @@ F 5 "445-173276-1-ND" H 4900 3750 50  0001 C CNN "Digikey"
 F 6 "TDK" H 4900 3750 50  0001 C CNN "Manufacturer"
 F 7 "FG18X7R1H474KRT06" H 4900 3750 50  0001 C CNN "MPN"
 F 8 "810-FG18X7R1H474KRT6" H 4900 3750 50  0001 C CNN "Mouser"
+F 9 "C13967" H 4900 3750 50  0001 C CNN "LCSC Part#"
 	1    4900 3750
 	0    -1   -1   0   
 $EndComp
@@ -1663,6 +1710,7 @@ F 5 "445-173276-1-ND" H 4900 3600 50  0001 C CNN "Digikey"
 F 6 "TDK" H 4900 3600 50  0001 C CNN "Manufacturer"
 F 7 "FG18X7R1H474KRT06" H 4900 3600 50  0001 C CNN "MPN"
 F 8 "810-FG18X7R1H474KRT6" H 4900 3600 50  0001 C CNN "Mouser"
+F 9 "C13967" H 4900 3600 50  0001 C CNN "LCSC Part#"
 	1    4900 3600
 	0    -1   1    0   
 $EndComp
@@ -1691,6 +1739,7 @@ F 4 "0" H 5500 3900 50  0001 C CNN "DNP"
 F 5 "" H 5500 3900 50  0001 C CNN "Digikey"
 F 6 "CPL-RES-0805-4.7K-0.125W" H 5500 3900 50  0001 C CNN "MPN"
 F 7 "CPL" H 5500 3900 50  0001 C CNN "Manufacturer"
+F 8 "C17673" H 5500 3900 50  0001 C CNN "LCSC Part#"
 	1    5500 3900
 	-1   0    0    1   
 $EndComp
@@ -1706,6 +1755,7 @@ F 4 "0" H 6000 3750 50  0001 C CNN "DNP"
 F 5 "" H 6000 3750 50  0001 C CNN "Digikey"
 F 6 "CPL-RES-0805-4.7K-0.125W" H 6000 3750 50  0001 C CNN "MPN"
 F 7 "CPL" H 6000 3750 50  0001 C CNN "Manufacturer"
+F 8 "C17673" H 6000 3750 50  0001 C CNN "LCSC Part#"
 	1    6000 3750
 	0    1    -1   0   
 $EndComp
@@ -1728,6 +1778,7 @@ F 5 "~" H 7000 1650 50  0001 C CNN "Digikey"
 F 6 "~" H 7000 1650 50  0001 C CNN "MPN"
 F 7 "~" H 7000 1650 50  0001 C CNN "Manufacturer"
 F 8 "" H 7000 1650 50  0001 C CNN "Mouser"
+F 9 "~" H 7000 1650 50  0001 C CNN "LCSC Part#"
 	1    7000 1650
 	-1   0    0    1   
 $EndComp
@@ -1770,6 +1821,7 @@ F 5 "~" H 5650 1650 50  0001 C CNN "Digikey"
 F 6 "~" H 5650 1650 50  0001 C CNN "MPN"
 F 7 "~" H 5650 1650 50  0001 C CNN "Manufacturer"
 F 8 "" H 5650 1650 50  0001 C CNN "Mouser"
+F 9 "~" H 5650 1650 50  0001 C CNN "LCSC Part#"
 	1    5650 1650
 	-1   0    0    1   
 $EndComp
@@ -1786,6 +1838,7 @@ F 5 "~" H 6050 1650 50  0001 C CNN "Digikey"
 F 6 "~" H 6050 1650 50  0001 C CNN "MPN"
 F 7 "~" H 6050 1650 50  0001 C CNN "Manufacturer"
 F 8 "" H 6050 1650 50  0001 C CNN "Mouser"
+F 9 "~" H 6050 1650 50  0001 C CNN "LCSC Part#"
 	1    6050 1650
 	-1   0    0    1   
 $EndComp
@@ -1843,32 +1896,17 @@ $Comp
 L Device:Ferrite_Bead_Small FB204
 U 1 1 5FF1A7AE
 P 5850 1250
-F 0 "FB204" V 5750 1100 50  0000 C CNN
-F 1 "330R@100MHz" V 5750 1400 50  0000 C CNN
+F 0 "FB204" V 5650 1275 50  0000 C CNN
+F 1 "330R@100MHz" V 5725 1300 50  0000 C CNN
 F 2 "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 5780 1250 50  0001 C CNN
-F 3 "https://www.murata.com/en-us/products/en-us/products/productdata/8796738977822/ENFA0005.pdf" H 5850 1250 50  0001 C CNN
+F 3 "" H 5850 1250 50  0001 C CNN
 F 4 "CPL-IND-FER-330OHM-1.5A" H 5850 1250 50  0001 C CNN "MPN"
 F 5 "0" H 5850 1250 50  0001 C CNN "DNP"
 F 6 "" H 5850 1250 50  0001 C CNN "Digikey"
 F 7 "CPL" H 5850 1250 50  0001 C CNN "Manufacturer"
 F 8 "" H 5850 1250 50  0001 C CNN "Mouser"
+F 9 "C1017" H 5850 1250 50  0001 C CNN "LCSC Part#"
 	1    5850 1250
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:Ferrite_Bead_Small FB209
-U 1 1 6030D32A
-P 7000 2600
-F 0 "FB209" V 7250 2600 50  0000 C CNN
-F 1 "330R@100MHz" V 7150 2600 50  0000 C CNN
-F 2 "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6930 2600 50  0001 C CNN
-F 3 "https://www.murata.com/en-us/products/en-us/products/productdata/8796738977822/ENFA0005.pdf" H 7000 2600 50  0001 C CNN
-F 4 "CPL-IND-FER-330OHM-1.5A" H 7000 2600 50  0001 C CNN "MPN"
-F 5 "0" H 7000 2600 50  0001 C CNN "DNP"
-F 6 "" H 7000 2600 50  0001 C CNN "Digikey"
-F 7 "CPL" H 7000 2600 50  0001 C CNN "Manufacturer"
-F 8 "" H 7000 2600 50  0001 C CNN "Mouser"
-	1    7000 2600
 	0    1    1    0   
 $EndComp
 $Comp
@@ -1884,6 +1922,7 @@ F 5 "~" H 7250 2850 50  0001 C CNN "Digikey"
 F 6 "~" H 7250 2850 50  0001 C CNN "MPN"
 F 7 "~" H 7250 2850 50  0001 C CNN "Manufacturer"
 F 8 "" H 7250 2850 50  0001 C CNN "Mouser"
+F 9 "~" H 7250 2850 50  0001 C CNN "LCSC Part#"
 	1    7250 2850
 	-1   0    0    1   
 $EndComp
@@ -1913,6 +1952,7 @@ F 5 "~" H 6550 2850 50  0001 C CNN "Digikey"
 F 6 "~" H 6550 2850 50  0001 C CNN "MPN"
 F 7 "~" H 6550 2850 50  0001 C CNN "Manufacturer"
 F 8 "" H 6550 2850 50  0001 C CNN "Mouser"
+F 9 "~" H 6550 2850 50  0001 C CNN "LCSC Part#"
 	1    6550 2850
 	-1   0    0    1   
 $EndComp
@@ -1942,6 +1982,7 @@ F 5 "~" H 5650 2850 50  0001 C CNN "Digikey"
 F 6 "~" H 5650 2850 50  0001 C CNN "MPN"
 F 7 "~" H 5650 2850 50  0001 C CNN "Manufacturer"
 F 8 "" H 5650 2850 50  0001 C CNN "Mouser"
+F 9 "~" H 5650 2850 50  0001 C CNN "LCSC Part#"
 	1    5650 2850
 	-1   0    0    1   
 $EndComp
@@ -1958,6 +1999,7 @@ F 5 "~" H 6150 2850 50  0001 C CNN "Digikey"
 F 6 "~" H 6150 2850 50  0001 C CNN "MPN"
 F 7 "~" H 6150 2850 50  0001 C CNN "Manufacturer"
 F 8 "" H 6150 2850 50  0001 C CNN "Mouser"
+F 9 "~" H 6150 2850 50  0001 C CNN "LCSC Part#"
 	1    6150 2850
 	-1   0    0    1   
 $EndComp
@@ -2002,12 +2044,13 @@ P 5900 2450
 F 0 "FB205" V 5663 2450 50  0000 C CNN
 F 1 "330R@100MHz" V 5750 2450 50  0000 C CNN
 F 2 "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 5830 2450 50  0001 C CNN
-F 3 "https://www.murata.com/en-us/products/en-us/products/productdata/8796738977822/ENFA0005.pdf" H 5900 2450 50  0001 C CNN
+F 3 "" H 5900 2450 50  0001 C CNN
 F 4 "CPL-IND-FER-330OHM-1.5A" H 5900 2450 50  0001 C CNN "MPN"
 F 5 "0" H 5900 2450 50  0001 C CNN "DNP"
 F 6 "" H 5900 2450 50  0001 C CNN "Digikey"
 F 7 "CPL" H 5900 2450 50  0001 C CNN "Manufacturer"
 F 8 "" H 5900 2450 50  0001 C CNN "Mouser"
+F 9 "C1017" H 5900 2450 50  0001 C CNN "LCSC Part#"
 	1    5900 2450
 	0    1    1    0   
 $EndComp
@@ -2028,6 +2071,7 @@ F 5 "~" H 7100 4000 50  0001 C CNN "Digikey"
 F 6 "~" H 7100 4000 50  0001 C CNN "MPN"
 F 7 "~" H 7100 4000 50  0001 C CNN "Manufacturer"
 F 8 "" H 7100 4000 50  0001 C CNN "Mouser"
+F 9 "~" H 7100 4000 50  0001 C CNN "LCSC Part#"
 	1    7100 4000
 	-1   0    0    1   
 $EndComp
@@ -2059,6 +2103,7 @@ F 5 "~" H 7800 4000 50  0001 C CNN "Digikey"
 F 6 "~" H 7800 4000 50  0001 C CNN "MPN"
 F 7 "~" H 7800 4000 50  0001 C CNN "Manufacturer"
 F 8 "" H 7800 4000 50  0001 C CNN "Mouser"
+F 9 "~" H 7800 4000 50  0001 C CNN "LCSC Part#"
 	1    7800 4000
 	-1   0    0    1   
 $EndComp
@@ -2112,6 +2157,7 @@ F 5 "~" H 6700 4000 50  0001 C CNN "Digikey"
 F 6 "~" H 6700 4000 50  0001 C CNN "MPN"
 F 7 "~" H 6700 4000 50  0001 C CNN "Manufacturer"
 F 8 "" H 6700 4000 50  0001 C CNN "Mouser"
+F 9 "~" H 6700 4000 50  0001 C CNN "LCSC Part#"
 	1    6700 4000
 	-1   0    0    1   
 $EndComp
@@ -2143,6 +2189,7 @@ F 5 "~" H 6300 4000 50  0001 C CNN "Digikey"
 F 6 "~" H 6300 4000 50  0001 C CNN "MPN"
 F 7 "~" H 6300 4000 50  0001 C CNN "Manufacturer"
 F 8 "" H 6300 4000 50  0001 C CNN "Mouser"
+F 9 "~" H 6300 4000 50  0001 C CNN "LCSC Part#"
 	1    6300 4000
 	-1   0    0    1   
 $EndComp
@@ -2205,6 +2252,7 @@ F 4 "0" H 7250 5100 50  0001 C CNN "DNP"
 F 5 "" H 7250 5100 50  0001 C CNN "Digikey"
 F 6 "CPL-RES-0805-10K-0.125W" H 7250 5100 50  0001 C CNN "MPN"
 F 7 "CPL" H 7250 5100 50  0001 C CNN "Manufacturer"
+F 8 "C17414" H 7250 5100 50  0001 C CNN "LCSC Part#"
 	1    7250 5100
 	-1   0    0    1   
 $EndComp
@@ -2247,6 +2295,7 @@ F 4 "0" H 1250 2000 50  0001 C CNN "DNP"
 F 5 "" H 1250 2000 50  0001 C CNN "Digikey"
 F 6 "CPL" H 1250 2000 50  0001 C CNN "Manufacturer"
 F 7 "CPL-CAP-X5R-0805-10UF-16V" H 1250 2000 50  0001 C CNN "MPN"
+F 8 "C15850" H 1250 2000 50  0001 C CNN "LCSC Part#"
 	1    1250 2000
 	-1   0    0    -1  
 $EndComp
@@ -2263,6 +2312,7 @@ F 5 "~" H 6500 1650 50  0001 C CNN "Digikey"
 F 6 "~" H 6500 1650 50  0001 C CNN "MPN"
 F 7 "~" H 6500 1650 50  0001 C CNN "Manufacturer"
 F 8 "" H 6500 1650 50  0001 C CNN "Mouser"
+F 9 "~" H 6500 1650 50  0001 C CNN "LCSC Part#"
 	1    6500 1650
 	-1   0    0    1   
 $EndComp
@@ -2285,12 +2335,13 @@ P 6500 3600
 F 0 "FB206" V 6263 3600 50  0000 C CNN
 F 1 "330R@100MHz" V 6350 3600 50  0000 C CNN
 F 2 "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6430 3600 50  0001 C CNN
-F 3 "https://www.murata.com/en-us/products/en-us/products/productdata/8796738977822/ENFA0005.pdf" H 6500 3600 50  0001 C CNN
+F 3 "" H 6500 3600 50  0001 C CNN
 F 4 "CPL-IND-FER-330OHM-1.5A" H 6500 3600 50  0001 C CNN "MPN"
 F 5 "0" H 6500 3600 50  0001 C CNN "DNP"
 F 6 "" H 6500 3600 50  0001 C CNN "Digikey"
 F 7 "CPL" H 6500 3600 50  0001 C CNN "Manufacturer"
 F 8 "" H 6500 3600 50  0001 C CNN "Mouser"
+F 9 "C1017" H 6500 3600 50  0001 C CNN "LCSC Part#"
 	1    6500 3600
 	0    1    1    0   
 $EndComp
@@ -2308,6 +2359,7 @@ F 4 "0" H 6000 3600 50  0001 C CNN "DNP"
 F 5 "" H 6000 3600 50  0001 C CNN "Digikey"
 F 6 "CPL-RES-0805-4.7K-0.125W" H 6000 3600 50  0001 C CNN "MPN"
 F 7 "CPL" H 6000 3600 50  0001 C CNN "Manufacturer"
+F 8 "C17673" H 6000 3600 50  0001 C CNN "LCSC Part#"
 	1    6000 3600
 	0    1    1    0   
 $EndComp
@@ -2328,15 +2380,16 @@ $Comp
 L Device:Ferrite_Bead_Small FB210
 U 1 1 605225D8
 P 7550 3750
-F 0 "FB210" V 7800 3750 50  0000 C CNN
-F 1 "330R@100MHz" V 7700 3750 50  0000 C CNN
+F 0 "FB210" V 7275 3750 50  0000 C CNN
+F 1 "330R@100MHz" V 7350 3750 50  0000 C CNN
 F 2 "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7480 3750 50  0001 C CNN
-F 3 "https://www.murata.com/en-us/products/en-us/products/productdata/8796738977822/ENFA0005.pdf" H 7550 3750 50  0001 C CNN
+F 3 "" H 7550 3750 50  0001 C CNN
 F 4 "CPL-IND-FER-330OHM-1.5A" H 7550 3750 50  0001 C CNN "MPN"
 F 5 "0" H 7550 3750 50  0001 C CNN "DNP"
 F 6 "" H 7550 3750 50  0001 C CNN "Digikey"
 F 7 "CPL" H 7550 3750 50  0001 C CNN "Manufacturer"
 F 8 "" H 7550 3750 50  0001 C CNN "Mouser"
+F 9 "C1017" H 7550 3750 50  0001 C CNN "LCSC Part#"
 	1    7550 3750
 	0    1    1    0   
 $EndComp
@@ -2349,7 +2402,7 @@ Wire Wire Line
 Connection ~ 7100 3750
 Wire Wire Line
 	7100 3750 7450 3750
-Text Notes 5250 6250 0    50   ~ 0
+Text Notes 8200 6475 0    50   ~ 0
 The TLV320AIC23 must be set to:\n1) USB Mode (12 MHz clock)\n2) So-called 'Slave' mode (LRCOUT, LRCIN and BCLK are inputs)
 Wire Wire Line
 	3500 7100 4100 7100
@@ -2357,4 +2410,23 @@ Text Notes 4850 7700 0    50   ~ 0
 Some texts will tell you to 'split' GND and GNDA, in\norder to reduce noise, and that you should join them\nonly at a single point using a Ferrite Bead or a\nResistor. Others will tell you that attempting to carve\nyour ground plane like this will cause terrible EMI as\nyou will inevitably have traces crossing the split in\nthe ground plane, making the return current take the\nlong way back.\n\nBecause the TLV320AIC23 does not present 'analog'\npins on one side and 'digital' pins on the other\n(thus not lending itself towards straddling a split\nground plane), I've elected to follow the latter idiom.
 Wire Notes Line
 	4800 6550 6950 6550
+Text Notes 4900 6475 0    50   Italic 0
+C_L = [ (C_X1 * C_X2) / (C_X1 + C_X2) ] + C_STRAY\n\nIf we specify that C_X1 = C_X2, this is: C_L = [ C_X / 2 ] + C_STRAY\n\nC_L for CFS-20632768DZBB is 18.0 pF\nAssume C_STRAY is 3.0 pF \n\n6.0pF = [ C_X / 2 ] + 3.0pF\n3.0pF = C_X / 2\n=> C_X = 6.0pF
+$Comp
+L Device:Ferrite_Bead_Small FB209
+U 1 1 6030D32A
+P 7000 2600
+F 0 "FB209" V 6675 2600 50  0000 C CNN
+F 1 "330R@100MHz" V 6775 2600 50  0000 C CNN
+F 2 "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6930 2600 50  0001 C CNN
+F 3 "" H 7000 2600 50  0001 C CNN
+F 4 "CPL-IND-FER-330OHM-1.5A" H 7000 2600 50  0001 C CNN "MPN"
+F 5 "0" H 7000 2600 50  0001 C CNN "DNP"
+F 6 "" H 7000 2600 50  0001 C CNN "Digikey"
+F 7 "CPL" H 7000 2600 50  0001 C CNN "Manufacturer"
+F 8 "" H 7000 2600 50  0001 C CNN "Mouser"
+F 9 "C1017" H 7000 2600 50  0001 C CNN "LCSC Part#"
+	1    7000 2600
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC

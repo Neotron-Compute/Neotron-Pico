@@ -38,6 +38,7 @@ F 4 "1" H 1600 6400 50  0001 C CNN "DNP"
 F 5 "~" H 1600 6400 50  0001 C CNN "Digikey"
 F 6 "~" H 1600 6400 50  0001 C CNN "MPN"
 F 7 "~" H 1600 6400 50  0001 C CNN "Manufacturer"
+F 8 "~" H 1600 6400 50  0001 C CNN "LCSC Part#"
 	1    1600 6400
 	1    0    0    -1  
 $EndComp
@@ -53,6 +54,7 @@ F 4 "1" H 1600 6900 50  0001 C CNN "DNP"
 F 5 "~" H 1600 6900 50  0001 C CNN "Digikey"
 F 6 "~" H 1600 6900 50  0001 C CNN "MPN"
 F 7 "~" H 1600 6900 50  0001 C CNN "Manufacturer"
+F 8 "~" H 1600 6900 50  0001 C CNN "LCSC Part#"
 	1    1600 6900
 	1    0    0    -1  
 $EndComp
@@ -68,6 +70,7 @@ F 4 "1" H 2550 6400 50  0001 C CNN "DNP"
 F 5 "~" H 2550 6400 50  0001 C CNN "Digikey"
 F 6 "~" H 2550 6400 50  0001 C CNN "MPN"
 F 7 "~" H 2550 6400 50  0001 C CNN "Manufacturer"
+F 8 "~" H 2550 6400 50  0001 C CNN "LCSC Part#"
 	1    2550 6400
 	1    0    0    -1  
 $EndComp
@@ -83,6 +86,7 @@ F 4 "1" H 2550 6900 50  0001 C CNN "DNP"
 F 5 "~" H 2550 6900 50  0001 C CNN "Digikey"
 F 6 "~" H 2550 6900 50  0001 C CNN "MPN"
 F 7 "~" H 2550 6900 50  0001 C CNN "Manufacturer"
+F 8 "~" H 2550 6900 50  0001 C CNN "LCSC Part#"
 	1    2550 6900
 	1    0    0    -1  
 $EndComp
@@ -98,6 +102,7 @@ F 4 "1" H 3500 6400 50  0001 C CNN "DNP"
 F 5 "~" H 3500 6400 50  0001 C CNN "Digikey"
 F 6 "~" H 3500 6400 50  0001 C CNN "MPN"
 F 7 "~" H 3500 6400 50  0001 C CNN "Manufacturer"
+F 8 "~" H 3500 6400 50  0001 C CNN "LCSC Part#"
 	1    3500 6400
 	1    0    0    -1  
 $EndComp
@@ -113,6 +118,7 @@ F 4 "1" H 700 6900 50  0001 C CNN "DNP"
 F 5 "~" H 700 6900 50  0001 C CNN "Digikey"
 F 6 "~" H 700 6900 50  0001 C CNN "MPN"
 F 7 "~" H 700 6900 50  0001 C CNN "Manufacturer"
+F 8 "~" H 700 6900 50  0001 C CNN "LCSC Part#"
 	1    700  6900
 	1    0    0    -1  
 $EndComp
@@ -194,6 +200,7 @@ F 4 "1" H 3500 6900 50  0001 C CNN "DNP"
 F 5 "~" H 3500 6900 50  0001 C CNN "Digikey"
 F 6 "~" H 3500 6900 50  0001 C CNN "MPN"
 F 7 "~" H 3500 6900 50  0001 C CNN "Manufacturer"
+F 8 "~" H 3500 6900 50  0001 C CNN "LCSC Part#"
 	1    3500 6900
 	1    0    0    -1  
 $EndComp
@@ -231,6 +238,7 @@ F 5 "~" H 6100 6650 50  0001 C CNN "Digikey"
 F 6 "~" H 6100 6650 50  0001 C CNN "MPN"
 F 7 "~" H 6100 6650 50  0001 C CNN "Manufacturer"
 F 8 "" H 6100 6650 50  0001 C CNN "Mouser"
+F 9 "~" H 6100 6650 50  0001 C CNN "LCSC Part#"
 	1    6100 6650
 	1    0    0    -1  
 $EndComp
@@ -247,6 +255,7 @@ F 5 "~" H 5600 6650 50  0001 C CNN "Digikey"
 F 6 "~" H 5600 6650 50  0001 C CNN "MPN"
 F 7 "~" H 5600 6650 50  0001 C CNN "Manufacturer"
 F 8 "" H 5600 6650 50  0001 C CNN "Mouser"
+F 9 "~" H 5600 6650 50  0001 C CNN "LCSC Part#"
 	1    5600 6650
 	1    0    0    -1  
 $EndComp
@@ -263,6 +272,7 @@ F 5 "~" H 5050 6650 50  0001 C CNN "Digikey"
 F 6 "~" H 5050 6650 50  0001 C CNN "MPN"
 F 7 "~" H 5050 6650 50  0001 C CNN "Manufacturer"
 F 8 "" H 5050 6650 50  0001 C CNN "Mouser"
+F 9 "~" H 5050 6650 50  0001 C CNN "LCSC Part#"
 	1    5050 6650
 	1    0    0    -1  
 $EndComp
@@ -316,6 +326,7 @@ F 4 "0" H 1525 4800 50  0001 C CNN "DNP"
 F 5 "A31722-ND" H 1525 4800 50  0001 C CNN "Digikey"
 F 6 "5-5530843-0" H 1525 4800 50  0001 C CNN "MPN"
 F 7 "TE" H 1525 4800 50  0001 C CNN "Manufacturer"
+F 8 "~" H 1525 4800 50  0001 C CNN "LCSC Part#"
 	1    1525 4800
 	1    0    0    -1  
 $EndComp
@@ -399,6 +410,7 @@ F 4 "0" H 3650 4800 50  0001 C CNN "DNP"
 F 5 "A31722-ND" H 3650 4800 50  0001 C CNN "Digikey"
 F 6 "5-5530843-0" H 3650 4800 50  0001 C CNN "MPN"
 F 7 "TE" H 3650 4800 50  0001 C CNN "Manufacturer"
+F 8 "~" H 3650 4800 50  0001 C CNN "LCSC Part#"
 	1    3650 4800
 	1    0    0    -1  
 $EndComp
@@ -484,6 +496,7 @@ F 4 "0" H 5800 4800 50  0001 C CNN "DNP"
 F 5 "A31722-ND" H 5800 4800 50  0001 C CNN "Digikey"
 F 6 "5-5530843-0" H 5800 4800 50  0001 C CNN "MPN"
 F 7 "TE" H 5800 4800 50  0001 C CNN "Manufacturer"
+F 8 "~" H 5800 4800 50  0001 C CNN "LCSC Part#"
 	1    5800 4800
 	1    0    0    -1  
 $EndComp
@@ -598,6 +611,7 @@ F 4 "0" H 7925 4800 50  0001 C CNN "DNP"
 F 5 "A31722-ND" H 7925 4800 50  0001 C CNN "Digikey"
 F 6 "5-5530843-0" H 7925 4800 50  0001 C CNN "MPN"
 F 7 "TE" H 7925 4800 50  0001 C CNN "Manufacturer"
+F 8 "~" H 7925 4800 50  0001 C CNN "LCSC Part#"
 	1    7925 4800
 	1    0    0    -1  
 $EndComp
@@ -723,6 +737,7 @@ F 5 "2648-SC0915CT-ND" H 2325 2475 50  0001 C CNN "Digikey"
 F 6 "SC0915" H 2325 2475 50  0001 C CNN "MPN"
 F 7 "Raspberry Pi" H 2325 2475 50  0001 C CNN "Manufacturer"
 F 8 "~" H 2325 2475 50  0001 C CNN "Mouser"
+F 9 "~" H 2325 2475 50  0001 C CNN "LCSC Part#"
 	1    2325 2475
 	1    0    0    -1  
 $EndComp
@@ -1300,6 +1315,7 @@ F 4 "0" H 10075 4800 50  0001 C CNN "DNP"
 F 5 "A31722-ND" H 10075 4800 50  0001 C CNN "Digikey"
 F 6 "5-5530843-0" H 10075 4800 50  0001 C CNN "MPN"
 F 7 "TE" H 10075 4800 50  0001 C CNN "Manufacturer"
+F 8 "~" H 10075 4800 50  0001 C CNN "LCSC Part#"
 	1    10075 4800
 	1    0    0    -1  
 $EndComp
@@ -1685,9 +1701,10 @@ F 0 "J105" H 9897 3407 50  0000 R CNN
 F 1 "Conn_01x06_Pins" H 9897 3498 50  0000 R CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 9925 3525 50  0001 C CNN
 F 3 "~" H 9925 3525 50  0001 C CNN
-F 4 "0" H 9925 3525 50  0001 C CNN "DNP"
+F 4 "1" H 9925 3525 50  0001 C CNN "DNP"
 F 5 "~" H 9925 3525 50  0001 C CNN "Digikey"
 F 6 "~" H 9925 3525 50  0001 C CNN "MPN"
+F 7 "~" H 9925 3525 50  0001 C CNN "LCSC Part#"
 	1    9925 3525
 	-1   0    0    1   
 $EndComp
@@ -1790,6 +1807,7 @@ F 4 "0" H 3800 1250 50  0001 C CNN "DNP"
 F 5 "DMG2305UX-13DICT-ND" H 3800 1250 50  0001 C CNN "Digikey"
 F 6 "DMG2305UX-13" H 3800 1250 50  0001 C CNN "MPN"
 F 7 "Diodes Inc" H 3800 1250 50  0001 C CNN "Manufacturer"
+F 8 "C144153" H 3800 1250 50  0001 C CNN "LCSC Part#"
 	1    3800 1250
 	1    0    0    -1  
 $EndComp
@@ -1805,9 +1823,10 @@ F 0 "JP101" H 3550 1135 50  0000 C CNN
 F 1 "USB_PWR" H 3550 1044 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 3550 950 50  0001 C CNN
 F 3 "~" H 3550 950 50  0001 C CNN
-F 4 "0" H 3550 950 50  0001 C CNN "DNP"
+F 4 "1" H 3550 950 50  0001 C CNN "DNP"
 F 5 "~" H 3550 950 50  0001 C CNN "Digikey"
 F 6 "~" H 3550 950 50  0001 C CNN "MPN"
+F 7 "~" H 3550 950 50  0001 C CNN "LCSC Part#"
 	1    3550 950 
 	1    0    0    -1  
 $EndComp
