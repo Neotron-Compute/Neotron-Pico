@@ -131,8 +131,8 @@ Power-on Reset sequencing, soft shutdown, voltage monitoring and PS/2 interfacin
 * Controls two PS/2 ports
 * Monitors 5V and 3.3V rails
 * Controls system reset, soft-on and soft-off for main CPU
-* Can the main 5V regulator on and off
-* Runs from 3.3V stand-by regulator
+   * Can turn the main 5V regulator on and off
+   * Runs from 3.3V stand-by regulator
 * SPI interface (with dedicated IRQ line) with main CPU
 * Secondary I²C bus which can be controlled over SPI
 
