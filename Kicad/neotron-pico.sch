@@ -1981,6 +1981,124 @@ F 3 "" H 9150 6200 50  0001 C CNN
 	1    9150 6200
 	1    0    0    -1  
 $EndComp
+$Comp
+L Connector_Generic:Conn_01x09 J108
+U 1 1 60BFC788
+P 10925 1650
+F 0 "J108" H 10825 2275 50  0000 L CNN
+F 1 "Conn_01x09" H 10650 2175 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x09_P2.54mm_Vertical" H 10925 1650 50  0001 C CNN
+F 3 "~" H 10925 1650 50  0001 C CNN
+	1    10925 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x09 J107
+U 1 1 60BFF553
+P 10175 1650
+F 0 "J107" H 10075 2275 50  0000 L CNN
+F 1 "Conn_01x09" H 9900 2175 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x09_P2.54mm_Vertical" H 10175 1650 50  0001 C CNN
+F 3 "~" H 10175 1650 50  0001 C CNN
+	1    10175 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0144
+U 1 1 60C00427
+P 9900 2075
+F 0 "#PWR0144" H 9900 1825 50  0001 C CNN
+F 1 "GND" H 10025 2000 50  0000 C CNN
+F 2 "" H 9900 2075 50  0001 C CNN
+F 3 "" H 9900 2075 50  0001 C CNN
+	1    9900 2075
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0145
+U 1 1 60C007FA
+P 10650 2075
+F 0 "#PWR0145" H 10650 1825 50  0001 C CNN
+F 1 "GND" H 10775 2000 50  0000 C CNN
+F 2 "" H 10650 2075 50  0001 C CNN
+F 3 "" H 10650 2075 50  0001 C CNN
+	1    10650 2075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10725 2050 10650 2050
+Wire Wire Line
+	10650 2050 10650 2075
+Wire Wire Line
+	9975 2050 9900 2050
+Wire Wire Line
+	9900 2050 9900 2075
+Wire Wire Line
+	9700 1250 9975 1250
+Wire Wire Line
+	9700 1350 9975 1350
+Wire Wire Line
+	9700 1450 9975 1450
+Wire Wire Line
+	9700 1550 9975 1550
+Wire Wire Line
+	9700 1650 9975 1650
+Wire Wire Line
+	9700 1750 9975 1750
+Wire Wire Line
+	9700 1850 9975 1850
+Wire Wire Line
+	9700 1950 9975 1950
+Wire Wire Line
+	10450 1250 10725 1250
+Wire Wire Line
+	10450 1350 10725 1350
+Wire Wire Line
+	10450 1450 10725 1450
+Wire Wire Line
+	10450 1550 10725 1550
+Wire Wire Line
+	10450 1650 10725 1650
+Wire Wire Line
+	10450 1750 10725 1750
+Wire Wire Line
+	10450 1850 10725 1850
+Wire Wire Line
+	10450 1950 10725 1950
+Text Label 9750 1250 0    50   ~ 0
+~IRQ0
+Text Label 9750 1350 0    50   ~ 0
+~IRQ1
+Text Label 9750 1450 0    50   ~ 0
+~IRQ2
+Text Label 9750 1550 0    50   ~ 0
+~IRQ3
+Text Label 9750 1650 0    50   ~ 0
+~IRQ4
+Text Label 9750 1750 0    50   ~ 0
+~IRQ5
+Text Label 9750 1850 0    50   ~ 0
+~IRQ6
+Text Label 9750 1950 0    50   ~ 0
+~IRQ7
+Text Label 10500 1250 0    50   ~ 0
+~CS0
+Text Label 10500 1350 0    50   ~ 0
+~CS1
+Text Label 10500 1450 0    50   ~ 0
+~CS2
+Text Label 10500 1550 0    50   ~ 0
+~CS3
+Text Label 10500 1650 0    50   ~ 0
+~CS4
+Text Label 10500 1750 0    50   ~ 0
+~CS5
+Text Label 10500 1850 0    50   ~ 0
+~CS6
+Text Label 10500 1950 0    50   ~ 0
+~CS7
+Text Notes 10125 2275 0    50   Italic 0
+Test Headers
 Wire Bus Line
 	1050 2675 1050 3025
 Wire Bus Line
