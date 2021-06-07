@@ -1662,8 +1662,6 @@ Text Label 6375 3875 0    50   ~ 0
 ~CS7
 Text Label 8600 1475 2    50   ~ 0
 ~IRQ1
-NoConn ~ 6600 3875
-NoConn ~ 6100 3875
 $Sheet
 S 7625 3025 1000 825 
 U 606F6368
