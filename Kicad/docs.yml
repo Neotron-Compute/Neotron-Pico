@@ -16,7 +16,6 @@ outputs:
     dir: pdfs
     options:
       output: '%f-schematic-%r.%x'
-      plot_sheet_reference: true
   
   - name: 'generate gerbers'
     comment: "Generate gerber files"
