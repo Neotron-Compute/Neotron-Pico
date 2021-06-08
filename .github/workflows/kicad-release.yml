@@ -22,7 +22,7 @@ jobs:
       - name: Build project # This would actually build your project, using zip for an example artifact
         uses: nerdyscout/kicad-exports@v2.3
         with:
-          config: 'Kicad/docs.yml'
+          config: 'Kicad/docs.kibot.yaml'
           dir: docs
           schema: 'Kicad/neotron-pico.sch'
           board: 'Kicad/neotron-pico.kicad_pcb'

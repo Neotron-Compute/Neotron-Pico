@@ -25,7 +25,7 @@ jobs:
     - name: Run KiBot
       uses: nerdyscout/kicad-exports@v2.3
       with:
-        config: 'Kicad/docs.yml'
+        config: 'Kicad/docs.kibot.yaml'
         dir: docs
         schema: 'Kicad/neotron-pico.sch'
         board: 'Kicad/neotron-pico.kicad_pcb'
