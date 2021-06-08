@@ -1,6 +1,27 @@
 kibot:
   version: 1
 
+filters:
+  - name: fix_rotation
+    comment: 'Adjust rotation for JLC'
+    type: rot_footprint
+    rotations:
+      - ["^SO-20", 270.0]
+
+  - name: only_jlc_parts
+    comment: 'Only parts with JLC code'
+    type: generic
+    include_only:
+      - column: 'LCSC Part#'
+        regex: '^C\d+'
+
+variants:
+  - name: rotated
+    comment: 'Just a place holder for the rotation filter'
+    type: kibom
+    variant: rotated
+    pre_transform: fix_rotation
+
 preflight:
   run_erc: true
   run_drc: true
@@ -58,8 +79,8 @@ outputs:
     type: excellon
     dir: gerbers
 
-  - name: 'generate position'
-    comment: "Generate XY position files"
+  - name: 'ascii position'
+    comment: "Generate XY position files in ASCII"
     type: position
     dir: gerbers
 
@@ -72,3 +93,47 @@ outputs:
     comment: "Generate assembly HTML page"
     type: ibom
     dir: ibom
+
+  - name: 'jlc position'
+    comment: "Pick and place file, JLC style"
+    type: position
+    options:
+      variant: rotated
+      output: '%f_cpl_jlc.%x'
+      format: CSV
+      units: millimeters
+      separate_files_for_front_and_back: false
+      only_smd: true
+      columns:
+        - id: Ref
+          name: Designator
+        - Val
+        - Package
+        - id: PosX
+          name: "Mid X"
+        - id: PosY
+          name: "Mid Y"
+        - id: Rot
+          name: Rotation
+        - id: Side
+          name: Layer
+
+  - name: 'jlc bom'
+    comment: "BoM for JLC"
+    type: bom
+    options:
+      output: '%f_%i_jlc.%x'
+      exclude_filter: 'only_jlc_parts'
+      ref_separator: ','
+      columns:
+        - field: Value
+          name: Comment
+        - field: References
+          name: Designator
+        - Footprint
+        - field: 'LCSC Part#'
+          name: 'LCSC Part #'
+      csv:
+        hide_pcb_info: true
+        hide_stats_info: true
+        quote_all: true
