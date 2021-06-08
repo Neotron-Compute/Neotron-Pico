@@ -20,9 +20,9 @@ jobs:
         run: |
           sed -i "s~\[Uncontrolled\]~${GITHUB_REF/#refs\/tags\/}~g" Kicad/*.sch Kicad/*.kicad_pcb
       - name: Build project # This would actually build your project, using zip for an example artifact
-        uses: nerdyscout/kicad-exports@v2.2
+        uses: nerdyscout/kicad-exports@v2.3
         with:
-          config: 'Kicad/docs.yml'
+          config: 'Kicad/docs.kibot.yaml'
           dir: docs
           schema: 'Kicad/neotron-pico.sch'
           board: 'Kicad/neotron-pico.kicad_pcb'
@@ -38,13 +38,14 @@ jobs:
           prerelease: false
       - name: Build gerbers zip file
         run: |
-          zip -r --junk-paths neotron-pico-gerbers-${{ github.ref }}.zip gerbers/
-      - name: Release
+          zip -r --junk-paths neotron-pico-gerbers-${{ github.ref }}.zip docs/gerbers/
+      - name: Upload files to Release
         uses: softprops/action-gh-release@v1
         with:
           files: |
             neotron-pico-gerbers*.zip
-            pdfs/*.pdf
-            ibom/*.html
+            docs/pdfs/*.pdf
+            docs/ibom/*.html
+            docs/neotron-pico.csv
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

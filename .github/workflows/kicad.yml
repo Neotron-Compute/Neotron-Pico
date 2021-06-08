@@ -18,16 +18,18 @@ jobs:
   Kicad:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
       with:
         submodules: recursive
-    - uses: nerdyscout/kicad-exports@v2.2
+    - name: Run KiBot
+      uses: nerdyscout/kicad-exports@v2.3
       with:
-        config: 'Kicad/docs.yml'
+        config: 'Kicad/docs.kibot.yaml'
         dir: docs
         schema: 'Kicad/neotron-pico.sch'
         board: 'Kicad/neotron-pico.kicad_pcb'
-    - name: upload results
+    - name: Upload Results
       uses: actions/upload-artifact@v2
       with:
         name: docs
