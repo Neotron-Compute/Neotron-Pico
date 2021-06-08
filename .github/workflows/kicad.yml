@@ -23,7 +23,7 @@ jobs:
       with:
         submodules: recursive
     - name: Run KiBot
-      uses: nerdyscout/kicad-exports@v2.2
+      uses: nerdyscout/kicad-exports@v2.3
       with:
         config: 'Kicad/docs.yml'
         dir: docs

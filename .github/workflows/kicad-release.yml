@@ -20,7 +20,7 @@ jobs:
         run: |
           sed -i "s~\[Uncontrolled\]~${GITHUB_REF/#refs\/tags\/}~g" Kicad/*.sch Kicad/*.kicad_pcb
       - name: Build project # This would actually build your project, using zip for an example artifact
-        uses: nerdyscout/kicad-exports@v2.2
+        uses: nerdyscout/kicad-exports@v2.3
         with:
           config: 'Kicad/docs.yml'
           dir: docs
