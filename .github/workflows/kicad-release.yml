@@ -38,12 +38,12 @@ jobs:
           prerelease: false
       - name: Build gerbers zip file
         run: |
-          zip -r --junk-paths neotron-pico-gerbers-${{ github.ref }}.zip docs/gerbers/
+          zip -r --junk-paths neotron-pico-gerbers.zip docs/gerbers/
       - name: Upload files to Release
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            neotron-pico-gerbers*.zip
+            neotron-pico-gerbers.zip
             docs/pdfs/*.pdf
             docs/ibom/*.html
             docs/neotron-pico.csv
