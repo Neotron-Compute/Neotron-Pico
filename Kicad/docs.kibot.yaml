@@ -1,0 +1,139 @@
+kibot:
+  version: 1
+
+filters:
+  - name: fix_rotation
+    comment: 'Adjust rotation for JLC'
+    type: rot_footprint
+    rotations:
+      - ["^SO-20", 270.0]
+
+  - name: only_jlc_parts
+    comment: 'Only parts with JLC code'
+    type: generic
+    include_only:
+      - column: 'LCSC Part#'
+        regex: '^C\d+'
+
+variants:
+  - name: rotated
+    comment: 'Just a place holder for the rotation filter'
+    type: kibom
+    variant: rotated
+    pre_transform: fix_rotation
+
+preflight:
+  run_erc: true
+  run_drc: true
+  check_zone_fills: true
+  ignore_unconnected: false
+  update_xml: true
+
+outputs:
+  # For more information: https://github.com/INTI-CMNB/KiBoM
+  - name: 'print schema'
+    comment: "Print schematic (PDF)"
+    type: pdf_sch_print
+    dir: pdfs
+    options:
+      output: '%f-schematic-%r.%x'
+  
+  - name: 'generate gerbers'
+    comment: "Generate gerber files"
+    type: gerber
+    layers: 
+      - F.Cu
+      - In1.Cu
+      - In2.Cu
+      - B.Cu
+      - Edge.Cuts
+      - F.SilkS
+      - F.Paste
+      - F.Mask
+      - B.SilkS
+      - B.Paste
+      - B.Mask
+    dir: gerbers
+    options:
+      # generic layer options
+      exclude_edge_layer: false
+      exclude_pads_from_silkscreen: false
+      plot_sheet_reference: false
+      plot_footprint_refs: true
+      plot_footprint_values: true
+      force_plot_invisible_refs_vals: false
+      tent_vias: true
+      line_width: 0.15
+
+      # gerber options
+      use_aux_axis_as_origin: false
+      subtract_mask_from_silk: true
+      use_protel_extensions: false
+      gerber_precision: 4.5
+      create_gerber_job_file: true
+      use_gerber_x2_attributes: true
+      use_gerber_net_attributes: false
+
+  - name: 'generate drills'
+    comment: "Generate drill files"
+    type: excellon
+    dir: gerbers
+
+  - name: 'ascii position'
+    comment: "Generate XY position files in ASCII"
+    type: position
+    dir: gerbers
+
+  - name: 'generate BoM in CSV'
+    comment: "Generate bill-of-material files"
+    type: kibom
+    dir: gerbers
+
+  - name: 'generate BoM in HTML'
+    comment: "Generate assembly HTML page"
+    type: ibom
+    dir: ibom
+
+  - name: 'jlc position'
+    comment: "Pick and place file, JLC style"
+    type: position
+    options:
+      variant: rotated
+      output: '%f_cpl_jlc.%x'
+      format: CSV
+      units: millimeters
+      separate_files_for_front_and_back: false
+      only_smd: true
+      columns:
+        - id: Ref
+          name: Designator
+        - Val
+        - Package
+        - id: PosX
+          name: "Mid X"
+        - id: PosY
+          name: "Mid Y"
+        - id: Rot
+          name: Rotation
+        - id: Side
+          name: Layer
+
+  - name: 'jlc bom'
+    comment: "BoM for JLC"
+    type: bom
+    options:
+      output: '%f_%i_jlc.%x'
+      exclude_filter: 'only_jlc_parts'
+      ref_separator: ','
+      columns:
+        - field: Value
+          name: Comment
+        - field: References
+          name: Designator
+        - Footprint
+        - field: 'LCSC Part#'
+          name: 'LCSC Part #'
+      csv:
+        hide_pcb_info: true
+        hide_stats_info: true
+        quote_all: true
