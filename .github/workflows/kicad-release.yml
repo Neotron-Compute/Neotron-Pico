@@ -46,6 +46,7 @@ jobs:
             neotron-pico-gerbers.zip
             docs/pdfs/*.pdf
             docs/ibom/*.html
-            docs/neotron-pico.csv
+            docs/*.txt
+            docs/*.csv
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
