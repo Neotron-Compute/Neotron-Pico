@@ -189,47 +189,37 @@ F 3 "" H 8925 2025 50  0001 C CNN
 	1    8925 2025
 	1    0    0    -1  
 $EndComp
-Text Label 10675 5375 2    50   ~ 0
+Text Label 10950 5375 2    50   ~ 0
 PS2_CLK0
-Text Label 10675 5575 2    50   ~ 0
+Text Label 10950 5575 2    50   ~ 0
 PS2_DAT0
-Text Label 10675 5925 2    50   ~ 0
+Text Label 10950 5925 2    50   ~ 0
 PS2_CLK1
-Text Label 10675 6125 2    50   ~ 0
+Text Label 10950 6125 2    50   ~ 0
 PS2_DAT1
 Text Notes 9425 5275 0    50   Italic 0
 Keyboard
 Text Notes 9450 5825 0    50   Italic 0
 Mouse
 Wire Wire Line
-	9925 5375 9925 5300
-Wire Wire Line
 	9375 5375 9925 5375
 Wire Wire Line
-	10025 5575 10025 5300
+	9375 5575 10100 5575
 Wire Wire Line
-	9375 5575 10025 5575
+	9375 5925 10275 5925
 Wire Wire Line
-	10125 5925 10125 5300
-Wire Wire Line
-	9375 5925 10125 5925
-Wire Wire Line
-	10225 6125 10225 5300
-Wire Wire Line
-	9375 6125 10225 6125
+	9375 6125 10450 6125
 $Comp
 L power:+5V #PWR01124
 U 1 1 6031C569
-P 9925 4875
-F 0 "#PWR01124" H 9925 4725 50  0001 C CNN
-F 1 "+5V" H 9940 5048 50  0000 C CNN
-F 2 "" H 9925 4875 50  0001 C CNN
-F 3 "" H 9925 4875 50  0001 C CNN
-	1    9925 4875
+P 9925 4775
+F 0 "#PWR01124" H 9925 4625 50  0001 C CNN
+F 1 "+5V" H 9940 4948 50  0000 C CNN
+F 2 "" H 9925 4775 50  0001 C CNN
+F 3 "" H 9925 4775 50  0001 C CNN
+	1    9925 4775
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	9925 4875 9925 4900
 Text Label 5575 2875 2    50   ~ 0
 PS2_DAT0
 $Comp
@@ -679,17 +669,17 @@ MON_3V3
 Wire Wire Line
 	3425 1875 3700 1875
 Wire Wire Line
-	9925 5375 10675 5375
+	9925 5375 10950 5375
 Connection ~ 9925 5375
 Wire Wire Line
-	10025 5575 10675 5575
-Connection ~ 10025 5575
+	10100 5575 10950 5575
+Connection ~ 10100 5575
 Wire Wire Line
-	10125 5925 10675 5925
-Connection ~ 10125 5925
+	10275 5925 10950 5925
+Connection ~ 10275 5925
 Wire Wire Line
-	10225 6125 10675 6125
-Connection ~ 10225 6125
+	10450 6125 10950 6125
+Connection ~ 10450 6125
 Text Label 9425 5375 0    50   ~ 0
 KB_CLK
 Text Label 9425 5575 0    50   ~ 0
@@ -938,23 +928,6 @@ F 6 "~" H 1375 5600 50  0001 C CNN "MPN"
 F 7 "~" H 1375 5600 50  0001 C CNN "Manufacturer"
 F 8 "~" H 1375 5600 50  0001 C CNN "LCSC Part#"
 	1    1375 5600
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R_Network04 RN1101
-U 1 1 60303C59
-P 10125 5100
-F 0 "RN1101" H 10313 5146 50  0000 L CNN
-F 1 "4x2k7" H 10313 5055 50  0000 L CNN
-F 2 "Resistor_THT:R_Array_SIP5" V 10400 5100 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/31509/csc.pdf" H 10125 5100 50  0001 C CNN
-F 4 "0" H 10125 5100 50  0001 C CNN "DNP"
-F 5 "4605X-101-272LF-ND" H 10125 5100 50  0001 C CNN "Digikey"
-F 6 "4605X-101-272LF" H 10125 5100 50  0001 C CNN "MPN"
-F 7 "Bourns" H 10125 5100 50  0001 C CNN "Manufacturer"
-F 8 "652-4605X-1LF-2.7K" H 10125 5100 50  0001 C CNN "Mouser"
-F 9 "~" H 10125 5100 50  0001 C CNN "LCSC Part#"
-	1    10125 5100
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1231,4 +1204,75 @@ Text Notes 1375 2750 0    50   Italic 0
 Need service when level is high
 Text Notes 550  7700 0    79   Italic 0
 This STM32 runs on the permanent 3.3VP power rail.\nIt boots up as soon as the board has power connected.\nIt handles the power button and reset buttons, and\ncontrols the main DC-DC PSU and the system reset lines.\nIt has an I²C bus, two LED outputs, a four-wire UART, and\ntwo PS/2 ports. It can monitor both 3.3V and 5.0V power\nrails. It talks to the host over SPI.\n\nLines to host are hi-Z until host is powered\n(i.e. 5V and 3.3V look good) to avoid back-powering.
+$Comp
+L Device:R R1114
+U 1 1 60CD12AF
+P 10275 5075
+F 0 "R1114" V 10200 5075 50  0000 C CNN
+F 1 "2k7" V 10275 5000 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 10205 5075 50  0001 C CNN
+F 3 "~" H 10275 5075 50  0001 C CNN
+	1    10275 5075
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1115
+U 1 1 60CD16F7
+P 10450 5075
+F 0 "R1115" V 10375 5075 50  0000 C CNN
+F 1 "2k7" V 10450 5000 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 10380 5075 50  0001 C CNN
+F 3 "~" H 10450 5075 50  0001 C CNN
+	1    10450 5075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9925 4850 10100 4850
+Wire Wire Line
+	10450 4850 10450 4925
+Wire Wire Line
+	9925 4775 9925 4850
+Wire Wire Line
+	10275 4925 10275 4850
+Connection ~ 10275 4850
+Wire Wire Line
+	10275 4850 10450 4850
+Wire Wire Line
+	10100 4925 10100 4850
+Connection ~ 10100 4850
+Wire Wire Line
+	10100 4850 10275 4850
+Wire Wire Line
+	9925 4925 9925 4850
+Connection ~ 9925 4850
+$Comp
+L Device:R R1113
+U 1 1 60CD0A39
+P 10100 5075
+F 0 "R1113" V 10025 5075 50  0000 C CNN
+F 1 "2k7" V 10100 5000 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 10030 5075 50  0001 C CNN
+F 3 "~" H 10100 5075 50  0001 C CNN
+	1    10100 5075
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1112
+U 1 1 60C73816
+P 9925 5075
+F 0 "R1112" V 9850 5075 50  0000 C CNN
+F 1 "2k7" V 9925 5000 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 9855 5075 50  0001 C CNN
+F 3 "~" H 9925 5075 50  0001 C CNN
+	1    9925 5075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9925 5225 9925 5375
+Wire Wire Line
+	10100 5225 10100 5575
+Wire Wire Line
+	10275 5225 10275 5925
+Wire Wire Line
+	10450 5225 10450 6125
 $EndSCHEMATC
