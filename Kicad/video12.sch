@@ -5,7 +5,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 4 11
 Title ""
-Date "2021-06-03"
+Date "2021-06-10"
 Rev "[Uncontrolled]"
 Comp "https://neotron-compute.github.io/"
 Comment1 "Licenced as CC BY-SA"
