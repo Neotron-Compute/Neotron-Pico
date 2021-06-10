@@ -5,7 +5,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 9 11
 Title "Neotron Common Hardware - Real Time Clock"
-Date "2021-06-03"
+Date "2021-06-10"
 Rev "[Uncontrolled]"
 Comp "https://neotron-compute.github.io/"
 Comment1 "Licenced as CC BY-SA"
@@ -23,13 +23,13 @@ U 1 1 5E0F47D7
 P 4075 2675
 F 0 "U901" H 4375 3025 50  0000 C CNN
 F 1 "MCP7940N" H 3675 3025 50  0000 C CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 4075 2675 50  0001 C CNN
+F 2 "Package_DIP:DIP-8_W7.62mm" H 4075 2675 50  0001 C CNN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20005010F.pdf" H 4075 2675 50  0001 C CNN
 F 4 "Microchip" H 4075 2675 50  0001 C CNN "Manufacturer"
 F 5 "0" H 4075 2675 50  0001 C CNN "DNP"
-F 6 "MCP7940NT-I/SN" H 4075 2675 50  0001 C CNN "MPN"
-F 7 "MCP7940NT-I/SNCT-ND" H 4075 2675 50  0001 C CNN "Digikey"
-F 8 "579-MCP7940NT-I/SN" H 4075 2675 50  0001 C CNN "Mouser"
+F 6 "MCP7940N-I/P" H 4075 2675 50  0001 C CNN "MPN"
+F 7 "MCP7940N-I/P-ND" H 4075 2675 50  0001 C CNN "Digikey"
+F 8 "579-MCP7940N-I/P" H 4075 2675 50  0001 C CNN "Mouser"
 F 9 "C51106" H 4075 2675 50  0001 C CNN "LCSC Part#"
 	1    4075 2675
 	1    0    0    -1  
