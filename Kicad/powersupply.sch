@@ -5,7 +5,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 8 11
 Title "Neotron Common Hardware - Power Supply"
-Date "2021-06-03"
+Date "2021-06-10"
 Rev "[Uncontrolled]"
 Comp "https://neotron-compute.github.io/"
 Comment1 "Licenced as CC BY-SA"
@@ -247,7 +247,7 @@ U 1 1 60282A88
 P 3225 2375
 F 0 "C801" H 3325 2375 50  0000 L CNN
 F 1 "100uF" H 3250 2275 50  0000 L CNN
-F 2 "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm" H 3263 2225 50  0001 C CNN
+F 2 "Capacitor_THT:CP_Radial_D8.0mm_P5.00mm" H 3263 2225 50  0001 C CNN
 F 3 "~" H 3225 2375 50  0001 C CNN
 F 4 "0" H 3225 2375 50  0001 C CNN "DNP"
 F 5 "" H 3225 2375 50  0001 C CNN "Digikey"
@@ -265,7 +265,7 @@ U 1 1 60283279
 P 3725 2375
 F 0 "C802" H 3825 2375 50  0000 L CNN
 F 1 "100uF" H 3750 2275 50  0000 L CNN
-F 2 "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm" H 3763 2225 50  0001 C CNN
+F 2 "Capacitor_THT:CP_Radial_D8.0mm_P5.00mm" H 3763 2225 50  0001 C CNN
 F 3 "~" H 3725 2375 50  0001 C CNN
 F 4 "0" H 3725 2375 50  0001 C CNN "DNP"
 F 5 "" H 3725 2375 50  0001 C CNN "Digikey"

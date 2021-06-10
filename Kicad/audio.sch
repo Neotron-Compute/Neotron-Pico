@@ -5,7 +5,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 11
 Title "Neotron Common Hardware - Audio CODEC"
-Date "2021-06-03"
+Date "2021-06-10"
 Rev "[Uncontrolled]"
 Comp "https://neotron-compute.github.io/"
 Comment1 "Licenced as CC BY-SA"
@@ -838,7 +838,7 @@ U 1 1 600CA5AF
 P 4600 2450
 F 0 "C220" V 4825 2450 50  0000 C CNN
 F 1 "220uF" V 4734 2450 50  0000 C CNN
-F 2 "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm" H 4600 2450 50  0001 C CNN
+F 2 "Capacitor_THT:CP_Radial_D8.0mm_P5.00mm" H 4600 2450 50  0001 C CNN
 F 3 "~" H 4600 2450 50  0001 C CNN
 F 4 "0" H 4600 2450 50  0001 C CNN "DNP"
 F 5 "" H 4600 2450 50  0001 C CNN "Digikey"
@@ -855,7 +855,7 @@ U 1 1 600D7617
 P 4600 2600
 F 0 "C221" V 4350 2600 50  0000 C CNN
 F 1 "220uF" V 4450 2600 50  0000 C CNN
-F 2 "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm" H 4600 2600 50  0001 C CNN
+F 2 "Capacitor_THT:CP_Radial_D8.0mm_P5.00mm" H 4600 2600 50  0001 C CNN
 F 3 "~" H 4600 2600 50  0001 C CNN
 F 4 "0" H 4600 2600 50  0001 C CNN "DNP"
 F 5 "" H 4600 2600 50  0001 C CNN "Digikey"
