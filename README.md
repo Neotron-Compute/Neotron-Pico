@@ -360,6 +360,10 @@ Please note that the models provided in the [Kicad/Models](./Kicad/Models) direc
 
 Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in the work by you, as defined in the Apache-2.0 license, shall be licensed as above, without any additional terms or conditions.
 
+## Changelog
+
+The Change Log for the project can be found in [./CHANGELOG.md](./CHANGELOG.md).
+
 ## Datasheets and References
 
 * Raspberry Pi Pico

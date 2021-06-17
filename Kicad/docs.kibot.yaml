@@ -31,8 +31,8 @@ preflight:
 
 outputs:
   # For more information: https://github.com/INTI-CMNB/KiBoM
-  - name: 'print schema'
-    comment: "Print schematic (PDF)"
+  - name: 'generic Schematic PDF'
+    comment: "Print the schematic as a PDF"
     type: pdf_sch_print
     dir: pdfs
     options:
@@ -84,22 +84,86 @@ outputs:
     type: position
     dir: gerbers
 
+  - name: 'generate PCB DXF'
+    comment: "Generate 2D PCB CAD in DXF format"
+    type: dxf
+    layers:
+      - F.Cu
+      - In1.Cu
+      - In2.Cu
+      - B.Cu
+      - Edge.Cuts
+      - F.SilkS
+      - F.Paste
+      - F.Mask
+      - B.SilkS
+      - B.Paste
+      - B.Mask
+    options:
+      output: '%f-pcb-cad-%r.%x'
+      exclude_edge_layer: false
+      metric_units: true
+
+  - name: 'generate SVG'
+    comment: "Generate 2D PCB image in SVG format"
+    type: pcbdraw
+    options:
+      output: '%f-pcb-%r.%x'
+
+  - name: 'generate PNG'
+    comment: "Generate 2D PCB image in PNG format"
+    type: pcbdraw
+    options:
+      output: '%f-pcb-%r.%x'
+      format: png
+
+  - name: 'generate 3D model'
+    comment: "Generate 3D PCB model in STEP format"
+    type: step
+    options:
+      output: '%f-3d-%r.%x'
+
+  - name: 'generate PCB PDF'
+    comment: "Generate 2D PCB CAD in PDF format"
+    type: pdf_pcb_print
+    dir: pdfs
+    layers:
+      - F.Cu
+      - In1.Cu
+      - In2.Cu
+      - B.Cu
+      - Edge.Cuts
+      - F.SilkS
+      - F.Paste
+      - F.Mask
+      - B.SilkS
+      - B.Paste
+      - B.Mask
+    options:
+      output: '%f-pcb-%r.%x'
+      separated: true
+      monochrome: true
+
   - name: 'generate BoM in CSV'
     comment: "Generate bill-of-material files"
     type: kibom
     dir: gerbers
+    options:
+      output: '%f-bom-%r.%x'
 
   - name: 'generate BoM in HTML'
     comment: "Generate assembly HTML page"
     type: ibom
     dir: ibom
+    options:
+      output: '%f-ibom-%r.%x'
 
   - name: 'jlc position'
     comment: "Pick and place file, JLC style"
     type: position
     options:
       variant: rotated
-      output: '%f_cpl_jlc.%x'
+      output: '%f-cpl-jlc-%r.%x'
       format: CSV
       units: millimeters
       separate_files_for_front_and_back: false
@@ -122,7 +186,7 @@ outputs:
     comment: "BoM for JLC"
     type: bom
     options:
-      output: '%f_%i_jlc.%x'
+      output: '%f-bom-jlc-%r.%x'
       exclude_filter: 'only_jlc_parts'
       ref_separator: ','
       columns:
