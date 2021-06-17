@@ -2,6 +2,14 @@
 
 # Unreleased Changes
 
+# [Version v0.5.1](https://github.com/Neotron-Compute/Neotron-Pico/releases/tag/v0.5.1)
+
+* Moved BOOT0 silkscreen
+* Moved labels for BMC SWD and UART ports
+* Moved some vias near the BMC to improve the ground pour
+* Added version numbers to the release outputs
+* Added PNG, SVG and STEP releaseoutputs
+
 # [Version v0.5.0](https://github.com/Neotron-Compute/Neotron-Pico/releases/tag/v0.5.0)
 
 * Sent to JLCPCB to assembly.
