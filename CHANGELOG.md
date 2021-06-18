@@ -2,6 +2,14 @@
 
 # Unreleased Changes
 
+* None
+
+# [Version v0.5.2](https://github.com/Neotron-Compute/Neotron-Pico/releases/tag/v0.5.2)
+
+* Tweaks to the BOM outputs, including an HTML format BOM
+* Revised voltages for each capacitor, specifying the minimum acceptable
+   * Most parts still specify a component that is better than the minimum, because of availability or price.
+
 # [Version v0.5.1](https://github.com/Neotron-Compute/Neotron-Pico/releases/tag/v0.5.1)
 
 * Moved BOOT0 silkscreen
