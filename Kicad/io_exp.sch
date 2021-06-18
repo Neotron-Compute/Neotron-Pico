@@ -325,7 +325,7 @@ F 7 "CPL" H 7900 2500 50  0001 C CNN "Manufacturer"
 F 8 "~" H 7900 2500 50  0001 C CNN "Mouser"
 F 9 "C49678" H 7900 2500 50  0001 C CNN "LCSC Part#"
 F 10 "X5R" H 7900 2500 50  0001 C CNN "Tolerance"
-F 11 "50V" H 7900 2500 50  0001 C CNN "Voltage"
+F 11 "10V" H 7900 2500 50  0001 C CNN "Voltage"
 	1    7900 2500
 	1    0    0    -1  
 $EndComp
@@ -350,7 +350,7 @@ F 7 "CPL" H 8375 2500 50  0001 C CNN "Manufacturer"
 F 8 "~" H 8375 2500 50  0001 C CNN "Mouser"
 F 9 "C49678" H 8375 2500 50  0001 C CNN "LCSC Part#"
 F 10 "X5R" H 8375 2500 50  0001 C CNN "Tolerance"
-F 11 "50V" H 8375 2500 50  0001 C CNN "Voltage"
+F 11 "10V" H 8375 2500 50  0001 C CNN "Voltage"
 	1    8375 2500
 	1    0    0    -1  
 $EndComp
