@@ -43,13 +43,15 @@ jobs:
           draft: false
           prerelease: false
       - name: Build gerbers zip file
+        env:
+          SOURCE_TAG: ${{ steps.branch_name.outputs.SOURCE_TAG }}
         run: |
-          zip -r --junk-paths neotron-pico-gerbers.zip docs/gerbers/
+          zip -r --junk-paths neotron-pico-gerbers-${SOURCE_TAG}.zip docs/gerbers/
       - name: Upload files to Release
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            neotron-pico-gerbers.zip
+            neotron-pico-gerbers-*.zip
             docs/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
