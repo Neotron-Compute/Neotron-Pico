@@ -217,6 +217,7 @@ outputs:
     type: ibom
     options:
       output: '%f-ibom-%r.%x'
+      extra_fields: "Voltage,Tolerance,Manufacturer,MPN"
 
   - name: 'make_jlc_position'
     comment: "Generate pick and place file, JLC style"
