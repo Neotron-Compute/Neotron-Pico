@@ -15,6 +15,13 @@ filters:
       - column: 'LCSC Part#'
         regex: '^C\d+'
 
+  - name: only_fitted_parts
+    comment: 'Only parts that are not DNF'
+    type: generic
+    include_only:
+      - column: 'DNP'
+        regex: '^0'
+
 variants:
   - name: rotated
     comment: 'Just a place holder for the rotation filter'
@@ -146,6 +153,63 @@ outputs:
     comment: "Generate bill-of-material file as CSV"
     type: bom
     options:
+      exclude_filter: 'only_fitted_parts'
+      group_fields:
+        - 'Part'
+        - 'Part Lib'
+        - 'Value'
+        - 'Voltage'
+        - 'Tolerance'
+        - 'Footprint'
+        - 'Footprint Lib'
+      columns:
+        - field: Manufacturer
+          name: Part Number
+          join: ['mpn']
+        - Footprint
+        - References
+        - Quantity per PCB
+        - field: Value
+          join: ['voltage', 'current', 'power', 'tolerance']
+        - Footprint
+        - field: 'LCSC Part#'
+          name: LCSC
+        - Digikey
+        - Mouser
+      output: '%f-bom-%r.%x'
+
+  - name: 'make_bom_html'
+    comment: "Generate bill-of-material files as HTML"
+    type: bom
+    options:
+      format: HTML
+      exclude_filter: 'only_fitted_parts'
+      html:
+        datasheet_as_link: "Datasheet"
+        digikey_link: "Digikey"
+        title: "Neotron Pico Bill of Materials"
+      group_fields:
+        - 'Part'
+        - 'Part Lib'
+        - 'Value'
+        - 'Voltage'
+        - 'Tolerance'
+        - 'Footprint'
+        - 'Footprint Lib'
+      columns:
+        - Row
+        - field: Manufacturer
+          name: Part Number
+          join: ['mpn']
+        - References
+        - Quantity per PCB
+        - field: Value
+          join: ['voltage', 'current', 'power', 'tolerance']
+        - field: 'LCSC Part#'
+          name: LCSC
+        - Digikey
+        - Mouser
+        - Footprint
       output: '%f-bom-%r.%x'
 
   - name: 'make_ibom'
@@ -182,6 +246,14 @@ outputs:
     comment: "Generate BoM, JLC style"
     type: bom
     options:
+      group_fields:
+        - 'Part'
+        - 'Part Lib'
+        - 'Value'
+        - 'Voltage'
+        - 'Tolerance'
+        - 'Footprint'
+        - 'Footprint Lib'
       output: '%f-bom-jlc-%r.%x'
       exclude_filter: 'only_jlc_parts'
       ref_separator: ','
