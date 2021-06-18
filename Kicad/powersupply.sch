@@ -13,8 +13,8 @@ Comment2 "Copyright (c) The Neotron Developers, 2021"
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 1975 1850 0    50   Italic 0
-2.51mm (inner, 5.5mm outer\ndiameter) barrel jack.\nCentre +ve.
+Text Notes 1925 1800 0    50   Italic 0
+2mm inner diameter\n(6.3mm outer diamater)\nDC barrel jack. Centre +ve.
 Text Notes 8525 4075 0    50   Italic 0
 Most of our board runs on 3.3V. We expect\nto draw around 100 mA from this 1A linear\nregulator.\n\nNorm. power wasted: (5V - 3.3V) * 0.1A = 0.17W\nMax power wasted: (5V - 3.3V) * 1A = 1.7W\n\nThe LDO is 50 °C/W so at max power,\nit's 85 °C over ambient. Probably best\nto use a heatsink if you want to pull\nover about 250 mA. Or replace with a\n3-terminal switching PSU module.
 Text Notes 4425 1550 0    50   Italic 0
@@ -28,11 +28,13 @@ F 1 "TLV1117 3.3V 1A" H 7525 3676 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 7525 3725 50  0001 C CNN
 F 3 "http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftlv1117lv" H 7625 3275 50  0001 C CNN
 F 4 "0" H 7525 3525 50  0001 C CNN "DNP"
-F 5 "296-28778-1-ND" H 7525 3525 50  0001 C CNN "Digikey"
+F 5 "~" H 7525 3525 50  0001 C CNN "Digikey"
 F 6 "CPL-REG-LIN-3.3V-1A" H 7525 3525 50  0001 C CNN "MPN"
 F 7 "CPL" H 7525 3525 50  0001 C CNN "Manufacturer"
-F 8 "595-TLV1117LV33DCYR" H 7525 3525 50  0001 C CNN "Mouser"
+F 8 "~" H 7525 3525 50  0001 C CNN "Mouser"
 F 9 "C6186" H 7525 3525 50  0001 C CNN "LCSC Part#"
+F 10 "~" H 7525 3525 50  0001 C CNN "Tolerance"
+F 11 "~" H 7525 3525 50  0001 C CNN "Voltage"
 	1    7525 3525
 	1    0    0    -1  
 $EndComp
@@ -45,10 +47,13 @@ F 1 "1uF" H 7993 3730 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 7913 3625 50  0001 C CNN
 F 3 "~" H 7875 3775 50  0001 C CNN
 F 4 "0" H 7875 3775 50  0001 C CNN "DNP"
-F 5 "" H 7875 3775 50  0001 C CNN "Digikey"
+F 5 "~" H 7875 3775 50  0001 C CNN "Digikey"
 F 6 "CPL-CAP-X7R-0805-1UF-25V" H 7875 3775 50  0001 C CNN "MPN"
 F 7 "CPL" H 7875 3775 50  0001 C CNN "Manufacturer"
 F 8 "C28323" H 7875 3775 50  0001 C CNN "LCSC Part#"
+F 9 "X5R" H 7875 3775 50  0001 C CNN "Tolerance"
+F 10 "10V" H 7875 3775 50  0001 C CNN "Voltage"
+F 11 "~" H 7875 3775 50  0001 C CNN "Mouser"
 	1    7875 3775
 	1    0    0    -1  
 $EndComp
@@ -88,6 +93,8 @@ F 6 "0ZRS0200FF1E" H 2975 2125 50  0001 C CNN "MPN"
 F 7 "Bel Fuse" H 2975 2125 50  0001 C CNN "Manufacturer"
 F 8 "530-0ZRS0200FF1E" H 2975 2125 50  0001 C CNN "Mouser"
 F 9 "~" H 2975 2125 50  0001 C CNN "LCSC Part#"
+F 10 "~" H 2975 2125 50  0001 C CNN "Tolerance"
+F 11 "~" H 2975 2125 50  0001 C CNN "Voltage"
 	1    2975 2125
 	0    1    1    0   
 $EndComp
@@ -116,6 +123,8 @@ F 6 "MAX1615EUK+T" H 4725 3975 50  0001 C CNN "MPN"
 F 7 "Maxim" H 4725 3975 50  0001 C CNN "Manufacturer"
 F 8 "700-MAX1615EUKT" H 4725 3975 50  0001 C CNN "Mouser"
 F 9 "C52770" H 4725 3975 50  0001 C CNN "LCSC Part#"
+F 10 "~" H 4725 3975 50  0001 C CNN "Tolerance"
+F 11 "~" H 4725 3975 50  0001 C CNN "Voltage"
 	1    4725 3975
 	1    0    0    -1  
 $EndComp
@@ -143,11 +152,13 @@ F 1 "100nF" H 4118 4230 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 4038 4125 50  0001 C CNN
 F 3 "~" H 4000 4275 50  0001 C CNN
 F 4 "0" H 4000 4275 50  0001 C CNN "DNP"
-F 5 "" H 4000 4275 50  0001 C CNN "Digikey"
+F 5 "~" H 4000 4275 50  0001 C CNN "Digikey"
 F 6 "CPL-CAP-X7R-0805-100NF-50V" H 4000 4275 50  0001 C CNN "MPN"
 F 7 "CPL" H 4000 4275 50  0001 C CNN "Manufacturer"
 F 8 "C49678" H 4000 4275 50  0001 C CNN "LCSC Part#"
 F 9 "50V" H 4000 4275 50  0001 C CNN "Voltage"
+F 10 "X5R" H 4000 4275 50  0001 C CNN "Tolerance"
+F 11 "~" H 4000 4275 50  0001 C CNN "Mouser"
 	1    4000 4275
 	1    0    0    -1  
 $EndComp
@@ -185,11 +196,13 @@ F 1 "100nF" H 7293 3730 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 7213 3625 50  0001 C CNN
 F 3 "~" H 7175 3775 50  0001 C CNN
 F 4 "0" H 7175 3775 50  0001 C CNN "DNP"
-F 5 "" H 7175 3775 50  0001 C CNN "Digikey"
+F 5 "~" H 7175 3775 50  0001 C CNN "Digikey"
 F 6 "CPL-CAP-X7R-0805-100NF-50V" H 7175 3775 50  0001 C CNN "MPN"
 F 7 "CPL" H 7175 3775 50  0001 C CNN "Manufacturer"
-F 8 "" H 7175 3775 50  0001 C CNN "Mouser"
+F 8 "~" H 7175 3775 50  0001 C CNN "Mouser"
 F 9 "C49678" H 7175 3775 50  0001 C CNN "LCSC Part#"
+F 10 "X5R" H 7175 3775 50  0001 C CNN "Tolerance"
+F 11 "16V" H 7175 3775 50  0001 C CNN "Voltage"
 	1    7175 3775
 	-1   0    0    -1  
 $EndComp
@@ -213,10 +226,13 @@ F 1 "10uF" H 5393 2330 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 5313 2225 50  0001 C CNN
 F 3 "~" H 5275 2375 50  0001 C CNN
 F 4 "0" H 5275 2375 50  0001 C CNN "DNP"
-F 5 "" H 5275 2375 50  0001 C CNN "Digikey"
+F 5 "~" H 5275 2375 50  0001 C CNN "Digikey"
 F 6 "CPL-CAP-X5R-0805-10UF-16V" H 5275 2375 50  0001 C CNN "MPN"
 F 7 "CPL" H 5275 2375 50  0001 C CNN "Manufacturer"
 F 8 "C15850" H 5275 2375 50  0001 C CNN "LCSC Part#"
+F 9 "X5R" H 5275 2375 50  0001 C CNN "Tolerance"
+F 10 "16V" H 5275 2375 50  0001 C CNN "Voltage"
+F 11 "~" H 5275 2375 50  0001 C CNN "Mouser"
 	1    5275 2375
 	1    0    0    -1  
 $EndComp
@@ -229,15 +245,17 @@ L Device:L L801
 U 1 1 606E29FD
 P 3475 2125
 F 0 "L801" V 3665 2125 50  0000 C CNN
-F 1 "22uH 2A" V 3574 2125 50  0000 C CNN
+F 1 "22uH" V 3574 2125 50  0000 C CNN
 F 2 "Inductor_THT:L_Radial_D9.5mm_P5.00mm_Fastron_07HVP" H 3475 2125 50  0001 C CNN
 F 3 "https://www.murata-ps.com/pub/data/magnetics/kmp_1300r.pdf" H 3475 2125 50  0001 C CNN
 F 4 "0" H 3475 2125 50  0001 C CNN "DNP"
 F 5 "13R223C" V 3475 2125 50  0001 C CNN "MPN"
 F 6 "Murata" V 3475 2125 50  0001 C CNN "Manufacturer"
 F 7 "811-2042-ND" V 3475 2125 50  0001 C CNN "Digikey"
-F 8 "" H 3475 2125 50  0001 C CNN "Mouser"
+F 8 "580-13R223C" H 3475 2125 50  0001 C CNN "Mouser"
 F 9 "~" H 3475 2125 50  0001 C CNN "LCSC Part#"
+F 10 "~" H 3475 2125 50  0001 C CNN "Tolerance"
+F 11 "~" H 3475 2125 50  0001 C CNN "Voltage"
 	1    3475 2125
 	0    -1   -1   0   
 $EndComp
@@ -250,12 +268,13 @@ F 1 "100uF" H 3250 2275 50  0000 L CNN
 F 2 "Capacitor_THT:CP_Radial_D8.0mm_P5.00mm" H 3263 2225 50  0001 C CNN
 F 3 "~" H 3225 2375 50  0001 C CNN
 F 4 "0" H 3225 2375 50  0001 C CNN "DNP"
-F 5 "" H 3225 2375 50  0001 C CNN "Digikey"
+F 5 "~" H 3225 2375 50  0001 C CNN "Digikey"
 F 6 "CPL-CAP-ALU-RAD-100UF-50V" H 3225 2375 50  0001 C CNN "MPN"
 F 7 "CPL" H 3225 2375 50  0001 C CNN "Manufacturer"
-F 8 "" H 3225 2375 50  0001 C CNN "Mouser"
+F 8 "~" H 3225 2375 50  0001 C CNN "Mouser"
 F 9 "~" H 3225 2375 50  0001 C CNN "LCSC Part#"
 F 10 "50V" H 3225 2375 50  0001 C CNN "Voltage"
+F 11 "20%" H 3225 2375 50  0001 C CNN "Tolerance"
 	1    3225 2375
 	-1   0    0    -1  
 $EndComp
@@ -268,12 +287,13 @@ F 1 "100uF" H 3750 2275 50  0000 L CNN
 F 2 "Capacitor_THT:CP_Radial_D8.0mm_P5.00mm" H 3763 2225 50  0001 C CNN
 F 3 "~" H 3725 2375 50  0001 C CNN
 F 4 "0" H 3725 2375 50  0001 C CNN "DNP"
-F 5 "" H 3725 2375 50  0001 C CNN "Digikey"
+F 5 "~" H 3725 2375 50  0001 C CNN "Digikey"
 F 6 "CPL-CAP-ALU-RAD-100UF-50V" H 3725 2375 50  0001 C CNN "MPN"
 F 7 "CPL" H 3725 2375 50  0001 C CNN "Manufacturer"
-F 8 "" H 3725 2375 50  0001 C CNN "Mouser"
+F 8 "~" H 3725 2375 50  0001 C CNN "Mouser"
 F 9 "~" H 3725 2375 50  0001 C CNN "LCSC Part#"
 F 10 "50V" H 3725 2375 50  0001 C CNN "Voltage"
+F 11 "20%" H 3725 2375 50  0001 C CNN "Tolerance"
 	1    3725 2375
 	-1   0    0    -1  
 $EndComp
@@ -337,6 +357,8 @@ F 6 "PJ-063AH" H 2375 2225 50  0001 C CNN "MPN"
 F 7 "CUI" H 2375 2225 50  0001 C CNN "Manufacturer"
 F 8 "490-PJ-063AH" H 2375 2225 50  0001 C CNN "Mouser"
 F 9 "~" H 2375 2225 50  0001 C CNN "LCSC Part#"
+F 10 "~" H 2375 2225 50  0001 C CNN "Tolerance"
+F 11 "~" H 2375 2225 50  0001 C CNN "Voltage"
 	1    2375 2225
 	1    0    0    -1  
 $EndComp
@@ -375,6 +397,9 @@ F 5 "0" H 4725 1975 50  0001 C CNN "DNP"
 F 6 "2725-K7805-3AR3-ND" H 4725 1975 50  0001 C CNN "Digikey"
 F 7 "K7805-3AR3" H 4725 1975 50  0001 C CNN "MPN"
 F 8 "~" H 4725 1975 50  0001 C CNN "LCSC Part#"
+F 9 "~" H 4725 1975 50  0001 C CNN "Mouser"
+F 10 "~" H 4725 1975 50  0001 C CNN "Tolerance"
+F 11 "~" H 4725 1975 50  0001 C CNN "Voltage"
 	1    4725 1975
 	1    0    0    -1  
 $EndComp
@@ -459,10 +484,13 @@ F 1 "4.7uF" H 5543 4230 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 5463 4125 50  0001 C CNN
 F 3 "~" H 5425 4275 50  0001 C CNN
 F 4 "0" H 5425 4275 50  0001 C CNN "DNP"
-F 5 "" H 5425 4275 50  0001 C CNN "Digikey"
+F 5 "~" H 5425 4275 50  0001 C CNN "Digikey"
 F 6 "CPL-CAP-X5R-0805-4.7UF-25V" H 5425 4275 50  0001 C CNN "MPN"
 F 7 "CPL" H 5425 4275 50  0001 C CNN "Manufacturer"
 F 8 "C1779" H 5425 4275 50  0001 C CNN "LCSC Part#"
+F 9 "X5R" H 5425 4275 50  0001 C CNN "Tolerance"
+F 10 "10V" H 5425 4275 50  0001 C CNN "Voltage"
+F 11 "~" H 5425 4275 50  0001 C CNN "Mouser"
 	1    5425 4275
 	1    0    0    -1  
 $EndComp
@@ -515,6 +543,9 @@ F 5 "BC546CTA" H 1925 5900 50  0001 C CNN "MPN"
 F 6 "ON Semiconductor" H 1925 5900 50  0001 C CNN "Manufacturer"
 F 7 "0" H 1925 5900 50  0001 C CNN "DNP"
 F 8 "~" H 1925 5900 50  0001 C CNN "LCSC Part#"
+F 9 "512-BC546CTA" H 1925 5900 50  0001 C CNN "Mouser"
+F 10 "~" H 1925 5900 50  0001 C CNN "Tolerance"
+F 11 "~" H 1925 5900 50  0001 C CNN "Voltage"
 	1    1925 5900
 	1    0    0    -1  
 $EndComp
@@ -555,6 +586,9 @@ F 5 "BC556BTFCT-ND" H 2475 5550 50  0001 C CNN "Digikey"
 F 6 "ON Semiconductor" H 2475 5550 50  0001 C CNN "Manufacturer"
 F 7 "0" H 2475 5550 50  0001 C CNN "DNP"
 F 8 "~" H 2475 5550 50  0001 C CNN "LCSC Part#"
+F 9 "512-BC556BTF" H 2475 5550 50  0001 C CNN "Mouser"
+F 10 "~" H 2475 5550 50  0001 C CNN "Tolerance"
+F 11 "~" H 2475 5550 50  0001 C CNN "Voltage"
 	1    2475 5550
 	1    0    0    1   
 $EndComp
@@ -596,10 +630,13 @@ F 1 "10k" V 1450 5900 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1480 5900 50  0001 C CNN
 F 3 "~" H 1550 5900 50  0001 C CNN
 F 4 "0" H 1550 5900 50  0001 C CNN "DNP"
-F 5 "" H 1550 5900 50  0001 C CNN "Digikey"
+F 5 "~" H 1550 5900 50  0001 C CNN "Digikey"
 F 6 "CPL-RES-0805-10K-0.125W" H 1550 5900 50  0001 C CNN "MPN"
 F 7 "CPL" H 1550 5900 50  0001 C CNN "Manufacturer"
 F 8 "C17414" H 1550 5900 50  0001 C CNN "LCSC Part#"
+F 9 "1%" H 1550 5900 50  0001 C CNN "Tolerance"
+F 10 "~" H 1550 5900 50  0001 C CNN "Mouser"
+F 11 "~" H 1550 5900 50  0001 C CNN "Voltage"
 	1    1550 5900
 	0    1    -1   0   
 $EndComp
@@ -614,10 +651,13 @@ F 1 "10k" H 2075 5275 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1955 5300 50  0001 C CNN
 F 3 "~" H 2025 5300 50  0001 C CNN
 F 4 "0" H 2025 5300 50  0001 C CNN "DNP"
-F 5 "" H 2025 5300 50  0001 C CNN "Digikey"
+F 5 "~" H 2025 5300 50  0001 C CNN "Digikey"
 F 6 "CPL-RES-0805-10K-0.125W" H 2025 5300 50  0001 C CNN "MPN"
 F 7 "CPL" H 2025 5300 50  0001 C CNN "Manufacturer"
 F 8 "C17414" H 2025 5300 50  0001 C CNN "LCSC Part#"
+F 9 "1%" H 2025 5300 50  0001 C CNN "Tolerance"
+F 10 "~" H 2025 5300 50  0001 C CNN "Mouser"
+F 11 "~" H 2025 5300 50  0001 C CNN "Voltage"
 	1    2025 5300
 	-1   0    0    -1  
 $EndComp
@@ -630,10 +670,13 @@ F 1 "10k" H 2625 6100 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 2505 6150 50  0001 C CNN
 F 3 "~" H 2575 6150 50  0001 C CNN
 F 4 "0" H 2575 6150 50  0001 C CNN "DNP"
-F 5 "" H 2575 6150 50  0001 C CNN "Digikey"
+F 5 "~" H 2575 6150 50  0001 C CNN "Digikey"
 F 6 "CPL-RES-0805-10K-0.125W" H 2575 6150 50  0001 C CNN "MPN"
 F 7 "CPL" H 2575 6150 50  0001 C CNN "Manufacturer"
 F 8 "C17414" H 2575 6150 50  0001 C CNN "LCSC Part#"
+F 9 "1%" H 2575 6150 50  0001 C CNN "Tolerance"
+F 10 "~" H 2575 6150 50  0001 C CNN "Mouser"
+F 11 "~" H 2575 6150 50  0001 C CNN "Voltage"
 	1    2575 6150
 	-1   0    0    -1  
 $EndComp
@@ -689,10 +732,13 @@ F 1 "10uF" H 5968 2330 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 5888 2225 50  0001 C CNN
 F 3 "~" H 5850 2375 50  0001 C CNN
 F 4 "0" H 5850 2375 50  0001 C CNN "DNP"
-F 5 "" H 5850 2375 50  0001 C CNN "Digikey"
+F 5 "~" H 5850 2375 50  0001 C CNN "Digikey"
 F 6 "CPL-CAP-X5R-0805-10UF-16V" H 5850 2375 50  0001 C CNN "MPN"
 F 7 "CPL" H 5850 2375 50  0001 C CNN "Manufacturer"
 F 8 "C15850" H 5850 2375 50  0001 C CNN "LCSC Part#"
+F 9 "X5R" H 5850 2375 50  0001 C CNN "Tolerance"
+F 10 "16V" H 5850 2375 50  0001 C CNN "Voltage"
+F 11 "~" H 5850 2375 50  0001 C CNN "Mouser"
 	1    5850 2375
 	1    0    0    -1  
 $EndComp

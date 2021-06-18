@@ -39,6 +39,9 @@ F 5 "~" H 1600 6850 50  0001 C CNN "Digikey"
 F 6 "~" H 1600 6850 50  0001 C CNN "MPN"
 F 7 "~" H 1600 6850 50  0001 C CNN "Manufacturer"
 F 8 "~" H 1600 6850 50  0001 C CNN "LCSC Part#"
+F 9 "~" H 1600 6850 50  0001 C CNN "Mouser"
+F 10 "~" H 1600 6850 50  0001 C CNN "Tolerance"
+F 11 "~" H 1600 6850 50  0001 C CNN "Voltage"
 	1    1600 6850
 	1    0    0    -1  
 $EndComp
@@ -55,6 +58,9 @@ F 5 "~" H 1600 7350 50  0001 C CNN "Digikey"
 F 6 "~" H 1600 7350 50  0001 C CNN "MPN"
 F 7 "~" H 1600 7350 50  0001 C CNN "Manufacturer"
 F 8 "~" H 1600 7350 50  0001 C CNN "LCSC Part#"
+F 9 "~" H 1600 7350 50  0001 C CNN "Mouser"
+F 10 "~" H 1600 7350 50  0001 C CNN "Tolerance"
+F 11 "~" H 1600 7350 50  0001 C CNN "Voltage"
 	1    1600 7350
 	1    0    0    -1  
 $EndComp
@@ -71,6 +77,9 @@ F 5 "~" H 2550 6850 50  0001 C CNN "Digikey"
 F 6 "~" H 2550 6850 50  0001 C CNN "MPN"
 F 7 "~" H 2550 6850 50  0001 C CNN "Manufacturer"
 F 8 "~" H 2550 6850 50  0001 C CNN "LCSC Part#"
+F 9 "~" H 2550 6850 50  0001 C CNN "Mouser"
+F 10 "~" H 2550 6850 50  0001 C CNN "Tolerance"
+F 11 "~" H 2550 6850 50  0001 C CNN "Voltage"
 	1    2550 6850
 	1    0    0    -1  
 $EndComp
@@ -87,6 +96,9 @@ F 5 "~" H 2550 7350 50  0001 C CNN "Digikey"
 F 6 "~" H 2550 7350 50  0001 C CNN "MPN"
 F 7 "~" H 2550 7350 50  0001 C CNN "Manufacturer"
 F 8 "~" H 2550 7350 50  0001 C CNN "LCSC Part#"
+F 9 "~" H 2550 7350 50  0001 C CNN "Mouser"
+F 10 "~" H 2550 7350 50  0001 C CNN "Tolerance"
+F 11 "~" H 2550 7350 50  0001 C CNN "Voltage"
 	1    2550 7350
 	1    0    0    -1  
 $EndComp
@@ -103,6 +115,9 @@ F 5 "~" H 3500 6850 50  0001 C CNN "Digikey"
 F 6 "~" H 3500 6850 50  0001 C CNN "MPN"
 F 7 "~" H 3500 6850 50  0001 C CNN "Manufacturer"
 F 8 "~" H 3500 6850 50  0001 C CNN "LCSC Part#"
+F 9 "~" H 3500 6850 50  0001 C CNN "Mouser"
+F 10 "~" H 3500 6850 50  0001 C CNN "Tolerance"
+F 11 "~" H 3500 6850 50  0001 C CNN "Voltage"
 	1    3500 6850
 	1    0    0    -1  
 $EndComp
@@ -119,6 +134,9 @@ F 5 "~" H 700 7350 50  0001 C CNN "Digikey"
 F 6 "~" H 700 7350 50  0001 C CNN "MPN"
 F 7 "~" H 700 7350 50  0001 C CNN "Manufacturer"
 F 8 "~" H 700 7350 50  0001 C CNN "LCSC Part#"
+F 9 "~" H 700 7350 50  0001 C CNN "Mouser"
+F 10 "~" H 700 7350 50  0001 C CNN "Tolerance"
+F 11 "~" H 700 7350 50  0001 C CNN "Voltage"
 	1    700  7350
 	1    0    0    -1  
 $EndComp
@@ -201,6 +219,9 @@ F 5 "~" H 3500 7350 50  0001 C CNN "Digikey"
 F 6 "~" H 3500 7350 50  0001 C CNN "MPN"
 F 7 "~" H 3500 7350 50  0001 C CNN "Manufacturer"
 F 8 "~" H 3500 7350 50  0001 C CNN "LCSC Part#"
+F 9 "~" H 3500 7350 50  0001 C CNN "Mouser"
+F 10 "~" H 3500 7350 50  0001 C CNN "Tolerance"
+F 11 "~" H 3500 7350 50  0001 C CNN "Voltage"
 	1    3500 7350
 	1    0    0    -1  
 $EndComp
@@ -233,8 +254,10 @@ F 4 "1" H 6125 7225 50  0001 C CNN "DNP"
 F 5 "~" H 6125 7225 50  0001 C CNN "Digikey"
 F 6 "~" H 6125 7225 50  0001 C CNN "MPN"
 F 7 "~" H 6125 7225 50  0001 C CNN "Manufacturer"
-F 8 "" H 6125 7225 50  0001 C CNN "Mouser"
+F 8 "~" H 6125 7225 50  0001 C CNN "Mouser"
 F 9 "~" H 6125 7225 50  0001 C CNN "LCSC Part#"
+F 10 "~" H 6125 7225 50  0001 C CNN "Tolerance"
+F 11 "~" H 6125 7225 50  0001 C CNN "Voltage"
 	1    6125 7225
 	1    0    0    -1  
 $EndComp
@@ -250,8 +273,10 @@ F 4 "1" H 5625 7225 50  0001 C CNN "DNP"
 F 5 "~" H 5625 7225 50  0001 C CNN "Digikey"
 F 6 "~" H 5625 7225 50  0001 C CNN "MPN"
 F 7 "~" H 5625 7225 50  0001 C CNN "Manufacturer"
-F 8 "" H 5625 7225 50  0001 C CNN "Mouser"
+F 8 "~" H 5625 7225 50  0001 C CNN "Mouser"
 F 9 "~" H 5625 7225 50  0001 C CNN "LCSC Part#"
+F 10 "~" H 5625 7225 50  0001 C CNN "Tolerance"
+F 11 "~" H 5625 7225 50  0001 C CNN "Voltage"
 	1    5625 7225
 	1    0    0    -1  
 $EndComp
@@ -267,8 +292,10 @@ F 4 "1" H 5075 7225 50  0001 C CNN "DNP"
 F 5 "~" H 5075 7225 50  0001 C CNN "Digikey"
 F 6 "~" H 5075 7225 50  0001 C CNN "MPN"
 F 7 "~" H 5075 7225 50  0001 C CNN "Manufacturer"
-F 8 "" H 5075 7225 50  0001 C CNN "Mouser"
+F 8 "~" H 5075 7225 50  0001 C CNN "Mouser"
 F 9 "~" H 5075 7225 50  0001 C CNN "LCSC Part#"
+F 10 "~" H 5075 7225 50  0001 C CNN "Tolerance"
+F 11 "~" H 5075 7225 50  0001 C CNN "Voltage"
 	1    5075 7225
 	1    0    0    -1  
 $EndComp
@@ -323,6 +350,9 @@ F 5 "A31722-ND" H 1525 4800 50  0001 C CNN "Digikey"
 F 6 "5-5530843-0" H 1525 4800 50  0001 C CNN "MPN"
 F 7 "TE" H 1525 4800 50  0001 C CNN "Manufacturer"
 F 8 "~" H 1525 4800 50  0001 C CNN "LCSC Part#"
+F 9 "571-5-5530843-0" H 1525 4800 50  0001 C CNN "Mouser"
+F 10 "~" H 1525 4800 50  0001 C CNN "Tolerance"
+F 11 "~" H 1525 4800 50  0001 C CNN "Voltage"
 	1    1525 4800
 	1    0    0    -1  
 $EndComp
@@ -407,6 +437,9 @@ F 5 "A31722-ND" H 3650 4800 50  0001 C CNN "Digikey"
 F 6 "5-5530843-0" H 3650 4800 50  0001 C CNN "MPN"
 F 7 "TE" H 3650 4800 50  0001 C CNN "Manufacturer"
 F 8 "~" H 3650 4800 50  0001 C CNN "LCSC Part#"
+F 9 "571-5-5530843-0" H 3650 4800 50  0001 C CNN "Mouser"
+F 10 "~" H 3650 4800 50  0001 C CNN "Tolerance"
+F 11 "~" H 3650 4800 50  0001 C CNN "Voltage"
 	1    3650 4800
 	1    0    0    -1  
 $EndComp
@@ -493,6 +526,9 @@ F 5 "A31722-ND" H 5800 4800 50  0001 C CNN "Digikey"
 F 6 "5-5530843-0" H 5800 4800 50  0001 C CNN "MPN"
 F 7 "TE" H 5800 4800 50  0001 C CNN "Manufacturer"
 F 8 "~" H 5800 4800 50  0001 C CNN "LCSC Part#"
+F 9 "571-5-5530843-0" H 5800 4800 50  0001 C CNN "Mouser"
+F 10 "~" H 5800 4800 50  0001 C CNN "Tolerance"
+F 11 "~" H 5800 4800 50  0001 C CNN "Voltage"
 	1    5800 4800
 	1    0    0    -1  
 $EndComp
@@ -608,6 +644,9 @@ F 5 "A31722-ND" H 7925 4800 50  0001 C CNN "Digikey"
 F 6 "5-5530843-0" H 7925 4800 50  0001 C CNN "MPN"
 F 7 "TE" H 7925 4800 50  0001 C CNN "Manufacturer"
 F 8 "~" H 7925 4800 50  0001 C CNN "LCSC Part#"
+F 9 "571-5-5530843-0" H 7925 4800 50  0001 C CNN "Mouser"
+F 10 "~" H 7925 4800 50  0001 C CNN "Tolerance"
+F 11 "~" H 7925 4800 50  0001 C CNN "Voltage"
 	1    7925 4800
 	1    0    0    -1  
 $EndComp
@@ -734,6 +773,8 @@ F 6 "SC0915" H 2325 2475 50  0001 C CNN "MPN"
 F 7 "Raspberry Pi" H 2325 2475 50  0001 C CNN "Manufacturer"
 F 8 "~" H 2325 2475 50  0001 C CNN "Mouser"
 F 9 "~" H 2325 2475 50  0001 C CNN "LCSC Part#"
+F 10 "~" H 2325 2475 50  0001 C CNN "Tolerance"
+F 11 "~" H 2325 2475 50  0001 C CNN "Voltage"
 	1    2325 2475
 	1    0    0    -1  
 $EndComp
@@ -1312,6 +1353,9 @@ F 5 "A31722-ND" H 10075 4800 50  0001 C CNN "Digikey"
 F 6 "5-5530843-0" H 10075 4800 50  0001 C CNN "MPN"
 F 7 "TE" H 10075 4800 50  0001 C CNN "Manufacturer"
 F 8 "~" H 10075 4800 50  0001 C CNN "LCSC Part#"
+F 9 "571-5-5530843-0" H 10075 4800 50  0001 C CNN "Mouser"
+F 10 "~" H 10075 4800 50  0001 C CNN "Tolerance"
+F 11 "~" H 10075 4800 50  0001 C CNN "Voltage"
 	1    10075 4800
 	1    0    0    -1  
 $EndComp
@@ -1699,6 +1743,10 @@ F 4 "1" H 9925 3525 50  0001 C CNN "DNP"
 F 5 "~" H 9925 3525 50  0001 C CNN "Digikey"
 F 6 "~" H 9925 3525 50  0001 C CNN "MPN"
 F 7 "~" H 9925 3525 50  0001 C CNN "LCSC Part#"
+F 8 "~" H 9925 3525 50  0001 C CNN "Manufacturer"
+F 9 "~" H 9925 3525 50  0001 C CNN "Mouser"
+F 10 "~" H 9925 3525 50  0001 C CNN "Tolerance"
+F 11 "~" H 9925 3525 50  0001 C CNN "Voltage"
 	1    9925 3525
 	-1   0    0    1   
 $EndComp
@@ -1802,6 +1850,9 @@ F 5 "DMG2305UX-13DICT-ND" H 3800 1250 50  0001 C CNN "Digikey"
 F 6 "DMG2305UX-13" H 3800 1250 50  0001 C CNN "MPN"
 F 7 "Diodes Inc" H 3800 1250 50  0001 C CNN "Manufacturer"
 F 8 "C144153" H 3800 1250 50  0001 C CNN "LCSC Part#"
+F 9 "~" H 3800 1250 50  0001 C CNN "Mouser"
+F 10 "~" H 3800 1250 50  0001 C CNN "Tolerance"
+F 11 "~" H 3800 1250 50  0001 C CNN "Voltage"
 	1    3800 1250
 	1    0    0    -1  
 $EndComp
@@ -1821,6 +1872,10 @@ F 4 "1" H 3550 950 50  0001 C CNN "DNP"
 F 5 "~" H 3550 950 50  0001 C CNN "Digikey"
 F 6 "~" H 3550 950 50  0001 C CNN "MPN"
 F 7 "~" H 3550 950 50  0001 C CNN "LCSC Part#"
+F 8 "~" H 3550 950 50  0001 C CNN "Manufacturer"
+F 9 "~" H 3550 950 50  0001 C CNN "Mouser"
+F 10 "~" H 3550 950 50  0001 C CNN "Tolerance"
+F 11 "~" H 3550 950 50  0001 C CNN "Voltage"
 	1    3550 950 
 	1    0    0    -1  
 $EndComp
@@ -1869,6 +1924,14 @@ F 0 "TP101" H 7183 6318 50  0000 L CNN
 F 1 "TestPoint" H 7183 6227 50  0000 L CNN
 F 2 "TestPoint:TestPoint_Bridge_Pitch2.54mm_Drill1.0mm" H 7325 6200 50  0001 C CNN
 F 3 "~" H 7325 6200 50  0001 C CNN
+F 4 "1" H 7125 6200 50  0001 C CNN "DNP"
+F 5 "~" H 7125 6200 50  0001 C CNN "Digikey"
+F 6 "~" H 7125 6200 50  0001 C CNN "LCSC Part#"
+F 7 "~" H 7125 6200 50  0001 C CNN "MPN"
+F 8 "~" H 7125 6200 50  0001 C CNN "Manufacturer"
+F 9 "~" H 7125 6200 50  0001 C CNN "Mouser"
+F 10 "~" H 7125 6200 50  0001 C CNN "Tolerance"
+F 11 "~" H 7125 6200 50  0001 C CNN "Voltage"
 	1    7125 6200
 	1    0    0    -1  
 $EndComp
@@ -1893,6 +1956,14 @@ F 0 "TP102" H 7708 6318 50  0000 L CNN
 F 1 "TestPoint" H 7708 6227 50  0000 L CNN
 F 2 "TestPoint:TestPoint_Bridge_Pitch2.54mm_Drill1.0mm" H 7850 6200 50  0001 C CNN
 F 3 "~" H 7850 6200 50  0001 C CNN
+F 4 "1" H 7650 6200 50  0001 C CNN "DNP"
+F 5 "~" H 7650 6200 50  0001 C CNN "Digikey"
+F 6 "~" H 7650 6200 50  0001 C CNN "LCSC Part#"
+F 7 "~" H 7650 6200 50  0001 C CNN "MPN"
+F 8 "~" H 7650 6200 50  0001 C CNN "Manufacturer"
+F 9 "~" H 7650 6200 50  0001 C CNN "Mouser"
+F 10 "~" H 7650 6200 50  0001 C CNN "Tolerance"
+F 11 "~" H 7650 6200 50  0001 C CNN "Voltage"
 	1    7650 6200
 	1    0    0    -1  
 $EndComp
@@ -1915,6 +1986,14 @@ F 0 "TP103" H 8208 6318 50  0000 L CNN
 F 1 "TestPoint" H 8208 6227 50  0000 L CNN
 F 2 "TestPoint:TestPoint_Bridge_Pitch2.54mm_Drill1.0mm" H 8350 6200 50  0001 C CNN
 F 3 "~" H 8350 6200 50  0001 C CNN
+F 4 "1" H 8150 6200 50  0001 C CNN "DNP"
+F 5 "~" H 8150 6200 50  0001 C CNN "Digikey"
+F 6 "~" H 8150 6200 50  0001 C CNN "LCSC Part#"
+F 7 "~" H 8150 6200 50  0001 C CNN "MPN"
+F 8 "~" H 8150 6200 50  0001 C CNN "Manufacturer"
+F 9 "~" H 8150 6200 50  0001 C CNN "Mouser"
+F 10 "~" H 8150 6200 50  0001 C CNN "Tolerance"
+F 11 "~" H 8150 6200 50  0001 C CNN "Voltage"
 	1    8150 6200
 	1    0    0    -1  
 $EndComp
@@ -1937,6 +2016,14 @@ F 0 "TP104" H 8708 6318 50  0000 L CNN
 F 1 "TestPoint" H 8708 6227 50  0000 L CNN
 F 2 "TestPoint:TestPoint_Bridge_Pitch2.54mm_Drill1.0mm" H 8850 6200 50  0001 C CNN
 F 3 "~" H 8850 6200 50  0001 C CNN
+F 4 "1" H 8650 6200 50  0001 C CNN "DNP"
+F 5 "~" H 8650 6200 50  0001 C CNN "Digikey"
+F 6 "~" H 8650 6200 50  0001 C CNN "LCSC Part#"
+F 7 "~" H 8650 6200 50  0001 C CNN "MPN"
+F 8 "~" H 8650 6200 50  0001 C CNN "Manufacturer"
+F 9 "~" H 8650 6200 50  0001 C CNN "Mouser"
+F 10 "~" H 8650 6200 50  0001 C CNN "Tolerance"
+F 11 "~" H 8650 6200 50  0001 C CNN "Voltage"
 	1    8650 6200
 	1    0    0    -1  
 $EndComp
@@ -1959,6 +2046,14 @@ F 0 "TP105" H 9208 6318 50  0000 L CNN
 F 1 "TestPoint" H 9208 6227 50  0000 L CNN
 F 2 "TestPoint:TestPoint_Bridge_Pitch2.54mm_Drill1.0mm" H 9350 6200 50  0001 C CNN
 F 3 "~" H 9350 6200 50  0001 C CNN
+F 4 "1" H 9150 6200 50  0001 C CNN "DNP"
+F 5 "~" H 9150 6200 50  0001 C CNN "Digikey"
+F 6 "~" H 9150 6200 50  0001 C CNN "LCSC Part#"
+F 7 "~" H 9150 6200 50  0001 C CNN "MPN"
+F 8 "~" H 9150 6200 50  0001 C CNN "Manufacturer"
+F 9 "~" H 9150 6200 50  0001 C CNN "Mouser"
+F 10 "~" H 9150 6200 50  0001 C CNN "Tolerance"
+F 11 "~" H 9150 6200 50  0001 C CNN "Voltage"
 	1    9150 6200
 	1    0    0    -1  
 $EndComp
@@ -1981,6 +2076,14 @@ F 0 "J108" H 10825 2275 50  0000 L CNN
 F 1 "Conn_01x09" H 10650 2175 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x09_P2.54mm_Vertical" H 10925 1650 50  0001 C CNN
 F 3 "~" H 10925 1650 50  0001 C CNN
+F 4 "1" H 10925 1650 50  0001 C CNN "DNP"
+F 5 "~" H 10925 1650 50  0001 C CNN "Digikey"
+F 6 "~" H 10925 1650 50  0001 C CNN "LCSC Part#"
+F 7 "~" H 10925 1650 50  0001 C CNN "MPN"
+F 8 "~" H 10925 1650 50  0001 C CNN "Manufacturer"
+F 9 "~" H 10925 1650 50  0001 C CNN "Mouser"
+F 10 "~" H 10925 1650 50  0001 C CNN "Tolerance"
+F 11 "~" H 10925 1650 50  0001 C CNN "Voltage"
 	1    10925 1650
 	1    0    0    -1  
 $EndComp
@@ -1992,6 +2095,14 @@ F 0 "J107" H 10075 2275 50  0000 L CNN
 F 1 "Conn_01x09" H 9900 2175 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x09_P2.54mm_Vertical" H 10175 1650 50  0001 C CNN
 F 3 "~" H 10175 1650 50  0001 C CNN
+F 4 "1" H 10175 1650 50  0001 C CNN "DNP"
+F 5 "~" H 10175 1650 50  0001 C CNN "Digikey"
+F 6 "~" H 10175 1650 50  0001 C CNN "LCSC Part#"
+F 7 "~" H 10175 1650 50  0001 C CNN "MPN"
+F 8 "~" H 10175 1650 50  0001 C CNN "Manufacturer"
+F 9 "~" H 10175 1650 50  0001 C CNN "Mouser"
+F 10 "~" H 10175 1650 50  0001 C CNN "Tolerance"
+F 11 "~" H 10175 1650 50  0001 C CNN "Voltage"
 	1    10175 1650
 	1    0    0    -1  
 $EndComp
