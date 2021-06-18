@@ -15,6 +15,13 @@ filters:
       - column: 'LCSC Part#'
         regex: '^C\d+'
 
+  - name: only_fitted_parts
+    comment: 'Only parts that are not DNF'
+    type: generic
+    include_only:
+      - column: 'DNP'
+        regex: '^0'
+
 variants:
   - name: rotated
     comment: 'Just a place holder for the rotation filter'
@@ -31,14 +38,13 @@ preflight:
 
 outputs:
   # For more information: https://github.com/INTI-CMNB/KiBoM
-  - name: 'generic Schematic PDF'
+  - name: 'generic_sch_pdf'
     comment: "Print the schematic as a PDF"
     type: pdf_sch_print
-    dir: pdfs
     options:
       output: '%f-schematic-%r.%x'
   
-  - name: 'generate gerbers'
+  - name: 'make_gerbers'
     comment: "Generate gerber files"
     type: gerber
     layers: 
@@ -74,17 +80,17 @@ outputs:
       use_gerber_x2_attributes: true
       use_gerber_net_attributes: false
 
-  - name: 'generate drills'
+  - name: 'make_drills'
     comment: "Generate drill files"
     type: excellon
     dir: gerbers
 
-  - name: 'ascii position'
+  - name: 'make_ascii_position'
     comment: "Generate XY position files in ASCII"
     type: position
     dir: gerbers
 
-  - name: 'generate PCB DXF'
+  - name: 'make_dxf'
     comment: "Generate 2D PCB CAD in DXF format"
     type: dxf
     layers:
@@ -104,29 +110,28 @@ outputs:
       exclude_edge_layer: false
       metric_units: true
 
-  - name: 'generate SVG'
+  - name: 'make_svg'
     comment: "Generate 2D PCB image in SVG format"
     type: pcbdraw
     options:
       output: '%f-pcb-%r.%x'
 
-  - name: 'generate PNG'
+  - name: 'make_png'
     comment: "Generate 2D PCB image in PNG format"
     type: pcbdraw
     options:
       output: '%f-pcb-%r.%x'
       format: png
 
-  - name: 'generate 3D model'
+  - name: 'make_step'
     comment: "Generate 3D PCB model in STEP format"
     type: step
     options:
       output: '%f-3d-%r.%x'
 
-  - name: 'generate PCB PDF'
+  - name: 'make_pcb_pdf'
     comment: "Generate 2D PCB CAD in PDF format"
     type: pdf_pcb_print
-    dir: pdfs
     layers:
       - F.Cu
       - In1.Cu
@@ -144,22 +149,78 @@ outputs:
       separated: true
       monochrome: true
 
-  - name: 'generate BoM in CSV'
-    comment: "Generate bill-of-material files"
-    type: kibom
-    dir: gerbers
+  - name: 'make_bom_csv'
+    comment: "Generate bill-of-material file as CSV"
+    type: bom
     options:
+      exclude_filter: 'only_fitted_parts'
+      group_fields:
+        - 'Part'
+        - 'Part Lib'
+        - 'Value'
+        - 'Voltage'
+        - 'Tolerance'
+        - 'Footprint'
+        - 'Footprint Lib'
+      columns:
+        - field: Manufacturer
+          name: Part Number
+          join: ['mpn']
+        - Footprint
+        - References
+        - Quantity per PCB
+        - field: Value
+          join: ['voltage', 'current', 'power', 'tolerance']
+        - Footprint
+        - field: 'LCSC Part#'
+          name: LCSC
+        - Digikey
+        - Mouser
       output: '%f-bom-%r.%x'
 
-  - name: 'generate BoM in HTML'
+  - name: 'make_bom_html'
+    comment: "Generate bill-of-material files as HTML"
+    type: bom
+    options:
+      format: HTML
+      exclude_filter: 'only_fitted_parts'
+      html:
+        datasheet_as_link: "Datasheet"
+        digikey_link: "Digikey"
+        title: "Neotron Pico Bill of Materials"
+      group_fields:
+        - 'Part'
+        - 'Part Lib'
+        - 'Value'
+        - 'Voltage'
+        - 'Tolerance'
+        - 'Footprint'
+        - 'Footprint Lib'
+      columns:
+        - Row
+        - field: Manufacturer
+          name: Part Number
+          join: ['mpn']
+        - References
+        - Quantity per PCB
+        - field: Value
+          join: ['voltage', 'current', 'power', 'tolerance']
+        - field: 'LCSC Part#'
+          name: LCSC
+        - Digikey
+        - Mouser
+        - Footprint
+      output: '%f-bom-%r.%x'
+
+  - name: 'make_ibom'
     comment: "Generate assembly HTML page"
     type: ibom
-    dir: ibom
     options:
       output: '%f-ibom-%r.%x'
+      extra_fields: "Voltage,Tolerance,Manufacturer,MPN"
 
-  - name: 'jlc position'
-    comment: "Pick and place file, JLC style"
+  - name: 'make_jlc_position'
+    comment: "Generate pick and place file, JLC style"
     type: position
     options:
       variant: rotated
@@ -182,10 +243,18 @@ outputs:
         - id: Side
           name: Layer
 
-  - name: 'jlc bom'
-    comment: "BoM for JLC"
+  - name: 'make_jlc_bom'
+    comment: "Generate BoM, JLC style"
     type: bom
     options:
+      group_fields:
+        - 'Part'
+        - 'Part Lib'
+        - 'Value'
+        - 'Voltage'
+        - 'Tolerance'
+        - 'Footprint'
+        - 'Footprint Lib'
       output: '%f-bom-jlc-%r.%x'
       exclude_filter: 'only_jlc_parts'
       ref_separator: ','
