@@ -362,9 +362,12 @@ Please note that the models provided in the [Kicad/Models](./Kicad/Models) direc
 
 Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in the work by you, as defined in the Apache-2.0 license, shall be licensed as above, without any additional terms or conditions.
 
-## Changelog
+## Articles and Reviews
 
-The Change Log for the project can be found in [./CHANGELOG.md](./CHANGELOG.md).
+* [Tom's Hardware](https://www.tomshardware.com/uk/news/raspberry-pi-pico-neotron-motherboard)
+* [Hackaday](https://hackaday.com/2021/06/22/pi-pico-powered-atx-motherboard/)
+* [Hackster.io](https://www.hackster.io/news/jonathan-pallant-s-neotron-pico-turns-the-raspberry-pi-pico-into-a-full-size-atx-pc-motherboard-fff86e2a1a96)
+* [Hacker News](https://news.ycombinator.com/item?id=27627631)
 
 ## Datasheets and References
 
