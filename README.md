@@ -365,9 +365,11 @@ Unless you explicitly state otherwise, any contribution intentionally submitted 
 ## Articles and Reviews
 
 * [Tom's Hardware](https://www.tomshardware.com/uk/news/raspberry-pi-pico-neotron-motherboard)
+* [Tom's Hardware #2](https://www.tomshardware.com/uk/news/raspberry-pi-pico-motherboard-update-neotron-pico)
 * [Hackaday](https://hackaday.com/2021/06/22/pi-pico-powered-atx-motherboard/)
 * [Hackster.io](https://www.hackster.io/news/jonathan-pallant-s-neotron-pico-turns-the-raspberry-pi-pico-into-a-full-size-atx-pc-motherboard-fff86e2a1a96)
 * [Hacker News](https://news.ycombinator.com/item?id=27627631)
+* [Adafruit Blog](https://blog.adafruit.com/2021/06/23/a-raspberry-pi-pico-based-computer-motherboard/)
 
 ## Datasheets and References
 
