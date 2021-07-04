@@ -517,167 +517,151 @@ Wire Wire Line
 Wire Wire Line
 	6975 3525 7175 3525
 Connection ~ 7175 3525
-Text HLabel 1325 5900 0    50   Input ~ 0
+Text HLabel 1300 5925 0    50   Input ~ 0
 DC_ON
 Text Notes 6575 2025 0    50   Italic 0
 DC-DC Module is on when\nCtrl > 4.5V or open-circuit.\nIt is off when < 0.8V.
 Wire Wire Line
-	2575 6300 2575 6350
+	3000 6325 3000 6375
 Wire Wire Line
 	4725 2625 4725 2700
 Connection ~ 5425 3875
 Wire Wire Line
-	2575 5750 2575 5925
+	3000 5775 3000 5925
 Text Label 4375 2275 2    50   ~ 0
 ~SHDN
 $Comp
 L Transistor_BJT:BC546 Q801
 U 1 1 607850D9
-P 1925 5900
-F 0 "Q801" H 2116 5946 50  0000 L CNN
-F 1 "BC546" H 2116 5855 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-92_Inline" H 2125 5825 50  0001 L CIN
-F 3 "https://www.onsemi.com/pub/Collateral/BC550-D.pdf" H 1925 5900 50  0001 L CNN
-F 4 "BC546CTACT-ND" H 1925 5900 50  0001 C CNN "Digikey"
-F 5 "BC546CTA" H 1925 5900 50  0001 C CNN "MPN"
-F 6 "ON Semiconductor" H 1925 5900 50  0001 C CNN "Manufacturer"
-F 7 "0" H 1925 5900 50  0001 C CNN "DNP"
-F 8 "~" H 1925 5900 50  0001 C CNN "LCSC Part#"
-F 9 "512-BC546CTA" H 1925 5900 50  0001 C CNN "Mouser"
-F 10 "~" H 1925 5900 50  0001 C CNN "Tolerance"
-F 11 "~" H 1925 5900 50  0001 C CNN "Voltage"
-	1    1925 5900
+P 1900 5925
+F 0 "Q801" H 2091 5971 50  0000 L CNN
+F 1 "BC546" H 2091 5880 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 2100 5850 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/BC550-D.pdf" H 1900 5925 50  0001 L CNN
+F 4 "BC546CTACT-ND" H 1900 5925 50  0001 C CNN "Digikey"
+F 5 "BC546CTA" H 1900 5925 50  0001 C CNN "MPN"
+F 6 "ON Semiconductor" H 1900 5925 50  0001 C CNN "Manufacturer"
+F 7 "0" H 1900 5925 50  0001 C CNN "DNP"
+F 8 "~" H 1900 5925 50  0001 C CNN "LCSC Part#"
+F 9 "512-BC546CTA" H 1900 5925 50  0001 C CNN "Mouser"
+F 10 "~" H 1900 5925 50  0001 C CNN "Tolerance"
+F 11 "~" H 1900 5925 50  0001 C CNN "Voltage"
+	1    1900 5925
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0803
 U 1 1 60786FC2
-P 2575 6350
-F 0 "#PWR0803" H 2575 6100 50  0001 C CNN
-F 1 "GND" H 2580 6177 50  0000 C CNN
-F 2 "" H 2575 6350 50  0001 C CNN
-F 3 "" H 2575 6350 50  0001 C CNN
-	1    2575 6350
+P 3000 6375
+F 0 "#PWR0803" H 3000 6125 50  0001 C CNN
+F 1 "GND" H 3005 6202 50  0000 C CNN
+F 2 "" H 3000 6375 50  0001 C CNN
+F 3 "" H 3000 6375 50  0001 C CNN
+	1    3000 6375
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2575 5925 2950 5925
-Connection ~ 2575 5925
+	3000 5925 3375 5925
+Connection ~ 3000 5925
 Wire Wire Line
-	2575 5925 2575 6000
-Text Label 2725 5925 0    50   ~ 0
+	3000 5925 3000 6025
+Text Label 3150 5925 0    50   ~ 0
 ~SHDN
 Wire Wire Line
-	1325 5900 1400 5900
+	1300 5925 1375 5925
 Wire Wire Line
-	1700 5900 1725 5900
+	1675 5925 1700 5925
 Text Notes 1700 3550 0    100  Italic 0
 DC Input rating:\n8V to 24V\n12V Nominal\nMax 2A
 $Comp
 L Transistor_BJT:BC556 Q802
 U 1 1 60798177
-P 2475 5550
-F 0 "Q802" H 2666 5596 50  0000 L CNN
-F 1 "BC556" H 2666 5505 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-92_Inline" H 2675 5475 50  0001 L CIN
-F 3 "https://www.onsemi.com/pub/Collateral/BC556BTA-D.pdf" H 2475 5550 50  0001 L CNN
-F 4 "BC556BTF" H 2475 5550 50  0001 C CNN "MPN"
-F 5 "BC556BTFCT-ND" H 2475 5550 50  0001 C CNN "Digikey"
-F 6 "ON Semiconductor" H 2475 5550 50  0001 C CNN "Manufacturer"
-F 7 "0" H 2475 5550 50  0001 C CNN "DNP"
-F 8 "~" H 2475 5550 50  0001 C CNN "LCSC Part#"
-F 9 "512-BC556BTF" H 2475 5550 50  0001 C CNN "Mouser"
-F 10 "~" H 2475 5550 50  0001 C CNN "Tolerance"
-F 11 "~" H 2475 5550 50  0001 C CNN "Voltage"
-	1    2475 5550
+P 2900 5575
+F 0 "Q802" H 3091 5621 50  0000 L CNN
+F 1 "BC556" H 3091 5530 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 3100 5500 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/BC556BTA-D.pdf" H 2900 5575 50  0001 L CNN
+F 4 "BC556BTF" H 2900 5575 50  0001 C CNN "MPN"
+F 5 "BC556BTFCT-ND" H 2900 5575 50  0001 C CNN "Digikey"
+F 6 "ON Semiconductor" H 2900 5575 50  0001 C CNN "Manufacturer"
+F 7 "0" H 2900 5575 50  0001 C CNN "DNP"
+F 8 "~" H 2900 5575 50  0001 C CNN "LCSC Part#"
+F 9 "512-BC556BTF" H 2900 5575 50  0001 C CNN "Mouser"
+F 10 "~" H 2900 5575 50  0001 C CNN "Tolerance"
+F 11 "~" H 2900 5575 50  0001 C CNN "Voltage"
+	1    2900 5575
 	1    0    0    1   
 $EndComp
-Wire Wire Line
-	2275 5550 2025 5550
-Wire Wire Line
-	2025 5550 2025 5700
 $Comp
 L power:GND #PWR0801
 U 1 1 6079CA8F
-P 2025 6350
-F 0 "#PWR0801" H 2025 6100 50  0001 C CNN
-F 1 "GND" H 2030 6177 50  0000 C CNN
-F 2 "" H 2025 6350 50  0001 C CNN
-F 3 "" H 2025 6350 50  0001 C CNN
-	1    2025 6350
+P 2000 6375
+F 0 "#PWR0801" H 2000 6125 50  0001 C CNN
+F 1 "GND" H 2005 6202 50  0000 C CNN
+F 2 "" H 2000 6375 50  0001 C CNN
+F 3 "" H 2000 6375 50  0001 C CNN
+	1    2000 6375
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2025 6100 2025 6350
-Wire Wire Line
-	2575 5350 2575 5050
-Wire Wire Line
-	2575 5050 2025 5050
-Wire Wire Line
-	2025 5050 2025 5150
-Wire Wire Line
-	2025 5450 2025 5550
-Connection ~ 2575 5050
-Wire Wire Line
-	2575 5050 2575 4975
-Connection ~ 2025 5550
+	2000 6125 2000 6375
 $Comp
 L Device:R R801
 U 1 1 607A5326
-P 1550 5900
-F 0 "R801" V 1650 5900 50  0000 C CNN
-F 1 "10k" V 1450 5900 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1480 5900 50  0001 C CNN
-F 3 "~" H 1550 5900 50  0001 C CNN
-F 4 "0" H 1550 5900 50  0001 C CNN "DNP"
-F 5 "~" H 1550 5900 50  0001 C CNN "Digikey"
-F 6 "CPL-RES-0805-10K-0.125W" H 1550 5900 50  0001 C CNN "MPN"
-F 7 "CPL" H 1550 5900 50  0001 C CNN "Manufacturer"
-F 8 "C17414" H 1550 5900 50  0001 C CNN "LCSC Part#"
-F 9 "1%" H 1550 5900 50  0001 C CNN "Tolerance"
-F 10 "~" H 1550 5900 50  0001 C CNN "Mouser"
-F 11 "~" H 1550 5900 50  0001 C CNN "Voltage"
-	1    1550 5900
+P 1525 5925
+F 0 "R801" V 1625 5925 50  0000 C CNN
+F 1 "10k" V 1425 5925 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1455 5925 50  0001 C CNN
+F 3 "~" H 1525 5925 50  0001 C CNN
+F 4 "0" H 1525 5925 50  0001 C CNN "DNP"
+F 5 "~" H 1525 5925 50  0001 C CNN "Digikey"
+F 6 "CPL-RES-0805-10K-0.125W" H 1525 5925 50  0001 C CNN "MPN"
+F 7 "CPL" H 1525 5925 50  0001 C CNN "Manufacturer"
+F 8 "C17414" H 1525 5925 50  0001 C CNN "LCSC Part#"
+F 9 "1%" H 1525 5925 50  0001 C CNN "Tolerance"
+F 10 "~" H 1525 5925 50  0001 C CNN "Mouser"
+F 11 "~" H 1525 5925 50  0001 C CNN "Voltage"
+	1    1525 5925
 	0    1    -1   0   
 $EndComp
-Text Notes 2800 6500 0    50   Italic 0
-~SHDN~ must be low at power-up\nto avoid DC-DC enabling temporarily.\n\n~SHDN~ raised to +VDC when DC_ON\nis high enough to switch on Q801\n(above about 0.7V). 3.3V is plenty.
+Text Notes 3625 6675 0    50   Italic 0
+~SHDN~ must be low at power-up to avoid\nDC-DC enabling temporarily. To do this\nQ801 is an open-collector switch, driving\na PNP (high-side output) inverter.\n\nTo activate PSU, ~SHDN~ must be raised to\nbetween 4.5V and 14V. This limits our input\nvoltage to 14V maximum, as we have no\nother suitable voltage source available (the\nmicroLDO is 3.3V).\n\nRaising DC_ON to above 0.7V will switch on\nQ801. This will allow current to flow through\nthe base of Q802 to GND, switching on current\nthrough Q802, which will raise ~SHDN~ to\na suitable level.\n\nThe CTRL pin on the DCDC PSU has high\ninput impedance so no current limiting\nresistor is required.
 $Comp
 L Device:R R802
 U 1 1 607A18C2
-P 2025 5300
-F 0 "R802" H 2075 5350 50  0000 L CNN
-F 1 "10k" H 2075 5275 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1955 5300 50  0001 C CNN
-F 3 "~" H 2025 5300 50  0001 C CNN
-F 4 "0" H 2025 5300 50  0001 C CNN "DNP"
-F 5 "~" H 2025 5300 50  0001 C CNN "Digikey"
-F 6 "CPL-RES-0805-10K-0.125W" H 2025 5300 50  0001 C CNN "MPN"
-F 7 "CPL" H 2025 5300 50  0001 C CNN "Manufacturer"
-F 8 "C17414" H 2025 5300 50  0001 C CNN "LCSC Part#"
-F 9 "1%" H 2025 5300 50  0001 C CNN "Tolerance"
-F 10 "~" H 2025 5300 50  0001 C CNN "Mouser"
-F 11 "~" H 2025 5300 50  0001 C CNN "Voltage"
-	1    2025 5300
-	-1   0    0    -1  
+P 2375 5575
+F 0 "R802" V 2525 5475 50  0000 L CNN
+F 1 "10k" V 2450 5500 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 2305 5575 50  0001 C CNN
+F 3 "~" H 2375 5575 50  0001 C CNN
+F 4 "0" H 2375 5575 50  0001 C CNN "DNP"
+F 5 "~" H 2375 5575 50  0001 C CNN "Digikey"
+F 6 "CPL-RES-0805-10K-0.125W" H 2375 5575 50  0001 C CNN "MPN"
+F 7 "CPL" H 2375 5575 50  0001 C CNN "Manufacturer"
+F 8 "C17414" H 2375 5575 50  0001 C CNN "LCSC Part#"
+F 9 "1%" H 2375 5575 50  0001 C CNN "Tolerance"
+F 10 "~" H 2375 5575 50  0001 C CNN "Mouser"
+F 11 "~" H 2375 5575 50  0001 C CNN "Voltage"
+	1    2375 5575
+	0    1    -1   0   
 $EndComp
 $Comp
 L Device:R R803
 U 1 1 606E2A14
-P 2575 6150
-F 0 "R803" H 2625 6200 50  0000 L CNN
-F 1 "10k" H 2625 6100 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 2505 6150 50  0001 C CNN
-F 3 "~" H 2575 6150 50  0001 C CNN
-F 4 "0" H 2575 6150 50  0001 C CNN "DNP"
-F 5 "~" H 2575 6150 50  0001 C CNN "Digikey"
-F 6 "CPL-RES-0805-10K-0.125W" H 2575 6150 50  0001 C CNN "MPN"
-F 7 "CPL" H 2575 6150 50  0001 C CNN "Manufacturer"
-F 8 "C17414" H 2575 6150 50  0001 C CNN "LCSC Part#"
-F 9 "1%" H 2575 6150 50  0001 C CNN "Tolerance"
-F 10 "~" H 2575 6150 50  0001 C CNN "Mouser"
-F 11 "~" H 2575 6150 50  0001 C CNN "Voltage"
-	1    2575 6150
+P 3000 6175
+F 0 "R803" H 3050 6225 50  0000 L CNN
+F 1 "10k" H 3050 6125 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 2930 6175 50  0001 C CNN
+F 3 "~" H 3000 6175 50  0001 C CNN
+F 4 "0" H 3000 6175 50  0001 C CNN "DNP"
+F 5 "~" H 3000 6175 50  0001 C CNN "Digikey"
+F 6 "CPL-RES-0805-10K-0.125W" H 3000 6175 50  0001 C CNN "MPN"
+F 7 "CPL" H 3000 6175 50  0001 C CNN "Manufacturer"
+F 8 "C17414" H 3000 6175 50  0001 C CNN "LCSC Part#"
+F 9 "1%" H 3000 6175 50  0001 C CNN "Tolerance"
+F 10 "~" H 3000 6175 50  0001 C CNN "Mouser"
+F 11 "~" H 3000 6175 50  0001 C CNN "Voltage"
+	1    3000 6175
 	-1   0    0    -1  
 $EndComp
 $Comp
@@ -699,12 +683,12 @@ Wire Wire Line
 $Comp
 L power:VDC #PWR0802
 U 1 1 606FDFCB
-P 2575 4975
-F 0 "#PWR0802" H 2575 4875 50  0001 C CNN
-F 1 "VDC" H 2590 5148 50  0000 C CNN
-F 2 "" H 2575 4975 50  0001 C CNN
-F 3 "" H 2575 4975 50  0001 C CNN
-	1    2575 4975
+P 3000 5225
+F 0 "#PWR0802" H 3000 5125 50  0001 C CNN
+F 1 "VDC" H 3015 5398 50  0000 C CNN
+F 2 "" H 3000 5225 50  0001 C CNN
+F 3 "" H 3000 5225 50  0001 C CNN
+	1    3000 5225
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -760,4 +744,12 @@ Wire Wire Line
 Connection ~ 5850 2125
 Wire Wire Line
 	5850 2125 6175 2125
+Wire Wire Line
+	3000 5225 3000 5375
+Wire Wire Line
+	2700 5575 2525 5575
+Wire Wire Line
+	2000 5575 2000 5725
+Wire Wire Line
+	2225 5575 2000 5575
 $EndSCHEMATC
