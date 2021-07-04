@@ -56,34 +56,34 @@ The main processor module is the Raspberry Pi Pico, which features:
 
 The limited I/O on the Pico (we are using half the available pins just for the video output) is supplemented using a Microchip MCP23S17 SPI to GPIO expander, and an octal buffer. See the [I/O Expanders](#io-expanders) section for more details.
 
-| Pin  | Name | Signal         | Function                                           |
-| :--- | :--- | :------------- | :------------------------------------------------- |
-| 01   | GP0  | VGA_HSYNC      | VGA Horizontal Sync (31.5 kHz)                     |
-| 02   | GP1  | VGA_VSYNC      | VGA Vertical Sync (60 Hz)                          |
-| 04   | GP2  | VGA_RED0       | Digital VGA signal, Red channel LSB                |
-| 05   | GP3  | VGA_RED1       | Digital VGA signal, Red channel                    |
-| 06   | GP4  | VGA_RED2       | Digital VGA signal, Red channel                    |
-| 07   | GP5  | VGA_RED3       | Digital VGA signal, Red channel MSB                |
-| 09   | GP6  | VGA_GREEN0     | Digital VGA signal, Green channel LSB              |
-| 10   | GP7  | VGA_GREEN1     | Digital VGA signal, Green channel                  |
-| 11   | GP8  | VGA_GREEN2     | Digital VGA signal, Green channel                  |
-| 12   | GP9  | VGA_GREEN3     | Digital VGA signal, Green channel MSB              |
-| 14   | GP10 | VGA_BLUE0      | Digital VGA signal, Blue channel LSB               |
-| 15   | GP11 | VGA_BLUE1      | Digital VGA signal, Blue channel                   |
-| 16   | GP12 | VGA_BLUE2      | Digital VGA signal, Blue channel                   |
-| 17   | GP13 | VGA_BLUE3      | Digital VGA signal, Blue channel MSB               |
-| 19   | GP14 | I2C_SDA        | I²C Data                                           |
-| 20   | GP15 | I2C_SCL        | I²C Clock                                          |
-| 21   | GP16 | SPI_CIPO       | SPI Data In                                        |
-| 22   | GP17 | SPI_CS_nIOCS   | Low selects MCP23S17, High selects Expansion Slots |
-| 24   | GP18 | SPI_CLK        | SPI Clock                                          |
-| 25   | GP19 | SPI_COPI       | SPI Data Out                                       |
-| 26   | GP20 | nIRQn          | Interrupt Request Input from MCP23S17              |
-| 27   | GP21 | nOUTPUT_EN     | Enable buffered CS outputs from MCP23S17           |
-| 29   | GP22 | I2S_DAC_DATA   | Digital Audio Output                               |
-| 31   | GP26 | I2S_ADC_DATA   | Digital Audio Input                                |
-| 32   | GP27 | I2S_LR_CLOCK   | Digital Audio Sync (96kHz)                         |
-| 34   | GP28 | I2S_BIT_CLOCK  | Digital Audio Bit Clock (1.536MHz)                 |
+| Pin  | Name | Signal        | Function                                           |
+| :--- | :--- | :------------ | :------------------------------------------------- |
+| 01   | GP0  | VGA_HSYNC     | VGA Horizontal Sync (31.5 kHz)                     |
+| 02   | GP1  | VGA_VSYNC     | VGA Vertical Sync (60 Hz)                          |
+| 04   | GP2  | VGA_RED0      | Digital VGA signal, Red channel LSB                |
+| 05   | GP3  | VGA_RED1      | Digital VGA signal, Red channel                    |
+| 06   | GP4  | VGA_RED2      | Digital VGA signal, Red channel                    |
+| 07   | GP5  | VGA_RED3      | Digital VGA signal, Red channel MSB                |
+| 09   | GP6  | VGA_GREEN0    | Digital VGA signal, Green channel LSB              |
+| 10   | GP7  | VGA_GREEN1    | Digital VGA signal, Green channel                  |
+| 11   | GP8  | VGA_GREEN2    | Digital VGA signal, Green channel                  |
+| 12   | GP9  | VGA_GREEN3    | Digital VGA signal, Green channel MSB              |
+| 14   | GP10 | VGA_BLUE0     | Digital VGA signal, Blue channel LSB               |
+| 15   | GP11 | VGA_BLUE1     | Digital VGA signal, Blue channel                   |
+| 16   | GP12 | VGA_BLUE2     | Digital VGA signal, Blue channel                   |
+| 17   | GP13 | VGA_BLUE3     | Digital VGA signal, Blue channel MSB               |
+| 19   | GP14 | I2C_SDA       | I²C Data                                           |
+| 20   | GP15 | I2C_SCL       | I²C Clock                                          |
+| 21   | GP16 | SPI_CIPO      | SPI Data In                                        |
+| 22   | GP17 | SPI_CS_nIOCS  | Low selects MCP23S17, High selects Expansion Slots |
+| 24   | GP18 | SPI_CLK       | SPI Clock                                          |
+| 25   | GP19 | SPI_COPI      | SPI Data Out                                       |
+| 26   | GP20 | nIRQn         | Interrupt Request Input from MCP23S17              |
+| 27   | GP21 | nOUTPUT_EN    | Enable buffered CS outputs from MCP23S17           |
+| 29   | GP22 | I2S_DAC_DATA  | Digital Audio Output                               |
+| 31   | GP26 | I2S_ADC_DATA  | Digital Audio Input                                |
+| 32   | GP27 | I2S_LR_CLOCK  | Digital Audio Sync (96kHz)                         |
+| 34   | GP28 | I2S_BIT_CLOCK | Digital Audio Bit Clock (1.536MHz)                 |
 
 ### Super VGA output
 
@@ -138,33 +138,33 @@ Power-on Reset sequencing, soft shutdown, voltage monitoring and PS/2 interfacin
 * SPI interface (with dedicated IRQ line) with main CPU
 * Secondary I²C bus which can be controlled over SPI
 
-| Pin  | Name | Signal     | Function                                     |
-| :--- | :--- | :--------- | :------------------------------------------- |
-| 02   | PF0  | BUTTON_nPWR| Power Button Input (active low)              |
-| 03   | PF1  | HOST_nRST  | Reset Output to reset the rest of the system |
-| 06   | PA0  | MON_3V3    | 3.3V rail monitor Input (1.65V nominal)      |
-| 07   | PA1  | MON_5V     | 5.0V rail monitor Input (1.65V nominal)      |
-| 08   | PA2  | LED0       | PWM output for first Status LED              |
-| 09   | PA3  | LED1       | PWM output for second Status LED             |
-| 10   | PA4  | SPI1_nCS   | SPI Chip Select Input (active low)           |
-| 11   | PA5  | SPI1_SCK   | SPI Clock Input                              |
-| 12   | PA6  | SPI1_CIPO  | SPI Data Output                              |
-| 13   | PA7  | SPI1_COPI  | SPI Data Input                               |
-| 14   | PB0  | BUTTON_nRST| Reset Button Input (active low)              |
-| 15   | PB1  | DC_ON      | PSU Enable Output                            |
-| 18   | PA8  | IRQ_nHOST  | Interrupt Output to the Host (active low)    |
-| 19   | PA9  | I2C1_SCL   | I²C Clock                                    |
-| 20   | PA10 | I2C1_SDA   | I²C Data                                     |
-| 21   | PA11 | USART1_CTS | UART Clear-to-Send Output                    |
-| 22   | PA12 | USART1_RTS | UART Ready-to-Receive Input                  |
-| 23   | PA13 | SWDIO      | SWD Progamming Data Input                    |
-| 24   | PA14 | SWCLK      | SWD Programming Clock Input                  |
-| 25   | PA15 | PS2_CLK0   | Keyboard Clock Input                         |
-| 26   | PB3  | PS2_CLK1   | Mouse Clock Input                            |
-| 27   | PB4  | PS2_DAT0   | Keyboard Data Input                          |
-| 28   | PB5  | PS2_DAT1   | Mouse Data Input                             |
-| 29   | PB6  | USART1_TX  | UART Transmit Output                         |
-| 30   | PB7  | USART1_RX  | UART Receive Input                           |
+| Pin  | Name | Signal      | Function                                  |
+| :--- | :--- | :---------- | :---------------------------------------- |
+| 02   | PF0  | BUTTON_nPWR | Power Button Input (active low)           |
+| 03   | PF1  | BUTTON_nRST | Reset Button Input (active low)           |
+| 06   | PA0  | MON_3V3     | 3.3V rail monitor Input (1.65V nominal)   |
+| 07   | PA1  | MON_5V      | 5.0V rail monitor Input (1.65V nominal)   |
+| 08   | PA2  | SYS_nRESET  | System Reset Output (active low)          |
+| 09   | PA3  | DC_ON       | Enable 5.0V PSU Output (active high)      |
+| 10   | PA4  | SPI1_nCS    | SPI Chip Select Input (active low)        |
+| 11   | PA5  | SPI1_SCK    | SPI Clock Input                           |
+| 12   | PA6  | SPI1_CIPO   | SPI Data Output                           |
+| 13   | PA7  | SPI1_COPI   | SPI Data Input                            |
+| 14   | PB0  | LED0        | PWM output for first Status LED           |
+| 15   | PB1  | LED1        | PWM output for second Status LED          |
+| 18   | PA8  | IRQ_nHOST   | Interrupt Output to the Host (active low) |
+| 19   | PA9  | I2C1_SCL    | I²C Clock                                 |
+| 20   | PA10 | I2C1_SDA    | I²C Data                                  |
+| 21   | PA11 | USART1_CTS  | UART Clear-to-Send Output                 |
+| 22   | PA12 | USART1_RTS  | UART Ready-to-Receive Input               |
+| 23   | PA13 | SWDIO       | SWD Progamming Data Input                 |
+| 24   | PA14 | SWCLK       | SWD Programming Clock Input               |
+| 25   | PA15 | PS2_CLK0    | Keyboard Clock Input                      |
+| 26   | PB3  | PS2_CLK1    | Mouse Clock Input                         |
+| 27   | PB4  | PS2_DAT0    | Keyboard Data Input                       |
+| 28   | PB5  | PS2_DAT1    | Mouse Data Input                          |
+| 29   | PB6  | USART1_TX   | UART Transmit Output                      |
+| 30   | PB7  | USART1_RX   | UART Receive Input                        |
 
 Note that in the above table, the UART signals are wired as _Data Terminal Equipment (DTE)_.
 
