@@ -2,7 +2,9 @@
 
 # Unreleased Changes
 
-* None
+* Fixed https://github.com/Neotron-Compute/Neotron-Pico/issues/43
+* Re-arranged Q801 and Q802 on PCB layout, but labelled them as PNP and NPN to avoid
+  confusion.
 
 # [Version v0.5.2](https://github.com/Neotron-Compute/Neotron-Pico/releases/tag/v0.5.2)
 
