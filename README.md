@@ -187,11 +187,11 @@ Note that not all STM32 pins are 5V-tolerant, and the PS/2 protocol is a 5V open
 
 ### Power Supply
 
-* Unregulated 12V (8V to 28V) input fused with a PTC at 2A
+* 12V (8V to 14V) input fused with a PTC at 2A
 * 3A 5.0V main regulator (DC-DC switch-mode regulator module)
   * Morsun K7805-3AR3
-* 30mA 3.3V stand-by regulator (a micropower linear regulator)
-* 1A 3.3V regulator (a high-power 1117 type linear regulator)
+* 30mA 3.3V stand-by regulator (a micropower linear regulator running from 12V input)
+* 1A 3.3V regulator (a high-power 1117 type linear regulator running from 5.0V)
 * Controlled by the Board Management Controller
 
 ### I/O Expanders
