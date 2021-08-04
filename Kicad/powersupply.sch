@@ -20,10 +20,10 @@ Most of our board runs on 3.3V. We expect\nto draw around 100 mA from this 1A li
 Text Notes 4425 1550 0    50   Italic 0
 Some of our board (e.g. USB) runs on 5V. We also need\nto supply 2A (4x500mA) to downstream USB devices.\nWe use a big 3A/5V DC-DC to supply this.
 $Comp
-L Regulator_Linear:AMS1117CD-3.3 U803
+L Regulator_Linear:AMS1117CD-3.3 U703
 U 1 1 5FECE573
 P 7525 3525
-F 0 "U803" H 7525 3767 50  0000 C CNN
+F 0 "U703" H 7525 3767 50  0000 C CNN
 F 1 "TLV1117 3.3V 1A" H 7525 3676 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 7525 3725 50  0001 C CNN
 F 3 "http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftlv1117lv" H 7625 3275 50  0001 C CNN
@@ -39,10 +39,10 @@ F 11 "~" H 7525 3525 50  0001 C CNN "Voltage"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C807
+L Device:C C708
 U 1 1 606E29CB
 P 7875 3775
-F 0 "C807" H 7993 3821 50  0000 L CNN
+F 0 "C708" H 7993 3821 50  0000 L CNN
 F 1 "1uF" H 7993 3730 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 7913 3625 50  0001 C CNN
 F 3 "~" H 7875 3775 50  0001 C CNN
@@ -58,10 +58,10 @@ F 11 "~" H 7875 3775 50  0001 C CNN "Mouser"
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0816
+L power:GND #PWR0717
 U 1 1 606E29CC
 P 7875 4025
-F 0 "#PWR0816" H 7875 3775 50  0001 C CNN
+F 0 "#PWR0717" H 7875 3775 50  0001 C CNN
 F 1 "GND" H 7880 3852 50  0000 C CNN
 F 2 "" H 7875 4025 50  0001 C CNN
 F 3 "" H 7875 4025 50  0001 C CNN
@@ -69,10 +69,10 @@ F 3 "" H 7875 4025 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0815
+L power:GND #PWR0716
 U 1 1 606E29CD
 P 7525 4025
-F 0 "#PWR0815" H 7525 3775 50  0001 C CNN
+F 0 "#PWR0716" H 7525 3775 50  0001 C CNN
 F 1 "GND" H 7530 3852 50  0000 C CNN
 F 2 "" H 7525 4025 50  0001 C CNN
 F 3 "" H 7525 4025 50  0001 C CNN
@@ -80,10 +80,10 @@ F 3 "" H 7525 4025 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:Polyfuse F801
+L Device:Polyfuse F701
 U 1 1 606E29D1
 P 2975 2125
-F 0 "F801" V 2750 2125 50  0000 C CNN
+F 0 "F701" V 2750 2125 50  0000 C CNN
 F 1 "32V 2A PTC" V 2841 2125 50  0000 C CNN
 F 2 "Fuse:Fuse_BelFuse_0ZRE0016FF_L9.9mm_W3.8mm" H 3025 1925 50  0001 L CNN
 F 3 "https://belfuse.com/resources/datasheets/circuitprotection/ds-cp-0zrs-series.pdf" H 2975 2125 50  0001 C CNN
@@ -99,10 +99,10 @@ F 11 "~" H 2975 2125 50  0001 C CNN "Voltage"
 	0    1    1    0   
 $EndComp
 $Comp
-L power:GND #PWR0804
+L power:GND #PWR0702
 U 1 1 5FED7E13
 P 2775 2625
-F 0 "#PWR0804" H 2775 2375 50  0001 C CNN
+F 0 "#PWR0702" H 2775 2375 50  0001 C CNN
 F 1 "GND" H 2780 2452 50  0000 C CNN
 F 2 "" H 2775 2625 50  0001 C CNN
 F 3 "" H 2775 2625 50  0001 C CNN
@@ -110,10 +110,10 @@ F 3 "" H 2775 2625 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Regulator_Linear:MAX1615xUK U802
+L Regulator_Linear:MAX1615xUK U702
 U 1 1 606E29D4
 P 4725 3975
-F 0 "U802" H 4725 4342 50  0000 C CNN
+F 0 "U702" H 4725 4342 50  0000 C CNN
 F 1 "MAX1615" H 4725 4251 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-5" H 4725 3725 50  0001 C CNN
 F 3 "https://datasheets.maximintegrated.com/en/ds/MAX1615-MAX1616.pdf" H 4725 3725 50  0001 C CNN
@@ -133,10 +133,10 @@ Text Notes 4400 1800 0    50   Italic 0
 Text Notes 4425 3550 0    50   Italic 0
 28V max input\n30mA max output
 $Comp
-L power:GND #PWR0811
+L power:GND #PWR0711
 U 1 1 606E29D6
 P 5425 4650
-F 0 "#PWR0811" H 5425 4400 50  0001 C CNN
+F 0 "#PWR0711" H 5425 4400 50  0001 C CNN
 F 1 "GND" H 5430 4477 50  0000 C CNN
 F 2 "" H 5425 4650 50  0001 C CNN
 F 3 "" H 5425 4650 50  0001 C CNN
@@ -144,10 +144,10 @@ F 3 "" H 5425 4650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C803
+L Device:C C703
 U 1 1 5FEEC6C5
 P 4000 4275
-F 0 "C803" H 4118 4321 50  0000 L CNN
+F 0 "C703" H 4118 4321 50  0000 L CNN
 F 1 "100nF" H 4118 4230 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 4038 4125 50  0001 C CNN
 F 3 "~" H 4000 4275 50  0001 C CNN
@@ -166,10 +166,10 @@ Connection ~ 4725 4525
 Wire Wire Line
 	5425 4650 5425 4525
 $Comp
-L power:+5V #PWR0812
+L power:+5V #PWR0713
 U 1 1 606E29D8
 P 6175 2025
-F 0 "#PWR0812" H 6175 1875 50  0001 C CNN
+F 0 "#PWR0713" H 6175 1875 50  0001 C CNN
 F 1 "+5V" H 6190 2198 50  0000 C CNN
 F 2 "" H 6175 2025 50  0001 C CNN
 F 3 "" H 6175 2025 50  0001 C CNN
@@ -177,10 +177,10 @@ F 3 "" H 6175 2025 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0814
+L power:GND #PWR0715
 U 1 1 606E29CF
 P 7175 4025
-F 0 "#PWR0814" H 7175 3775 50  0001 C CNN
+F 0 "#PWR0715" H 7175 3775 50  0001 C CNN
 F 1 "GND" H 7180 3852 50  0000 C CNN
 F 2 "" H 7175 4025 50  0001 C CNN
 F 3 "" H 7175 4025 50  0001 C CNN
@@ -188,10 +188,10 @@ F 3 "" H 7175 4025 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C806
+L Device:C C707
 U 1 1 606E29CE
 P 7175 3775
-F 0 "C806" H 7293 3821 50  0000 L CNN
+F 0 "C707" H 7293 3821 50  0000 L CNN
 F 1 "100nF" H 7293 3730 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 7213 3625 50  0001 C CNN
 F 3 "~" H 7175 3775 50  0001 C CNN
@@ -207,10 +207,10 @@ F 11 "16V" H 7175 3775 50  0001 C CNN "Voltage"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0809
+L power:GND #PWR0709
 U 1 1 606E29DA
 P 5275 2700
-F 0 "#PWR0809" H 5275 2450 50  0001 C CNN
+F 0 "#PWR0709" H 5275 2450 50  0001 C CNN
 F 1 "GND" H 5280 2527 50  0000 C CNN
 F 2 "" H 5275 2700 50  0001 C CNN
 F 3 "" H 5275 2700 50  0001 C CNN
@@ -218,10 +218,10 @@ F 3 "" H 5275 2700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C804
+L Device:C C704
 U 1 1 606E29DB
 P 5275 2375
-F 0 "C804" H 5393 2421 50  0000 L CNN
+F 0 "C704" H 5393 2421 50  0000 L CNN
 F 1 "10uF" H 5393 2330 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 5313 2225 50  0001 C CNN
 F 3 "~" H 5275 2375 50  0001 C CNN
@@ -241,10 +241,10 @@ This small PSU runs our\nboard management controller.\nIt is set to 3.3V output.
 Text Notes 1925 1350 0    100  Italic 20
 Main Power Regulators
 $Comp
-L Device:L L801
+L Device:L L701
 U 1 1 606E29FD
 P 3475 2125
-F 0 "L801" V 3665 2125 50  0000 C CNN
+F 0 "L701" V 3665 2125 50  0000 C CNN
 F 1 "22uH" V 3574 2125 50  0000 C CNN
 F 2 "Inductor_THT:L_Radial_D9.5mm_P5.00mm_Fastron_07HVP" H 3475 2125 50  0001 C CNN
 F 3 "https://www.murata-ps.com/pub/data/magnetics/kmp_1300r.pdf" H 3475 2125 50  0001 C CNN
@@ -260,10 +260,10 @@ F 11 "~" H 3475 2125 50  0001 C CNN "Voltage"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:CP C801
+L Device:CP C701
 U 1 1 60282A88
 P 3225 2375
-F 0 "C801" H 3325 2375 50  0000 L CNN
+F 0 "C701" H 3325 2375 50  0000 L CNN
 F 1 "100uF" H 3250 2275 50  0000 L CNN
 F 2 "Capacitor_THT:CP_Radial_D8.0mm_P5.00mm" H 3263 2225 50  0001 C CNN
 F 3 "~" H 3225 2375 50  0001 C CNN
@@ -279,10 +279,10 @@ F 11 "20%" H 3225 2375 50  0001 C CNN "Tolerance"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Device:CP C802
+L Device:CP C702
 U 1 1 60283279
 P 3725 2375
-F 0 "C802" H 3825 2375 50  0000 L CNN
+F 0 "C702" H 3825 2375 50  0000 L CNN
 F 1 "100uF" H 3750 2275 50  0000 L CNN
 F 2 "Capacitor_THT:CP_Radial_D8.0mm_P5.00mm" H 3763 2225 50  0001 C CNN
 F 3 "~" H 3725 2375 50  0001 C CNN
@@ -298,10 +298,10 @@ F 11 "20%" H 3725 2375 50  0001 C CNN "Tolerance"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0805
+L power:GND #PWR0705
 U 1 1 60283676
 P 3225 2625
-F 0 "#PWR0805" H 3225 2375 50  0001 C CNN
+F 0 "#PWR0705" H 3225 2375 50  0001 C CNN
 F 1 "GND" H 3230 2452 50  0000 C CNN
 F 2 "" H 3225 2625 50  0001 C CNN
 F 3 "" H 3225 2625 50  0001 C CNN
@@ -309,10 +309,10 @@ F 3 "" H 3225 2625 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:+3.3VP #PWR0810
+L power:+3.3VP #PWR0710
 U 1 1 5FF9B1CD
 P 5425 3875
-F 0 "#PWR0810" H 5575 3825 50  0001 C CNN
+F 0 "#PWR0710" H 5575 3825 50  0001 C CNN
 F 1 "+3.3VP" H 5440 4048 50  0000 C CNN
 F 2 "" H 5425 3875 50  0001 C CNN
 F 3 "" H 5425 3875 50  0001 C CNN
@@ -320,10 +320,10 @@ F 3 "" H 5425 3875 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0808
+L power:GND #PWR0708
 U 1 1 606E29D3
 P 4725 2700
-F 0 "#PWR0808" H 4725 2450 50  0001 C CNN
+F 0 "#PWR0708" H 4725 2450 50  0001 C CNN
 F 1 "GND" H 4730 2527 50  0000 C CNN
 F 2 "" H 4725 2700 50  0001 C CNN
 F 3 "" H 4725 2700 50  0001 C CNN
@@ -333,10 +333,10 @@ $EndComp
 Wire Wire Line
 	3625 2125 3725 2125
 $Comp
-L power:GND #PWR0806
+L power:GND #PWR0706
 U 1 1 6004335B
 P 3725 2625
-F 0 "#PWR0806" H 3725 2375 50  0001 C CNN
+F 0 "#PWR0706" H 3725 2375 50  0001 C CNN
 F 1 "GND" H 3730 2452 50  0000 C CNN
 F 2 "" H 3725 2625 50  0001 C CNN
 F 3 "" H 3725 2625 50  0001 C CNN
@@ -344,10 +344,10 @@ F 3 "" H 3725 2625 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Jack-DC J801
+L Connector:Jack-DC J701
 U 1 1 606E29C8
 P 2375 2225
-F 0 "J801" H 2375 2525 50  0000 C CNN
+F 0 "J701" H 2375 2525 50  0000 C CNN
 F 1 "Jack 2/6.3mm" H 2375 2450 50  0000 C CNN
 F 2 "Connector_BarrelJack:BarrelJack_CUI_PJ-063AH_Horizontal" H 2425 2185 50  0001 C CNN
 F 3 "~" H 2425 2185 50  0001 C CNN
@@ -385,10 +385,10 @@ Wire Wire Line
 	3725 2225 3725 2125
 Connection ~ 3725 2125
 $Comp
-L Neotron-Common-Hardware:K78(L)05-3AR3 U801
+L Neotron-Common-Hardware:K78(L)05-3AR3 U701
 U 1 1 606E29D0
 P 4725 1975
-F 0 "U801" H 4725 2090 50  0000 C CNN
+F 0 "U701" H 4725 2090 50  0000 C CNN
 F 1 "DC-DC Module" H 4725 1999 50  0000 C CNN
 F 2 "Neotron-Common-Hardware:K78xx-3AR3" H 4725 2225 50  0001 C CNN
 F 3 "https://www.mornsun-power.com/html/pdf/K7805-3AR3.html" H 4725 1975 50  0001 C CNN
@@ -407,10 +407,10 @@ NoConn ~ 5075 2275
 Wire Wire Line
 	5075 2125 5275 2125
 $Comp
-L power:+3.3V #PWR0817
+L power:+3.3V #PWR0718
 U 1 1 606E29C9
 P 8075 3425
-F 0 "#PWR0817" H 8075 3275 50  0001 C CNN
+F 0 "#PWR0718" H 8075 3275 50  0001 C CNN
 F 1 "+3.3V" H 8090 3598 50  0000 C CNN
 F 2 "" H 8075 3425 50  0001 C CNN
 F 3 "" H 8075 3425 50  0001 C CNN
@@ -476,10 +476,10 @@ Wire Wire Line
 Connection ~ 4000 3875
 Connection ~ 4000 2125
 $Comp
-L Device:C C805
+L Device:C C705
 U 1 1 5FEE3B3C
 P 5425 4275
-F 0 "C805" H 5543 4321 50  0000 L CNN
+F 0 "C705" H 5543 4321 50  0000 L CNN
 F 1 "4.7uF" H 5543 4230 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 5463 4125 50  0001 C CNN
 F 3 "~" H 5425 4275 50  0001 C CNN
@@ -502,10 +502,10 @@ Connection ~ 5425 4525
 Wire Wire Line
 	6175 2025 6175 2125
 $Comp
-L power:+5V #PWR0813
+L power:+5V #PWR0714
 U 1 1 60A3F499
 P 6975 3425
-F 0 "#PWR0813" H 6975 3275 50  0001 C CNN
+F 0 "#PWR0714" H 6975 3275 50  0001 C CNN
 F 1 "+5V" H 6990 3598 50  0000 C CNN
 F 2 "" H 6975 3425 50  0001 C CNN
 F 3 "" H 6975 3425 50  0001 C CNN
@@ -531,10 +531,10 @@ Wire Wire Line
 Text Label 4375 2275 2    50   ~ 0
 ~SHDN
 $Comp
-L Transistor_BJT:BC546 Q801
+L Transistor_BJT:BC546 Q701
 U 1 1 607850D9
 P 1900 5925
-F 0 "Q801" H 2091 5971 50  0000 L CNN
+F 0 "Q701" H 2091 5971 50  0000 L CNN
 F 1 "BC546" H 2091 5880 50  0000 L CNN
 F 2 "Package_TO_SOT_THT:TO-92_Inline" H 2100 5850 50  0001 L CIN
 F 3 "https://www.onsemi.com/pub/Collateral/BC550-D.pdf" H 1900 5925 50  0001 L CNN
@@ -550,10 +550,10 @@ F 11 "~" H 1900 5925 50  0001 C CNN "Voltage"
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0803
+L power:GND #PWR0704
 U 1 1 60786FC2
 P 3000 6375
-F 0 "#PWR0803" H 3000 6125 50  0001 C CNN
+F 0 "#PWR0704" H 3000 6125 50  0001 C CNN
 F 1 "GND" H 3005 6202 50  0000 C CNN
 F 2 "" H 3000 6375 50  0001 C CNN
 F 3 "" H 3000 6375 50  0001 C CNN
@@ -574,10 +574,10 @@ Wire Wire Line
 Text Notes 1700 3550 0    100  Italic 0
 DC Input rating:\n8V to 24V\n12V Nominal\nMax 2A
 $Comp
-L Transistor_BJT:BC556 Q802
+L Transistor_BJT:BC556 Q702
 U 1 1 60798177
 P 2900 5575
-F 0 "Q802" H 3091 5621 50  0000 L CNN
+F 0 "Q702" H 3091 5621 50  0000 L CNN
 F 1 "BC556" H 3091 5530 50  0000 L CNN
 F 2 "Package_TO_SOT_THT:TO-92_Inline" H 3100 5500 50  0001 L CIN
 F 3 "https://www.onsemi.com/pub/Collateral/BC556BTA-D.pdf" H 2900 5575 50  0001 L CNN
@@ -593,10 +593,10 @@ F 11 "~" H 2900 5575 50  0001 C CNN "Voltage"
 	1    0    0    1   
 $EndComp
 $Comp
-L power:GND #PWR0801
+L power:GND #PWR0701
 U 1 1 6079CA8F
 P 2000 6375
-F 0 "#PWR0801" H 2000 6125 50  0001 C CNN
+F 0 "#PWR0701" H 2000 6125 50  0001 C CNN
 F 1 "GND" H 2005 6202 50  0000 C CNN
 F 2 "" H 2000 6375 50  0001 C CNN
 F 3 "" H 2000 6375 50  0001 C CNN
@@ -606,10 +606,10 @@ $EndComp
 Wire Wire Line
 	2000 6125 2000 6375
 $Comp
-L Device:R R801
+L Device:R R701
 U 1 1 607A5326
 P 1525 5925
-F 0 "R801" V 1625 5925 50  0000 C CNN
+F 0 "R701" V 1625 5925 50  0000 C CNN
 F 1 "10k" V 1425 5925 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 1455 5925 50  0001 C CNN
 F 3 "~" H 1525 5925 50  0001 C CNN
@@ -627,10 +627,10 @@ $EndComp
 Text Notes 3625 6675 0    50   Italic 0
 ~SHDN~ must be low at power-up to avoid\nDC-DC enabling temporarily. To do this\nQ801 is an open-collector switch, driving\na PNP (high-side output) inverter.\n\nTo activate PSU, ~SHDN~ must be raised to\nbetween 4.5V and 14V. This limits our input\nvoltage to 14V maximum, as we have no\nother suitable voltage source available (the\nmicroLDO is 3.3V).\n\nRaising DC_ON to above 0.7V will switch on\nQ801. This will allow current to flow through\nthe base of Q802 to GND, switching on current\nthrough Q802, which will raise ~SHDN~ to\na suitable level.\n\nThe CTRL pin on the DCDC PSU has high\ninput impedance so no current limiting\nresistor is required.
 $Comp
-L Device:R R802
+L Device:R R702
 U 1 1 607A18C2
 P 2375 5575
-F 0 "R802" V 2525 5475 50  0000 L CNN
+F 0 "R702" V 2525 5475 50  0000 L CNN
 F 1 "10k" V 2450 5500 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 2305 5575 50  0001 C CNN
 F 3 "~" H 2375 5575 50  0001 C CNN
@@ -646,10 +646,10 @@ F 11 "~" H 2375 5575 50  0001 C CNN "Voltage"
 	0    1    -1   0   
 $EndComp
 $Comp
-L Device:R R803
+L Device:R R703
 U 1 1 606E2A14
 P 3000 6175
-F 0 "R803" H 3050 6225 50  0000 L CNN
+F 0 "R703" H 3050 6225 50  0000 L CNN
 F 1 "10k" H 3050 6125 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 2930 6175 50  0001 C CNN
 F 3 "~" H 3000 6175 50  0001 C CNN
@@ -665,10 +665,10 @@ F 11 "~" H 3000 6175 50  0001 C CNN "Voltage"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L power:VDC #PWR0807
+L power:VDC #PWR0707
 U 1 1 606FD8EC
 P 3850 2125
-F 0 "#PWR0807" H 3850 2025 50  0001 C CNN
+F 0 "#PWR0707" H 3850 2025 50  0001 C CNN
 F 1 "VDC" H 3865 2298 50  0000 C CNN
 F 2 "" H 3850 2125 50  0001 C CNN
 F 3 "" H 3850 2125 50  0001 C CNN
@@ -681,10 +681,10 @@ Connection ~ 3850 2125
 Wire Wire Line
 	3850 2125 4000 2125
 $Comp
-L power:VDC #PWR0802
+L power:VDC #PWR0703
 U 1 1 606FDFCB
 P 3000 5225
-F 0 "#PWR0802" H 3000 5125 50  0001 C CNN
+F 0 "#PWR0703" H 3000 5125 50  0001 C CNN
 F 1 "VDC" H 3015 5398 50  0000 C CNN
 F 2 "" H 3000 5225 50  0001 C CNN
 F 3 "" H 3000 5225 50  0001 C CNN
@@ -697,10 +697,10 @@ Wire Wire Line
 	4000 2125 4175 2125
 Connection ~ 4175 2125
 $Comp
-L power:PWR_FLAG #FLG0801
+L power:PWR_FLAG #FLG0701
 U 1 1 606FBD37
 P 4175 2125
-F 0 "#FLG0801" H 4175 2200 50  0001 C CNN
+F 0 "#FLG0701" H 4175 2200 50  0001 C CNN
 F 1 "PWR_FLAG" H 4175 2298 50  0000 C CNN
 F 2 "" H 4175 2125 50  0001 C CNN
 F 3 "~" H 4175 2125 50  0001 C CNN
@@ -708,10 +708,10 @@ F 3 "~" H 4175 2125 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C808
+L Device:C C706
 U 1 1 60E7E52A
 P 5850 2375
-F 0 "C808" H 5968 2421 50  0000 L CNN
+F 0 "C706" H 5968 2421 50  0000 L CNN
 F 1 "10uF" H 5968 2330 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 5888 2225 50  0001 C CNN
 F 3 "~" H 5850 2375 50  0001 C CNN
@@ -727,10 +727,10 @@ F 11 "~" H 5850 2375 50  0001 C CNN "Mouser"
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR01
+L power:GND #PWR0712
 U 1 1 60E86C1C
 P 5850 2700
-F 0 "#PWR01" H 5850 2450 50  0001 C CNN
+F 0 "#PWR0712" H 5850 2450 50  0001 C CNN
 F 1 "GND" H 5855 2527 50  0000 C CNN
 F 2 "" H 5850 2700 50  0001 C CNN
 F 3 "" H 5850 2700 50  0001 C CNN
