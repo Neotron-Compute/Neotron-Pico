@@ -61,22 +61,22 @@ $EndComp
 Text Notes 4700 4750 0    50   Italic 0
 Place near STM32 VDD
 $Comp
-L Switch:SW_DIP_x01 SW1003
+L Switch:SW_DIP_x01 J1004
 U 1 1 606E29E8
-P 3425 3725
-F 0 "SW1003" H 3425 3992 50  0000 C CNN
-F 1 "SW_DIP_x01" H 3425 3901 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 3425 3725 50  0001 C CNN
-F 3 "~" H 3425 3725 50  0001 C CNN
-F 4 "1" H 3425 3725 50  0001 C CNN "DNP"
-F 5 "~" H 3425 3725 50  0001 C CNN "Digikey"
-F 6 "~" H 3425 3725 50  0001 C CNN "MPN"
-F 7 "~" H 3425 3725 50  0001 C CNN "Manufacturer"
-F 8 "~" H 3425 3725 50  0001 C CNN "Mouser"
-F 9 "~" H 3425 3725 50  0001 C CNN "LCSC Part#"
-F 10 "~" H 3425 3725 50  0001 C CNN "Tolerance"
-F 11 "~" H 3425 3725 50  0001 C CNN "Voltage"
-	1    3425 3725
+P 3425 4200
+F 0 "J1004" H 3425 4467 50  0000 C CNN
+F 1 "CONN 1x02" H 3425 4376 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 3425 4200 50  0001 C CNN
+F 3 "~" H 3425 4200 50  0001 C CNN
+F 4 "1" H 3425 4200 50  0001 C CNN "DNP"
+F 5 "~" H 3425 4200 50  0001 C CNN "Digikey"
+F 6 "~" H 3425 4200 50  0001 C CNN "MPN"
+F 7 "~" H 3425 4200 50  0001 C CNN "Manufacturer"
+F 8 "~" H 3425 4200 50  0001 C CNN "Mouser"
+F 9 "~" H 3425 4200 50  0001 C CNN "LCSC Part#"
+F 10 "~" H 3425 4200 50  0001 C CNN "Tolerance"
+F 11 "~" H 3425 4200 50  0001 C CNN "Voltage"
+	1    3425 4200
 	1    0    0    -1  
 $EndComp
 Text Notes 7225 5825 0    50   ~ 0
@@ -89,8 +89,8 @@ AR Path="/60081044" Ref="J?"  Part="1"
 AR Path="/5FDEDE75/60081044" Ref="J?"  Part="1" 
 AR Path="/5FDE7599/60081044" Ref="J?"  Part="1" 
 AR Path="/606E253F/60081044" Ref="J?"  Part="1" 
-AR Path="/606F6368/60081044" Ref="J1004"  Part="1" 
-F 0 "J1004" H 9075 6423 50  0000 C CNN
+AR Path="/606F6368/60081044" Ref="J1007"  Part="1" 
+F 0 "J1007" H 9075 6423 50  0000 C CNN
 F 1 "Double-mini-DIN-6" H 9075 6332 50  0000 C CNN
 F 2 "Neotron-Common-Hardware:Double_mini-DIN_6" H 9075 5975 50  0001 C CNN
 F 3 "http://www.kycon.com/Pub_Eng_Draw/KMDGX-6S-6S-S4N.pdf" H 9075 5975 50  0001 C CNN
@@ -315,10 +315,10 @@ Wire Wire Line
 Text Label 5575 2975 2    50   ~ 0
 PS2_DAT1
 $Comp
-L Device:Jumper_NO_Small JP1001
+L Device:Jumper_NO_Small J1005
 U 1 1 6072F924
 P 3800 1875
-F 0 "JP1001" H 3800 2060 50  0000 C CNN
+F 0 "J1005" H 3800 2060 50  0000 C CNN
 F 1 "Jumper" H 3800 1969 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 3800 1875 50  0001 C CNN
 F 3 "~" H 3800 1875 50  0001 C CNN
@@ -739,10 +739,10 @@ Wire Wire Line
 Wire Wire Line
 	4425 1025 4475 1025
 $Comp
-L Connector_Generic:Conn_01x05 J1003
+L Connector_Generic:Conn_01x05 J1006
 U 1 1 606E2A07
 P 4225 1225
-F 0 "J1003" H 4325 1025 50  0000 L CNN
+F 0 "J1006" H 4325 1025 50  0000 L CNN
 F 1 "Conn_01x05" H 4325 1125 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical" H 4225 1225 50  0001 C CNN
 F 3 "~" H 4225 1225 50  0001 C CNN
@@ -834,25 +834,6 @@ F 11 "~" H 3050 5650 50  0001 C CNN "Voltage"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Connector:Conn_01x02_Male J1002
-U 1 1 606E2A0F
-P 2650 5600
-F 0 "J1002" H 2600 5600 50  0000 R CNN
-F 1 "Header" H 2625 5500 50  0000 R CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 2650 5600 50  0001 C CNN
-F 3 "~" H 2650 5600 50  0001 C CNN
-F 4 "1" H 2650 5600 50  0001 C CNN "DNP"
-F 5 "~" H 2650 5600 50  0001 C CNN "Digikey"
-F 6 "~" H 2650 5600 50  0001 C CNN "MPN"
-F 7 "~" H 2650 5600 50  0001 C CNN "Manufacturer"
-F 8 "~" H 2650 5600 50  0001 C CNN "LCSC Part#"
-F 9 "~" H 2650 5600 50  0001 C CNN "Mouser"
-F 10 "~" H 2650 5600 50  0001 C CNN "Tolerance"
-F 11 "~" H 2650 5600 50  0001 C CNN "Voltage"
-	1    2650 5600
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:R R1001
 U 1 1 606E29F9
 P 1575 5250
@@ -908,25 +889,6 @@ F 10 "~" H 1775 5650 50  0001 C CNN "Tolerance"
 F 11 "~" H 1775 5650 50  0001 C CNN "Voltage"
 	1    1775 5650
 	0    -1   -1   0   
-$EndComp
-$Comp
-L Connector:Conn_01x02_Male J1001
-U 1 1 606E29FA
-P 1375 5600
-F 0 "J1001" H 1250 5600 50  0000 C CNN
-F 1 "Header" H 1225 5500 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 1375 5600 50  0001 C CNN
-F 3 "~" H 1375 5600 50  0001 C CNN
-F 4 "1" H 1375 5600 50  0001 C CNN "DNP"
-F 5 "~" H 1375 5600 50  0001 C CNN "Digikey"
-F 6 "~" H 1375 5600 50  0001 C CNN "MPN"
-F 7 "~" H 1375 5600 50  0001 C CNN "Manufacturer"
-F 8 "~" H 1375 5600 50  0001 C CNN "LCSC Part#"
-F 9 "~" H 1375 5600 50  0001 C CNN "Mouser"
-F 10 "~" H 1375 5600 50  0001 C CNN "Tolerance"
-F 11 "~" H 1375 5600 50  0001 C CNN "Voltage"
-	1    1375 5600
-	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	1575 4950 1775 4950
@@ -1326,22 +1288,22 @@ Wire Wire Line
 Wire Wire Line
 	10450 5225 10450 6125
 $Comp
-L Switch:SW_DIP_x01 SW1004
+L Switch:SW_DIP_x01 SW1002
 U 1 1 610D425B
-P 3425 4200
-F 0 "SW1004" H 3425 4467 50  0000 C CNN
-F 1 "SW_DIP_x01" H 3425 4376 50  0000 C CNN
-F 2 "Button_Switch_THT:SW_PUSH_6mm" H 3425 4200 50  0001 C CNN
-F 3 "~" H 3425 4200 50  0001 C CNN
-F 4 "1" H 3425 4200 50  0001 C CNN "DNP"
-F 5 "~" H 3425 4200 50  0001 C CNN "Digikey"
-F 6 "~" H 3425 4200 50  0001 C CNN "MPN"
-F 7 "~" H 3425 4200 50  0001 C CNN "Manufacturer"
-F 8 "~" H 3425 4200 50  0001 C CNN "Mouser"
-F 9 "~" H 3425 4200 50  0001 C CNN "LCSC Part#"
-F 10 "~" H 3425 4200 50  0001 C CNN "Tolerance"
-F 11 "~" H 3425 4200 50  0001 C CNN "Voltage"
-	1    3425 4200
+P 3425 3725
+F 0 "SW1002" H 3425 3992 50  0000 C CNN
+F 1 "SPST 6mm" H 3425 3901 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm" H 3425 3725 50  0001 C CNN
+F 3 "~" H 3425 3725 50  0001 C CNN
+F 4 "1" H 3425 3725 50  0001 C CNN "DNP"
+F 5 "~" H 3425 3725 50  0001 C CNN "Digikey"
+F 6 "~" H 3425 3725 50  0001 C CNN "MPN"
+F 7 "~" H 3425 3725 50  0001 C CNN "Manufacturer"
+F 8 "~" H 3425 3725 50  0001 C CNN "Mouser"
+F 9 "~" H 3425 3725 50  0001 C CNN "LCSC Part#"
+F 10 "~" H 3425 3725 50  0001 C CNN "Tolerance"
+F 11 "~" H 3425 3725 50  0001 C CNN "Voltage"
+	1    3425 3725
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1349,7 +1311,7 @@ L Switch:SW_DIP_x01 SW1001
 U 1 1 610D6045
 P 3425 2775
 F 0 "SW1001" H 3425 3042 50  0000 C CNN
-F 1 "SW_DIP_x01" H 3425 2951 50  0000 C CNN
+F 1 "SPST 6mm" H 3425 2951 50  0000 C CNN
 F 2 "Button_Switch_THT:SW_PUSH_6mm" H 3425 2775 50  0001 C CNN
 F 3 "~" H 3425 2775 50  0001 C CNN
 F 4 "1" H 3425 2775 50  0001 C CNN "DNP"
@@ -1392,11 +1354,11 @@ Wire Wire Line
 Wire Wire Line
 	3125 3250 2950 3250
 $Comp
-L Switch:SW_DIP_x01 SW1002
+L Switch:SW_DIP_x01 J1003
 U 1 1 606E29E9
 P 3425 3250
-F 0 "SW1002" H 3425 3517 50  0000 C CNN
-F 1 "SW_DIP_x01" H 3425 3426 50  0000 C CNN
+F 0 "J1003" H 3425 3517 50  0000 C CNN
+F 1 "CONN 1x02" H 3425 3426 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 3425 3250 50  0001 C CNN
 F 3 "~" H 3425 3250 50  0001 C CNN
 F 4 "1" H 3425 3250 50  0001 C CNN "DNP"
@@ -1429,4 +1391,42 @@ Wire Wire Line
 	7225 875  7225 2975
 Wire Wire Line
 	7325 775  7325 3075
+$Comp
+L Connector:Conn_01x02_Male J1002
+U 1 1 606E2A0F
+P 2650 5600
+F 0 "J1002" H 2600 5600 50  0000 R CNN
+F 1 "Header" H 2625 5500 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 2650 5600 50  0001 C CNN
+F 3 "~" H 2650 5600 50  0001 C CNN
+F 4 "1" H 2650 5600 50  0001 C CNN "DNP"
+F 5 "~" H 2650 5600 50  0001 C CNN "Digikey"
+F 6 "~" H 2650 5600 50  0001 C CNN "MPN"
+F 7 "~" H 2650 5600 50  0001 C CNN "Manufacturer"
+F 8 "~" H 2650 5600 50  0001 C CNN "LCSC Part#"
+F 9 "~" H 2650 5600 50  0001 C CNN "Mouser"
+F 10 "~" H 2650 5600 50  0001 C CNN "Tolerance"
+F 11 "~" H 2650 5600 50  0001 C CNN "Voltage"
+	1    2650 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x02_Male J1001
+U 1 1 606E29FA
+P 1375 5600
+F 0 "J1001" H 1250 5600 50  0000 C CNN
+F 1 "Header" H 1225 5500 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 1375 5600 50  0001 C CNN
+F 3 "~" H 1375 5600 50  0001 C CNN
+F 4 "1" H 1375 5600 50  0001 C CNN "DNP"
+F 5 "~" H 1375 5600 50  0001 C CNN "Digikey"
+F 6 "~" H 1375 5600 50  0001 C CNN "MPN"
+F 7 "~" H 1375 5600 50  0001 C CNN "Manufacturer"
+F 8 "~" H 1375 5600 50  0001 C CNN "LCSC Part#"
+F 9 "~" H 1375 5600 50  0001 C CNN "Mouser"
+F 10 "~" H 1375 5600 50  0001 C CNN "Tolerance"
+F 11 "~" H 1375 5600 50  0001 C CNN "Voltage"
+	1    1375 5600
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
