@@ -1,0 +1,40 @@
+outputs:
+  # DXF (Drawing Exchange Format):
+  # This output is what you get from the File/Plot menu in pcbnew.
+  - name: 'autocad.dxf'
+    comment: 'https://en.wikipedia.org/wiki/AutoCAD_DXF'
+    type: dxf
+    dir: 'cad/dxf'
+    options:
+      # [string|list(string)=''] Name of the filter to mark components as not fitted.
+      # A short-cut to use for simple cases where a variant is an overkill
+      dnf_filter: ''
+      # [string='full'] what to use to indicate the drill places, can be none, small or full (for real scale)
+      drill_marks: 'small'
+      # [boolean=true] do not include the PCB edge layer
+      exclude_edge_layer: true
+      # [boolean=false] do not plot the component pads in the silk screen (KiCad 5.x only)
+      exclude_pads_from_silkscreen: false
+      # [boolean=false] include references and values even when they are marked as invisible
+      force_plot_invisible_refs_vals: false
+      # [boolean=false] use mm instead of inches
+      metric_units: false
+      # [string='%f-%i%v.%x'] output file name, the default KiCad name if empty. Affected by global options
+      output: '%f-%i.%x'
+      # [boolean=true] include the footprint references
+      plot_footprint_refs: true
+      # [boolean=true] include the footprint values
+      plot_footprint_values: true
+      # [boolean=false] currently without effect
+      plot_sheet_reference: false
+      # [boolean=true] plot using the contour, instead of the center line
+      polygon_mode: true
+      # [boolean=false] don't fill objects, just draw the outline
+      sketch_plot: false
+      # [boolean=true] cover the vias
+      tent_vias: true
+      # [boolean=false] use the auxiliar axis as origin for coordinates
+      use_aux_axis_as_origin: true
+      # [string=''] Board variant to apply
+      variant: ''
+    layers: all

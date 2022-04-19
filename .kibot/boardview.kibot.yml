@@ -1,0 +1,7 @@
+outputs:
+  - name: 'openboardview.brd'
+    comment: 'https://openboardview.org/'
+    type: boardview
+    dir: cad
+    options:
+      output: '%f.%x'

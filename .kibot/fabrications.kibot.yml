@@ -1,0 +1,38 @@
+outputs:
+  - name: 'pickandplace.csv'
+    comment: 'position files'
+    type: 'position'
+    dir: 'gerbers'
+    options:
+      # [string|list(string)=''] Name of the filter to mark components as not fitted.
+      # A short-cut to use for simple cases where a variant is an overkill
+      dnf_filter: '_mechanical'
+      # [string='ASCII'] [ASCII,CSV] format for the position file
+      format: 'CSV'
+      # [boolean=true] only include the surface mount components
+      only_smd: true
+      # [string='%f-%i%v.%x'] output file name (%i='top_pos'|'bottom_pos'|'both_pos', %x='pos'|'csv'). Affected by global options
+      output: '%f-%i.%x'
+      # [boolean=true] generate two separated files, one for the top and another for the bottom
+      separate_files_for_front_and_back: true
+      # [string='millimeters'] [millimeters,inches] units used for the positions
+      units: 'millimeters'
+      # [string=''] Board variant to apply
+      variant: ''
+
+# generates bom.csv in gerbers folder
+  - name: bom.csv
+    type: kibom
+    dir: gerbers
+    extends: 'octopart.csv'
+
+# zip fabrication files
+  - name: 'fabrication.zip'
+    type: compress
+    dir: .
+    options:
+      format: ZIP
+      files:
+        - dest: .
+          source: gerbers/*
+      output: '%f-%r.%x'

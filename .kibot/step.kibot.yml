@@ -1,0 +1,9 @@
+outputs:
+  - name: 'model.step'
+    comment: 'Renders - 3D model (STEP)'
+    type: step
+    dir: cad
+    options:
+      metric_units: true
+      download: true
+      output: '%f.%x'

@@ -1,0 +1,50 @@
+outputs:
+  - name: 'kicost.xlsx'
+    comment: 'https://github.com/hildogjr/KiCost'
+    type: 'kicost'
+    dir: 'docs/bom'
+    options:
+      # [list(dict)] Add components from other projects
+      # aggregate:
+        # [string=''] Name of the XML to aggregate
+      #  - file: ''
+          # [string=' '] Variant for this project
+      #    variant: ' '
+      # [string|list(string)=USD] Currency priority. Use ISO4217 codes (i.e. USD, EUR)
+      currency: EUR
+      # [string|list(string)] Use only this distributors list. Default is all the available.
+      # Not compatible with `no_distributors` option
+      # distributors:
+      # [string|list(string)=''] Name of the filter to mark components as not fitted.
+      # A short-cut to use for simple cases where a variant is an overkill.
+      # Internal variants and filters are currently ignored
+      dnf_filter: ''
+      # [string|list(string)] List of fields to be added to the global data section
+      # fields:
+      # [string|list(string)] List of fields that can be different for a group.
+      # Parts with differences in these fields are grouped together, but displayed individually
+      # group_fields:
+      # [string|list(string)] List of fields to be ignored
+      # ignore_fields:
+      # [string=''] Regular expression to match the variant field (KiCost option, not internal variants)
+      kicost_variant: ''
+      # [boolean=false] Do not collapse the part references (collapse=R1-R4)
+      no_collapse: false
+      # [string|list(string)] Use all but this distributors list. Default is use all the available.
+      # Not compatible with `distributors` option
+      # no_distributors:
+      # [boolean=false] Do not look for components price. For testing purposes
+      no_price: false
+      # [string='%f-%i%v.%x'] Filename for the output (%i=kicost, %x=xlsx). Affected by global options
+      output: '%f-%i.%x'
+      # [boolean=false] Include the catalogue links in the catalogue code
+      show_cat_url: true
+      # [list(dict)] Fields to rename (KiCost option, not internal filters)
+      translate_fields:
+        # [string=''] Name of the field to rename
+        - field: 'mpn'
+          # [string=''] New name
+          name: 'manf#'
+      # [string=''] Board variant to apply.
+      # Internal variants and filters are currently ignored
+      variant: ''

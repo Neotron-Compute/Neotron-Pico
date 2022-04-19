@@ -1,0 +1,58 @@
+outputs:
+  # Gerber drill format:
+  # You can create a map file for documentation purposes.
+  # This output is what you get from the 'File/Fabrication output/Drill Files' menu in pcbnew.
+  - name: 'drills.gbr'
+    comment: 'https://en.wikipedia.org/wiki/Gerber_format'
+    type: gerb_drill
+    dir: gerbers
+    options:
+      # [dict|string] [hpgl,ps,gerber,dxf,svg,pdf] format for a graphical drill map.
+      # Not generated unless a format is specified
+      map:
+        # [string='%f-%i%v.%x'] name for the map file, KiCad defaults if empty (%i='PTH_drill_map'). Affected by global options
+        output: ''
+        # [string='pdf'] [hpgl,ps,gerber,dxf,svg,pdf] format for a graphical drill map
+        type: 'gerber'
+      # [string='%f-%i%v.%x'] name for the drill file, KiCad defaults if empty (%i='PTH_drill'). Affected by global options
+      output: '%f-%i.%x'
+      # [dict|string] name of the drill report. Not generated unless a name is specified
+      report:
+        # [string=''] name of the drill report. Not generated unless a name is specified.
+        # (%i='drill_report' %x='txt')
+        filename: '%i.%x'
+      # [boolean=false] use the auxiliar axis as origin for coordinates
+      use_aux_axis_as_origin: true
+
+  # Excellon drill format:
+  # You can create a map file for documentation purposes.
+  # This output is what you get from the 'File/Fabrication output/Drill Files' menu in pcbnew.
+  - name: 'drills.drl'
+    comment: 'https://en.wikipedia.org/wiki/Gerber_format'
+    type: excellon
+    dir: gerbers
+    options:
+      # [dict|string] [hpgl,ps,gerber,dxf,svg,pdf] format for a graphical drill map.
+      # Not generated unless a format is specified
+      map:
+        # [string='%f-%i%v.%x'] name for the map file, KiCad defaults if empty (%i='PTH_drill_map'). Affected by global options
+        output: '%f-%i.%x'
+        # [string='pdf'] [hpgl,ps,gerber,dxf,svg,pdf] format for a graphical drill map
+        type: 'gerber'
+      # [boolean=true] use metric units instead of inches
+      metric_units: true
+      # [boolean=false] use a minimal header in the file
+      minimal_header: false
+      # [boolean=false] invert the Y axis
+      mirror_y_axis: false
+      # [string='%f-%i%v.%x'] name for the drill file, KiCad defaults if empty (%i='PTH_drill'). Affected by global options
+      output: '%f-%i.%x'
+      # [boolean=true] generate one file for both, plated holes and non-plated holes, instead of two separated files
+      pth_and_npth_single_file: false
+      # [dict|string] name of the drill report. Not generated unless a name is specified
+      report:
+        # [string=''] name of the drill report. Not generated unless a name is specified.
+        # (%i='drill_report' %x='txt')
+        filename: '%i.%x'
+      # [boolean=false] use the auxiliar axis as origin for coordinates
+      use_aux_axis_as_origin: true
