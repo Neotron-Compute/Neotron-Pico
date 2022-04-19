@@ -1100,6 +1100,7 @@
     )
   )
 
+
   (junction (at 265.43 155.575) (diameter 0) (color 0 0 0 0)
     (uuid 02fd5a2b-b98f-4d85-b9d8-1df9f053308f)
   )
@@ -3560,8 +3561,8 @@
     (in_bom yes) (on_board yes)
     (uuid 00000000-0000-0000-0000-00006072f924)
     (property "Reference" "JP1101" (id 0) (at 96.52 42.926 0))
-    (property "Value" "" (id 1) (at 96.52 45.2374 0))
-    (property "Footprint" "" (id 2) (at 96.52 47.625 0)
+    (property "Value" "Jumper" (id 1) (at 96.52 45.2374 0))
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" (id 2) (at 96.52 47.625 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 96.52 47.625 0)
