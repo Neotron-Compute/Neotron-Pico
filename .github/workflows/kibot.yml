@@ -55,7 +55,7 @@ jobs:
       - name: run kibot
         run: | 
           kibot -c kibot.yml -e ${{env.schema}} -b ${{env.board}} -d ${{env.dir}} -s run_erc,run_drc -v \
-            ibom.html octopart.csv schematic.pdf schematic.svg board_top.pdf board_bottom.pdf
+            ibom.html octopart.csv schematic.pdf
       - uses: actions/upload-artifact@v2
         if: ${{success()}}
         with:
