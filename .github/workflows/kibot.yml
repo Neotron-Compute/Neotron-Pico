@@ -54,18 +54,6 @@ jobs:
         id: branch_name
         run: |
           echo ::set-output name=SOURCE_TAG::${GITHUB_REF#refs/tags/}
-      - name: Set version number (for release)
-        if: github.event_name == 'push' && startswith(github.ref, 'refs/tags/')
-        env:
-          SOURCE_TAG: ${{ steps.branch_name.outputs.SOURCE_TAG }}
-        run: |
-          sed -i "s~\[Uncontrolled\]~${SOURCE_TAG}~g" ${{env.dir}}/Kicad/*.kicad_sch ${{env.dir}}/Kicad/*.kicad_pcb
-      - name: Set git hash (for test build)
-        if: github.event_name != 'push' || !startswith(github.ref, 'refs/tags/')
-        env:
-          VERSION: ${{ github.run_id }}
-        run: |
-          sed -i "s~\[Uncontrolled\]~${VERSION}~g" ${{env.dir}}/Kicad/*.kicad_sch ${{env.dir}}/Kicad/*.kicad_pcb
       - name: Run KiBot for Schematic Docs
         run: |
           kibot -c kibot.yml -e ${{env.schema}} -b ${{env.board}} -d ${{env.dir}} -s run_erc,run_drc -v \
