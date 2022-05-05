@@ -1,5 +1,5 @@
 outputs:
-  - name: 'board_black_top.svg'
+  - name: 'board_green_top.png'
     comment: 'https://github.com/yaqwsx/PcbDraw'
     type: 'pcbdraw'
     dir: 'img/pcb'
@@ -12,7 +12,7 @@ outputs:
       # [number=300] [10,1200] dots per inch (resolution) of the generated image
       dpi: 300
       # [string='svg'] [svg,png,jpg] output format. Only used if no `output` is specified
-      format: 'svg'
+      format: 'png'
       # [list(string)=[]] list of components to highlight
       highlight: []
       # [list(string)=[]] list of libraries
@@ -31,7 +31,7 @@ outputs:
       # The default is none
       show_components: none
       # [string|dict] PCB style (colors). An internal name, the name of a JSON file or the style options
-      style: '/usr/share/pcbdraw/styles/set-black-cu.json'
+      style: '/usr/share/pcbdraw/styles/jlcpcb-green-enig.json'
       # [string=''] Board variant to apply
       variant: ''
       # [boolean=false] render V-CUTS on the Cmts.User layer
@@ -39,7 +39,7 @@ outputs:
       # [string='visible'] [visible,all,none] using visible only the warnings about components in the visible side are generated
       warnings: 'none'
 
-  - name: 'board_black_bottom.svg'
+  - name: 'board_green_bottom.png'
     comment: 'https://github.com/yaqwsx/PcbDraw'
     type: 'pcbdraw'
     dir: 'img/pcb'
@@ -52,7 +52,7 @@ outputs:
       # [number=300] [10,1200] dots per inch (resolution) of the generated image
       dpi: 300
       # [string='svg'] [svg,png,jpg] output format. Only used if no `output` is specified
-      format: 'svg'
+      format: 'png'
       # [list(string)=[]] list of components to highlight
       highlight: []
       # [list(string)=[]] list of libraries
@@ -71,7 +71,7 @@ outputs:
       # The default is none
       show_components: none
       # [string|dict] PCB style (colors). An internal name, the name of a JSON file or the style options
-      style: '/usr/share/pcbdraw/styles/set-black-cu.json'
+      style: '/usr/share/pcbdraw/styles/jlcpcb-green-enig.json'
       # [string=''] Board variant to apply
       variant: ''
       # [boolean=false] render V-CUTS on the Cmts.User layer

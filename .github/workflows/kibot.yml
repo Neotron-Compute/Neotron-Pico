@@ -74,7 +74,7 @@ jobs:
         uses: actions/upload-artifact@v2
         if: ${{success()}}
         with:
-          name: ${{github.event.repository.name}}_docs
+          name: Neotron-Pico-Schematic-Docs
           if-no-files-found: error
           path: |
             ${{env.dir}}/docs/**
@@ -83,12 +83,12 @@ jobs:
       - name: Run KiBot to generate Gerbers
         run: |
           kibot -c kibot.yml -e ${{env.schema}} -b ${{env.board}} -d ${{env.dir}} -s run_erc,run_drc -v \
-            gerbers.gbr drills.gbr drills.drl pickandplace.csv bom.csv
+            gerbers.gbr drills.gbr drills.drl pickandplace.csv bom.csv gerbers_jlcpcb.gbr JLCPCB_drill JLCPCB_bom JLCPCB_cpl
       - name: Upload Gerbers
         uses: actions/upload-artifact@v2
         if: ${{success()}}
         with:
-          name: ${{github.event.repository.name}}-Gerbers
+          name: Neotron-Pico-Gerbers
           if-no-files-found: error
           path: |
             ${{env.dir}}/gerbers/**
@@ -97,37 +97,39 @@ jobs:
       - name: Run KiBot to generate PCB CAD
         run: |
           kibot -c kibot.yml -e ${{env.schema}} -b ${{env.board}} -d ${{env.dir}} -s run_erc,run_drc -v \
-            model.step openboardview.brd autocad.dxf board_black_top.svg board_black_bottom.svg
+            board_green_top.png board_green_bottom.png
       - name: Upload PCB CAD
         uses: actions/upload-artifact@v2
         if: ${{success()}}
         with:
-          name: ${{github.event.repository.name}}-3D
+          name: Neotron-Pico-PCB
           if-no-files-found: error
           path: |
-            ${{env.dir}}/cad/**
             ${{env.dir}}/img/**
             !${{env.dir}}/**/*.ogv
             !${{env.dir}}/**/*.log
-      - name: Create Release
+      - name: Assemble Release
+        if: github.event_name == 'push' && startswith(github.ref, 'refs/tags/')
+        run: |
+          cd ${{env.dir}}
+          zip Neotron-Pico-JLCPCB-${{ steps.branch_name.outputs.SOURCE_TAG }}.zip gerbers/jlcpcb/*
+          rm -rf gerbers/jlcpcb
+          zip Neotron-Pico-Gerbers-${{ steps.branch_name.outputs.SOURCE_TAG }}.zip gerbers/*
+          mv docs/neotron-pico-schematic.pdf Neotron-Pico-Schematic-${{ steps.branch_name.outputs.SOURCE_TAG }}.pdf
+          mv docs/bom/neotron-pico-ibom.html Neotron-Pico-iBOM-${{ steps.branch_name.outputs.SOURCE_TAG }}.html
+          mv docs/bom/neotron-pico-bom.csv Neotron-Pico-BOM-${{ steps.branch_name.outputs.SOURCE_TAG }}.csv
+          mv img/pcb/neotron-pico-bottom.svg Neotron-Pico-PCB-Bottom-${{ steps.branch_name.outputs.SOURCE_TAG }}.png
+          mv img/pcb/neotron-pico-top.svg Neotron-Pico-PCB-Top-${{ steps.branch_name.outputs.SOURCE_TAG }}.png
+      - name: Create and Upload Release
         if: github.event_name == 'push' && startswith(github.ref, 'refs/tags/')
         id: create_release
-        uses: actions/create-release@v1
+        uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
-          release_name: Release ${{ steps.branch_name.outputs.SOURCE_TAG }}
+          name: Release ${{ steps.branch_name.outputs.SOURCE_TAG }}
           draft: false
           prerelease: false
-      - name: Upload files to Release
-        if: github.event_name == 'push' && startswith(github.ref, 'refs/tags/')
-        uses: softprops/action-gh-release@v1
-        with:
           files: |
-            ${{env.dir}}/docs/**
-            ${{env.dir}}/img/**
-            ${{env.dir}}/cad/**
-            ${{env.dir}}/gerbers/**
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            ${{env.dir}}/Neotron-Pico-*
