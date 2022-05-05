@@ -65,7 +65,7 @@ jobs:
         env:
           VERSION: ${{ github.run_id }}
         run: |
-          sed -i "s~\[Uncontrolled\]~Run ${VERSION}~g" ${{env.dir}}/Kicad/*.kicad_sch ${{env.dir}}/Kicad/*.kicad_pcb
+          sed -i "s~\[Uncontrolled\]~${VERSION}~g" ${{env.dir}}/Kicad/*.kicad_sch ${{env.dir}}/Kicad/*.kicad_pcb
       - name: Run KiBot for Schematic Docs
         run: |
           kibot -c kibot.yml -e ${{env.schema}} -b ${{env.board}} -d ${{env.dir}} -s run_erc,run_drc -v \
@@ -74,7 +74,7 @@ jobs:
         uses: actions/upload-artifact@v2
         if: ${{success()}}
         with:
-          name: ${{github.event.repository.name}}_docs.zip
+          name: ${{github.event.repository.name}}_docs
           if-no-files-found: error
           path: |
             ${{env.dir}}/docs/**
@@ -88,37 +88,24 @@ jobs:
         uses: actions/upload-artifact@v2
         if: ${{success()}}
         with:
-          name: ${{github.event.repository.name}}_gerbers.zip
+          name: ${{github.event.repository.name}}-Gerbers
           if-no-files-found: error
           path: |
             ${{env.dir}}/gerbers/**
             !${{env.dir}}/**/*.ogv
             !${{env.dir}}/**/*.log
-      - name: Run KiBot to generate 2D PCB CAD
+      - name: Run KiBot to generate PCB CAD
         run: |
           kibot -c kibot.yml -e ${{env.schema}} -b ${{env.board}} -d ${{env.dir}} -s run_erc,run_drc -v \
-            model.step openboardview.brd autocad.dxf
-      - name: Upload 2D PCB CAD
+            model.step openboardview.brd autocad.dxf board_black_top.svg board_black_bottom.svg
+      - name: Upload PCB CAD
         uses: actions/upload-artifact@v2
         if: ${{success()}}
         with:
-          name: ${{github.event.repository.name}}_cad.zip
+          name: ${{github.event.repository.name}}-3D
           if-no-files-found: error
           path: |
             ${{env.dir}}/cad/**
-            !${{env.dir}}/**/*.ogv
-            !${{env.dir}}/**/*.log
-      - name: Run KiBot to generate 3D Renders
-        run: |
-          kibot -c kibot.yml -e ${{env.schema}} -b ${{env.board}} -d ${{env.dir}} -s run_erc,run_drc -v \
-            board_black_top.svg board_black_bottom.svg
-      - name: Upload 3D Renders
-        uses: actions/upload-artifact@v2
-        if: ${{success()}}
-        with:
-          name: ${{github.event.repository.name}}_img.zip
-          if-no-files-found: error
-          path: |
             ${{env.dir}}/img/**
             !${{env.dir}}/**/*.ogv
             !${{env.dir}}/**/*.log
