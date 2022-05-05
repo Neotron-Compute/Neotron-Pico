@@ -106,8 +106,8 @@ jobs:
           mv docs/neotron-pico-schematic.pdf Neotron-Pico-Schematic-${{ steps.branch_name.outputs.SOURCE_TAG }}.pdf
           mv docs/bom/neotron-pico-ibom.html Neotron-Pico-iBOM-${{ steps.branch_name.outputs.SOURCE_TAG }}.html
           mv docs/bom/neotron-pico-bom.csv Neotron-Pico-BOM-${{ steps.branch_name.outputs.SOURCE_TAG }}.csv
-          mv img/pcb/neotron-pico-bottom.svg Neotron-Pico-PCB-Bottom-${{ steps.branch_name.outputs.SOURCE_TAG }}.png
-          mv img/pcb/neotron-pico-top.svg Neotron-Pico-PCB-Top-${{ steps.branch_name.outputs.SOURCE_TAG }}.png
+          mv img/pcb/neotron-pico-bottom.png Neotron-Pico-PCB-Bottom-${{ steps.branch_name.outputs.SOURCE_TAG }}.png
+          mv img/pcb/neotron-pico-top.png Neotron-Pico-PCB-Top-${{ steps.branch_name.outputs.SOURCE_TAG }}.png
       - name: Create and Upload Release
         if: github.event_name == 'push' && startswith(github.ref, 'refs/tags/')
         id: create_release
