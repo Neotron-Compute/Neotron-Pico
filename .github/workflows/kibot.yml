@@ -1,0 +1,130 @@
+# SPDX-FileCopyrightText: 2022 nerdyscout <https://github.com/nerdyscout/>
+#
+# SPDX-License-Identifier: CC0-1.0
+
+name: KiBot
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+    - "Kicad/*.kicad_sch"
+    - "Kicad/*.kicad_pcb"
+    - "Kicad/*.kicad_pro"
+    - "**/*kibot.yml"
+  pull_request:
+    paths:
+    - "Kicad/*.kicad_sch"
+    - "Kicad/*.kicad_pcb"
+    - "Kicad/*.kicad_pro"
+    - "**/*kibot.yml"
+
+env:
+  schema: "Kicad/neotron-pico.kicad_sch"
+  board: "Kicad/neotron-pico.kicad_pcb"
+  dir: .
+
+jobs:
+# checks
+  ERC:
+    runs-on: ubuntu-latest
+    container:
+      image: setsoft/kicad_auto:dev_k6
+    steps:
+      - uses: actions/checkout@v2
+      - name: run kibot
+        run: | 
+          kibot -c kibot.yml -e ${{env.schema}} -b ${{env.board}} -d ${{env.dir}} -s run_drc -v -i
+  DRC:
+    runs-on: ubuntu-latest
+    container:
+      image: setsoft/kicad_auto:dev_k6
+    steps:
+      - uses: actions/checkout@v2
+      - name: run kibot
+        run: | 
+          kibot -c kibot.yml -e ${{env.schema}} -b ${{env.board}} -d ${{env.dir}} -s run_erc -v -i
+# documentation
+  docs:
+    runs-on: ubuntu-latest
+    needs: [ERC]
+    container:
+      image: setsoft/kicad_auto:dev_k6
+    steps:
+      - uses: actions/checkout@v2
+      - name: run kibot
+        run: | 
+          kibot -c kibot.yml -e ${{env.schema}} -b ${{env.board}} -d ${{env.dir}} -s run_erc,run_drc -v \
+            ibom.html octopart.csv schematic.pdf
+      - uses: actions/upload-artifact@v2
+        if: ${{success()}}
+        with:
+          name: ${{github.event.repository.name}}_docs
+          if-no-files-found: error
+          path: |
+            ${{env.dir}}/docs/**
+            !${{env.dir}}/**/*.ogv
+            !${{env.dir}}/**/*.log
+# fabrications
+  gerbers:
+    runs-on: ubuntu-latest
+    needs: [DRC]
+    container:
+      image: setsoft/kicad_auto:dev_k6
+    steps:
+      - uses: actions/checkout@v2
+      - name: run kibot
+        run: |
+          kibot -c kibot.yml -e ${{env.schema}} -b ${{env.board}} -d ${{env.dir}} -s run_erc,run_drc -v \
+            gerbers.gbr drills.gbr drills.drl pickandplace.csv bom.csv
+      - uses: actions/upload-artifact@v2
+        if: ${{success()}}
+        with:
+          name: ${{github.event.repository.name}}_gerbers
+          if-no-files-found: error
+          path: |
+            ${{env.dir}}/gerbers/**
+            !${{env.dir}}/**/*.ogv
+            !${{env.dir}}/**/*.log
+# cad
+  cad:
+    runs-on: ubuntu-latest
+    needs: [DRC]
+    container:
+      image: setsoft/kicad_auto:dev_k6
+    steps:
+      - uses: actions/checkout@v2
+      - name: run kibot
+        run: | 
+          kibot -c kibot.yml -e ${{env.schema}} -b ${{env.board}} -d ${{env.dir}} -s run_erc,run_drc -v \
+            model.step openboardview.brd autocad.dxf
+      - uses: actions/upload-artifact@v2
+        if: ${{success()}}
+        with:
+          name: ${{github.event.repository.name}}_cad
+          if-no-files-found: error
+          path: |
+            ${{env.dir}}/cad/**
+            !${{env.dir}}/**/*.ogv
+            !${{env.dir}}/**/*.log
+# images
+  render:
+    runs-on: ubuntu-latest
+    needs: [DRC]
+    container:
+      image: setsoft/kicad_auto:dev_k6
+    steps:
+      - uses: actions/checkout@v2
+      - name: run kibot
+        run: | 
+          kibot -c kibot.yml -e ${{env.schema}} -b ${{env.board}} -d ${{env.dir}} -s run_erc,run_drc -v \
+            board_black_top.svg board_black_bottom.svg
+      - uses: actions/upload-artifact@v2
+        if: ${{success()}}
+        with:
+          name: ${{github.event.repository.name}}_img
+          if-no-files-found: error
+          path: |
+            ${{env.dir}}/img/**
+            !${{env.dir}}/**/*.ogv
+            !${{env.dir}}/**/*.log

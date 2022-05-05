@@ -1,0 +1,80 @@
+outputs:
+  - name: 'ibom.html'
+    comment: 'https://github.com/openscopeproject/InteractiveHtmlBom'
+    type: 'ibom'
+    dir: 'docs/bom'
+    options:
+      # [string=''] List of comma separated blacklisted components or prefixes with *. E.g. 'X1,MH*'.
+      # IBoM option, avoid using in conjunction with KiBot variants/filters
+      blacklist: ''
+      # [boolean=false] Blacklist components with empty value.
+      # IBoM option, avoid using in conjunction with KiBot variants/filters
+      blacklist_empty_val: false
+      # [number=0] Board rotation in degrees (-180 to 180). Will be rounded to multiple of 5
+      board_rotation: 0
+      # [string='left-right'] [bom-only,left-right,top-bottom] Default BOM view
+      bom_view: 'left-right'
+      # [string='Sourced,Placed'] Comma separated list of checkbox columns
+      checkboxes: 'Sourced,Placed'
+      # [boolean=false] Default to dark mode
+      dark_mode: true
+      # [string|list(string)=''] Name of the filter to mark components as not fitted.
+      # A short-cut to use for simple cases where a variant is an overkill.
+      # Avoid using it in conjunction with with IBoM native filtering options
+      dnf_filter: ''
+      # [string=''] Name of the extra field that indicates do not populate status.
+      # Components with this field not empty will be blacklisted.
+      # IBoM option, avoid using in conjunction with KiBot variants/filters
+      dnp_field: ''
+      # [string=''] Comma separated list of extra fields to pull from netlist or xml file
+      # extra_fields: 'MPN'
+      # [boolean=false] Hide footprint pads by default
+      hide_pads: false
+      # [boolean=false] Hide silkscreen by default
+      hide_silkscreen: false
+      # [boolean=false] Highlight pin1 by default
+      highlight_pin1: true
+      # [boolean=false] Include netlist information in output.
+      include_nets: true
+      # [boolean=false] Include track/zone information in output. F.Cu and B.Cu layers only
+      include_tracks: true
+      # [string='FB'] [F,FB,B] Default layer view
+      layer_view: 'FB'
+      # [string='ibom'] Output file name format supports substitutions:
+      # %f : original pcb file name without extension.
+      # %p : pcb/project title from pcb metadata.
+      # %c : company from pcb metadata.
+      # %r : revision from pcb metadata.
+      # %d : pcb date from metadata if available, file modification date otherwise.
+      # %D : bom generation date.
+      # %T : bom generation time.
+      # Extension .html will be added automatically.
+      # Note that this name is used only when output is ''
+      name_format: 'ibom'
+      # [string=''] Path to netlist or xml file
+      netlist_file: ''
+      # [boolean=false] Do not blacklist virtual components.
+      # IBoM option, avoid using in conjunction with KiBot variants/filters
+      no_blacklist_virtual: false
+      # [boolean=false] Do not redraw pcb on drag by default
+      no_redraw_on_drag: false
+      # [boolean=false] Normalize extra field name case. E.g. 'MPN' and 'mpn' will be considered the same field
+      normalize_field_case: true
+      # [string='%f-%i%v.%x'] Filename for the output, use '' to use the IBoM filename (%i=ibom, %x=html). Affected by global options
+      output: '%f-%i.%x'
+      # [boolean=false] Show fabrication layer by default
+      show_fabrication: false
+      # [string='C,R,L,D,U,Y,X,F,SW,A,~,HS,CNN,J,P,NT,MH'] Default sort order for components. Must contain '~' once
+      sort_order: 'C,R,L,D,U,Y,X,F,SW,A,~,HS,CNN,J,P,NT,MH'
+      # [string=''] Board variant to apply.
+      # Avoid using it in conjunction with with IBoM native filtering options
+      variant: ''
+      # [string=''] Name of the extra field that stores board variant for component.
+      # IBoM option, avoid using in conjunction with KiBot variants/filters
+      variant_field: ''
+      # [string=''] List of board variants to exclude from the BOM.
+      # IBoM option, avoid using in conjunction with KiBot variants/filters
+      variants_blacklist: ''
+      # [string=''] List of board variants to include in the BOM.
+      # IBoM option, avoid using in conjunction with KiBot variants/filters
+      variants_whitelist: ''

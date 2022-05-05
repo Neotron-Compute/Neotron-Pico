@@ -1,0 +1,63 @@
+kibot:
+  version: 1
+
+# variants:
+#   - name: 'XXX'
+#     comment: 'default'
+#     type: kibom
+#     file_id: _XXX
+#     variant: XXX
+
+preflight:
+  set_text_variables:
+    - name: "date"
+      command: git log -1 --format="%as"
+    - name: "version"
+      command: git describe --exact-match --tags 2> /dev/null || git rev-parse --short HEAD
+  update_xml: true
+  run_erc: true
+  run_drc: true
+  check_zone_fills: true
+  ignore_unconnected: false
+#  update_qr: true
+  # filters:
+  #   - filter: 'suppress courtyards overlap'
+  #     regex: 'Courtyards overlap'
+  #     error: 'courtyards_overlap'
+  #   - filter: 'suppress clearance violation'
+  #     regex: 'Clearance violation'
+  #     error: 'clearance'
+  #   - filter: 'suppress board edge clearance violation'
+  #     regex: 'Board edge clearance violation'
+  #     error: 'copper_edge_clearance'
+
+filters:
+  - name: "exclude_any"
+    type: "generic"
+    comment: "Exclude logos, testpoints, fiducials and power"
+    exclude_any:
+      - column: Reference
+        regex: "^(G|#|TP|F).*"
+
+import:
+# docs 
+  - file: .kibot/bom_ibom.kibot.yml
+  - file: .kibot/bom_kicost.kibot.yml
+  - file: .kibot/docs.kibot.yml
+#  - file: .kibot/datasheets.kibot.yml
+# fabrications
+  - file: .kibot/bom_octopart.kibot.yml
+  - file: .kibot/gerbers.kibot.yml
+  - file: .kibot/drills.kibot.yml
+  - file: .kibot/fabrications.kibot.yml
+# img
+  - file: .kibot/render.kibot.yml
+  - file: .kibot/plot.kibot.yml
+#  - file: .kibot/plot_jlcpcb-green-enig.kibot.yml
+#  - file: .kibot/plot_jlcpcb-green-hasl.kibot.yml
+#  - file: .kibot/plot_oshpark-afterdark.kibot.yml
+#  - file: .kibot/plot_oshpark-purple.kibot.yml
+# cad
+  - file: .kibot/boardview.kibot.yml
+  - file: .kibot/step.kibot.yml
+  - file: .kibot/dxf.kibot.yml

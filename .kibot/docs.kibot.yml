@@ -1,0 +1,77 @@
+outputs:
+  # For more information: https://github.com/INTI-CMNB/KiBoM
+  - name: 'schematic.pdf'
+    comment: "generate schematic (PDF)"
+    type: pdf_sch_print
+    dir: docs
+    options:
+      output: '%f-%i.%x' #[string='%f-%i%v.%x'] filename for the output PDF (%i=schematic %x=pdf). Affected by global options.
+
+  - name: 'schematic.svg'
+    comment: "generate schematic (SVG)"
+    type: svg_sch_print
+    dir: img
+    options:
+      output: '%f-%i.%x' #[string='%f-%i%v.%x'] filename for the output SVG (%i=schematic %x=svg). Affected by global options.
+
+  - name: 'board_top.pdf'
+    comment: "generate board top (PDF)"
+    type: 'pdf_pcb_print'
+    dir: 'docs'
+    options:
+      # [string|list(string)=''] Name of the filter to mark components as not fitted.
+      # A short-cut to use for simple cases where a variant is an overkill
+      dnf_filter: ''
+      # [string='full'] What to use to indicate the drill places, can be none, small or full (for real scale)
+      drill_marks: 'none'
+      # [boolean=false] Print mirrored (X axis inverted). ONLY for KiCad 6
+      mirror: false
+      # [boolean=false] Print in black and white
+      monochrome: false
+      # [string='%f-%i%v.%x'] Filename for the output PDF (%i=layers, %x=pdf). Affected by global options
+      output: '%f-board_top.%x'
+      # `output_name` is an alias for `output`
+      # [boolean=true] Include the title-block
+      plot_sheet_reference: true
+      # [number=1.0] Scale factor (0 means autoscaling)
+      scaling: 0
+      # [boolean=false] Print layers in separated pages
+      separated: false
+      # [string=''] Board variant to apply
+      variant: ''
+    layers:
+      - 'F.SilkS'
+      - 'F.Mask'
+      - 'Cmts.User'
+      - 'Edge.Cuts'
+
+  - name: 'board_bottom.pdf'
+    comment: "generate board bottom (PDF)"
+    type: 'pdf_pcb_print'
+    dir: 'docs'
+    options:
+      # [string|list(string)=''] Name of the filter to mark components as not fitted.
+      # A short-cut to use for simple cases where a variant is an overkill
+      dnf_filter: ''
+      # [string='full'] What to use to indicate the drill places, can be none, small or full (for real scale)
+      drill_marks: 'none'
+      # [boolean=false] Print mirrored (X axis inverted). ONLY for KiCad 6
+      mirror: true
+      # [boolean=false] Print in black and white
+      monochrome: false
+      # [string='%f-%i%v.%x'] Filename for the output PDF (%i=layers, %x=pdf). Affected by global options
+      output: '%f-board_bottom.%x'
+      # `output_name` is an alias for `output`
+      # [boolean=true] Include the title-block
+      plot_sheet_reference: true
+      # [number=1.0] Scale factor (0 means autoscaling)
+      scaling: 0
+      # [boolean=false] Print layers in separated pages
+      separated: false
+      # [string=''] Board variant to apply
+      variant: ''
+    layers:
+      - 'B.SilkS'
+      - 'B.Mask'
+      - 'Dwgs.User'
+      - 'Edge.Cuts'

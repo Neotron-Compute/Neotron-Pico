@@ -1,0 +1,54 @@
+outputs:
+  # For more information: https://github.com/INTI-CMNB/KiBoM
+  - name: "gerbers.gbr"
+    comment: "https://en.wikipedia.org/wiki/Gerber_format"
+    type: 'gerber'
+    dir: 'gerbers'
+    options:
+      # [boolean=true] creates a file with information about all the generated gerbers.
+      # You can use it in gerbview to load all gerbers at once
+      create_gerber_job_file: false
+      # [string|list(string)=''] Name of the filter to mark components as not fitted.
+      # A short-cut to use for simple cases where a variant is an overkill
+      dnf_filter: ''
+      # [boolean=true] do not include the PCB edge layer
+      exclude_edge_layer: true
+      # [boolean=false] do not plot the component pads in the silk screen
+      exclude_pads_from_silkscreen: false
+      # [boolean=false] include references and values even when they are marked as invisible
+      force_plot_invisible_refs_vals: false
+      # [string='%f-%i%v.%x'] name for the gerber job file (%i='job', %x='gbrjob'). Affected by global options
+      gerber_job_file: '%f-%i-%r.%x'
+      # [number=4.6] this the gerber coordinate format, can be 4.5 or 4.6
+      gerber_precision: 4.6
+      # [number=0.1] [0.02,2] line_width for objects without width [mm]
+      line_width: 0.1
+      # [string='%f-%i%v.%x'] output file name, the default KiCad name if empty. Affected by global options
+      output: '%f-%i-%r.%x'
+      # [boolean=true] include the footprint references
+      plot_footprint_refs: true
+      # [boolean=true] include the footprint values
+      plot_footprint_values: true
+      # [boolean=false] currently without effect
+      plot_sheet_reference: false
+      # [boolean=false] substract the solder mask from the silk screen
+      subtract_mask_from_silk: false
+      # [boolean=true] cover the vias
+      tent_vias: true
+      # [boolean=false] use the auxiliar axis as origin for coordinates
+      use_aux_axis_as_origin: true
+      # [boolean=true] include netlist metadata
+      use_gerber_net_attributes: true
+      # [boolean=true] use the extended X2 format
+      use_gerber_x2_attributes: true
+      # [boolean=false] use legacy Protel file extensions
+      use_protel_extensions: false
+      # [string=''] Board variant to apply
+      variant: ''
+    layers:
+      - 'Edge.Cuts'
+      - 'copper'
+      - 'F.Mask'
+      - 'B.Mask'
+      - 'F.SilkS'
+      - 'B.SilkS'

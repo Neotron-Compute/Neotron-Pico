@@ -1,0 +1,118 @@
+outputs:
+  - name: 'octopart.csv'
+    comment: 'https://octopart.com/'
+    type: 'kibom'
+    dir: 'docs/bom'
+    options:
+      # [string|dict] BoM configuration file, relative to PCB.
+      # You can also define the configuration here, will be stored in `config.kibom.ini`
+      conf:
+        # [list(dict)|list(string)] List of columns to display.
+        # Can be just the name of the field
+        columns:
+          # [string=''] Name of the field to use for this column
+          # field: ''
+          # [list(string)|string=''] List of fields to join to this column
+          # join: ''
+          # [string=''] Name to display in the header. The field is used when empty
+          # name: ''
+          - References
+          - Description
+          - Part
+          - Value
+          - field: Quantity Per PCB
+            name: Qty
+        # [list(list(string))] A series of values which are considered to be equivalent for the part name.
+        # Each entry is a list of equivalen names. Example: ['c', 'c_small', 'cap' ]
+        # will ensure the equivalent capacitor symbols can be grouped together.
+        # If empty the following aliases are used:
+        # - ['r', 'r_small', 'res', 'resistor']
+        # - ['l', 'l_small', 'inductor']
+        # - ['c', 'c_small', 'cap', 'capacitor']
+        # - ['sw', 'switch']
+        # - ['zener', 'zenersmall']
+        # - ['d', 'diode', 'd_small']
+        component_aliases: [['r', 'r_small', 'res', 'resistor'], ['l', 'l_small', 'inductor'], ['c', 'c_small', 'cap', 'capacitor'], ['sw', 'switch'], ['zener', 'zenersmall'], ['d', 'diode', 'd_small']]
+        # [string=''] Column with links to the datasheet (HTML only)
+        datasheet_as_link: ''
+        # [string|list(string)=''] Column/s containing Digi-Key part numbers, will be linked to web page (HTML only)
+        digikey_link: ''
+        # [list(dict)] A series of regular expressions used to exclude parts.
+        # If a component matches ANY of these, it will be excluded.
+        # Column names are case-insensitive.
+        # If empty the following list is used:
+        # - column: References
+        #   regex: '^TP[0-9]*'
+        # - column: References
+        #   regex: '^FID'
+        # - column: Part
+        #   regex: 'mount.*hole'
+        # - column: Part
+        #   regex: 'solder.*bridge'
+        # - column: Part
+        #   regex: 'test.*point'
+        # - column: Footprint
+        #   regex 'test.*point'
+        # - column: Footprint
+        #   regex: 'mount.*hole'
+        # - column: Footprint
+        #   regex: 'fiducial'
+        # list(dict)] A series of regular expressions used to exclude parts. If a component matches ANY of these, it will be excluded.
+        exclude_any:
+          - column: Part
+            regex: TestPoint
+          - column: Part
+            regex: LOGO
+          - column: Part
+            regex: Jumper
+        # [string='Config'] Field name used to determine if a particular part is to be fitted (also DNC and variants)
+        fit_field: 'Config'
+        # [boolean=true] Connectors with the same footprints will be grouped together, independent of the name of the connector
+        group_connectors: true
+        # [list(string)] List of fields used for sorting individual components into groups.
+        # Components which match (comparing *all* fields) will be grouped together.
+        # Field names are case-insensitive.
+        # If empty: ['Part', 'Part Lib', 'Value', 'Footprint', 'Footprint Lib'] is used
+        # group_fields: ['Part', 'Part Lib', 'Value', 'Footprint', 'Footprint Lib']
+        # group_fields: ['']
+        # [boolean=false] Hide column headers
+        hide_headers: false
+        # [boolean=false] Hide project information
+        hide_pcb_info: true
+        # [boolean=true] Generate a separated section for DNF (Do Not Fit) components (HTML only)
+        html_generate_dnf: true
+        # [boolean=true] Exclude DNF (Do Not Fit) components
+        ignore_dnf: true
+        # [list(dict)] A series of regular expressions used to select included parts.
+        # If there are any regex defined here, only components that match against ANY of them will be included.
+        # Column names are case-insensitive.
+        # If empty all the components are included
+        # include_only:
+          # [string=''] Name of the column to apply the regular expression
+          # column: ''
+          # `field` is an alias for `column`
+          # [string=''] Regular expression to match
+          # regex: ''
+          # `regexp` is an alias for `regex`
+        # [boolean=true] Component groups with blank fields will be merged into the most compatible group, where possible
+        merge_blank_fields: false
+        # [boolean=true] First column is the row number
+        number_rows: false
+        # [boolean=true] Each component group will be tested against a number of regular-expressions (see ``).
+        test_regex: true
+        # [boolean=false] Print grouped references in the alternate compressed style eg: R1-R7,R18
+        use_alt: false
+      # [string='HTML'] [HTML,CSV,XML,XLSX] format for the BoM
+      format: 'CSV'
+      # [number=1] Number of boards to build (components multiplier)
+      number: 1
+      # [string='%f-%i%v.%x'] filename for the output (%i=bom). Affected by global options
+      output: '%f-%i.%x'
+      # [string=','] CSV Separator
+      separator: ';'
+      # [string=''] Board variant(s), used to determine which components
+      # are output to the BoM. To specify multiple variants,
+      # with a BOM file exported for each variant, separate
+      # variants with the ';' (semicolon) character.
+      # This isn't related to the KiBot concept of variants
+      variant: ''

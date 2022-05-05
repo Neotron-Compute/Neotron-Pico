@@ -1,0 +1,38 @@
+outputs:
+  - name: 'oshpark afterdark svg top'
+    comment: 'https://oshpark.com/'
+    type: 'pcbdraw'
+    dir: 'img/pcb/oshpark/purple'
+    options:
+      bottom: false
+      dpi: 300
+      format: 'svg'
+      libs: []
+      mirror: false
+      no_drillholes: false
+      output: '%f-%i.%x'
+      placeholder: false
+      remap:
+      show_components: none
+      style: '/usr/share/pcbdraw/styles/oshpark-purple.json'
+      vcuts: true
+      warnings: 'none'
+
+  - name: 'oshpark afterdark svg bottom'
+    comment: 'https://oshpark.com/'
+    type: 'pcbdraw'
+    dir: 'img/pcb/oshpark/purple'
+    options:
+      bottom: true
+      dpi: 300
+      format: 'svg'
+      libs: []
+      mirror: false
+      no_drillholes: false
+      output: '%f-%i.%x'
+      placeholder: false
+      remap:
+      show_components: none
+      style: '/usr/share/pcbdraw/styles/oshpark-purple.json'
+      vcuts: true
+      warnings: 'none'
