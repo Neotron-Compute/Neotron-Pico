@@ -100,9 +100,9 @@ jobs:
         if: github.event_name == 'push' && startswith(github.ref, 'refs/tags/')
         run: |
           cd ${{env.dir}}
-          zip Neotron-Pico-JLCPCB-${{ steps.branch_name.outputs.SOURCE_TAG }}.zip gerbers/jlcpcb/*
+          tar cvzf Neotron-Pico-JLCPCB-${{ steps.branch_name.outputs.SOURCE_TAG }}.tar.gz gerbers/jlcpcb/*
           rm -rf gerbers/jlcpcb
-          zip Neotron-Pico-Gerbers-${{ steps.branch_name.outputs.SOURCE_TAG }}.zip gerbers/*
+          tar cvzf Neotron-Pico-Gerbers-${{ steps.branch_name.outputs.SOURCE_TAG }}.tar.gz gerbers/*
           mv docs/neotron-pico-schematic.pdf Neotron-Pico-Schematic-${{ steps.branch_name.outputs.SOURCE_TAG }}.pdf
           mv docs/bom/neotron-pico-ibom.html Neotron-Pico-iBOM-${{ steps.branch_name.outputs.SOURCE_TAG }}.html
           mv docs/bom/neotron-pico-bom.csv Neotron-Pico-BOM-${{ steps.branch_name.outputs.SOURCE_TAG }}.csv
