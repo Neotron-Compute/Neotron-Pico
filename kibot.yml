@@ -40,24 +40,12 @@ filters:
         regex: "^(G|#|TP|F).*"
 
 import:
-# docs 
   - file: .kibot/bom_ibom.kibot.yml
-  - file: .kibot/bom_kicost.kibot.yml
   - file: .kibot/docs.kibot.yml
-#  - file: .kibot/datasheets.kibot.yml
-# fabrications
   - file: .kibot/bom_octopart.kibot.yml
   - file: .kibot/gerbers.kibot.yml
+  - file: .kibot/gerbers_jlcpcb.kibot.yml
   - file: .kibot/drills.kibot.yml
   - file: .kibot/fabrications.kibot.yml
-# img
   - file: .kibot/render.kibot.yml
   - file: .kibot/plot.kibot.yml
-#  - file: .kibot/plot_jlcpcb-green-enig.kibot.yml
-#  - file: .kibot/plot_jlcpcb-green-hasl.kibot.yml
-#  - file: .kibot/plot_oshpark-afterdark.kibot.yml
-#  - file: .kibot/plot_oshpark-purple.kibot.yml
-# cad
-  - file: .kibot/boardview.kibot.yml
-  - file: .kibot/step.kibot.yml
-  - file: .kibot/dxf.kibot.yml

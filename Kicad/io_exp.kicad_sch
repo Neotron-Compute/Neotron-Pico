@@ -5,9 +5,9 @@
   (paper "A4")
 
   (title_block
-    (date "2021-06-10")
-    (rev "[Uncontrolled]")
-    (comment 2 "Copyright (c) The Neotron Developers, 2021")
+    (date "${date}")
+    (rev "${version}")
+    (comment 2 "Copyright (c) The Neotron Developers, 2022")
   )
 
   (lib_symbols

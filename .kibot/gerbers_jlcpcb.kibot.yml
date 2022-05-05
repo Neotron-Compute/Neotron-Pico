@@ -102,7 +102,7 @@ outputs:
       npth_id: "NPTH"
       metric_units: false
 
-  - name: 'https://jlcpcb.com/'
+  - name: JLCPCB_cpl
     comment: "Pick and place - JLCPCB"
     type: position
     dir: gerbers/jlcpcb

@@ -6,11 +6,11 @@
 
   (title_block
     (title "Neotron Common Hardware - 4-bit DAC")
-    (date "2021-06-10")
-    (rev "[Uncontrolled]")
+    (date "${date}")
+    (rev "${version}")
     (company "https://neotron-compute.github.io/")
     (comment 1 "Licenced as CC BY-SA")
-    (comment 2 "Copyright (c) The Neotron Developers, 2021")
+    (comment 2 "Copyright (c) The Neotron Developers, 2022")
   )
 
   (lib_symbols
