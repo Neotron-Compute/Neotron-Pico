@@ -2,19 +2,6 @@ kibot:
   version: 1
 
 filters:
-  - name: fix_rotation
-    comment: 'Adjust rotation for JLC'
-    type: rot_footprint
-    rotations:
-      - ["^SO-20", 270.0]
-
-  - name: only_jlc_parts
-    comment: 'Only parts with JLC code'
-    type: generic
-    include_only:
-      - column: 'LCSC Part#'
-        regex: '^C\d+'
-
   - name: only_fitted_parts
     comment: 'Only parts that are not DNF'
     type: generic
@@ -22,112 +9,40 @@ filters:
       - column: 'DNP'
         regex: '^0'
 
-variants:
-  - name: rotated
-    comment: 'Just a place holder for the rotation filter'
-    type: kibom
-    variant: rotated
-    pre_transform: fix_rotation
-
 preflight:
+  set_text_variables:
+    - name: "date"
+      command: git log -1 --format="%as"
+    - name: "version"
+      command: git describe --exact-match --tags 2> /dev/null || git rev-parse --short HEAD
+  update_xml: true
   run_erc: true
   run_drc: true
   check_zone_fills: true
   ignore_unconnected: false
-  update_xml: true
+
+import:
+  - file: .kibot/gerbers_jlcpcb.kibot.yml
 
 outputs:
-  # For more information: https://github.com/INTI-CMNB/KiBoM
   - name: 'generic_sch_pdf'
     comment: "Print the schematic as a PDF"
     type: pdf_sch_print
     options:
-      output: '%f-schematic-%r.%x'
-  
-  - name: 'make_gerbers'
-    comment: "Generate gerber files"
-    type: gerber
-    layers: 
-      - F.Cu
-      - In1.Cu
-      - In2.Cu
-      - B.Cu
-      - Edge.Cuts
-      - F.SilkS
-      - F.Paste
-      - F.Mask
-      - B.SilkS
-      - B.Paste
-      - B.Mask
-    dir: gerbers
-    options:
-      # generic layer options
-      exclude_edge_layer: false
-      exclude_pads_from_silkscreen: false
-      plot_sheet_reference: false
-      plot_footprint_refs: true
-      plot_footprint_values: true
-      force_plot_invisible_refs_vals: false
-      tent_vias: true
-      line_width: 0.15
-
-      # gerber options
-      use_aux_axis_as_origin: false
-      subtract_mask_from_silk: true
-      use_protel_extensions: false
-      gerber_precision: 4.5
-      create_gerber_job_file: true
-      use_gerber_x2_attributes: true
-      use_gerber_net_attributes: false
-
-  - name: 'make_drills'
-    comment: "Generate drill files"
-    type: excellon
-    dir: gerbers
-
-  - name: 'make_ascii_position'
-    comment: "Generate XY position files in ASCII"
-    type: position
-    dir: gerbers
-
-  - name: 'make_dxf'
-    comment: "Generate 2D PCB CAD in DXF format"
-    type: dxf
-    layers:
-      - F.Cu
-      - In1.Cu
-      - In2.Cu
-      - B.Cu
-      - Edge.Cuts
-      - F.SilkS
-      - F.Paste
-      - F.Mask
-      - B.SilkS
-      - B.Paste
-      - B.Mask
-    options:
-      output: '%f-pcb-cad-%r.%x'
-      exclude_edge_layer: false
-      metric_units: true
+      output: '%f-%r-schematic.%x'
 
   - name: 'make_svg'
     comment: "Generate 2D PCB image in SVG format"
     type: pcbdraw
     options:
-      output: '%f-pcb-%r.%x'
+      output: '%f-%r-pcb.%x'
 
   - name: 'make_png'
     comment: "Generate 2D PCB image in PNG format"
     type: pcbdraw
     options:
-      output: '%f-pcb-%r.%x'
+      output: '%f-%r-pcb.%x'
       format: png
-
-  - name: 'make_step'
-    comment: "Generate 3D PCB model in STEP format"
-    type: step
-    options:
-      output: '%f-3d-%r.%x'
 
   - name: 'make_pcb_pdf'
     comment: "Generate 2D PCB CAD in PDF format"
@@ -145,38 +60,9 @@ outputs:
       - B.Paste
       - B.Mask
     options:
-      output: '%f-pcb-%r.%x'
+      output: '%f-%r-pcb.%x'
       separated: true
-      monochrome: true
-
-  - name: 'make_bom_csv'
-    comment: "Generate bill-of-material file as CSV"
-    type: bom
-    options:
-      exclude_filter: 'only_fitted_parts'
-      group_fields:
-        - 'Part'
-        - 'Part Lib'
-        - 'Value'
-        - 'Voltage'
-        - 'Tolerance'
-        - 'Footprint'
-        - 'Footprint Lib'
-      columns:
-        - field: Manufacturer
-          name: Part Number
-          join: ['mpn']
-        - Footprint
-        - References
-        - Quantity per PCB
-        - field: Value
-          join: ['voltage', 'current', 'power', 'tolerance']
-        - Footprint
-        - field: 'LCSC Part#'
-          name: LCSC
-        - Digikey
-        - Mouser
-      output: '%f-bom-%r.%x'
+      monochrome: false
 
   - name: 'make_bom_html'
     comment: "Generate bill-of-material files as HTML"
@@ -210,63 +96,60 @@ outputs:
         - Digikey
         - Mouser
         - Footprint
-      output: '%f-bom-%r.%x'
+      output: '%f-%r-bom.%x'
 
   - name: 'make_ibom'
     comment: "Generate assembly HTML page"
     type: ibom
     options:
-      output: '%f-ibom-%r.%x'
+      output: '%f-%r-ibom.%x'
       extra_fields: "Voltage,Tolerance,Manufacturer,MPN"
 
-  - name: 'make_jlc_position'
-    comment: "Generate pick and place file, JLC style"
-    type: position
+  - name: 'make_octopart_bom'
+    comment: 'Make a bill-of-materials you can upload to https://octopart.com/'
+    type: 'kibom'
     options:
-      variant: rotated
-      output: '%f-cpl-jlc-%r.%x'
-      format: CSV
-      units: millimeters
-      separate_files_for_front_and_back: false
-      only_smd: true
-      columns:
-        - id: Ref
-          name: Designator
-        - Val
-        - Package
-        - id: PosX
-          name: "Mid X"
-        - id: PosY
-          name: "Mid Y"
-        - id: Rot
-          name: Rotation
-        - id: Side
-          name: Layer
-
-  - name: 'make_jlc_bom'
-    comment: "Generate BoM, JLC style"
-    type: bom
-    options:
-      group_fields:
-        - 'Part'
-        - 'Part Lib'
-        - 'Value'
-        - 'Voltage'
-        - 'Tolerance'
-        - 'Footprint'
-        - 'Footprint Lib'
-      output: '%f-bom-jlc-%r.%x'
-      exclude_filter: 'only_jlc_parts'
-      ref_separator: ','
-      columns:
-        - field: Value
-          name: Comment
-        - field: References
-          name: Designator
-        - Footprint
-        - field: 'LCSC Part#'
-          name: 'LCSC Part #'
-      csv:
+      conf:
+        columns:
+          - References
+          - Description
+          - Part
+          - Value
+          - field: Quantity Per PCB
+            name: Qty
+        component_aliases: [['r', 'r_small', 'res', 'resistor'], ['l', 'l_small', 'inductor'], ['c', 'c_small', 'cap', 'capacitor'], ['sw', 'switch'], ['zener', 'zenersmall'], ['d', 'diode', 'd_small']]
+        datasheet_as_link: ''
+        digikey_link: ''
+        exclude_any:
+          - column: Part
+            regex: TestPoint
+          - column: Part
+            regex: LOGO
+          - column: Part
+            regex: Jumper
+        fit_field: 'Config'
+        group_connectors: true
+        hide_headers: false
         hide_pcb_info: true
-        hide_stats_info: true
-        quote_all: true
+        html_generate_dnf: true
+        ignore_dnf: true
+        merge_blank_fields: false
+        number_rows: false
+        test_regex: true
+        use_alt: false
+      format: 'CSV'
+      number: 1
+      output: '%f-%r-bom-octopart.%x'
+      separator: ';'
+      variant: ''
+
+  - name: 'make_jlcpcb_zip'
+    type: compress
+    dir: .
+    options:
+      format: ZIP
+      files:
+        - dest: .
+          source: gerbers/jlcpcb/*
+      move_files: true
+      output: '%f-%r-gerbers-jlcpcb.%x'

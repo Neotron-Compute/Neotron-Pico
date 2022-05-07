@@ -12,7 +12,7 @@ filters:
     comment: "Only parts with JLC code"
     type: generic
     include_only:
-      - column: "LCSC"
+      - column: 'LCSC Part#'
         regex: '^C\d+'
   - name: fix_rotation
     comment: "Adjust rotation for JLC"
@@ -68,7 +68,13 @@ outputs:
     comment: Gerbers - JLCPCB
     type: gerber
     dir: gerbers/jlcpcb
-    options: &gerber_options
+    options:
+      dnf_filter: ''
+      gerber_job_file: '%f-%r-%i.%x'
+      output: '%f-%r-%i.%x'
+      plot_footprint_values: true
+      use_aux_axis_as_origin: true
+      variant: ''
       exclude_edge_layer: true
       exclude_pads_from_silkscreen: true
       plot_sheet_reference: false
@@ -108,7 +114,7 @@ outputs:
     dir: gerbers/jlcpcb
     options:
       variant: rotated
-      output: "%f_cpl.%x"
+      output: "%f-%r-cpl.%x"
       format: CSV
       units: millimeters
       separate_files_for_front_and_back: true
@@ -132,7 +138,7 @@ outputs:
     type: bom
     dir: gerbers/jlcpcb
     options:
-      output: "%f-%i-%r.%x"
+      output: "%f-%r-%i.%x"
       exclude_filter: only_jlc_parts
       ref_separator: ","
       columns:
@@ -141,7 +147,7 @@ outputs:
         - field: References
           name: Designator
         - Footprint
-        - field: "LCSC"
+        - field: "LCSC Part#"
           name: "LCSC Part #"
       csv:
         hide_pcb_info: true

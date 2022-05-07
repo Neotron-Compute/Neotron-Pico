@@ -1,5 +1,0 @@
-outputs:
-  - name: 'datasheets.pdf'
-    comment: "downloading datasheets"
-    type: download_datasheets
-    dir: docs/datasheets
