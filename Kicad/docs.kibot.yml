@@ -184,5 +184,5 @@ outputs:
           dest: 'gerbers-jlcpcb'
         - from_output: JLCPCB_drill
           dest: 'gerbers-jlcpcb'
-      move_files: false
+      move_files: true
       output: '%f-%r-gerbers-jlcpcb.%x'
