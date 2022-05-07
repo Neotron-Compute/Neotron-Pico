@@ -111,7 +111,6 @@ outputs:
   - name: JLCPCB_cpl
     comment: "Pick and place - JLCPCB"
     type: position
-    dir: gerbers/jlcpcb
     options:
       variant: rotated
       output: "%f-%r-cpl.%x"
@@ -136,7 +135,6 @@ outputs:
   - name: JLCPCB_bom
     comment: "BOM - JLCPCB"
     type: bom
-    dir: gerbers/jlcpcb
     options:
       output: "%f-%r-%i.%x"
       exclude_filter: only_jlc_parts
