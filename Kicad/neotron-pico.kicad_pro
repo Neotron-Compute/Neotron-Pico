@@ -521,5 +521,8 @@
       "Power Supply"
     ]
   ],
-  "text_variables": {}
+  "text_variables": {
+    "date": "2022-05-05",
+    "version": "c5afe9c"
+  }
 }

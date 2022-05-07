@@ -1,0 +1,188 @@
+kibot:
+  version: 1
+
+filters:
+  - name: only_fitted_parts
+    comment: 'Only parts that are not DNF'
+    type: generic
+    include_only:
+      - column: 'DNP'
+        regex: '^0'
+
+global:
+  kiauto_time_out_scale: 2.0
+
+preflight:
+  set_text_variables:
+    - name: "date"
+      command: git log -1 --format="%as"
+    - name: "version"
+      command: git describe --exact-match --tags 2> /dev/null || git rev-parse --short HEAD
+  update_xml: true
+  run_erc: true
+  run_drc: true
+  check_zone_fills: true
+  ignore_unconnected: false
+
+import:
+  - file: .kibot/gerbers_jlcpcb.kibot.yml
+
+outputs:
+  - name: 'generic_sch_pdf'
+    comment: "Print the schematic as a PDF"
+    type: pdf_sch_print
+    options:
+      output: '%f-%r-schematic.%x'
+
+  - name: 'make_pcb_pdf'
+    comment: "Generate 2D PCB CAD in PDF format"
+    type: pcb_print
+    options:
+      format: 'PDF'
+      pages:
+        - layers:
+          - 'F.Cu'
+          - 'F.Mask'
+          - 'F.Paste'
+          - 'F.SilkS'
+          title: "Top"
+        - layers:
+          - 'B.Cu'
+          - 'B.Mask'
+          - 'B.Paste'
+          - 'B.SilkS'
+          title: "Bottom"
+          mirror: true
+        - layers:
+          - 'F.Cu'
+          title: "F.Cu (Top Copper)"
+        - layers:
+          - 'In1.Cu'
+          title: 'In1.Cu (Inner Copper 1)'
+        - layers:
+          - 'In2.Cu'
+          title: 'In2.Cu (Inner Copper 2)'
+        - layers:
+          - 'B.Cu'
+          title: 'B.Cu (Bottom Copper)'
+          mirror: true
+        - layers:
+          - 'Edge.Cuts'
+          title: 'Edge.Cuts (PCB Outline)'
+        - layers:
+          - 'F.SilkS'
+          title: 'F.SilkS (Top Silkscreen)'
+        - layers:
+          - 'F.Paste'
+          title: 'F.Paste (Top Solder Paste)'
+        - layers:
+          - 'F.Mask'
+          title: 'F.Mask (Top Solder Mask)'
+        - layers:
+          - 'B.SilkS'
+          title: 'B.SilkS (Bottom Solder Mask)'
+          mirror: true
+        - layers:
+          - 'B.Paste'
+          title: 'B.Paste (Bottom Solder Paste)'
+          mirror: true
+        - layers:
+          - 'B.Mask'
+          title: 'B.Mask (Bottom Solder Mask)'
+          mirror: true
+      output: '%f-%r-pcb.%x'
+      force_edge_cuts: true
+      png_width: 4800
+
+  - name: 'make_bom_html'
+    comment: "Generate bill-of-material files as HTML"
+    type: bom
+    options:
+      format: HTML
+      exclude_filter: 'only_fitted_parts'
+      html:
+        datasheet_as_link: "Datasheet"
+        digikey_link: "Digikey"
+        title: "Neotron Pico Bill of Materials"
+      group_fields:
+        - 'Part'
+        - 'Part Lib'
+        - 'Value'
+        - 'Voltage'
+        - 'Tolerance'
+        - 'Footprint'
+        - 'Footprint Lib'
+      columns:
+        - Row
+        - field: Manufacturer
+          name: Part Number
+          join: ['mpn']
+        - References
+        - Quantity per PCB
+        - field: Value
+          join: ['voltage', 'current', 'power', 'tolerance']
+        - field: 'LCSC Part#'
+          name: LCSC
+        - Digikey
+        - Mouser
+        - Footprint
+      output: '%f-%r-bom.%x'
+
+  - name: 'make_ibom'
+    comment: "Generate assembly HTML page"
+    type: ibom
+    options:
+      output: '%f-%r-ibom.%x'
+      extra_fields: "Voltage,Tolerance,Manufacturer,MPN"
+
+  - name: 'make_octopart_bom'
+    comment: 'Make a bill-of-materials you can upload to https://octopart.com/'
+    type: 'kibom'
+    options:
+      conf:
+        columns:
+          - References
+          - Description
+          - Part
+          - Value
+          - field: Quantity Per PCB
+            name: Qty
+        component_aliases: [['r', 'r_small', 'res', 'resistor'], ['l', 'l_small', 'inductor'], ['c', 'c_small', 'cap', 'capacitor'], ['sw', 'switch'], ['zener', 'zenersmall'], ['d', 'diode', 'd_small']]
+        datasheet_as_link: ''
+        digikey_link: ''
+        exclude_any:
+          - column: Part
+            regex: TestPoint
+          - column: Part
+            regex: LOGO
+          - column: Part
+            regex: Jumper
+        fit_field: 'Config'
+        group_connectors: true
+        hide_headers: false
+        hide_pcb_info: true
+        html_generate_dnf: true
+        ignore_dnf: true
+        merge_blank_fields: false
+        number_rows: false
+        test_regex: true
+        use_alt: false
+      format: 'CSV'
+      number: 1
+      output: '%f-%r-bom-octopart.%x'
+      separator: ';'
+      variant: ''
+
+  - name: 'make_jlcpcb_zip'
+    comment: 'Make a ZIP file you can upload to JLCPCB'
+    type: compress
+    dir: .
+    options:
+      format: ZIP
+      files:
+        - from_output: gerbers_jlcpcb.gbr
+          dest: 'gerbers-jlcpcb'
+        - from_output: JLCPCB_drill
+          dest: 'gerbers-jlcpcb'
+      move_files: true
+      output: '%f-%r-gerbers-jlcpcb.%x'

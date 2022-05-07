@@ -331,6 +331,27 @@ Why not design and build your own expansion card? You could try designing:
 * A floppy drive controller card - either using an eSPI Super I/O chip, or connecting a legacy ISA bus floppy controller as per the ISA adaptor
 * A video card for a second monitor output, perhaps based on the CPLD used in the [VGAtonic](https://hackaday.io/project/6309-vga-graphics-over-spi-and-serial-vgatonic)
 
+## Automated Builds
+
+This project treats a PCB like embedded firmware:
+
+* The *source files* are the KiCAD 6 files (in `./Kicad`)
+* The *compiler* is KiCAD 6, plus various automation plug-ins (like KiBom)
+* The *build system* is [KiBot](https://github.com/INTI-CMNB/KiBot)
+* The *build outputs* are PDF versions of the schematic and the PCB, plus various zipped Gerber and Drill files.
+
+We do not check *build outputs* into this repository - ever. Instead, we run a Github Action which uses KiBot to generate our outputs. On a regular Pull Request, the *build outputs* are stored as *artefacts* against the particular Github Action run. When a new version is tagged, the *build outputs* are stored as files against a [Github Release](https://github.com/Neotron-Compute/Neotron-Pico/releases).
+
+You can build locally using the KiBot docker container:
+
+```console
+~/Neotron-Pico $ docker run --rm -ti -v $(pwd):/work setsoft/kicad_auto:dev_k6
+root@12345678:/# cd /work/Kicad
+root@12345678:/work/Kicad# kibot -c docs.kibot.yml -e neotron-pico.kicad_sch -b neotron-pico.kicad_pcb -d docs
+```
+
+This will build everything and put it in the `./Kicad/docs` directory.
+
 ## Changelog
 
 See [CHANGELOG.md](./CHANGELOG.md) for a list of detailed changes.
