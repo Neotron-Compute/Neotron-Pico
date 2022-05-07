@@ -9,6 +9,9 @@ filters:
       - column: 'DNP'
         regex: '^0'
 
+global:
+  kiauto_time_out_scale: 2.0
+
 preflight:
   set_text_variables:
     - name: "date"
