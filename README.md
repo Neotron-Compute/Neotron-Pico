@@ -198,36 +198,36 @@ Note that not all STM32 pins are 5V-tolerant, and the PS/2 protocol is a 5V open
 
 Because we used so many pins on the Pico for Audio and Video, we don't have enough pins to use for _Chip Select_ lines. Each device we wish to communicate with on the SPI bus must have a unique chip select line and so have limited lines means we could only have a limited number of SPI devices.
 
-However, in this design, we cheat and use a Microchip MCP23S17 I/O expander. This is an SPI peripheral with 16 GPIO pins that can be controlled by sending it commands over SPI. It also has an IRQ output which be programmed to fire when the input pins match a certain state.
+However, in this design, we cheat and use a Microchip MCP23S17 I/O expander. This is an SPI peripheral with 16 GPIO pins that can be controlled by sending it commands over SPI. It also has an IRQ output which be programmed to fire when the input pins match a certain state. The MCP23S18 (with open-drain outputs) will also work.
 
-The problem would come when the Pico has finished talking to our select SPI device - how does it tell the MCP23S17 to release the current chip select, without the SPI bus traffic also going to the currently selected expansion slot? We resolve this by using a simple 8-bit buffer with an enable pin. This allows the Pico to disconnect all of the chip select signals at once, regardless of the output of the MCP23S17. Once this is disabled, we know we are talking to only the MCP23S17 and the Pico can command it to select the next chip select of interest to us.
+The problem would come when the Pico has finished talking to our select SPI device - how does it tell the MCP23S17 to release the current chip select, without the SPI bus traffic also going to the currently selected expansion slot? We resolve this by using a simple 8-bit decoder/buffer with an enable pin. This allows the Pico to disconnect all of the chip select signals at once, regardless of the output of the MCP23S17. Once this is disabled, we know we are talking to only the MCP23S17 and the Pico can command it to select the next chip select of interest to us.
 
 Interrupts are also processed through the MCP23S17. We configure the device to provide an IRQ (edge, active low) whenever any of the eight IRQ inputs are active (programmable for edge or level, active high/rising or low/falling). When the Pico receives an IRQ from the MCP23S17, it must do a read of the pins (using SPI) to find out which device actually raised the interrupt. This model is similar to that used in the IBM PC - where the Intel 8088 must talk to an Intel 8259A programmable interrupt controller over the ISA bus to find out which interrupt was raised - except that in our case, our CPU is very fast and our bus is pretty slow, so our interrupt latency isn't very good. Worse, if there is a big SPI transaction happening (such as transferring a 512 byte block from an SD card) when an interrupt fires, the Pico will have to wait for that to complete before it can talk to the MCP23S17 to handle the IRQ. That or it could just drop the SPI transaction mid-way through and re-try it later (if your expansion device can tolerate such rudeness).
 
 ```
 +------+                                  +-----+
-|      |----------OUTPUT_EN-------------->|     |
+|      |----------/OUTPUT_EN------------->|     |
 |      |                                  |     |
 |      |           +----------+           |     |
 |      |           |          |           |     |
-|      |           |          |----CS0--->|     |----CS0----------------------------------+
+|      |           |          |--CS_SEL0->|     |----/CS0---------------------------------+
 |      |           |          |           |     |                                         |
-|      |           |          |----CS1--->|  B  |----CS1------------------------------+   |
-|      |           |          |           |  U  |                                     |   |
-|      |           |          |----CS2--->|  F  |----CS2--------------------------+   |   |
-|      |           |          |           |  F  |                                 |   |   |
-|      |           |          |----CS3--->|  E  |----CS3----------------------+   |   |   |
-|      |           |          |           |  R  |                             |   |   |   |
-|      |           |          |----CS4--->|     |----CS4------------------+   |   |   |   |
+|      |           |          |--CS_SEL1->|  D  |----/CS1-----------------------------+   |
+|      |           |          |           |  E  |                                     |   |
+|      |           |          |--CS_SEL2->|  C  |----/CS2-------------------------+   |   |
+|      |           |          |           |  O  |                                 |   |   |
+|      |           |          |           |  D  |----/CS3---------------------+   |   |   |
+|      |           |          |           |  E  |                             |   |   |   |
+|      |           |          |           |  R  |----/CS4-----------------+   |   |   |   |
 |      |           |          |           |     |                         |   |   |   |   |
-|      |           |          |----CS5--->|     |----CS5--------------+   |   |   |   |   |
+|      |           |          |           |     |----/CS5-------------+   |   |   |   |   |
 |      |           |          |           |     |                     |   |   |   |   |   |
-|      |           |          |----CS6--->|     |----CS6----------+   |   |   |   |   |   |
+|      |           |          |           |     |----/CS6---------+   |   |   |   |   |   |
 | Pico |           | MCP23S17 |           |     |                 |   |   |   |   |   |   |
-|      |           |          |----CS7--->|     |----CS7------+   |   |   |   |   |   |   |
-|      |           |          |           +-----+             v   v   v   v   v   v   v   v
+|      |           |    or    |           |     |----/CS7-----+   |   |   |   |   |   |   |
+|      |           | MCP23S18 |           +-----+             v   v   v   v   v   v   v   v
 |      |           |          |                             +---+---+---+---+---+---+---+---+
-|      |----CS---->|          |                             | S | S | S | S | S | S | S | S |
+|      |--/IOCS--->|          |                             | S | S | S | S | S | S | S | S |
 |      |<---IRQ----|          |                             | l | l | l | l | l | l | l | l |
 |      |<===SPI===>|          |<============SPI============>| o | o | o | o | o | o | o | o |
 |      |           |          |                             | t | t | t | t | t | t | t | t |
