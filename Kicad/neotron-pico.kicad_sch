@@ -1511,7 +1511,6 @@
     )
   )
 
-
   (junction (at 78.105 31.75) (diameter 0) (color 0 0 0 0)
     (uuid 09951708-cede-4223-abbd-f973693155f5)
   )
@@ -6565,6 +6564,15 @@
     (path "/00000000-0000-0000-0000-00005fde7599/00000000-0000-0000-0000-0000606e29d8"
       (reference "#PWR01108") (unit 1) (value "+5V") (footprint "")
     )
+    (path "/00000000-0000-0000-0000-00005fde7599/0e934122-0331-4c10-8f97-8041dd69d52a"
+      (reference "#PWR01109") (unit 1) (value "+5V") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-00005fde7599/640bb7a9-63a5-4a61-baae-4dc99b9f7d40"
+      (reference "#PWR01110") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-00005fde7599/0860ef28-49f5-4885-b3fe-72d5b77c564c"
+      (reference "#PWR01111") (unit 1) (value "GND") (footprint "")
+    )
     (path "/00000000-0000-0000-0000-00005fde7599/00000000-0000-0000-0000-0000606e29c9"
       (reference "#PWR01113") (unit 1) (value "+3.3V") (footprint "")
     )
@@ -6788,7 +6796,7 @@
       (reference "D1101") (unit 1) (value "ZMM5V6") (footprint "Diode_SMD:D_MiniMELF")
     )
     (path "/00000000-0000-0000-0000-00005fde7599/00000000-0000-0000-0000-0000606e29d1"
-      (reference "F1101") (unit 1) (value "32V 2A PTC") (footprint "Fuse:Fuse_BelFuse_0ZRE0016FF_L9.9mm_W3.8mm")
+      (reference "F1101") (unit 1) (value "32V 2A PTC") (footprint "neotron-pico:Bel Fuse 0ZRS0200FF")
     )
     (path "/00000000-0000-0000-0000-00005fde6c5a/00000000-0000-0000-0000-000060203374"
       (reference "FB701") (unit 1) (value "330R@100MHz") (footprint "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder")
@@ -6894,6 +6902,12 @@
     )
     (path "/00000000-0000-0000-0000-00005fde7599/00000000-0000-0000-0000-0000606e29c8"
       (reference "J1101") (unit 1) (value "Jack 2.1{slash}6.3mm") (footprint "Connector_BarrelJack:BarrelJack_CUI_PJ-063AH_Horizontal")
+    )
+    (path "/00000000-0000-0000-0000-00005fde7599/4898d965-3b51-4bf9-a936-b7f29787981b"
+      (reference "J1102") (unit 1) (value "2x2 Socket") (footprint "Connector_PinSocket_2.54mm:PinSocket_2x02_P2.54mm_Vertical")
+    )
+    (path "/00000000-0000-0000-0000-00005fde7599/02c8e5b1-7b91-4dfa-8ddd-9719410c4fa2"
+      (reference "J1103") (unit 1) (value "4-pin Socket") (footprint "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical")
     )
     (path "/00000000-0000-0000-0000-0000606b6d4f"
       (reference "JP101") (unit 1) (value "USB_PWR") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
