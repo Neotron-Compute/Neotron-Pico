@@ -388,7 +388,6 @@
         "nets": [
           "+5V",
           "Net-(C801-Pad1)",
-          "Net-(F801-Pad2)",
           "VDC"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
