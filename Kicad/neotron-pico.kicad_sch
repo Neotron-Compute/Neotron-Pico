@@ -4619,7 +4619,7 @@
     (property "Reference" "J106" (id 0) (at 265.5062 86.5378 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Value" "Conn_01x06_Pins" (id 1) (at 265.5062 88.8492 0)
+    (property "Value" "Conn_01x06" (id 1) (at 265.5062 88.8492 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" (id 2) (at 264.795 89.535 0)
@@ -5647,7 +5647,7 @@
   (symbol (lib_id "power:GND") (at 62.23 104.775 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 0692467e-4d98-4b5f-909e-64be65758f3b)
-    (property "Reference" "#PWR?" (id 0) (at 62.23 111.125 0)
+    (property "Reference" "#PWR0102" (id 0) (at 62.23 111.125 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (id 1) (at 62.357 109.1692 0))
@@ -5711,7 +5711,7 @@
   (symbol (lib_id "power:VBUS") (at 44.45 40.005 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 33517fd8-bfa1-4c4f-a8e6-e9d782d16a8b)
-    (property "Reference" "#PWR?" (id 0) (at 44.45 43.815 0)
+    (property "Reference" "#PWR0103" (id 0) (at 44.45 43.815 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VBUS" (id 1) (at 44.45 35.56 0))
@@ -5777,7 +5777,7 @@
   (symbol (lib_id "power:VBUS") (at 54.61 27.305 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 439a13c1-0f1f-40f7-9a4b-6f5d52b6137e)
-    (property "Reference" "#PWR?" (id 0) (at 54.61 31.115 0)
+    (property "Reference" "#PWR0104" (id 0) (at 54.61 31.115 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VBUS" (id 1) (at 54.61 21.59 0))
@@ -6205,6 +6205,15 @@
     )
     (path "/00000000-0000-0000-0000-000060b3c806"
       (reference "#PWR0101") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/0692467e-4d98-4b5f-909e-64be65758f3b"
+      (reference "#PWR0102") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/33517fd8-bfa1-4c4f-a8e6-e9d782d16a8b"
+      (reference "#PWR0103") (unit 1) (value "VBUS") (footprint "")
+    )
+    (path "/439a13c1-0f1f-40f7-9a4b-6f5d52b6137e"
+      (reference "#PWR0104") (unit 1) (value "VBUS") (footprint "")
     )
     (path "/00000000-0000-0000-0000-000060b3dfa1"
       (reference "#PWR0106") (unit 1) (value "GND") (footprint "")
@@ -6695,15 +6704,6 @@
     (path "/00000000-0000-0000-0000-00005fde7599/0860ef28-49f5-4885-b3fe-72d5b77c564c"
       (reference "#PWR01112") (unit 1) (value "GND") (footprint "")
     )
-    (path "/0692467e-4d98-4b5f-909e-64be65758f3b"
-      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/33517fd8-bfa1-4c4f-a8e6-e9d782d16a8b"
-      (reference "#PWR?") (unit 1) (value "VBUS") (footprint "")
-    )
-    (path "/439a13c1-0f1f-40f7-9a4b-6f5d52b6137e"
-      (reference "#PWR?") (unit 1) (value "VBUS") (footprint "")
-    )
     (path "/00000000-0000-0000-0000-00005fef404d/00000000-0000-0000-0000-00005e0f507e"
       (reference "BT801") (unit 1) (value "CR2032") (footprint "Neotron-Common-Hardware:BatteryHolder_Keystone_103_1x20mm")
     )
@@ -6876,16 +6876,13 @@
       (reference "C1102") (unit 1) (value "100uF") (footprint "Capacitor_THT:CP_Radial_D8.0mm_P5.00mm")
     )
     (path "/00000000-0000-0000-0000-00005fde7599/930a8dcf-4cce-46ee-a662-11ce8573edbf"
-      (reference "C1103") (unit 1) (value "10uF") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
+      (reference "C1103") (unit 1) (value "1uF") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-00005fde7599/00000000-0000-0000-0000-0000606e29db"
-      (reference "C1104") (unit 1) (value "10uF") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
+      (reference "C1104") (unit 1) (value "22uF") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-00005fde7599/7aa4c31a-c7d2-40c3-be15-ff4382a68fc6"
-      (reference "C1105") (unit 1) (value "10uF") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
-    )
-    (path "/00000000-0000-0000-0000-00005fde7599/00000000-0000-0000-0000-000060e7e52a"
-      (reference "C1106") (unit 1) (value "10uF") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
+      (reference "C1105") (unit 1) (value "2.2uF") (footprint "Capacitor_SMD:CP_Elec_4x5.4")
     )
     (path "/00000000-0000-0000-0000-00005fde7599/00000000-0000-0000-0000-0000606e29ce"
       (reference "C1107") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
@@ -6987,7 +6984,7 @@
       (reference "J105") (unit 1) (value "Neotron-Expansion-Slot") (footprint "Neotron-Common-Hardware:Neotron-Expansion-Slot")
     )
     (path "/00000000-0000-0000-0000-0000607e546b"
-      (reference "J106") (unit 1) (value "Conn_01x06_Pins") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical")
+      (reference "J106") (unit 1) (value "Conn_01x06") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical")
     )
     (path "/00000000-0000-0000-0000-000060bff553"
       (reference "J107") (unit 1) (value "Conn_01x09") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x09_P2.54mm_Vertical")
@@ -7386,7 +7383,7 @@
       (reference "U1101") (unit 1) (value "DC-DC Module") (footprint "Neotron-Common-Hardware:K78xx-3AR3")
     )
     (path "/00000000-0000-0000-0000-00005fde7599/8e44377e-becb-4620-a243-a1d7822574c8"
-      (reference "U1102") (unit 1) (value "HT7533-1-SOT89") (footprint "Package_TO_SOT_SMD:SOT-89-3")
+      (reference "U1102") (unit 1) (value "LP2950N") (footprint "Package_TO_SOT_THT:TO-92_Inline")
     )
     (path "/00000000-0000-0000-0000-00005fde7599/00000000-0000-0000-0000-00005fece573"
       (reference "U1103") (unit 1) (value "AMS1117-3.3") (footprint "Package_TO_SOT_SMD:SOT-223-3_TabPin2")
