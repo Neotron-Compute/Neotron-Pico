@@ -6715,38 +6715,35 @@
     (path "/00000000-0000-0000-0000-0000606f6368/00000000-0000-0000-0000-0000606e29e6"
       (reference "#PWR0912") (unit 1) (value "GND") (footprint "")
     )
-    (path "/00000000-0000-0000-0000-0000606f6368/2343ace9-b0e6-4e5a-9541-8cdd79865e8d"
-      (reference "#PWR0913") (unit 1) (value "+3.3VP") (footprint "")
-    )
     (path "/00000000-0000-0000-0000-0000606f6368/d3a2ea50-261e-4365-a7ce-1ba3177c741c"
-      (reference "#PWR0914") (unit 1) (value "VDC") (footprint "")
+      (reference "#PWR0913") (unit 1) (value "VDC") (footprint "")
     )
     (path "/00000000-0000-0000-0000-0000606f6368/00000000-0000-0000-0000-0000607270b5"
-      (reference "#PWR0915") (unit 1) (value "GND") (footprint "")
+      (reference "#PWR0914") (unit 1) (value "GND") (footprint "")
     )
     (path "/00000000-0000-0000-0000-0000606f6368/00000000-0000-0000-0000-0000606e2a08"
-      (reference "#PWR0916") (unit 1) (value "+3.3VP") (footprint "")
+      (reference "#PWR0915") (unit 1) (value "+3.3VP") (footprint "")
     )
     (path "/00000000-0000-0000-0000-0000606f6368/00000000-0000-0000-0000-0000606e29fb"
-      (reference "#PWR0917") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/00000000-0000-0000-0000-0000606f6368/c32a6c0a-4752-4488-b736-8e4e77e4dded"
-      (reference "#PWR0918") (unit 1) (value "+3.3VP") (footprint "")
+      (reference "#PWR0916") (unit 1) (value "GND") (footprint "")
     )
     (path "/00000000-0000-0000-0000-0000606f6368/cef45d82-12c3-4655-a428-d1b7f013cad2"
-      (reference "#PWR0919") (unit 1) (value "VDC") (footprint "")
+      (reference "#PWR0917") (unit 1) (value "VDC") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000606f6368/fcad7c1d-9bf8-4690-86db-a9e6889551c0"
+      (reference "#PWR0918") (unit 1) (value "GND") (footprint "")
     )
     (path "/00000000-0000-0000-0000-0000606f6368/00000000-0000-0000-0000-00005ffcf4b9"
-      (reference "#PWR0920") (unit 1) (value "+3V3") (footprint "")
+      (reference "#PWR0919") (unit 1) (value "+3V3") (footprint "")
     )
     (path "/00000000-0000-0000-0000-0000606f6368/00000000-0000-0000-0000-00005ffbb273"
-      (reference "#PWR0921") (unit 1) (value "GND") (footprint "")
+      (reference "#PWR0920") (unit 1) (value "GND") (footprint "")
     )
     (path "/00000000-0000-0000-0000-0000606f6368/00000000-0000-0000-0000-0000606e29ee"
-      (reference "#PWR0922") (unit 1) (value "+5V") (footprint "")
+      (reference "#PWR0921") (unit 1) (value "+5V") (footprint "")
     )
     (path "/00000000-0000-0000-0000-0000606f6368/00000000-0000-0000-0000-0000606e29f1"
-      (reference "#PWR0923") (unit 1) (value "GND") (footprint "")
+      (reference "#PWR0922") (unit 1) (value "GND") (footprint "")
     )
     (path "/00000000-0000-0000-0000-00005fef6b08/00000000-0000-0000-0000-00005fe7caa7"
       (reference "#PWR01001") (unit 1) (value "+3V3") (footprint "")
@@ -7112,13 +7109,13 @@
       (reference "J903") (unit 1) (value "Conn_01x02") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
     )
     (path "/00000000-0000-0000-0000-0000606f6368/00000000-0000-0000-0000-0000606e29fa"
-      (reference "J904") (unit 1) (value "Header") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+      (reference "J904") (unit 1) (value "Conn_01x02") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
     )
     (path "/00000000-0000-0000-0000-0000606f6368/00000000-0000-0000-0000-0000606e2a07"
       (reference "J905") (unit 1) (value "Conn_01x05") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical")
     )
     (path "/00000000-0000-0000-0000-0000606f6368/00000000-0000-0000-0000-0000606e2a0f"
-      (reference "J906") (unit 1) (value "Header") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+      (reference "J906") (unit 1) (value "Conn_01x02") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
     )
     (path "/00000000-0000-0000-0000-00005fef6b08/00000000-0000-0000-0000-00005fe7bb6e"
       (reference "J1001") (unit 1) (value "SD_Card") (footprint "Connector_Card:SD_Kyocera_145638009211859+")
@@ -7164,6 +7161,12 @@
     )
     (path "/00000000-0000-0000-0000-000060afb124"
       (reference "Q101") (unit 1) (value "DMG2305UX") (footprint "Package_TO_SOT_SMD:SOT-23")
+    )
+    (path "/00000000-0000-0000-0000-0000606f6368/97543ffa-ddaf-40ea-8418-0853fe3bf6c2"
+      (reference "Q901") (unit 1) (value "2N7002") (footprint "Package_TO_SOT_SMD:SOT-23")
+    )
+    (path "/00000000-0000-0000-0000-0000606f6368/3bccfa59-db2e-4b24-a177-2fe765be9bd5"
+      (reference "Q902") (unit 1) (value "2N7002") (footprint "Package_TO_SOT_SMD:SOT-23")
     )
     (path "/00000000-0000-0000-0000-00005fde7599/00000000-0000-0000-0000-0000607850d9"
       (reference "Q1101") (unit 1) (value "BC546") (footprint "Package_TO_SOT_THT:TO-92_Inline")
