@@ -339,7 +339,7 @@
       "no_connect_dangling": "warning",
       "pin_not_connected": "error",
       "pin_not_driven": "error",
-      "pin_to_pin": "warning",
+      "pin_to_pin": "error",
       "power_pin_not_driven": "error",
       "similar_labels": "warning",
       "unannotated": "error",
@@ -408,8 +408,7 @@
         "name": "PicoPower",
         "nets": [
           "+3.3VP",
-          "+3V3",
-          "+BATT"
+          "+3V3"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
@@ -480,7 +479,7 @@
     ],
     [
       "00000000-0000-0000-0000-00006069d32a",
-      "I/O Expander"
+      "IO Expander"
     ],
     [
       "00000000-0000-0000-0000-000060687f8a",
@@ -504,19 +503,27 @@
     ],
     [
       "00000000-0000-0000-0000-00005fef404d",
-      "Real TIme Clock"
+      "Real Time Clock"
     ],
     [
-      "00000000-0000-0000-0000-0000606f6368",
+      "fa93e2c3-e1a7-4f88-921c-28d290d83e98",
       "BMC"
     ],
     [
-      "00000000-0000-0000-0000-00005fef6b08",
+      "f6d97a2f-a1cf-44b8-9182-20a8151a2e1a",
       "SD Card"
     ],
     [
-      "00000000-0000-0000-0000-00005fde7599",
+      "78eb64c2-d4cd-4a73-b8d7-3608f5c46fce",
       "Power Supply"
+    ],
+    [
+      "b2e2dc59-6c06-42f7-9516-007467fc5f98",
+      "Raspberry Pico"
+    ],
+    [
+      "473239af-77cb-4a8b-b63b-c3d123df75c7",
+      "Slots and Peripherals"
     ]
   ],
   "text_variables": {
