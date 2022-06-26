@@ -1375,7 +1375,7 @@
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid df6ad5f4-de15-4501-a705-dbcff656473a)
   )
-  (hierarchical_label "~{IRQ}" (shape output) (at 90.17 72.39 180)
+  (hierarchical_label "~{IRQ_IO}" (shape output) (at 90.17 72.39 180)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid f2862a47-46e9-40a8-a47e-389c7b661d9c)
   )
