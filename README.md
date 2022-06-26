@@ -8,7 +8,7 @@ The Neotron Pico is based around the idea of the [Neotron-32](https://github.com
 
 ## Design
 
-The Raspberry Pi Pico is the core of the Neotron Pico. It uses PIO statemachines to generate 12-bit Super VGA video, and digital 16 bit 48 kHz stereo audio. It also has both I²C and SPI buses. SPI chipselects and IRQs are handled by an SPI-to-GPIO expander. This provides eight chip-selects and eight IRQs, to support up to eight expansion slots or peripherals. The eight chip-selects are gated with a tri-state bus transceiver, allowing the Pico to talk to either the I/O exander, or the selected expansion slot. The board has an SD Card fitted in the 'Slot 1' position, and the Board Management Controller in the 'Slot 0' position, leaving 'Slot 2' through to 'Slot 7' available for expansion. Each expansion slot has both I²C and SPI, along with unique chip-select and IRQ signals.
+The Raspberry Pi Pico is the core of the Neotron Pico. It uses PIO statemachines to generate 12-bit Super VGA video, and digital 16 bit 48 kHz stereo audio. It also has both I²C and SPI buses. SPI chipselects and IRQs are handled by an SPI-to-GPIO expander. This provides eight chip-selects and eight IRQs, to support up to eight expansion slots or peripherals. The eight chip-selects can be globally disabled, allowing the Pico to talk to either the I/O exander, or the selected expansion slot. The board has an SD Card fitted in the 'Slot 1' position, and the Board Management Controller in the 'Slot 0' position, leaving 'Slot 2' through to 'Slot 7' available for expansion. Each expansion slot has both I²C and SPI, along with unique chip-select and IRQ signals.
 
 ## Software
 
@@ -21,16 +21,17 @@ The Neotron Pico is designed to run the Neotron OS - a CP/M or MS-DOS alike OS w
   * One available for OS/Application use
 * 264 KiB SRAM
 * 2 MiB Boot ROM
+* Micro-ATX form-factor
 * SD Card slot for storage
-* 8V to 28V DC input
+* 12V DC input
 * SPI and I²C based expansion bus
   * Four externally accessible expansion slots
-  * Two internally accessible expansion slots
+  * Debug headers with signals for two more slots
 * Dual PS/2 ports for Keyboard + Mouse
 * 16-bit 48 kHz stereo audio headphone out, line out, line in, and microphone in
 * 12-bit (4096 colour) VGA video output
   * Capable of 40x25, 80x25 and 80x50 text modes
-  * Capable of 640x480 @ 60 Hz 16-colour and 320x240 @ 60 Hz 256-colour graphics modes
+  * Capable of 640x480 @ 60 Hz 16-colour, 320x240 @ 60 Hz / 300x200 @ 70 Hz 256-colour graphics modes
 * Designed to run the Neotron OS
 * Open Source Hardware
 * Designed for hand assembly
@@ -75,15 +76,15 @@ The limited I/O on the Pico (we are using half the available pins just for the v
 | 19   | GP14 | I2C_SDA       | I²C Data                                           |
 | 20   | GP15 | I2C_SCL       | I²C Clock                                          |
 | 21   | GP16 | SPI_CIPO      | SPI Data In                                        |
-| 22   | GP17 | SPI_CS_nIOCS  | Low selects MCP23S17, High selects Peripherals     |
+| 22   | GP17 | nSPI_CS_IO    | Low selects MCP23S17, High selects Peripherals     |
 | 24   | GP18 | SPI_CLK       | SPI Clock                                          |
 | 25   | GP19 | SPI_COPI      | SPI Data Out                                       |
-| 26   | GP20 | nIRQn         | Interrupt Request Input from MCP23S17              |
+| 26   | GP20 | nIRQ_IO       | Interrupt Request Input from MCP23S17              |
 | 27   | GP21 | nOUTPUT_EN    | Enable buffered CS outputs from MCP23S17           |
-| 29   | GP22 | I2S_DAC_DATA  | Digital Audio Output                               |
-| 31   | GP26 | I2S_ADC_DATA  | Digital Audio Input                                |
-| 32   | GP27 | I2S_LR_CLOCK  | Digital Audio Sync (96kHz)                         |
-| 34   | GP28 | I2S_BIT_CLOCK | Digital Audio Bit Clock (1.536MHz)                 |
+| 29   | GP22 | I2S_ADC_DATA  | Digital Audio Input                                |
+| 31   | GP26 | I2S_DAC_DATA  | Digital Audio Output                               |
+| 32   | GP27 | I2S_BIT_CLOCK | Digital Audio Bit Clock (1.536MHz)                 |
+| 34   | GP28 | I2S_LR_CLOCK  | Digital Audio Sync (96kHz)                         |
 
 ### Super VGA output
 
@@ -136,7 +137,7 @@ Power-on Reset sequencing, soft shutdown, voltage monitoring and PS/2 interfacin
    * Can turn the main 5V regulator on and off
    * Runs from 3.3V stand-by regulator
 * SPI interface (with dedicated IRQ line) with main CPU
-* Secondary I²C bus which can be controlled over SPI
+* Secondary I²C bus, connected to VGA DDC pins
 
 | Pin  | Name | Signal      | Function                                  |
 | :--- | :--- | :---------- | :---------------------------------------- |
@@ -187,16 +188,31 @@ Note that not all STM32 pins are 5V-tolerant, and the PS/2 protocol is a 5V open
 
 ### Power Supply
 
-* 12V (8V to 14V) input
+* 12V nominal input
+  * 8V to 30V is OK if you don't need the 12V rail
   * Fused with a PTC at 2A
   * Reverse polarity protected
 * 3A 5.0V main regulator (DC-DC switch-mode regulator module)
   * Morsun K7805-3AR3
-* 100mA 3.3V stand-by regulator (a micropower linear regulator running from 12V input)
-* 1A 3.3V regulator (a high-power 1117 type linear regulator running from 5.0V)
+* 200mA 3.3V stand-by regulator (a micropower linear regulator running from 12V input)
+* 1A 3.3V regulator (a high-power 1117 type linear regulator running from 5.0V rail)
 * Controlled and monitored by the Board Management Controller
 
-### I/O Expanders
+### Real Time Clock
+
+The Neotron Pico can retain time/date settings when fully powered off, using a Real Time Clock chip and a CR2032 lithium coin cell. This also retains system settings in a very low-power SRAM built into the Real Time Clock chip.
+
+* MCP7940N or DS1307Z+ Real Time Clock
+* CR2032 battery-backup (should be OK for about 10 years)
+* 56 bytes of battery-backed SRAM for system settings
+
+### I/O Expander
+
+* MCP23S17 or MCP23S18 SPI to GPIO expander (DIP)
+* 74HC138 3:8 decoder (SOIC-16)
+* Five debug LEDs
+* Eight Chip-Select outputs (active low)
+* Eight IRQ inputs (active high or active low)
 
 Because we used so many pins on the Pico for Audio and Video, we don't have enough pins to use for _Chip Select_ lines. Each device we wish to communicate with on the SPI bus must have a unique chip select line and so have limited lines means we could only have a limited number of SPI devices.
 
@@ -263,23 +279,59 @@ The expansion slot is a simple 2x10 header. We suggest the use of a TE card-edge
 The expansion connector pinout is:
 
 ```
-     SPI_COPI   1    2   GND
-     SPI_CIPO   3    4   GND
-      SPI_CLK   5    6   GND
-      ~SPI_CS   7    8   ~IRQ
-      I2C_SDA   9   10   I2C_SCL
- EEPROM_ADDR0   11  12   EEPROM_ADDR1
- EEPROM_ADDR2   13  14   ~RESET
-           5V   15  16   5V
-          3V3   17  18   3V3
-          GND   19  20   GND
+               +--------+
+     SPI_COPI -| 1    2 |- GND
+     SPI_CIPO -| 3    4 |- GND
+      SPI_CLK -| 5    6 |- GND
+      ~SPI_CS -| 7    8 |- ~IRQ
+      I2C_SDA -| 9   10 |- I2C_SCL
+ EEPROM_ADDR0 -| 11  12 |- EEPROM_ADDR1
+ EEPROM_ADDR2 -| 13  14 |- ~RESET
+           5V -| 15  16 |- 5V
+          3V3 -| 17  18 |- 3V3
+          GND -| 19  20 |- GND
+               +--------+
 ```
 
 Four expansion slots line up with the ATX case expansion brackets, allowing you to use cards with external connectors. Note that these are aligned the "PCI way around" with components facing away from the board's I/O area, rather than the "ISA way around" which would have the components facing the I/O area. A further three of the expansion slots are available for internal use only.
 
-### I²C Bus
+### Slot Assignments
 
-All I²C device address given below are 7-bit values. The first byte in a message is the _control byte_; this is comprised of the device address in the top seven bits, and an extra bit at the bottom to indicate read (1) or write (0).
+#### Slot 0
+
+The signals for *Slot 0* are connected to the Board Management Controller. Both CS and IRQ are connected.
+
+#### Slot 1
+
+The signals for *Slot 1* are connected to the on-board SD Card Slot. CS 1 is connected to the card's `DAT3` pin, and IRQ 1 is connected to the `Card Detect` pin on the card slot.
+
+#### Slot 2
+
+*Slot 2* is the right-most Expansion Slot.
+
+#### Slot 3
+
+*Slot 3* is the right-most-but-one Expansion Slot.
+
+#### Slot 4
+
+*Slot 4* is the left-most-but-one Expansion Slot.
+
+#### Slot 5
+
+*Slot 5* is the left-most Expansion Slot.
+
+#### Slot 6
+
+*Slot 6* is not fitted. SPI Chip Select 6 and IRQ 6 are only available on the test headers. 
+
+#### Slot 7
+
+*Slot 7* is not fitted. SPI Chip Select 7 and IRQ 7 are only available on the test headers. 
+
+### Main I²C Bus
+
+All I²C device address given below are 7-bit values. Note that with I²C, the first byte in a message is the _control byte_; this is comprised of the device address in the top seven bits, and an extra bit at the bottom to indicate read (1) or write (0).
 
 The memory addresses given are 8-bit values used to access the contents of an I²C device, and are usually supplied as the second byte in a message.
 
@@ -295,29 +347,24 @@ The memory addresses given are 8-bit values used to access the contents of an I�
   * Memory Address 0x08 - Sample rate control
   * Memory Address 0x09 - Digital interface activation
   * Memory Address 0x0F - Reset register
-* Device Address 0x50 - VGA Monitor (DDC)
-  * Memory Addresses 0x00..0xFF - Monitor Specifications in [EDID format](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data)
-* Device Address 0x51 - Slot 1 ID EEPROM
-  * Memory Addresses 0x00..0xFF - Expansion Card Specification in NEID (Neotron Expansion ID) format
 * Device Address 0x52 - Slot 2 ID EEPROM
-  * Memory Addresses as per Slot 1
+  * Memory Addresses 0x00..0xFF - Expansion Card Specification in NEID (Neotron Expansion ID) format
 * Device Address 0x53 - Slot 3 ID EEPROM
   * Memory Addresses as per Slot 1
 * Device Address 0x54 - Slot 4 ID EEPROM
   * Memory Addresses as per Slot 1
 * Device Address 0x55 - Slot 5 ID EEPROM
   * Memory Addresses as per Slot 1
-* Device Address 0x56 - Slot 6 ID EEPROM
-  * Memory Addresses as per Slot 1
-* Device Address 0x57 - Slot 7 ID EEPROM
-  * Memory Addresses as per Slot 1
-* Device Address 0x6F - Real-time Clock
+* Device Address 0x68 - Real-time Clock (DS1307+ variant)
+  * Memory Addresses 0x00..0x07 - Clock Configuration
+  * Memory Addresses 0x08..0x3F - Battery-backed SRAM
+* Device Address 0x6F - Real-time Clock (MCP7940N variant)
   * Memory Addresses 0x00..0x1F - Clock Configuration
   * Memory Addresses 0x20..0x5F - Battery-backed SRAM
 
-### SPI Chip Selects
+### Secondary I²C Bus
 
-### Interrupt Assignments
+There is a second I²C bus, driven by the Board Management Controller. This is connected to the Display Data Connection (DDC) pins on the VGA interface, allowing the reading of the VGA monitor's [EDID block](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data). This is typically at device address `0x50`
 
 ## Expansion Ideas
 
@@ -325,7 +372,7 @@ Why not design and build your own expansion card? You could try designing:
 
 * A dual Atari/SEGA 9-pin Joypad Interface
 * A Mikro Electronika Click adaptor, allow many of the range of [Click boards](https://www.mikroe.com/click) to be fitted
-* A Wi-Fi/Bluetooth card, using an Espressif ESP32
+* A Wi-Fi/Bluetooth card, using an Espressif ESP32-C3
 * A second processor card - perhaps with a RISC-V microcontroller, or classic Zilog Z80
 * An OPL2 or OPL3 based FM synthesiser card
 * An ISA adaptor card (taking an ISA card at right-angles, i.e. parallel to the base board) - a simple microcontroller should be able to bit-bang the ISA bus at 8 MHz and offer an SPI peripheral interface to the Neotron Expansion Slot
@@ -342,7 +389,7 @@ This project treats a PCB like embedded firmware:
 * The *build system* is [KiBot](https://github.com/INTI-CMNB/KiBot)
 * The *build outputs* are PDF versions of the schematic and the PCB, plus various zipped Gerber and Drill files.
 
-We do not check *build outputs* into this repository - ever. Instead, we run a Github Action which uses KiBot to generate our outputs. On a regular Pull Request, the *build outputs* are stored as *artefacts* against the particular Github Action run. When a new version is tagged, the *build outputs* are stored as files against a [Github Release](https://github.com/Neotron-Compute/Neotron-Pico/releases).
+We do not check *build outputs* into this repository - *ever*. Instead, we run a Github Action which uses KiBot to generate our outputs. On a regular Pull Request, the *build outputs* are stored as *artefacts* against the particular Github Action run. When a new version is tagged, the *build outputs* are stored as files against a [Github Release](https://github.com/Neotron-Compute/Neotron-Pico/releases).
 
 You can build locally using the KiBot docker container:
 
@@ -358,28 +405,22 @@ This will build everything and put it in the `./Kicad/docs` directory.
 
 See [CHANGELOG.md](./CHANGELOG.md) for a list of detailed changes.
 
-## Git Setup
-
-We recommend you have the following Git config set:
-
-```
-$ git config --global filter.kicad_project.clean "sed -E 's/^update=.*$/update=Date/'"
-$ git config --global filter.kicad_project.smudge cat
-$ git config --global filter.kicad_sch.clean "sed -E 's/#(PWR|FLG)[0-9]+/#\1?/'"
-$ git config --global filter.kicad_sch.smudge cat
-```
-
-See https://jnavila.github.io/plotkicadsch/ for details.
-
 ## Licence
 
-These documents, schematics and PCB designs are Copyright (c) The Neotron Developers.
+These documents, schematics and PCB designs are Copyright (c) The Neotron Developers, 2022.
 
 [![CC BY-SA 4.0](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/)
 
 This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
+That means you are free to:
+
+* share - copy and redistribute the material in any medium or format
+* adapt — remix, transform, and build upon the material for any purpose, even commercially
+
 Please note that the models provided in the [Kicad/Models](./Kicad/Models) directory are from various manufacturers. Terms and conditions for the use of the models are as specified by the original manufacturer/author.
+
+__NOTE__: Releases are provided free-of-charge, and without any kind of warranty - explicit or implied. It is imperative you validate the design for yourself before placing an order or using/adapting/copying any of the designs herein. The Neotron Developers cannot be held responsible if you build or remix our designs and it doesn't turn out how you expected. This is a work-in-progress and you will most likely need to fix something, somewhere.
 
 ## Contribution Agreement
 
@@ -417,20 +458,40 @@ Unless you explicitly state otherwise, any contribution intentionally submitted 
 * Microchip MCP7940N Real-Time Clock
   * Info Page: <https://www.microchip.com/wwwproducts/en/MCP7940N>
 
+## How hard is this to solder?
+
+Typically, I get the boards from JLCPCB with most of the surface-mount components already fitted. This includes all the LEDS, small inductors, resistors and small capacitors (all 0805 size), the transistors (all SOT-23), and whichever of the larger ICs they happen to have in stock. All that's left is the larger ICs, and the through-hole connectors.
+
+In the release area, you will see a JLCPCB specific bill-of-materials (BoM), which includes only the parts with a `Cxxxx` format LCSC/JLCPCB part number. You upload this, along with the *CPL* position file for those parts, when placing your order.
+
+If you want to order bare boards, it is designed to be hand-solderable. That's why there are no SMD parts smaller than 0805.
+
+| Part           | Footprint | Size (mm) | Pitch (mm) |
+|:---------------|:---------:|:---------:|:----------:|
+| MCP23S18       |  DIP-28   |  36x7.6   |    2.54    |
+| Jellybeans     |   0805    |  2.0x1.2  |    N/A     |
+| Transistors    |  SOT-23   |  3.1x1.4  |    1.80    |
+| 74HC138        |  SOIC-16  |  3.9x9.9  |    1.27    |
+| THS7316        |  SOIC-8   |  3.9x4.9  |    1.27    |
+| DS1307Z        |  SOIC-8   |  3.9x4.9  |    1.27    |
+| STM32F031K6T6  |  LQFP-32  |  7.0x7.0  |    0.80    |
+| TLV320AIC23BPW | TSSOP-28  |  4.4x9.7  |    0.65    |
+| TPD7S019       |  SSOP-16  |  3.9x4.9  |   0.635    |
 
 ## But can I buy the parts yet?
 
 Feel free to click these (unaffiliated) links and see for yourself!
 
-| Component             | Manufacturer      | Part Number     | Octopart                                                                     | LCSC                                                                                                                | JLCPCB                                                                                | Digikey                                                                                                                                                                                        | Mouser                                                                                                          | RS                                                                            | Farnell                                                                                                    |
-|:----------------------|:------------------|:----------------|:-----------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------|
-| Main CPU              | Raspberry Pi      | Pico (SC0915)   | [Link](https://octopart.com/raspberry+pi+pico-raspberry+pi-116179381?r=sp)   | N/A                                                                                                                 | N/A                                                                                   |                                                                                                                                                                                                |                                                                                                                 | N/A                                                                           | [Link](https://uk.rs-online.com/web/p/raspberry-pi/2122162)                                                |
-| BMC                   | ST Micro          | STM32F031K6T6   | [Link](https://octopart.com/stm32f031k6t6-stmicroelectronics-35036651?r=sp)  | [C526904](https://www.lcsc.com/product-detail/ST-Microelectronics_STMicroelectronics-STM32F031K6T6_C526904.html)    | [C526904](https://jlcpcb.com/parts/componentSearch?isSearch=true&searchTxt=C526904)   | [Tray](https://www.digikey.co.uk/en/products/detail/stmicroelectronics/STM32F031K6T6/5051261)                                                                                                  | [Link](https://www.mouser.co.uk/ProductDetail/STMicroelectronics/STM32F031K6T6?qs=s5SkPsIz109XuZAtCLiKdA%3D%3D) | [Link](https://uk.rs-online.com/web/p/microcontrollers/1920937)               | [Link](https://uk.farnell.com/stmicroelectronics/stm32f031k6t6/mcu-32bit-48mhz-lqfp-32/dp/3129831)         |
-| BMC (alt)             | ST Micro          | STM32F030K6T6   | [Link](https://octopart.com/stm32f030k6t6-stmicroelectronics-30038872?r=sp)  | [C46830](https://www.lcsc.com/product-detail/ST-Microelectronics_STMicroelectronics-STM32F030K6T6_C46830.html)      | [C46830](https://jlcpcb.com/parts/componentSearch?isSearch=true&searchTxt=C46830)     | [Tray](https://www.digikey.co.uk/en/products/detail/stmicroelectronics/STM32F030K6T6/4494296)                                                                                                  | [Link](https://www.mouser.co.uk/ProductDetail/STMicroelectronics/STM32F030K6T6?qs=eyrSuY1LhL2nYlb0JDdrAA%3D%3D) | [Link](https://uk.rs-online.com/web/p/microcontrollers/8294644)               | [Link](https://uk.farnell.com/stmicroelectronics/stm32f030k6t6/mcu-32bit-cortex-m0-48mhz-lqfp/dp/2432085)  |
-| Video Amplifier       | 3Peak             | TPF133A         | [Link](https://octopart.com/tpf133a-sr-3peak-99349217?r=sp)                  | [C155446](https://www.lcsc.com/product-detail/Video-Amplifiers_3PEAK-TPF133A-SR_C155446.html)                       | [C155446](https://jlcpcb.com/parts/componentSearch?isSearch=true&searchTxt=C155446)   | N/A                                                                                                                                                                                            | N/A                                                                                                             | N/A                                                                           | N/A                                                                                                        |
-| Video Amplifier (alt) | Texas Instruments | THS7316         | [Link](https://octopart.com/ths7316dr-texas+instruments-7112464?r=sp)        | [C544774](https://www.lcsc.com/product-detail/Operational-Amplifier_Texas-Instruments-THS7316DR_C544774.html)       | [C544774](https://jlcpcb.com/parts/componentSearch?isSearch=true&searchTxt=C544774)   | [Tape](https://www.digikey.co.uk/en/products/detail/texas-instruments/THS7316DR/1905373)                                                                                                       | N/A                                                                                                             | N/A                                                                           | N/A                                                                                                        |
-| Video ESD Filter      | Texas Instruments | TPD7S019-15DBQR | [Link](https://octopart.com/tpd7s019-15dbqr-texas+instruments-18622248?r=sp) | [C337499](https://www.lcsc.com/product-detail/Interface-Specialized_Texas-Instruments-TPD7S019-15DBQR_C337499.html) | [C337499](https://jlcpcb.com/parts/componentSearch?isSearch=true&searchTxt=C337499)   | [Tape](https://www.digikey.co.uk/en/products/detail/texas-instruments/TPD7S019-15DBQR/2338404)                                                                                                 | [Link](https://www.mouser.co.uk/ProductDetail/Texas-Instruments/TPD7S019-15DBQR)                                | N/A                                                                           | [Link](https://uk.farnell.com/texas-instruments/tpd7s019-15dbqr/esd-solution-7ch-ssop-16/dp/3116525)       |
-| GPIO Expander         | Microchip         | MCP23S17/SO     | [Link](https://octopart.com/mcp23s17-e%2Fso-microchip-470569?r=sp)           | [C145413](https://www.lcsc.com/product-detail/I-O-Expanders_Microchip-Tech-MCP23S17-E-SO_C145413.html)              | [C145413](https://jlcpcb.com/parts/componentSearch?isSearch=true&searchTxt=C145413)   | [Tube](https://www.digikey.co.uk/en/products/detail/microchip-technology/MCP23S17-E-SO/894275) [Tape](https://www.digikey.co.uk/en/products/detail/microchip-technology/MCP23S17T-E-SO/964187) | [Link](https://www.mouser.co.uk/ProductDetail/Microchip-Technology/MCP23S17-E-SO)                               | [Link](https://uk.rs-online.com/web/p/io-expanders/0403894)                   | [Link](https://uk.farnell.com/microchip/mcp23s17-e-so/16bit-expander-i-o-spi-i-f-smd/dp/1332093)           |
-| Audio CODEC           | Texas Instruments | TLV320AIC23BPW  | [Link](https://octopart.com/tlv320aic23bpw-texas+instruments-427979?r=sp)    | [C9915](https://www.lcsc.com/product-detail/Audio-Interface-ICs_Texas-Instruments-TLV320AIC23BPWR_C9915.html)       | [C9915](https://jlcpcb.com/parts/componentSearch?isSearch=true&searchTxt=C9915)       | [Tape](https://www.digikey.co.uk/en/products/detail/texas-instruments/TLV320AIC23BPWR/1678295)                                                                                                 | [Link](https://www.mouser.co.uk/ProductDetail/Texas-Instruments/TLV320AIC23BPWR)                                | [Link](https://uk.rs-online.com/web/p/audio-video-encoders-decoders/1457115/) | [Link](https://uk.farnell.com/texas-instruments/tlv320aic23bipw/ic-codec-audio-smd-tssop28-320/dp/3124108) |
-| Real Time Clock       | Microchip         | MCP7940N-I/P    | [Link](https://octopart.com/mcp7940n-i%2Fp-microchip-24871076?r=sp)          | [C153264](https://www.lcsc.com/product-detail/Real-time-Clocks-RTC_Microchip-Tech-MCP7940N-I-P_C153264.html)        | [C153264](https://jlcpcb.com/parts/componentSearch?isSearch=true&searchTxt=C153264)   | [Tube](https://www.digikey.co.uk/en/products/detail/microchip-technology/MCP7940N-I-P/3872279)                                                                                                 | [Link](https://www.mouser.co.uk/ProductDetail/Microchip-Technology/MCP7940N-I-P)                                | [Link](https://uk.rs-online.com/web/p/real-time-clocks/8103933)               | [Link](https://uk.farnell.com/microchip/mcp7940n-i-p/rtcc-gp-i2c-64b-sram-8pdip/dp/2361114)                |
-| Power Supply          | Mornsun           | K7805-3AR3      | [Link](https://octopart.com/k7805-3ar3-mornsun-112021548?r=sp)               | [C2684867](https://www.lcsc.com/product-detail/Power-Modules_MORNSUN-Guangzhou-S-T-K7805-3AR3_C2684867.html)        | [C2684867](https://jlcpcb.com/parts/componentSearch?isSearch=true&searchTxt=C2684867) | [Tube](https://www.digikey.co.uk/en/products/detail/mornsun-america-llc/K7805-3AR3/13168239)                                                                                                   | N/A                                                                                                             | N/A                                                                           | N/A                                                                                                        |
+| Component             | Manufacturer      | Part Number     | Octopart                                                                     | LCSC                                                                                                                | JLCPCB                                                                                | Digikey                                                                                                 | Mouser                                                                                                          | RS                                                                            | Farnell                                                                                                        |
+|:----------------------|:------------------|:----------------|:-----------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------|
+| Main CPU              | Raspberry Pi      | Pico (SC0915)   | [Link](https://octopart.com/raspberry+pi+pico-raspberry+pi-116179381?r=sp)   | N/A                                                                                                                 | N/A                                                                                   |                                                                                                         |                                                                                                                 | N/A                                                                           | [Link](https://uk.rs-online.com/web/p/raspberry-pi/2122162)                                                    |
+| BMC                   | ST Micro          | STM32F031K6T6   | [Link](https://octopart.com/stm32f031k6t6-stmicroelectronics-35036651?r=sp)  | [C526904](https://www.lcsc.com/product-detail/ST-Microelectronics_STMicroelectronics-STM32F031K6T6_C526904.html)    | [C526904](https://jlcpcb.com/parts/componentSearch?isSearch=true&searchTxt=C526904)   | [Tray](https://www.digikey.co.uk/en/products/detail/stmicroelectronics/STM32F031K6T6/5051261)           | [Link](https://www.mouser.co.uk/ProductDetail/STMicroelectronics/STM32F031K6T6?qs=s5SkPsIz109XuZAtCLiKdA%3D%3D) | [Link](https://uk.rs-online.com/web/p/microcontrollers/1920937)               | [Link](https://uk.farnell.com/stmicroelectronics/stm32f031k6t6/mcu-32bit-48mhz-lqfp-32/dp/3129831)             |
+| BMC (alt)             | ST Micro          | STM32F030K6T6   | [Link](https://octopart.com/stm32f030k6t6-stmicroelectronics-30038872?r=sp)  | [C46830](https://www.lcsc.com/product-detail/ST-Microelectronics_STMicroelectronics-STM32F030K6T6_C46830.html)      | [C46830](https://jlcpcb.com/parts/componentSearch?isSearch=true&searchTxt=C46830)     | [Tray](https://www.digikey.co.uk/en/products/detail/stmicroelectronics/STM32F030K6T6/4494296)           | [Link](https://www.mouser.co.uk/ProductDetail/STMicroelectronics/STM32F030K6T6?qs=eyrSuY1LhL2nYlb0JDdrAA%3D%3D) | [Link](https://uk.rs-online.com/web/p/microcontrollers/8294644)               | [Link](https://uk.farnell.com/stmicroelectronics/stm32f030k6t6/mcu-32bit-cortex-m0-48mhz-lqfp/dp/2432085)      |
+| Video Amplifier       | 3Peak             | TPF133A         | [Link](https://octopart.com/tpf133a-sr-3peak-99349217?r=sp)                  | [C155446](https://www.lcsc.com/product-detail/Video-Amplifiers_3PEAK-TPF133A-SR_C155446.html)                       | [C155446](https://jlcpcb.com/parts/componentSearch?isSearch=true&searchTxt=C155446)   | N/A                                                                                                     | N/A                                                                                                             | N/A                                                                           | N/A                                                                                                            |
+| Video Amplifier (alt) | Texas Instruments | THS7316         | [Link](https://octopart.com/ths7316dr-texas+instruments-7112464?r=sp)        | [C544774](https://www.lcsc.com/product-detail/Operational-Amplifier_Texas-Instruments-THS7316DR_C544774.html)       | [C544774](https://jlcpcb.com/parts/componentSearch?isSearch=true&searchTxt=C544774)   | [Tape](https://www.digikey.co.uk/en/products/detail/texas-instruments/THS7316DR/1905373)                | N/A                                                                                                             | N/A                                                                           | N/A                                                                                                            |
+| Video ESD Filter      | Texas Instruments | TPD7S019-15DBQR | [Link](https://octopart.com/tpd7s019-15dbqr-texas+instruments-18622248?r=sp) | [C337499](https://www.lcsc.com/product-detail/Interface-Specialized_Texas-Instruments-TPD7S019-15DBQR_C337499.html) | [C337499](https://jlcpcb.com/parts/componentSearch?isSearch=true&searchTxt=C337499)   | [Tape](https://www.digikey.co.uk/en/products/detail/texas-instruments/TPD7S019-15DBQR/2338404)          | [Link](https://www.mouser.co.uk/ProductDetail/Texas-Instruments/TPD7S019-15DBQR)                                | N/A                                                                           | [Link](https://uk.farnell.com/texas-instruments/tpd7s019-15dbqr/esd-solution-7ch-ssop-16/dp/3116525)           |
+| GPIO Expander         | Microchip         | MCP23S17/SP     | [Link](https://octopart.com/mcp23s17-e%2Fsp-microchip-470570?r=sp)           | N/A                                                                                                                 | N/A                                                                                   | [Tube](https://www.digikey.co.uk/en/products/detail/MCP23S17-E-SP/MCP23S17-E-SP-ND/894276)              | [Link](https://www.mouser.co.uk/ProductDetail/Microchip-Technology-Atmel/MCP23S17-E-SP)                         | [Link](https://uk.rs-online.com/web/p/io-expanders/8233523)                   | [Link](https://uk.farnell.com/microchip/mcp23s17-e-sp/ic-16bit-i-o-expander-spi-23s17/dp/1292238)              |
+| Audio CODEC           | Texas Instruments | TLV320AIC23BPW  | [Link](https://octopart.com/tlv320aic23bpw-texas+instruments-427979?r=sp)    | [C9915](https://www.lcsc.com/product-detail/Audio-Interface-ICs_Texas-Instruments-TLV320AIC23BPWR_C9915.html)       | [C9915](https://jlcpcb.com/parts/componentSearch?isSearch=true&searchTxt=C9915)       | [Tape](https://www.digikey.co.uk/en/products/detail/texas-instruments/TLV320AIC23BPWR/1678295)          | [Link](https://www.mouser.co.uk/ProductDetail/Texas-Instruments/TLV320AIC23BPWR)                                | [Link](https://uk.rs-online.com/web/p/audio-video-encoders-decoders/1457115/) | [Link](https://uk.farnell.com/texas-instruments/tlv320aic23bipw/ic-codec-audio-smd-tssop28-320/dp/3124108)     |
+| Real Time Clock       | Microchip         | MCP7940N-I/P    | [Link](https://octopart.com/mcp7940n-i%2Fp-microchip-24871076?r=sp)          | [C153264](https://www.lcsc.com/product-detail/Real-time-Clocks-RTC_Microchip-Tech-MCP7940N-I-P_C153264.html)        | [C153264](https://jlcpcb.com/parts/componentSearch?isSearch=true&searchTxt=C153264)   | [Tube](https://www.digikey.co.uk/en/products/detail/microchip-technology/MCP7940N-I-P/3872279)          | [Link](https://www.mouser.co.uk/ProductDetail/Microchip-Technology/MCP7940N-I-P)                                | [Link](https://uk.rs-online.com/web/p/real-time-clocks/8103933)               | [Link](https://uk.farnell.com/microchip/mcp7940n-i-p/rtcc-gp-i2c-64b-sram-8pdip/dp/2361114)                    |
+| Real Time Clock (alt) | Dallas            | DS1307Z+        | [Link](https://octopart.com/ds1307z%2B-maxim+integrated-998846?r=sp)         | [C9868](https://www.lcsc.com/product-detail/Real-time-Clocks-RTC_Maxim-Integrated-DS1307Z-T-R_C9868.html)           | [C9868](https://jlcpcb.com/parts/componentSearch?isSearch=true&searchTxt=C9868)       | [Tube](https://www.digikey.co.uk/en/products/detail/analog-devices-inc-maxim-integrated/DS1307Z/956882) | [Link](https://www.mouser.co.uk/ProductDetail/Maxim-Integrated/DS1307Z%252b)                                    | [Link](https://uk.rs-online.com/web/p/real-time-clocks/1898602)               | [Link](https://uk.farnell.com/maxim-integrated-products/ds1307z/rtc-0-to-70deg-c-nsoic-8/dp/2909754?st=ds1307) |
+| Power Supply          | Mornsun           | K7805-3AR3      | [Link](https://octopart.com/k7805-3ar3-mornsun-112021548?r=sp)               | [C2684867](https://www.lcsc.com/product-detail/Power-Modules_MORNSUN-Guangzhou-S-T-K7805-3AR3_C2684867.html)        | [C2684867](https://jlcpcb.com/parts/componentSearch?isSearch=true&searchTxt=C2684867) | [Tube](https://www.digikey.co.uk/en/products/detail/mornsun-america-llc/K7805-3AR3/13168239)            | N/A                                                                                                             | N/A                                                                           | N/A                                                                                                            |

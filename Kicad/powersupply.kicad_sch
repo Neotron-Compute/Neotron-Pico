@@ -1851,7 +1851,7 @@
     (effects (font (size 1.27 1.27) italic) (justify left bottom))
     (uuid 6f348d32-f4cd-4a64-a08f-c177b7a4835b)
   )
-  (text "DC Input rating:\n8V to 14V\n12V Nominal\nMax 2A\nReverse-polarity protected"
+  (text "DC Input rating:\n8V to 30V\n12V Nominal\nMax 2A\nReverse-polarity protected"
     (at 15.875 93.98 0)
     (effects (font (size 1.905 1.905) italic) (justify left bottom))
     (uuid 7f53f9c5-42a9-4a18-b3e9-1febfec9f0f2)
