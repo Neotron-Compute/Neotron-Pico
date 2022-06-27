@@ -679,6 +679,7 @@
     )
   )
 
+
   (junction (at 215.9 86.36) (diameter 0) (color 0 0 0 0)
     (uuid 06075f0a-238a-463d-b09c-d0f246031bf8)
   )
@@ -1310,7 +1311,7 @@
     (uuid faa83ae3-8df7-4ad5-a687-6ed23fb95281)
   )
 
-  (label "VGA_HSYNC" (at 247.65 78.74 0)
+  (label "VGA_HSYNC_BUF" (at 247.65 78.74 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 03f2f483-0f35-4c0f-8c9b-031e53791a92)
   )
@@ -1318,7 +1319,7 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 0c9526b9-052a-4476-8838-f3531196da5a)
   )
-  (label "VGA_VSYNC" (at 220.345 115.57 0)
+  (label "VGA_VSYNC_BUF" (at 220.345 115.57 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 0e573a4f-cc91-43fe-9969-84e0a6ec6bed)
   )
@@ -1326,7 +1327,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 18024863-93ee-4a76-883c-af7c7d0f46ed)
   )
-  (label "VGA_VSYNC" (at 247.65 83.82 0)
+  (label "VGA_VSYNC_BUF" (at 247.65 83.82 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 219c35ad-1099-4320-a4b8-162c78ecf79e)
   )
@@ -1342,7 +1343,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 3b0a9a93-6189-41fd-8dfd-d08b2ffcb36a)
   )
-  (label "VGA_HSYNC" (at 220.345 118.11 0)
+  (label "VGA_HSYNC_BUF" (at 220.345 118.11 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 5e6b852d-7d5a-4b63-908b-9701d5944c7c)
   )
