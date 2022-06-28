@@ -870,6 +870,9 @@
     (property "Voltage" "~" (id 11) (at 155.575 183.515 0)
       (effects (font (size 1.27 1.27)) hide)
     )
+    (property "JLCPCB Collection" "~" (id 12) (at 155.575 183.515 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
   )
 
   (symbol (lib_id "Graphic:Logo_Open_Hardware_Small") (at 142.875 183.515 0) (unit 1)
@@ -909,6 +912,9 @@
     (property "Voltage" "~" (id 11) (at 142.875 183.515 0)
       (effects (font (size 1.27 1.27)) hide)
     )
+    (property "JLCPCB Collection" "~" (id 12) (at 142.875 183.515 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
   )
 
   (symbol (lib_id "Graphic:Logo_Open_Hardware_Small") (at 128.905 183.515 0) (unit 1)
@@ -946,6 +952,9 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Voltage" "~" (id 11) (at 128.905 183.515 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "JLCPCB Collection" "~" (id 12) (at 128.905 183.515 0)
       (effects (font (size 1.27 1.27)) hide)
     )
   )
@@ -1021,6 +1030,9 @@
     (property "Voltage" "~" (id 11) (at 40.64 173.99 0)
       (effects (font (size 1.27 1.27)) hide)
     )
+    (property "JLCPCB Collection" "~" (id 12) (at 40.64 173.99 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
     (pin "1" (uuid 3698e845-8a5f-4af1-97ef-88d8ce2d353c))
   )
 
@@ -1061,6 +1073,9 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Voltage" "~" (id 11) (at 40.64 186.69 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "JLCPCB Collection" "~" (id 12) (at 40.64 186.69 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 2dda21ac-15fc-4849-87de-3f2b53b44fde))
@@ -1105,6 +1120,9 @@
     (property "Voltage" "~" (id 11) (at 64.77 173.99 0)
       (effects (font (size 1.27 1.27)) hide)
     )
+    (property "JLCPCB Collection" "~" (id 12) (at 64.77 173.99 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
     (pin "1" (uuid 4858ccf1-8894-4197-90af-4596de25e06c))
   )
 
@@ -1145,6 +1163,9 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Voltage" "~" (id 11) (at 64.77 186.69 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "JLCPCB Collection" "~" (id 12) (at 64.77 186.69 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid f0fce225-a50e-41da-9e04-17f233e65745))
@@ -1189,6 +1210,9 @@
     (property "Voltage" "~" (id 11) (at 88.9 173.99 0)
       (effects (font (size 1.27 1.27)) hide)
     )
+    (property "JLCPCB Collection" "~" (id 12) (at 88.9 173.99 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
     (pin "1" (uuid b620c8a5-f48a-490e-ae7a-4380bfb6c2e4))
   )
 
@@ -1229,6 +1253,9 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Voltage" "~" (id 11) (at 17.78 186.69 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "JLCPCB Collection" "~" (id 12) (at 17.78 186.69 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid e4afe20f-bc0d-48f9-862b-df44df2ddfb8))
@@ -1369,6 +1396,9 @@
     (property "Voltage" "~" (id 11) (at 88.9 186.69 0)
       (effects (font (size 1.27 1.27)) hide)
     )
+    (property "JLCPCB Collection" "~" (id 12) (at 88.9 186.69 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
     (pin "1" (uuid 9ccb2c5c-8e1b-4978-92cf-35b78766ad2a))
   )
 
@@ -1425,6 +1455,9 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Voltage" "~" (id 11) (at 194.31 157.48 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "JLCPCB Collection" "~" (id 12) (at 194.31 157.48 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 1c30ab6f-a0e8-4928-9ca7-29f318f1fd33))
@@ -1501,6 +1534,9 @@
     (property "Voltage" "~" (id 11) (at 207.01 157.48 0)
       (effects (font (size 1.27 1.27)) hide)
     )
+    (property "JLCPCB Collection" "~" (id 12) (at 207.01 157.48 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
     (pin "1" (uuid e51dbec1-04d5-40b3-ba3b-52f534591d5a))
   )
 
@@ -1543,6 +1579,9 @@
     (property "Voltage" "~" (id 11) (at 219.71 157.48 0)
       (effects (font (size 1.27 1.27)) hide)
     )
+    (property "JLCPCB Collection" "~" (id 12) (at 219.71 157.48 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
     (pin "1" (uuid c50567eb-71d0-4077-b107-d2e70812a498))
   )
 
@@ -1583,6 +1622,9 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Voltage" "~" (id 11) (at 232.41 157.48 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "JLCPCB Collection" "~" (id 12) (at 232.41 157.48 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 9d83ab04-0b3b-450c-b002-f88ee838431a))
@@ -1641,6 +1683,9 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Voltage" "~" (id 11) (at 180.975 157.48 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "JLCPCB Collection" "~" (id 12) (at 180.975 157.48 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid c69d6ea2-482f-4572-9fe7-35a75761e533))
@@ -2798,13 +2843,13 @@
       (reference "J301") (unit 1) (value "DE15HD") (footprint "neotron-pico:Amphenol_ICD15S13E4GV00LF")
     )
     (path "/00000000-0000-0000-0000-00005fde6c5a/00000000-0000-0000-0000-00005fe2e418"
-      (reference "J701") (unit 1) (value "CD Audio In") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
+      (reference "J701") (unit 1) (value "Conn_01x04") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
     )
     (path "/00000000-0000-0000-0000-00005fde6c5a/00000000-0000-0000-0000-00005fe02cbe"
-      (reference "J702") (unit 1) (value "AC'97 Audio Header") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x05_P2.54mm_Vertical")
+      (reference "J702") (unit 1) (value "Conn_02x05") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x05_P2.54mm_Vertical")
     )
     (path "/00000000-0000-0000-0000-00005fde6c5a/00000000-0000-0000-0000-00005fe30dde"
-      (reference "J703") (unit 1) (value "Line Out") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
+      (reference "J703") (unit 1) (value "Conn_01x04") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
     )
     (path "/473239af-77cb-4a8b-b63b-c3d123df75c7/fa93e2c3-e1a7-4f88-921c-28d290d83e98/00000000-0000-0000-0000-000060081044"
       (reference "J901") (unit 1) (value "Double-mini-DIN-6") (footprint "Neotron-Common-Hardware:Double_mini-DIN_6")
@@ -2831,10 +2876,10 @@
       (reference "J1101") (unit 1) (value "Jack 2.1{slash}6.3mm") (footprint "Connector_BarrelJack:BarrelJack_CUI_PJ-063AH_Horizontal")
     )
     (path "/78eb64c2-d4cd-4a73-b8d7-3608f5c46fce/4898d965-3b51-4bf9-a936-b7f29787981b"
-      (reference "J1102") (unit 1) (value "2x2 Socket") (footprint "Connector_PinSocket_2.54mm:PinSocket_2x02_P2.54mm_Vertical")
+      (reference "J1102") (unit 1) (value "Conn_02x02") (footprint "Connector_PinSocket_2.54mm:PinSocket_2x02_P2.54mm_Vertical")
     )
     (path "/78eb64c2-d4cd-4a73-b8d7-3608f5c46fce/02c8e5b1-7b91-4dfa-8ddd-9719410c4fa2"
-      (reference "J1103") (unit 1) (value "4-pin Socket") (footprint "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical")
+      (reference "J1103") (unit 1) (value "Conn_01x04") (footprint "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical")
     )
     (path "/473239af-77cb-4a8b-b63b-c3d123df75c7/c07ad40d-3393-4dc3-9079-c5bbec568051"
       (reference "J1301") (unit 1) (value "Conn_01x09") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x09_P2.54mm_Vertical")
@@ -2873,16 +2918,16 @@
       (reference "JP304") (unit 1) (value "Bridge") (footprint "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm")
     )
     (path "/00000000-0000-0000-0000-00005fef404d/b8f37588-c876-477b-b2cd-c884fe04402e"
-      (reference "JP801") (unit 1) (value "SolderJumper_2_Open") (footprint "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm")
+      (reference "JP801") (unit 1) (value "Bridge") (footprint "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm")
     )
     (path "/00000000-0000-0000-0000-00005fef404d/85d1c886-2445-450f-8ba7-64655764424f"
-      (reference "JP802") (unit 1) (value "SolderJumper_2_Open") (footprint "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm")
+      (reference "JP802") (unit 1) (value "Bridge") (footprint "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm")
     )
     (path "/473239af-77cb-4a8b-b63b-c3d123df75c7/fa93e2c3-e1a7-4f88-921c-28d290d83e98/00000000-0000-0000-0000-00006072f924"
       (reference "JP901") (unit 1) (value "Jumper") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
     )
     (path "/b2e2dc59-6c06-42f7-9516-007467fc5f98/e7b3764f-809c-4d3a-ba87-2a29aca94ce5"
-      (reference "JP1201") (unit 1) (value "Conn_01x02") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+      (reference "JP1201") (unit 1) (value "Jumper") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
     )
     (path "/78eb64c2-d4cd-4a73-b8d7-3608f5c46fce/00000000-0000-0000-0000-0000606e29fd"
       (reference "L1101") (unit 1) (value "22uH") (footprint "Inductor_THT:L_Radial_D9.5mm_P5.00mm_Fastron_07HVP")
@@ -3221,7 +3266,7 @@
       (reference "U801") (unit 1) (value "DS1307Z+") (footprint "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm")
     )
     (path "/473239af-77cb-4a8b-b63b-c3d123df75c7/fa93e2c3-e1a7-4f88-921c-28d290d83e98/00000000-0000-0000-0000-00006062306e"
-      (reference "U901") (unit 1) (value "STM32F031K6T6") (footprint "Package_QFP:LQFP-32_7x7mm_P0.8mm")
+      (reference "U901") (unit 1) (value "STM32F030K6T6") (footprint "Package_QFP:LQFP-32_7x7mm_P0.8mm")
     )
     (path "/78eb64c2-d4cd-4a73-b8d7-3608f5c46fce/00000000-0000-0000-0000-0000606e29d0"
       (reference "U1101") (unit 1) (value "DC-DC Module") (footprint "Neotron-Common-Hardware:K78xx-3AR3")
