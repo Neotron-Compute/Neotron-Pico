@@ -514,7 +514,7 @@
       "SD Card"
     ],
     [
-      "78eb64c2-d4cd-4a73-b8d7-3608f5c46fce",
+      "51d67d64-e245-4973-bfb9-fc504d79e85e",
       "Power Supply"
     ],
     [
@@ -527,7 +527,7 @@
     ]
   ],
   "text_variables": {
-    "date": "2022-05-05",
-    "version": "c5afe9c"
+    "date": "2000-01-01",
+    "version": "Uncontrolled"
   }
 }
