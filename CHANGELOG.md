@@ -8,7 +8,11 @@
 * Use 200mA Holtek HT7533-1 stand-by regulator
 * Swapped MCP23S17 for MCP23S18 (because that's what's available)
 * Added internal 12V input header
+* Changed inner layers to both be GND
 * K7805-3AR3 control pin is protected with a zener (allows higher input voltages)
+* HDD LED is driven from I/O mux, not BMC
+* Designed audio paths (#93)
+* Added PC speaker output (#87)
 * Changed K7805-3AR3 to have ceramic output cap (#84)
 * Remove all the Octopart CPL references (#83)
 * Increased VGA DAC current (#77)
