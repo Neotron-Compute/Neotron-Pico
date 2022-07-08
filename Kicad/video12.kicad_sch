@@ -1634,7 +1634,7 @@
     (property "Reference" "#PWR0301" (id 0) (at 110.49 50.165 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "" (id 1) (at 110.871 41.9608 0))
+    (property "Value" "+3V3" (id 1) (at 110.871 41.9608 0))
     (property "Footprint" "" (id 2) (at 110.49 46.355 0)
       (effects (font (size 1.27 1.27)) hide)
     )
