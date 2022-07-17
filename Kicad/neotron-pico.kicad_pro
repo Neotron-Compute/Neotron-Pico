@@ -465,6 +465,10 @@
       ""
     ],
     [
+      "b2e2dc59-6c06-42f7-9516-007467fc5f98",
+      "Raspberry Pico"
+    ],
+    [
       "00000000-0000-0000-0000-00006069d32a",
       "IO Expander"
     ],
@@ -489,8 +493,8 @@
       "Audio"
     ],
     [
-      "00000000-0000-0000-0000-00005fef404d",
-      "Real Time Clock"
+      "473239af-77cb-4a8b-b63b-c3d123df75c7",
+      "Slots and Peripherals"
     ],
     [
       "fa93e2c3-e1a7-4f88-921c-28d290d83e98",
@@ -501,16 +505,12 @@
       "SD Card"
     ],
     [
+      "00000000-0000-0000-0000-00005fef404d",
+      "Real Time Clock"
+    ],
+    [
       "78eb64c2-d4cd-4a73-b8d7-3608f5c46fce",
       "Power Supply"
-    ],
-    [
-      "b2e2dc59-6c06-42f7-9516-007467fc5f98",
-      "Raspberry Pico"
-    ],
-    [
-      "473239af-77cb-4a8b-b63b-c3d123df75c7",
-      "Slots and Peripherals"
     ]
   ],
   "text_variables": {
