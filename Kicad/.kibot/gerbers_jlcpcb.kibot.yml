@@ -113,7 +113,7 @@ outputs:
     type: position
     options:
       variant: rotated
-      output: "%f-%r-cpl.%x"
+      output: "%f-%r-%i.%x"
       format: CSV
       units: millimeters
       separate_files_for_front_and_back: true
