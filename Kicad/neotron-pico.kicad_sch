@@ -2795,7 +2795,7 @@
       (reference "J1007") (unit 1) (value "Double-mini-DIN-6") (footprint "Neotron-Common-Hardware:Double_mini-DIN_6")
     )
     (path "/473239af-77cb-4a8b-b63b-c3d123df75c7/f6d97a2f-a1cf-44b8-9182-20a8151a2e1a/00000000-0000-0000-0000-00005fe7bb6e"
-      (reference "J1101") (unit 1) (value "SD_Card") (footprint "Connector_Card:SD_Kyocera_145638009211859+")
+      (reference "J1101") (unit 1) (value "SD_Card") (footprint "neotron-pico:Amphenol_GSD090012SEU")
     )
     (path "/78eb64c2-d4cd-4a73-b8d7-3608f5c46fce/00000000-0000-0000-0000-0000606e29c8"
       (reference "J1301") (unit 1) (value "Jack 2.1{slash}6.3mm") (footprint "Connector_BarrelJack:BarrelJack_CUI_PJ-063AH_Horizontal")
