@@ -518,7 +518,7 @@
     (property "Footprint" "neotron-pico:Amphenol_GSD090012SEU" (id 2) (at 151.13 95.25 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "http://portal.fciconnect.com/Comergent//fci/drawing/10067847.pdf" (id 3) (at 151.13 95.25 0)
+    (property "Datasheet" "https://cdn.amphenol-cs.com/media/wysiwyg/files/drawing/gsd09001xseu.pdf" (id 3) (at 151.13 95.25 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "DNP" "0" (id 4) (at 151.13 95.25 0)
