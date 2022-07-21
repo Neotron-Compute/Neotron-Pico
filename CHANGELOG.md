@@ -2,6 +2,10 @@
 
 # Unreleased Changes
 
+* None
+
+# [Version v1.0.0-rc0](https://github.com/Neotron-Compute/Neotron-Pico/releases/tag/v1.0.0-rc0)
+
 * Re-arranged top-sheet
 * Two PSU control BJTs are now surface mount
 * Support 5V DS1307+ as well as 3.3V MCP7940N Real Time Clock
@@ -11,7 +15,11 @@
 * Changed inner layers to both be GND
 * K7805-3AR3 control pin is protected with a zener (allows higher input voltages)
 * HDD LED is driven from I/O mux, not BMC
-* Designed audio paths (#93)
+* Relaid out board
+* Replaced 12 MHz Crystal with JLCPCB basic part (#103)
+* Replaced SD Card with Amphenol part (#99)
+* Redesigned audio paths (#93)
+* Replaced decoupling with single 10uF (#92)
 * Added PC speaker output (#87)
 * Changed K7805-3AR3 to have ceramic output cap (#84)
 * Remove all the Octopart CPL references (#83)
