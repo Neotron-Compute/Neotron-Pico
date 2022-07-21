@@ -2278,9 +2278,6 @@
     (path "/00000000-0000-0000-0000-00005fde6c5a/00000000-0000-0000-0000-00005fe2bf79"
       (reference "#PWR0820") (unit 1) (value "GND") (footprint "")
     )
-    (path "/00000000-0000-0000-0000-00005fde6c5a/00000000-0000-0000-0000-00005fe6c6e0"
-      (reference "#PWR0821") (unit 1) (value "GND") (footprint "")
-    )
     (path "/00000000-0000-0000-0000-00005fde6c5a/00000000-0000-0000-0000-000060860439"
       (reference "#PWR0822") (unit 1) (value "GND") (footprint "")
     )
@@ -2529,6 +2526,15 @@
     )
     (path "/78eb64c2-d4cd-4a73-b8d7-3608f5c46fce/4439535c-2f8e-4c4e-b302-ffc2081b6f1f"
       (reference "#PWR01314") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-00005fde6c5a/1febe222-0ef6-4258-bf86-97ea4a61f3b6"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-00005fde6c5a/861e9098-8e61-42cb-950f-806095564e80"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-00005fde6c5a/d6bd232e-1fc8-4402-9b77-1e709a62afa6"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
     )
     (path "/00000000-0000-0000-0000-00005fef404d/00000000-0000-0000-0000-00005e0f507e"
       (reference "BT1201") (unit 1) (value "CR2032") (footprint "Neotron-Common-Hardware:BatteryHolder_Keystone_103_1x20mm")
@@ -3245,7 +3251,7 @@
       (reference "U1303") (unit 1) (value "HT75xx-1-SOT89") (footprint "Package_TO_SOT_SMD:SOT-89-3")
     )
     (path "/00000000-0000-0000-0000-00005fde6c5a/00000000-0000-0000-0000-00005fe5eeb5"
-      (reference "Y801") (unit 1) (value "12M 20pF") (footprint "Crystal:Crystal_SMD_5032-2Pin_5.0x3.2mm_HandSoldering")
+      (reference "Y801") (unit 1) (value "12M 20pF") (footprint "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm_HandSoldering")
     )
     (path "/00000000-0000-0000-0000-00005fef404d/00000000-0000-0000-0000-00005e028a76"
       (reference "Y1201") (unit 1) (value "32,768 Hz") (footprint "Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm")
