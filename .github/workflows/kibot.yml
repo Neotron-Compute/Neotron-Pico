@@ -1,0 +1,83 @@
+# SPDX-FileCopyrightText: 2022 nerdyscout <https://github.com/nerdyscout/>
+#
+# SPDX-License-Identifier: CC0-1.0
+
+name: KiBot
+
+on:
+  push:
+    paths:
+    - "Kicad/*.kicad_sch"
+    - "Kicad/*.kicad_pcb"
+    - "Kicad/*.kicad_pro"
+    - "**/*kibot.yml"
+  pull_request:
+    paths:
+    - "Kicad/*.kicad_sch"
+    - "Kicad/*.kicad_pcb"
+    - "Kicad/*.kicad_pro"
+    - "**/*kibot.yml"
+
+env:
+  schema: "Kicad/neotron-pico.kicad_sch"
+  board: "Kicad/neotron-pico.kicad_pcb"
+  dir: "Kicad/docs"
+
+jobs:
+  DRC:
+    runs-on: ubuntu-latest
+    container:
+      image: setsoft/kicad_auto:dev_k6
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run KiBot for DRC
+        run: |
+          kibot -c Kicad/docs.kibot.yml -e ${{env.schema}} -b ${{env.board}} -d ${{env.dir}} -s run_drc -v -i
+  ERC:
+    runs-on: ubuntu-latest
+    container:
+      image: setsoft/kicad_auto:dev_k6
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run KiBot for ERC
+        run: |
+          kibot -c Kicad/docs.kibot.yml -e ${{env.schema}} -b ${{env.board}} -d ${{env.dir}} -s run_erc -v -i
+  build:
+    runs-on: ubuntu-latest
+    needs: [ERC, DRC]
+    container:
+      image: setsoft/kicad_auto:dev_k6
+    steps:
+      - uses: actions/checkout@v2
+      - name: Get Branch Name
+        if: github.event_name == 'push' && startswith(github.ref, 'refs/tags/')
+        id: branch_name
+        run: |
+          echo ::set-output name=SOURCE_TAG::${GITHUB_REF#refs/tags/}
+      - name: Run KiBot
+        run: |
+          kibot -c Kicad/docs.kibot.yml -e ${{env.schema}} -b ${{env.board}} -d ${{env.dir}} -s run_erc,run_drc -v 
+      - name: Upload KiBot Output
+        uses: actions/upload-artifact@v2
+        if: ${{success()}}
+        with:
+          name: Build-Outputs
+          if-no-files-found: error
+          path: |
+            ${{env.dir}}/**
+            !${{env.dir}}/**/*.ogv
+            !${{env.dir}}/**/*.log
+            !${{env.dir}}/**/*.ini
+      - name: Create and Upload Release
+        if: github.event_name == 'push' && startswith(github.ref, 'refs/tags/')
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          name: Release ${{ steps.branch_name.outputs.SOURCE_TAG }}
+          draft: false
+          prerelease: false
+          files: |
+            ${{env.dir}}/neotron-pico-*
