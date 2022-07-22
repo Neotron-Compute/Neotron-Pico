@@ -136,7 +136,7 @@ outputs:
     comment: "BOM - JLCPCB"
     type: bom
     options:
-      output: "%f-%r-%i.%x"
+      output: "%f-%r-bom-jlcpcb.%x"
       exclude_filter: only_jlc_parts
       ref_separator: ","
       columns:
