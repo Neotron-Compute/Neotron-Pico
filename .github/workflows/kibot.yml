@@ -71,13 +71,10 @@ jobs:
       - name: Create and Upload Release
         if: github.event_name == 'push' && startswith(github.ref, 'refs/tags/')
         id: create_release
-        uses: softprops/action-gh-release@v1
+        uses: ncipollo/release-action@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
           name: Release ${{ steps.branch_name.outputs.SOURCE_TAG }}
           draft: false
           prerelease: false
-          files: |
+          artifacts: |
             ${{env.dir}}/neotron-pico-*
