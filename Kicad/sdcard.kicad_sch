@@ -533,7 +533,7 @@
     (property "Manufacturer" "Amphenol" (id 7) (at 151.13 95.25 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Mouser" " 523-GSD090012SEU" (id 8) (at 151.13 95.25 0)
+    (property "Mouser" "523-GSD090012SEU" (id 8) (at 151.13 95.25 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "LCSC Part#" "~" (id 9) (at 151.13 95.25 0)

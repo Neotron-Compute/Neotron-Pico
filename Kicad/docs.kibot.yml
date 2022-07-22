@@ -45,6 +45,7 @@ outputs:
           - 'F.Mask'
           - 'F.Paste'
           - 'F.SilkS'
+          - 'User.Comments'
           title: "Top"
         - layers:
           - 'B.Cu'
@@ -80,7 +81,7 @@ outputs:
           title: 'F.Mask (Top Solder Mask)'
         - layers:
           - 'B.SilkS'
-          title: 'B.SilkS (Bottom Solder Mask)'
+          title: 'B.SilkS (Bottom Silkscreen)'
           mirror: true
         - layers:
           - 'B.Paste'
