@@ -4,7 +4,7 @@
 
 * None
 
-# [Version v1.0.0-rc0](https://github.com/Neotron-Compute/Neotron-Pico/releases/tag/v1.0.0-rc0)
+# [Version v1.0.0](https://github.com/Neotron-Compute/Neotron-Pico/releases/tag/v1.0.0)
 
 * Re-arranged top-sheet
 * Two PSU control BJTs are now surface mount
