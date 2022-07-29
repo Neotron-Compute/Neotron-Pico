@@ -1,4 +1,0 @@
-(fp_lib_table
-  (lib (name Neotron-Common-Hardware)(type KiCad)(uri ${KIPRJMOD}/Neotron-Common-Hardware/Kicad/Neotron-Common-Hardware.pretty)(options "")(descr ""))
-  (lib (name neotron-pico)(type KiCad)(uri ${KIPRJMOD}/neotron-pico.pretty)(options "")(descr ""))
-)
