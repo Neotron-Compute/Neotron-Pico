@@ -2,7 +2,8 @@
 
 # Unreleased Changes
 
-* None
+* Updated STEP model.
+* Added new top-down view to README.
 
 # [Version v1.0.0](https://github.com/Neotron-Compute/Neotron-Pico/releases/tag/v1.0.0)
 
