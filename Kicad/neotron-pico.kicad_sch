@@ -2756,7 +2756,7 @@
       (reference "J803") (unit 1) (value "Conn_01x04") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
     )
     (path "/473239af-77cb-4a8b-b63b-c3d123df75c7/e4a6688a-f469-4bd5-9401-9cc6470c44d1"
-      (reference "J901") (unit 1) (value "Conn_01x06S") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical")
+      (reference "J901") (unit 1) (value "Conn_01x06") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical")
     )
     (path "/473239af-77cb-4a8b-b63b-c3d123df75c7/fb7d92e4-68b6-4d05-8f14-a9bef7d5ad04"
       (reference "J902") (unit 1) (value "Neotron-Expansion-Slot") (footprint "Neotron-Common-Hardware:Neotron-Expansion-Slot")

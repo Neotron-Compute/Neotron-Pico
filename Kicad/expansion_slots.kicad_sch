@@ -4659,7 +4659,7 @@
     (property "Reference" "J901" (id 0) (at 177.8 38.735 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Value" "Conn_01x06S" (id 1) (at 177.8 41.275 0)
+    (property "Value" "Conn_01x06" (id 1) (at 177.8 41.275 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" (id 2) (at 177.8 43.815 0)
