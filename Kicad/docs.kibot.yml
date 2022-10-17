@@ -133,8 +133,9 @@ outputs:
     comment: "Generate assembly HTML page"
     type: ibom
     options:
+      dnf_filter: 'only_fitted_parts'
       output: '%f-%r-ibom.%x'
-      extra_fields: "Voltage,Tolerance,Manufacturer,MPN"
+      extra_fields: "Voltage,Tolerance,Manufacturer,MPN,LCSC Part#"
 
   - name: 'make_octopart_bom'
     comment: 'Make a bill-of-materials you can upload to https://octopart.com/'
