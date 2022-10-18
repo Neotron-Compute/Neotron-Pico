@@ -1121,7 +1121,7 @@
     (property "Reference" "C1201" (id 0) (at 121.285 67.945 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Value" "10uF" (id 1) (at 121.285 69.85 0)
+    (property "Value" "10u" (id 1) (at 121.285 69.85 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (id 2) (at 125.4252 64.77 0)
