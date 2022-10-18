@@ -1775,7 +1775,7 @@
     (property "Datasheet" "~" (id 3) (at 89.535 33.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "DNP" "1" (id 4) (at 89.535 33.02 0)
+    (property "DNP" "0" (id 4) (at 89.535 33.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Digikey" "~" (id 5) (at 89.535 33.02 0)
