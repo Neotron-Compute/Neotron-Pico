@@ -2,6 +2,11 @@
 
 # Unreleased Changes
 
+* Minor adjustments to schematic labels
+* DNF components now not shown on iBOM
+* J901 is a header not a socket
+* External LED drive is 5V 20mA
+* Moved passives clear away from expansion slot legs
 * Updated STEP model.
 * Added new top-down view to README.
 
