@@ -2,6 +2,8 @@
 
 # Unreleased Changes
 
+* Split microphone audio / bias (#132)
+* Added more GND vias near power vias
 * Minor adjustments to schematic labels
 * DNF components now not shown on iBOM
 * J901 is a header not a socket
