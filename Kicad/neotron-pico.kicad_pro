@@ -45,7 +45,7 @@
         "silk_text_upright": false,
         "zones": {
           "45_degree_only": false,
-          "min_clearance": 0.254
+          "min_clearance": 0.39999999999999997
         }
       },
       "diff_pair_dimensions": [
@@ -336,7 +336,7 @@
       "extra_units": "error",
       "global_label_dangling": "warning",
       "hier_label_mismatch": "error",
-      "label_dangling": "error",
+      "label_dangling": "ignore",
       "lib_symbol_issues": "warning",
       "multiple_net_names": "warning",
       "net_not_bus_member": "warning",
