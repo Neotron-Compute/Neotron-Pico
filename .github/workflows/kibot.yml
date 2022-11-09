@@ -64,7 +64,7 @@ jobs:
         run: |
           kibot -c Kicad/docs.kibot.yml -e ${{env.schema}} -b ${{env.board}} -d ${{env.dir}} -s run_erc,run_drc -v 
       - name: Upload KiBot Output
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: ${{success()}}
         with:
           name: Build-Outputs
