@@ -868,7 +868,7 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Kicad Logo" (id 1) (at 142.875 175.895 0))
-    (property "Footprint" "Symbol:KiCad-Logo2_12mm_SilkScreen" (id 2) (at 142.875 176.0474 0)
+    (property "Footprint" "Symbol:KiCad-Logo2_8mm_SilkScreen" (id 2) (at 142.875 176.0474 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 142.875 183.515 0)
@@ -2843,7 +2843,7 @@
       (reference "LOGO101") (unit 1) (value "Neotron Logo") (footprint "Neotron-Common-Hardware:logo")
     )
     (path "/00000000-0000-0000-0000-00005fe412eb"
-      (reference "LOGO102") (unit 1) (value "Kicad Logo") (footprint "Symbol:KiCad-Logo2_12mm_SilkScreen")
+      (reference "LOGO102") (unit 1) (value "Kicad Logo") (footprint "Symbol:KiCad-Logo2_8mm_SilkScreen")
     )
     (path "/00000000-0000-0000-0000-00005fe3e77b"
       (reference "LOGO103") (unit 1) (value "OSHW Logo") (footprint "Symbol:OSHW-Logo_11.4x12mm_SilkScreen")
@@ -3230,7 +3230,7 @@
       (reference "U303") (unit 1) (value "74AHC1G04") (footprint "Package_TO_SOT_SMD:SOT-23-5_HandSoldering")
     )
     (path "/00000000-0000-0000-0000-000060687f8a/00000000-0000-0000-0000-00005feaf8c1"
-      (reference "U401") (unit 1) (value "THS7316") (footprint "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm")
+      (reference "U401") (unit 1) (value "DIO2663") (footprint "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm")
     )
     (path "/00000000-0000-0000-0000-000060687f8a/00000000-0000-0000-0000-00005fea7855"
       (reference "U402") (unit 1) (value "TPD7S019") (footprint "Package_SO:SSOP-16_3.9x4.9mm_P0.635mm")
