@@ -2,6 +2,10 @@
 
 # Unreleased Changes
 
+# None
+
+# [Version v1.1.0](https://github.com/Neotron-Compute/Neotron-Pico/releases/tag/v1.1.0)
+
 * Split microphone audio / bias (#132)
 * Added more GND vias near power vias
 * Minor adjustments to schematic labels
@@ -9,9 +13,11 @@
 * J901 is a header not a socket
 * External LED drive is 5V 20mA
 * Moved passives clear away from expansion slot legs
-* Updated STEP model.
+* Updated STEP model
 * Added new top-down view to README.
 * BMC part as being STM32F030K6T6 (F031 is unavailable)
+* Switch to DIO2663 video buffer
+* Stitching vias for ground planes, and wider traces between vias and pads
 
 # [Version v1.0.0](https://github.com/Neotron-Compute/Neotron-Pico/releases/tag/v1.0.0)
 
