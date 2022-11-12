@@ -15,8 +15,9 @@
 * Moved passives clear away from expansion slot legs
 * Updated STEP model
 * Added new top-down view to README.
-* BMC part as being STM32F030K6T6 (F031 is unavailable)
+* Set BMC part as being STM32F030K6T6 (F031 is unavailable)
 * Switch to DIO2663 video buffer
+* Specify THS7316 as default video buffer (TPF133A and DIO2663 should also work)
 * Stitching vias for ground planes, and wider traces between vias and pads
 
 # [Version v1.0.0](https://github.com/Neotron-Compute/Neotron-Pico/releases/tag/v1.0.0)
