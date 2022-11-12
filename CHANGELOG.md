@@ -15,7 +15,7 @@
 * Moved passives clear away from expansion slot legs
 * Updated STEP model
 * Added new top-down view to README.
-* Switch to DIO2663 video buffer
+* Specify THS7316 as default video buffer (TPF133A and DIO2663 should also work)
 * Stitching vias for ground planes, and wider traces between vias and pads
 
 # [Version v1.0.0](https://github.com/Neotron-Compute/Neotron-Pico/releases/tag/v1.0.0)
