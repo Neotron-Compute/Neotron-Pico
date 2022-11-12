@@ -3230,7 +3230,7 @@
       (reference "U303") (unit 1) (value "74AHC1G04") (footprint "Package_TO_SOT_SMD:SOT-23-5_HandSoldering")
     )
     (path "/00000000-0000-0000-0000-000060687f8a/00000000-0000-0000-0000-00005feaf8c1"
-      (reference "U401") (unit 1) (value "DIO2663") (footprint "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm")
+      (reference "U401") (unit 1) (value "THS7316") (footprint "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm")
     )
     (path "/00000000-0000-0000-0000-000060687f8a/00000000-0000-0000-0000-00005fea7855"
       (reference "U402") (unit 1) (value "TPD7S019") (footprint "Package_SO:SSOP-16_3.9x4.9mm_P0.635mm")
