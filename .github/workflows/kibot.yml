@@ -27,18 +27,22 @@ jobs:
   DRC:
     runs-on: ubuntu-latest
     container:
-      image: setsoft/kicad_auto:dev_k6
+      image: setsoft/kicad_auto:ki6.0.7_Debian
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+            submodules: true
       - name: Run KiBot for DRC
         run: |
           kibot -c Kicad/docs.kibot.yml -e ${{env.schema}} -b ${{env.board}} -d ${{env.dir}} -s run_drc -v -i
   ERC:
     runs-on: ubuntu-latest
     container:
-      image: setsoft/kicad_auto:dev_k6
+      image: setsoft/kicad_auto:ki6.0.7_Debian
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+            submodules: true
       - name: Run KiBot for ERC
         run: |
           kibot -c Kicad/docs.kibot.yml -e ${{env.schema}} -b ${{env.board}} -d ${{env.dir}} -s run_erc -v -i
@@ -46,9 +50,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: [ERC, DRC]
     container:
-      image: setsoft/kicad_auto:dev_k6
+      image: setsoft/kicad_auto:ki6.0.7_Debian
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+            submodules: true
       - name: Get Branch Name
         if: github.event_name == 'push' && startswith(github.ref, 'refs/tags/')
         id: branch_name
@@ -58,7 +64,7 @@ jobs:
         run: |
           kibot -c Kicad/docs.kibot.yml -e ${{env.schema}} -b ${{env.board}} -d ${{env.dir}} -s run_erc,run_drc -v 
       - name: Upload KiBot Output
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: ${{success()}}
         with:
           name: Build-Outputs

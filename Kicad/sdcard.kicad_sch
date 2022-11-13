@@ -617,7 +617,7 @@
     (property "Reference" "C1101" (id 0) (at 114.935 68.58 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Value" "10uF" (id 1) (at 114.935 71.12 0)
+    (property "Value" "10u" (id 1) (at 114.935 71.12 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (id 2) (at 117.475 69.85 0)

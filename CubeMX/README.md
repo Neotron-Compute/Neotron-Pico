@@ -2,7 +2,7 @@
 
 ## What is CubeMX?
 
-The Neotron Pico uses an STM32F031 as a Board Management Controller. ST's CubeMX software allows you to configure ST Micro devices, such as our STM32F031.
+The Neotron Pico uses an STM32F030 as a Board Management Controller. ST's CubeMX software allows you to configure ST Micro devices, such as our STM32F030.
 
 ## What is in this folder?
 
