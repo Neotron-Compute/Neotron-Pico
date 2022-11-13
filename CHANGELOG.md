@@ -15,6 +15,7 @@
 * Moved passives clear away from expansion slot legs
 * Updated STEP model
 * Added new top-down view to README.
+* BMC part as being STM32F030K6T6 (F031 is unavailable)
 * Specify THS7316 as default video buffer (TPF133A and DIO2663 should also work)
 * Stitching vias for ground planes, and wider traces between vias and pads
 
