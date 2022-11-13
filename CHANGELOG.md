@@ -11,6 +11,7 @@
 * Moved passives clear away from expansion slot legs
 * Updated STEP model.
 * Added new top-down view to README.
+* BMC part as being STM32F030K6T6 (F031 is unavailable)
 
 # [Version v1.0.0](https://github.com/Neotron-Compute/Neotron-Pico/releases/tag/v1.0.0)
 
