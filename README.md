@@ -210,7 +210,7 @@ The Neotron Pico can retain time/date settings when fully powered off, using a R
 
 ### I/O Expander
 
-* MCP23S17 or MCP23S18 SPI to GPIO expander (DIP)
+* MCP23S17 SPI to GPIO expander (DIP)
 * 74HC138 3:8 decoder (SOIC-16)
 * Five debug LEDs
 * Eight Chip-Select outputs (active low)
@@ -218,7 +218,7 @@ The Neotron Pico can retain time/date settings when fully powered off, using a R
 
 Because we used so many pins on the Pico for Audio and Video, we don't have enough pins to use for _Chip Select_ lines. Each device we wish to communicate with on the SPI bus must have a unique chip select line and so have limited lines means we could only have a limited number of SPI devices.
 
-However, in this design, we cheat and use a Microchip MCP23S17 I/O expander. This is an SPI peripheral with 16 GPIO pins that can be controlled by sending it commands over SPI. It also has an IRQ output which be programmed to fire when the input pins match a certain state. The MCP23S18 (with open-drain outputs) will also work.
+However, in this design, we cheat and use a Microchip MCP23S17 I/O expander. This is an SPI peripheral with 16 GPIO pins that can be controlled by sending it commands over SPI. It also has an IRQ output which be programmed to fire when the input pins match a certain state. The MCP23S18 (with open-drain outputs) will *not* work - it has a different pinout.
 
 The problem would come when the Pico has finished talking to our select SPI device - how does it tell the MCP23S17 to release the current chip select, without the SPI bus traffic also going to the currently selected expansion slot? We resolve this by using a simple 8-bit decoder/buffer with an enable pin. This allows the Pico to disconnect all of the chip select signals at once, regardless of the output of the MCP23S17. Once this is disabled, we know we are talking to only the MCP23S17 and the Pico can command it to select the next chip select of interest to us.
 
@@ -244,8 +244,8 @@ Interrupts are also processed through the MCP23S17. We configure the device to p
 |      |           |          |           |     |                     |   |   |   |   |   |
 |      |           |          |           |     |----/CS6---------+   |   |   |   |   |   |
 | Pico |           | MCP23S17 |           |     |                 |   |   |   |   |   |   |
-|      |           |    or    |           |     |----/CS7-----+   |   |   |   |   |   |   |
-|      |           | MCP23S18 |           +-----+             v   v   v   v   v   v   v   v
+|      |           |          |           |     |----/CS7-----+   |   |   |   |   |   |   |
+|      |           |          |           +-----+             v   v   v   v   v   v   v   v
 |      |           |          |                             +---+---+---+---+---+---+---+---+
 |      |--/IOCS--->|          |                             | S | S | S | S | S | S | S | S |
 |      |<---IRQ----|          |                             | l | l | l | l | l | l | l | l |
@@ -470,7 +470,7 @@ If you want to order bare boards, it is designed to be hand-solderable. That's w
 
 | Part           | Footprint | Size (mm) | Pitch (mm) |
 |:---------------|:---------:|:---------:|:----------:|
-| MCP23S18       |  DIP-28   |  36x7.6   |    2.54    |
+| MCP23S17       |  DIP-28   |  36x7.6   |    2.54    |
 | Jellybeans     |   0805    |  2.0x1.2  |    N/A     |
 | Transistors    |  SOT-23   |  3.1x1.4  |    1.80    |
 | 74HC138        |  SOIC-16  |  3.9x9.9  |    1.27    |

@@ -575,7 +575,6 @@
     )
   )
 
-
   (junction (at 155.575 82.55) (diameter 0) (color 0 0 0 0)
     (uuid 0874517d-9004-4861-8da5-2f4d5eef2644)
   )
@@ -1292,11 +1291,6 @@
     (uuid ff1df48d-cfc0-4b11-ba4d-e182ff8debd2)
   )
 
-  (text "We use the MCP23S18 here, because\nyou can buy it and the S17 is out\nof stock everywhere. Either will\nwork fine.\n\nThe S18 has open-drain outputs, but\nevery output here is either pulled-up,\nor is a low-side switch."
-    (at 66.04 126.365 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 10ece55f-24b0-4d8d-8f73-1079d9fdfcdf)
-  )
   (text "When ~{OUTPUT_EN} is inactive (high)\n~{CSx} are all driven inactive (high)."
     (at 213.36 111.125 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
