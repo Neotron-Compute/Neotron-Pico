@@ -36,6 +36,8 @@ The Neotron Pico is designed to run the Neotron OS - a CP/M or MS-DOS alike OS w
   * Capable of 640x480 @ 60 Hz 16-colour, 320x240 @ 60 Hz / 300x200 @ 70 Hz 256-colour graphics modes
 * Designed to run the Neotron OS
 * Open Source Hardware
+* Perfectly suitable for passive cooling
+* Low power
 * Designed for hand assembly
 
 ## Components in detail
