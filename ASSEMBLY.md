@@ -43,25 +43,27 @@ The best way to fit the components to your PCB is to use the Interactive Bill of
 
 The general rule is to fit the parts with the lowest Z-height first (i.e. the flat ones, that stick out the least). This means if you flip the PCB over to solder on the underside, you won't have a tall component preventing the board from lying flat and causing the component you are currently trying to solder to fall out of its hole. A suggested order is:
 
-* All surface mount components
+* All surface mount components (including U401, which may not have been presoldered in your kit)
 * Short-circuit JP1201 *or* JP1201
   * If you have a DS1307 short JP1201 to give it 5V
   * If you have an MCP7940, short JP1202 to give it 3.3V
-* The SD Card Socket
-* The 28-pin DIP socket
-* The DC Input jack
-* The 22uH Inductor, PTC fuse and electrolytic capacitors
-* The PSU module
-* The Raspberry Pi Pico (if you want to solder it straight to the board)
+* The SD Card Socket (J1101)
+* The 28-pin DIP socket (U301)
+* The DC Input jack (J1301)
+* The 22uH Inductor (L1301), PTC fuse (F1301) and electrolytic capacitors (C801, C808, C809, C1301, C1302)
+* The PSU module (U1301)
+* The Raspberry Pi Pico (if you want to solder it straight to the board) (U201)
 * Any 2.54mm pin headers and jumpers
   * Don't worry about J906, J907 and J908 - they're just for debugging/testing/probing
   * Ensure you leave out pin 8 on the J802 PC case audio connector, as most cases have a blank position on the mating connector to make sure you can't put it in backwards. Pin 8 is the top row, one in from the right; if you look carefully it's the only pad on that 10-way header that doesn't have a PCB trace running to it.
 * Any 2.54mm pin sockets (e.g. for the Raspberry Pi Pico, if you didn't solder it down directly earlier)
-* The MCP23S17 chip
-* The Expansion Connectors
-* The VGA Connector
-* The Triple 3.5mm audio connector
-* The PS/2 connector
+* The Expansion Connectors (J902, J903, J904, J905)
+* The VGA Connector (J401)
+* The Triple 3.5mm audio connector (U802)
+* The PS/2 connector (J1007)
+
+Don't forget to put the MCP23S17 chip (U301) in its socket.
+
 
 ## Programming the BMC
 
