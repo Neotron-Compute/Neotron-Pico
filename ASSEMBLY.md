@@ -82,7 +82,7 @@ $ cargo install probe-run
 5. Connect your Arm Serial Wire Debug probe to J1001, the BMC programming header.
     * If you have 12V DC power to the board, the 3.3V pin will be live and should be treated as an output - connect it to the VTref pin of your programmer if it has one.
     * If you do not have 12V DC power to your board (maybe you haven't fitted any of the through-hole parts yet), you can inject 3.3V power here if you are careful. This will reverse-power the 3.3V standby regulator, but it seems to survive (at least for short periods of time).
-6. Run `probe-run --chip STM32F030K6Tx ./neotron-bmc-pico.elf` and ensure it completes successfully and prints some log messages from the chip. If there are any errors, investigate.
+6. Run `probe-run --chip STM32F030K6Tx ./neotron-bmc-pico` and ensure it completes successfully and prints some log messages from the chip. If there are any errors, investigate.
 7. Disconnect the Arm SWD programmer and remove any power from the board.
 8. Apply 12V DC power to the board and observe that the Power LED is blinking.
 9. Tap the ON/OFF button and observe the Power LED is now on solidly.
