@@ -58,7 +58,7 @@ The general rule is to fit the parts with the lowest Z-height first (i.e. the fl
 * The Raspberry Pi Pico (if you want to solder it straight to the board) (U201)
 * Any 2.54mm pin headers and jumpers
   * Don't worry about J906, J907 and J908 - they're just for debugging/testing/probing. It's easier to put an oscilloscope probe directly into a hole.
-  * Ensure you leave out pin 8 on the J802 PC case audio connector, as most cases have a blank position on the mating connector to make sure you can't put it in backwards.<p>
+  * Ensure you leave out pin 8 on the J802 PC case audio connector, as most cases have a blank position on the mating connector to make sure you can't put it in backwards. See *Not using a PCB Case* if you don't actually connect this header to your ATX case, as you'll need to fit some jumpers<p>
 ```
 .    +----+----+----+----+----+
 .    |  2 |  3 |  6 |  X | 10 |
