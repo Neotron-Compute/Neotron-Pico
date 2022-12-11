@@ -462,6 +462,10 @@ Unless you explicitly state otherwise, any contribution intentionally submitted 
 * Microchip MCP7940N Real-Time Clock
   * Info Page: <https://www.microchip.com/wwwproducts/en/MCP7940N>
 
+## Assembly instructions
+
+See [ASSEMBLY.md](./ASSEMBLY.md) for instructions on how to assemble the board.
+
 ## How hard is this to solder?
 
 Typically, I get the boards from JLCPCB with most of the surface-mount components already fitted. This includes all the LEDS, small inductors, resistors and small capacitors (all 0805 size), the transistors (all SOT-23), and whichever of the larger ICs they happen to have in stock. All that's left is the larger ICs, and the through-hole connectors.
