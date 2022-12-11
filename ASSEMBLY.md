@@ -102,8 +102,9 @@ $ cargo install probe-run
 
 4. Connect 12V DC to your board and press the ON/OFF button (if the BMC isn't programmed, do that first).
 5. Connect your Arm Serial Wire Debug probe to the SWD pins of the Raspberry Pi Pico.
-6. Run `cargo-run --release` and ensure it completes successfully and prints some log messages from the chip. If there are any errors, investigate.
-7. Check you have some output on the VGA connector.
+6. Add the target architecture to Rust installation with `rustup target add thumbv6m-none-eabi`.
+7. Run `cargo run --release` and ensure it completes successfully and prints some log messages from the chip. If there are any errors, investigate.
+8. Check you have some output on the VGA connector.
 
 The Neotron Pico BIOS usually includes some version of the Neotron OS, but at the time of writing (November 2022) it's at a very very early stage so it may not do much beyond displaying some text.
 
