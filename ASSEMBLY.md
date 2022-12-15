@@ -85,9 +85,11 @@ The Board Management Controller (BMC) is responsible for controlling power and r
 3. Ensure you have the Rust Programming Language installed (see <https://www.rust-lang.org>)
 4. Install the `probe-run` tool:
 
-```console
-$ cargo install probe-run
-```
+	```console
+	$ cargo install probe-run
+	```
+
+	**NOTE**: Linux Mint requires `open-ocd`, `libudev-dev` and `libusb-1.0-0-dev` before installing `probe-run`.
 
 5. Connect your Arm Serial Wire Debug probe to J1001, the BMC programming header.
     * If you have 12V DC power to the board, the 3.3V pin will be live and should be treated as an output - connect it to the VTref pin of your programmer if it has one.
@@ -106,9 +108,9 @@ $ cargo install probe-run
 2. Ensure you have the Rust Programming Language installed (see <https://www.rust-lang.org>)
 3. Install the `probe-run` tool (if you didn't do it earlier):
 
-```console
-$ cargo install probe-run
-```
+	```console
+	$ cargo install probe-run
+	```
 
 4. Connect 12V DC to your board and press the ON/OFF button (if the BMC isn't programmed, do that first).
 5. Connect your Arm Serial Wire Debug probe to the SWD pins of the Raspberry Pi Pico.
@@ -123,6 +125,13 @@ Time to learn Rust and get hacking on the BIOS and the OS! That's what the Neotr
 ## I don't have an Arm SWD Debug Probe
 
 You can make one out of a Raspberry Pi Pico. See <https://github.com/rp-rs/rp2040-project-template/blob/main/debug_probes.md> for more details.
+
+For Linux Mint, the udev-rules also needs to be updated for the SWD debug probe. The file `/etc/udev/rules.d/99-cmsis-dap.rules` should include:
+
+```
+# cafe:4005 RP2040 Pico with CMSIS-DAP
+SUBSYSTEM=="usb", ATTR{idVendor}=="cafe", ATTR{idProduct}=="4005", MODE:="0666"
+```
 
 ## Connecting up a PC Case
 
