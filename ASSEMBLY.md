@@ -46,10 +46,10 @@ The IBOM file can be found by clicking the Releases shortcut available to the ri
 The general rule is to fit the parts with the lowest Z-height first (i.e. the flat ones, that stick out the least). This means if you flip the PCB over to solder on the underside, you won't have a tall component preventing the board from lying flat and causing the component you are currently trying to solder to fall out of its hole. A suggested order is:
 
 * All surface mount components (including U401, which may not have been presoldered in your kit)
-  * U401 has a line to the left of the chip which should correspond to the line to the left of the PCB foot print
+    * U401 has a line to the left of the chip which should correspond to the line to the left of the PCB foot print
 * Short-circuit JP1201 *or* JP1201
-  * If you have a DS1307 short JP1201 to give it 5V
-  * If you have an MCP7940, short JP1202 to give it 3.3V
+    * If you have a DS1307 short JP1201 to give it 5V
+    * If you have an MCP7940, short JP1202 to give it 3.3V
 * The SD Card Socket (J1101)
 * The 28-pin DIP socket (U301)
 * The DC Input jack (J1301)
@@ -57,15 +57,17 @@ The general rule is to fit the parts with the lowest Z-height first (i.e. the fl
 * The PSU module (U1301)
 * The Raspberry Pi Pico (if you want to solder it straight to the board) (U201)
 * Any 2.54mm pin headers and jumpers
-  * Don't worry about J906, J907 and J908 - they're just for debugging/testing/probing. It's easier to put an oscilloscope probe directly into a hole.
-  * Ensure you leave out pin 8 on the J802 PC case audio connector, as most cases have a blank position on the mating connector to make sure you can't put it in backwards. See *Not using a PCB Case* if you don't actually connect this header to your ATX case, as you'll need to fit some jumpers<p>
-```
-.    +----+----+----+----+----+
-.    |  2 |  3 |  6 |  X | 10 |
-Case +----+----+----+----+----+
-.    |  1 |  4 |  5 |  7 |  9 |
-.    +----+----+----+----+----+
-```
+    * Don't worry about J906, J907 and J908 - they're just for debugging/testing/probing. It's easier to put an oscilloscope probe directly into a hole.
+    * Ensure you leave out pin 8 on the J802 PC case audio connector, as most cases have a blank position on the mating connector to make sure you can't put it in backwards. See *Not using a PCB Case* if you don't actually connect this header to your ATX case, as you'll need to fit some jumpers:
+
+        ```text
+             +----+----+----+----+----+
+             |  2 |  3 |  6 |  X | 10 |
+        Case +----+----+----+----+----+
+             |  1 |  4 |  5 |  7 |  9 |
+             +----+----+----+----+----+
+        ```
+
 * Any 2.54mm pin sockets (e.g. for the Raspberry Pi Pico, if you didn't solder it down directly earlier)
 * The Expansion Connectors (J902, J903, J904, J905)
 * The VGA Connector (J401)
@@ -74,20 +76,21 @@ Case +----+----+----+----+----+
 
 Don't forget to put the MCP23S17 chip (U301) in its socket.
 
-
 ## Programming the BMC
 
 The Board Management Controller (BMC) is responsible for controlling power and reset signals. If it hasn't been programmed, the power button won't work. Also, the power LED won't light up. If you apply 12V DC power and the power LED blinks, then the BMC has been programmed already and you should be OK (unless you want to update the firmware).
 
 1. Get the firmware from <https://github.com/Neotron-Compute/Neotron-BMC/releases>. You want `neotron-bmc-pico`.
-   * Or you can clone the source code and build it by following the instructions.
+    * Or you can clone the source code and build it by following the instructions.
 2. Rename the file `neotron-bmc-pico.elf`
 3. Ensure you have the Rust Programming Language installed (see <https://www.rust-lang.org>)
 4. Install the `probe-run` tool:
 
-```console
-$ cargo install probe-run
-```
+    ```console
+    $ cargo install probe-run
+    ```
+
+    **NOTE**: Linux Mint requires `open-ocd`, `libudev-dev` and `libusb-1.0-0-dev` before installing `probe-run`.
 
 5. Connect your Arm Serial Wire Debug probe to J1001, the BMC programming header.
     * If you have 12V DC power to the board, the 3.3V pin will be live and should be treated as an output - connect it to the VTref pin of your programmer if it has one.
@@ -106,9 +109,9 @@ $ cargo install probe-run
 2. Ensure you have the Rust Programming Language installed (see <https://www.rust-lang.org>)
 3. Install the `probe-run` tool (if you didn't do it earlier):
 
-```console
-$ cargo install probe-run
-```
+    ```console
+    $ cargo install probe-run
+    ```
 
 4. Connect 12V DC to your board and press the ON/OFF button (if the BMC isn't programmed, do that first).
 5. Connect your Arm Serial Wire Debug probe to the SWD pins of the Raspberry Pi Pico.
@@ -123,6 +126,15 @@ Time to learn Rust and get hacking on the BIOS and the OS! That's what the Neotr
 ## I don't have an Arm SWD Debug Probe
 
 You can make one out of a Raspberry Pi Pico. See <https://github.com/rp-rs/rp2040-project-template/blob/main/debug_probes.md> for more details.
+
+For Linux Mint (and likely most other modern Linux distributions), the udev-rules also need to be updated for the SWD debug probe. The file `/etc/udev/rules.d/99-cmsis-dap.rules` should be created, containing:
+
+```text
+# cafe:4005 RP2040 Pico with CMSIS-DAP
+SUBSYSTEM=="usb", ATTR{idVendor}=="cafe", ATTR{idProduct}=="4005", MODE:="0666"
+```
+
+**NOTE:** Edit idVendor & idProduct to match VID & PID of the device you are using.
 
 ## Connecting up a PC Case
 
@@ -147,7 +159,6 @@ Also, you should fit two jumpers to the J802 header - one across pins 5 and 6 an
 |     |     |+---+|     |+---+|
 +-  --+-----+-----+-----+-----+
               ^^^         ^^^
-              
 ```
 
 ## Something's not working!
@@ -156,5 +167,5 @@ If you paid a commercial company some actual money for your Neotron Pico, in whi
 
 To chat with the developers and other users, jump in the Matrix Chat and ask nicely. Don't forget, we're all volunteers here, but we like to help people out as much as we can. Just visit <https://matrix.to/#/#neotron:matrix.org> - you can use Element in your browser, so there's nothing to install, but you will need to create an account. If you have some Embedded Rust questions, you could try the `#rust-embedded` and/or the `#rp-rs` Matrix chat rooms.
 
-If you think something's wrong with the design, please do open a Github Issue at https://github.com/Neotron-Compute/Neotron-Pico/issues.
+If you think something's wrong with the design, please do open a Github Issue at <https://github.com/Neotron-Compute/Neotron-Pico/issues>.
 
