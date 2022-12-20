@@ -1,3 +1,5 @@
+View this project on [CADLAB.io](https://cadlab.io/project/26331). 
+
 # Neotron Pico
 
 > A Neotron system powered by the Raspberry Pi Pico, in a micro-ATX form-factor.
