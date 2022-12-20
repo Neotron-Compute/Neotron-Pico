@@ -90,7 +90,10 @@ The Board Management Controller (BMC) is responsible for controlling power and r
     $ cargo install probe-run
     ```
 
-    **NOTE**: Linux Mint requires `open-ocd`, `libudev-dev` and `libusb-1.0-0-dev` before installing `probe-run`.
+    **NOTE**: On Linux you will need to install probe-run's dependencies (libudev and libusb) before probe-run. 
+    For Debian based distros, run `sudo apt install -y libusb-1.0-0-dev libudev-dev`
+    For Fedora based distros, run `sudo dnf install -y libusbx-devel systemd-devel`
+    See https://github.com/knurling-rs/probe-run#installation for the latest dependency information
 
 5. Connect your Arm Serial Wire Debug probe to J1001, the BMC programming header.
     * If you have 12V DC power to the board, the 3.3V pin will be live and should be treated as an output - connect it to the VTref pin of your programmer if it has one.
@@ -127,14 +130,23 @@ Time to learn Rust and get hacking on the BIOS and the OS! That's what the Neotr
 
 You can make one out of a Raspberry Pi Pico. See <https://github.com/rp-rs/rp2040-project-template/blob/main/debug_probes.md> for more details.
 
-For Linux Mint (and likely most other modern Linux distributions), the udev-rules also need to be updated for the SWD debug probe. The file `/etc/udev/rules.d/99-cmsis-dap.rules` should be created, containing:
+For Linux Mint (and likely most other modern Linux distributions), you will not have sufficient privileges to access the probe without adding a udev rules file.
 
-```text
-# cafe:4005 RP2040 Pico with CMSIS-DAP
-SUBSYSTEM=="usb", ATTR{idVendor}=="cafe", ATTR{idProduct}=="4005", MODE:="0666"
+The following instructions will set up udev to allow access to your probe:
+
+```system
+wget https://probe.rs/files/69-probe-rs.rules
+sudo mv 69-probe-rs.rules /etc/udev/rules.d/
+sudo udevadm control --reload
+sudo udevadm trigger
 ```
 
-**NOTE:** Edit idVendor & idProduct to match VID & PID of the device you are using.
+You also need to add your user to the plugdev group for these permissions to apply:
+
+```system
+sudo usermod -a -G plugdev replace_this_with_your_username
+```
+
 
 ## Connecting up a PC Case
 
