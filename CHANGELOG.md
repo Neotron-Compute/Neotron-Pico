@@ -2,7 +2,8 @@
 
 # Unreleased Changes
 
-# None
+* Updated Neotron Common Hardware (the library of symbols and footprints we use) to v1.0.0
+
 
 # [Version v1.1.0](https://github.com/Neotron-Compute/Neotron-Pico/releases/tag/v1.1.0)
 
