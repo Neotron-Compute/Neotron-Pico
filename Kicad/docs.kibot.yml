@@ -23,6 +23,10 @@ preflight:
   run_drc: true
   check_zone_fills: true
   ignore_unconnected: false
+  filters:
+    - filter: 'Ignore audio jack mismatch'
+      error: 'lib_footprint_mismatch'
+      regex: 'STX-4335-5BGP-S1'
 
 import:
   - file: .kibot/gerbers_jlcpcb.kibot.yml
