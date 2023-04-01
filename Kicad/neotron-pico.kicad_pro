@@ -57,8 +57,7 @@
         }
       ],
       "drc_exclusions": [
-        "silk_edge_clearance|123571000|25400000|d49ed7cc-4771-4b00-9095-7cff7cc44a9e|ff106e09-6111-4253-b56f-9305b71419ee",
-        "silk_edge_clearance|127635000|25400000|d49ed7cc-4771-4b00-9095-7cff7cc44a9e|a842bf57-ce2c-4649-8607-ef6c9678b1a1"
+        "lib_footprint_mismatch|127583786|35814000|00000000-0000-0000-0000-0000606b8add|00000000-0000-0000-0000-000000000000"
       ],
       "meta": {
         "filename": "board_design_settings.json",
@@ -97,7 +96,7 @@
         "pth_inside_courtyard": "ignore",
         "shorting_items": "error",
         "silk_edge_clearance": "warning",
-        "silk_over_copper": "ignore",
+        "silk_over_copper": "warning",
         "silk_overlap": "warning",
         "skew_out_of_range": "error",
         "solder_mask_bridge": "error",
