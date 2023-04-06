@@ -1,4 +1,5 @@
 (sym_lib_table
-  (lib (name "neotron-pico")(type "KiCad")(uri "${KIPRJMOD}/neotron-pico.kicad_sym")(options "")(descr ""))
+  (version 7)
   (lib (name "Neotron-Common-Hardware")(type "KiCad")(uri "${KIPRJMOD}/Neotron-Common-Hardware/Kicad/Neotron-Common-Hardware.kicad_sym")(options "")(descr ""))
+  (lib (name "neotron-pico")(type "KiCad")(uri "${KIPRJMOD}/neotron-pico.kicad_sym")(options "")(descr ""))
 )
