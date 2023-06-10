@@ -6,7 +6,9 @@ View this project on [CADLAB.io](https://cadlab.io/project/26331).
 
 The Neotron Pico is based around the idea of the [Neotron-32](https://github.com/neotron-compute/Neotron-32-Hardware), but using a low-cost Raspberry Pi Pico instead of a Texas Instuments Tiva-C Launchpad. It also stretches out to full micro-ATX size, and adds more expansion slots so that you can easily design and add your own peripherals.
 
-![3D PCB View](./neotron-pico.jpg)
+![Bare PCB Photo](./neotron-pico-bare-photo.jpg)
+
+![3D PCB View](./neotron-pico-3d.jpg)
 
 ![Top-Down PCB View](./neotron-pico-top-3d.jpg)
 
