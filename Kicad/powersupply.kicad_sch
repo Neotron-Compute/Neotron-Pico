@@ -3537,7 +3537,7 @@
     (property "Footprint" "Package_TO_SOT_SMD:SOT-23" (at 62.865 51.435 0)
       (effects (font (size 1.27 1.27) italic) (justify left) hide)
     )
-    (property "Datasheet" "https://datasheet.lcsc.com/lcsc/1810171817_Alpha---Omega-Semicon-AO3401A_C15127.pdf" (at 60.96 56.515 0)
+    (property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3401A.pdf" (at 60.96 56.515 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
     (property "LCSC Part#" "C15127" (at 60.96 56.515 90)
