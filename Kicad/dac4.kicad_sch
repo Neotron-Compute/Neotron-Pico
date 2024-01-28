@@ -232,7 +232,7 @@
     (uuid f96146e0-d3b5-4ca2-be41-6ec641aada57)
   )
 
-  (text "This is a 4-bit R2R DAC.\n\nThe maximum output is 15/16 of the input: 3.3V * 15 / 16 = 3.09375 V\n\nWe want 700 mV into the RGB buffer.\n\nBuffer Input = 700 mV = 3.09375 V * R / (1000 + R)\n\n=> 3.09375 V * R = 700 mV * (1000 + R)\n=> ( 3.09375 V - 700mV ) * R = 700 mV * 1000\n=> R = 292 Ohm\n\nThe Buffer Input Impedance is 800k, which we can ignore.\n\n300 Ohm is a close standard value.\n\nDIGITAL_IN[0] is the least significant bit\nDIGITAL_IN[3] is the most significant bit\n\nEach resistor must be better than 1/32 or 3.1%.\n"
+  (text "This is a 4-bit R2R DAC.\n\nThe maximum output is 15/16 of the input: 3.3V * 15 / 16 = 3.09375 V\n\nWe want 700 mV into the RGB buffer.\n\nBuffer Input = 700 mV = 3.09375 V * R / (2000 + R)\n\n=> 3.09375 V * R = 700 mV * (2000 + R)\n=> ( 3.09375 V - 700mV ) * R = 700 mV * 2000\n=> R = 585 Ohm\n\nThe Buffer Input Impedance is 800k, which we can ignore.\n\n560 Ohm is a close standard value on the JLCPCB basic 0805 resistor list.\nIt drops the voltage to 676mV.\n\nDIGITAL_IN[0] is the least significant bit\nDIGITAL_IN[3] is the most significant bit\n\nEach resistor must be better than 1/32 or 3.1%.\n"
     (at 24.765 160.02 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 6c4c1fdc-b478-48e2-8f9b-2b33528032ce)
@@ -687,7 +687,7 @@
     (property "Reference" "R510" (at 193.548 82.6516 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "300" (at 193.548 84.963 0)
+    (property "Value" "560" (at 193.548 84.963 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (at 189.992 83.82 90)
@@ -702,13 +702,13 @@
     (property "Digikey" "~" (at 191.77 83.82 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "MPN" "0805W8F3000T5E" (at 191.77 83.82 0)
+    (property "MPN" "0805W8F5600T5E" (at 191.77 83.82 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Manufacturer" "Uniroyal" (at 191.77 83.82 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "LCSC Part#" "C17617" (at 191.77 83.82 0)
+    (property "LCSC Part#" "C28636" (at 191.77 83.82 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Tolerance" "1%" (at 191.77 83.82 0)
