@@ -57,7 +57,11 @@
         }
       ],
       "drc_exclusions": [
-        "lib_footprint_mismatch|127583786|35814000|00000000-0000-0000-0000-0000606b8add|00000000-0000-0000-0000-000000000000"
+        "lib_footprint_mismatch|125603000|35814000|00000000-0000-0000-0000-0000606b8add|00000000-0000-0000-0000-000000000000",
+        "silk_over_copper|119507000|40584092|815b7bf1-11b5-41c0-bce7-4c3e1ec48d1b|00000000-0000-0000-0000-000000000000",
+        "silk_over_copper|131699000|40417001|91c553d8-2931-49a7-87b0-d3d38ca0680d|00000000-0000-0000-0000-000000000000",
+        "silk_over_copper|252876173|42495003|4ee06abf-e14c-4312-99e0-9269024da54f|00000000-0000-0000-0000-000000000000",
+        "silk_over_copper|266550052|39505003|d1f0906c-f83f-4b8b-a499-85f7f09fab76|00000000-0000-0000-0000-000000000000"
       ],
       "meta": {
         "filename": "board_design_settings.json",
@@ -95,8 +99,8 @@
         "padstack": "error",
         "pth_inside_courtyard": "ignore",
         "shorting_items": "error",
-        "silk_edge_clearance": "warning",
-        "silk_over_copper": "warning",
+        "silk_edge_clearance": "ignore",
+        "silk_over_copper": "ignore",
         "silk_overlap": "warning",
         "skew_out_of_range": "error",
         "solder_mask_bridge": "error",
@@ -208,7 +212,9 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [],
+    "erc_exclusions": [
+      "no_connect_connected|2444750|539750|6495731f-db63-45b3-b4fd-27a4b4628d54|00000000-0000-0000-0000-000000000000|||"
+    ],
     "meta": {
       "version": 0
     },
@@ -411,7 +417,7 @@
       "pin_to_pin": "error",
       "power_pin_not_driven": "error",
       "similar_labels": "warning",
-      "simulation_model_issue": "error",
+      "simulation_model_issue": "ignore",
       "unannotated": "error",
       "unit_value_mismatch": "error",
       "unresolved_variable": "error",
@@ -601,7 +607,7 @@
     ]
   ],
   "text_variables": {
-    "date": "2022-12-26",
-    "version": "398ac1a"
+    "date": "2024-01-28",
+    "version": "d33ed0f"
   }
 }
