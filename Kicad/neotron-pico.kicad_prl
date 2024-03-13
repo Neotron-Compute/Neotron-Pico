@@ -69,6 +69,12 @@
     "visible_layers": "000f3a0_80000003",
     "zone_display_mode": 0
   },
+  "git": {
+    "repo_password": "",
+    "repo_type": "",
+    "repo_username": "",
+    "ssh_key": ""
+  },
   "meta": {
     "filename": "neotron-pico.kicad_prl",
     "version": 3
