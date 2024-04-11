@@ -2,8 +2,12 @@
 
 # Unreleased Changes
 
+* None
+
+# [Version v1.1.1](https://github.com/Neotron-Compute/Neotron-Pico/releases/tag/v1.1.1)
+
 * Updated Neotron Common Hardware (the library of symbols and footprints we use) to v2.0.0
-* Updated to KiCAD 7
+* Updated to KiCAD 7.0.11
 * Replaced MCP23S17 DIP with SOIC (#176)
 * Fixed DAC output resistor (#177)
 

@@ -1,6 +1,6 @@
 # Assembly Instructions
 
-This document explains how to assemble a Neotron Pico kit. It is based around the v1.1.0 Kit, but other versions may be similar.
+This document explains how to assemble a Neotron Pico kit. It is based around the v1.1.1 Kit, but other versions may be similar.
 
 Assembling a Neotron Pico Kit involves the following components:
 
@@ -39,7 +39,7 @@ The Neotron Pico kit does assume you can solder at an intermediate level. If you
 
 The best way to find where to fit the components to your PCB is to use the Interactive Bill of Materials (also known as the IBOM). This is a web-page with a diagram of the PCB and a list of all the components. As you click a component it is highlighted on the PC. Conversely, if you click on the diagram, the relevant component is highlighted in the table. Do ensure you click the *"Sourced"* checkbox when you have determined you have the part in stock, and that you click the *"Placed"* checkbox when the component has been fitted. If your PCB was supplied with some parts already fitted, tick those off now.
 
-The IBOM file can be found by clicking the Releases shortcut available to the right on the GitHub page, or downloading it directly: [IBOM v1.1.0](https://github.com/Neotron-Compute/Neotron-Pico/releases/download/v1.1.0/neotron-pico-v1.1.0-ibom.html). Open the saved file in a browser.
+The IBOM file can be found by clicking the Releases shortcut available to the right on the GitHub page, or downloading it directly: [IBOM v1.1.1](https://github.com/Neotron-Compute/Neotron-Pico/releases/download/v1.1.1/neotron-pico-v1.1.1-ibom.html). Open the saved file in a browser.
 
 ## But what order should I fit things in?
 
