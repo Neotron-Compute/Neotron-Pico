@@ -1,7 +1,9 @@
 *-bak
+~*.lck
 Kicad/neotron-pico.csv
 Kicad/neotron-pico.xml
-Kicad/docs
+Kicad/docs/
 Kicad/bom.ini
 Kicad/fp-info-cache
-
+Kicad/neotron-pico-backups/
+docs/
