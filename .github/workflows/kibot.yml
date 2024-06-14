@@ -29,7 +29,7 @@ jobs:
     container:
       image: ghcr.io/inti-cmnb/kicad8_auto:1.6.5
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
             submodules: true
       - name: Run KiBot for DRC
@@ -40,7 +40,7 @@ jobs:
     container:
       image: ghcr.io/inti-cmnb/kicad8_auto:1.6.5
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
             submodules: true
       - name: Run KiBot for ERC
@@ -52,7 +52,7 @@ jobs:
     container:
       image: ghcr.io/inti-cmnb/kicad8_auto:1.6.5
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
             submodules: true
       - name: Get Branch Name
@@ -64,7 +64,7 @@ jobs:
         run: |
           kibot -c Kicad/docs.kibot.yml -e ${{env.schema}} -b ${{env.board}} -d ${{env.dir}} -s run_erc,run_drc -v 
       - name: Upload KiBot Output
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: ${{success()}}
         with:
           name: Build-Outputs
