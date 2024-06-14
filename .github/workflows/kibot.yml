@@ -27,7 +27,7 @@ jobs:
   DRC:
     runs-on: ubuntu-latest
     container:
-      image: setsoft/kicad_auto:ki7
+      image: ghcr.io/inti-cmnb/kicad8_auto:1.6.5
     steps:
       - uses: actions/checkout@v3
         with:
@@ -38,7 +38,7 @@ jobs:
   ERC:
     runs-on: ubuntu-latest
     container:
-      image: setsoft/kicad_auto:ki7
+      image: ghcr.io/inti-cmnb/kicad8_auto:1.6.5
     steps:
       - uses: actions/checkout@v3
         with:
@@ -50,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [ERC, DRC]
     container:
-      image: setsoft/kicad_auto:ki7
+      image: ghcr.io/inti-cmnb/kicad8_auto:1.6.5
     steps:
       - uses: actions/checkout@v3
         with:
