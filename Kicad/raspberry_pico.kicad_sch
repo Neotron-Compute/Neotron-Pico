@@ -10,7 +10,7 @@
 		(rev "${version}")
 		(company "https://neotron-compute.github.io")
 		(comment 1 "Licensed as CC-BY-SA")
-		(comment 2 "Copyright (c) The Neotron Developers, 2022")
+		(comment 2 "Copyright (c) The Neotron Developers, 2024")
 	)
 	(lib_symbols
 		(symbol "Device:C"
