@@ -5,6 +5,7 @@
 	(uuid "4e394768-409e-4152-bd60-8df2e5ccb604")
 	(paper "A4")
 	(title_block
+		(title "Neotron 12-bit VGA")
 		(date "${date}")
 		(rev "${version}")
 		(company "https://neotron-compute.github.io")
