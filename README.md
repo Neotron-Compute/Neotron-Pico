@@ -12,6 +12,10 @@ The Neotron Pico is based around the idea of the [Neotron-32](https://github.com
 
 ![Top-Down PCB View](./neotron-pico-top-3d.jpg)
 
+## Hardware for sale
+
+Sometimes I have [kits on Tindie](https://www.tindie.com/products/thejpster/neotron-pico-v11-full-kit/), and sometimes there are kits or [complete boards](https://www.elecrow.com/neotron-pico-rev-1-1-assembled.html) on Elecrow.  
+
 ## Design
 
 The Raspberry Pi Pico is the core of the Neotron Pico. It uses PIO statemachines to generate 12-bit Super VGA video, and digital 16 bit 48 kHz stereo audio. It also has both I²C and SPI buses. SPI chipselects and IRQs are handled by an SPI-to-GPIO expander. This provides eight chip-selects and eight IRQs, to support up to eight expansion slots or peripherals. The eight chip-selects can be globally disabled, allowing the Pico to talk to either the I/O exander, or the selected expansion slot. The board has an SD Card fitted in the 'Slot 1' position, and the Board Management Controller in the 'Slot 0' position, leaving 'Slot 2' through to 'Slot 7' available for expansion. Each expansion slot has both I²C and SPI, along with unique chip-select and IRQ signals.
