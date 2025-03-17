@@ -1,7 +1,7 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "3b9fc854-66a1-41f8-bab3-e4562208cde0")
 	(paper "A4")
 	(title_block
@@ -10,13 +10,17 @@
 		(rev "${version}")
 		(company "https://neotron-compute.github.io")
 		(comment 1 "Licensed as CC-BY-SA")
-		(comment 2 "Copyright (c) The Neotron Developers, 2024")
+		(comment 2 "Copyright (c) The Neotron Developers, 2025")
 	)
 	(lib_symbols
 		(symbol "Connector:TestPoint"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0.762) hide)
+				(offset 0.762)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -114,6 +118,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Graphic:Logo_Open_Hardware_Small"
 			(exclude_from_sim no)
@@ -249,6 +254,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Logo_Open_Hardware_Small_1"
 			(exclude_from_sim no)
@@ -384,6 +390,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Logo_Open_Hardware_Small_2"
 			(exclude_from_sim no)
@@ -519,11 +526,16 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Mechanical:MountingHole_Pad"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -621,12 +633,17 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:GND"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -717,12 +734,17 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:PWR_FLAG"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -813,7 +835,152 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
+	)
+	(text "Page 13"
+		(exclude_from_sim no)
+		(at 266.7 93.98 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "0f478dbe-9af0-4b56-9a37-7f4b52a9b1c7")
+	)
+	(text "Page 8"
+		(exclude_from_sim no)
+		(at 149.86 106.68 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "12e0a73c-11a0-4623-987e-c36996ea71a6")
+	)
+	(text "Test Pads"
+		(exclude_from_sim no)
+		(at 177.8 151.13 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+				(thickness 0.508)
+				(bold yes)
+				(italic yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "3339a52f-9b81-4bd5-87ce-298c6c512291")
+	)
+	(text "Page 12"
+		(exclude_from_sim no)
+		(at 215.9 127 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "46560692-b295-45ee-9b18-c493d832cf9d")
+	)
+	(text "Pages 9-11"
+		(exclude_from_sim no)
+		(at 215.265 97.155 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "59b87116-5f63-4767-8ef4-d424cb5ba359")
+	)
+	(text "Page 3"
+		(exclude_from_sim no)
+		(at 149.86 66.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "74d9b1bf-ff0e-4560-a635-a2601208d37f")
+	)
+	(text "Page 2"
+		(exclude_from_sim no)
+		(at 50.8 106.68 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7c664013-1789-4f1d-9e79-28917890add9")
+	)
+	(text "Top Sheet"
+		(exclude_from_sim no)
+		(at 15.24 20.32 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+				(thickness 0.508)
+				(bold yes)
+				(italic yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "ac7adea2-1c30-4d49-9356-ddb56f771d09")
+	)
+	(text "Misc symbols"
+		(exclude_from_sim no)
+		(at 113.03 167.64 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+				(thickness 0.508)
+				(bold yes)
+				(italic yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "c8da4732-478a-4180-8d72-07e21a6677a2")
+	)
+	(text "Pages 4-7"
+		(exclude_from_sim no)
+		(at 269.24 48.26 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "caadd6c8-1dff-4402-ac9a-10c8ad8139a0")
+	)
+	(text "micro-ATX Mounting Holes"
+		(exclude_from_sim no)
+		(at 12.7 167.64 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+				(thickness 0.508)
+				(bold yes)
+				(italic yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "e925f921-71cc-4ad8-b857-e94b049db7a4")
+	)
+	(text "Unless specified, assume:\n\nCapacitors:\n- 16V and X5R (or better)\nResistors:\n- 1% 1/8W (or better) ."
+		(exclude_from_sim no)
+		(at 257.175 162.56 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ec644bdf-b3bd-4f05-aa0e-717fb2d97cfe")
 	)
 	(junction
 		(at 111.76 53.34)
@@ -1479,153 +1646,8 @@
 		)
 		(uuid "fb775c77-632b-487d-b1d5-2ef13d02c427")
 	)
-	(text "Page 13"
-		(exclude_from_sim no)
-		(at 266.7 93.98 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "0f478dbe-9af0-4b56-9a37-7f4b52a9b1c7")
-	)
-	(text "Page 8"
-		(exclude_from_sim no)
-		(at 149.86 106.68 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "12e0a73c-11a0-4623-987e-c36996ea71a6")
-	)
-	(text "Test Pads"
-		(exclude_from_sim no)
-		(at 177.8 151.13 0)
-		(effects
-			(font
-				(size 2.54 2.54)
-				(thickness 0.508)
-				(bold yes)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "3339a52f-9b81-4bd5-87ce-298c6c512291")
-	)
-	(text "Page 12"
-		(exclude_from_sim no)
-		(at 215.9 127 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "46560692-b295-45ee-9b18-c493d832cf9d")
-	)
-	(text "Pages 9-11"
-		(exclude_from_sim no)
-		(at 215.265 97.155 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "59b87116-5f63-4767-8ef4-d424cb5ba359")
-	)
-	(text "Page 3"
-		(exclude_from_sim no)
-		(at 149.86 66.04 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "74d9b1bf-ff0e-4560-a635-a2601208d37f")
-	)
-	(text "Page 2"
-		(exclude_from_sim no)
-		(at 50.8 106.68 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "7c664013-1789-4f1d-9e79-28917890add9")
-	)
-	(text "Top Sheet"
-		(exclude_from_sim no)
-		(at 15.24 20.32 0)
-		(effects
-			(font
-				(size 2.54 2.54)
-				(thickness 0.508)
-				(bold yes)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "ac7adea2-1c30-4d49-9356-ddb56f771d09")
-	)
-	(text "Misc symbols"
-		(exclude_from_sim no)
-		(at 113.03 167.64 0)
-		(effects
-			(font
-				(size 2.54 2.54)
-				(thickness 0.508)
-				(bold yes)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "c8da4732-478a-4180-8d72-07e21a6677a2")
-	)
-	(text "Pages 4-7"
-		(exclude_from_sim no)
-		(at 269.24 48.26 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "caadd6c8-1dff-4402-ac9a-10c8ad8139a0")
-	)
-	(text "micro-ATX Mounting Holes"
-		(exclude_from_sim no)
-		(at 12.7 167.64 0)
-		(effects
-			(font
-				(size 2.54 2.54)
-				(thickness 0.508)
-				(bold yes)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "e925f921-71cc-4ad8-b857-e94b049db7a4")
-	)
-	(text "Unless specified, assume:\n\nCapacitors:\n- 16V and X5R (or better)\nResistors:\n- 1% 1/8W (or better) ."
-		(exclude_from_sim no)
-		(at 257.175 162.56 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "ec644bdf-b3bd-4f05-aa0e-717fb2d97cfe")
-	)
 	(label "VGA_HSYNC"
 		(at 238.76 38.1 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1636,7 +1658,6 @@
 	)
 	(label "RED[0..3]"
 		(at 238.76 30.48 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1647,7 +1668,6 @@
 	)
 	(label "BLUE[0..3]"
 		(at 238.76 35.56 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1658,7 +1678,6 @@
 	)
 	(label "GREEN[0..3]"
 		(at 238.76 33.02 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1669,7 +1688,6 @@
 	)
 	(label "VGA_VSYNC"
 		(at 238.76 40.64 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4786,6 +4804,10 @@
 	(sheet
 		(at 124.46 86.36)
 		(size 25.4 20.32)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(stroke
 			(width 0)
 			(type solid)
@@ -4814,73 +4836,73 @@
 		)
 		(pin "I2C_SDA" bidirectional
 			(at 124.46 101.6 180)
+			(uuid "ab72dfb5-d4ed-44cf-a736-ad2c18d3607a")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "ab72dfb5-d4ed-44cf-a736-ad2c18d3607a")
 		)
 		(pin "I2C_SCL" input
 			(at 124.46 104.14 180)
+			(uuid "f57971b0-1433-4d5a-a668-3a5c2e44f237")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "f57971b0-1433-4d5a-a668-3a5c2e44f237")
 		)
 		(pin "AUDIO_DAC_DAT" input
 			(at 124.46 88.9 180)
+			(uuid "e8876dbf-7ea1-4043-bdf2-284835487698")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "e8876dbf-7ea1-4043-bdf2-284835487698")
 		)
 		(pin "AUDIO_DAC_LR" bidirectional
 			(at 124.46 99.06 180)
+			(uuid "b8fce9be-9e6e-4ec4-9fec-69c6c1fa816f")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "b8fce9be-9e6e-4ec4-9fec-69c6c1fa816f")
 		)
 		(pin "AUDIO_BIT_CLK" bidirectional
 			(at 124.46 93.98 180)
+			(uuid "992e02c2-660a-463f-8600-7e5e024af36b")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "992e02c2-660a-463f-8600-7e5e024af36b")
 		)
 		(pin "AUDIO_ADC_DATA" output
 			(at 124.46 91.44 180)
+			(uuid "b87f51e9-1d1e-4148-b0a0-ddf733ebd027")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "b87f51e9-1d1e-4148-b0a0-ddf733ebd027")
 		)
 		(pin "AUDIO_ADC_LR" bidirectional
 			(at 124.46 96.52 180)
+			(uuid "6ac6701b-6019-4892-927b-fbb9639741e7")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "6ac6701b-6019-4892-927b-fbb9639741e7")
 		)
 		(instances
 			(project "neotron-pico"
@@ -4893,6 +4915,10 @@
 	(sheet
 		(at 190.5 119.38)
 		(size 25.4 7.62)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(stroke
 			(width 0)
 			(type solid)
@@ -4921,23 +4947,23 @@
 		)
 		(pin "I2C_SDA" bidirectional
 			(at 190.5 121.92 180)
+			(uuid "3faf830b-7f4a-4f98-81bc-acde467ca2fb")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "3faf830b-7f4a-4f98-81bc-acde467ca2fb")
 		)
 		(pin "I2C_SCL" input
 			(at 190.5 124.46 180)
+			(uuid "fe3b8b0b-f3cc-4027-887d-60125ffc4f76")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "fe3b8b0b-f3cc-4027-887d-60125ffc4f76")
 		)
 		(instances
 			(project "neotron-pico"
@@ -4950,6 +4976,10 @@
 	(sheet
 		(at 241.3 27.94)
 		(size 27.94 20.32)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(stroke
 			(width 0)
 			(type solid)
@@ -4978,73 +5008,73 @@
 		)
 		(pin "DDC_SDA" bidirectional
 			(at 241.3 43.18 180)
+			(uuid "38b69a3f-9f2a-4119-861c-51e9020433d6")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "38b69a3f-9f2a-4119-861c-51e9020433d6")
 		)
 		(pin "DDC_SCL" input
 			(at 241.3 45.72 180)
+			(uuid "0766fafd-9f9b-450e-b5a3-58456add6c49")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "0766fafd-9f9b-450e-b5a3-58456add6c49")
 		)
 		(pin "VSYNC" input
 			(at 241.3 40.64 180)
+			(uuid "756f4482-c5de-495c-b717-015bf9aa53c4")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "756f4482-c5de-495c-b717-015bf9aa53c4")
 		)
 		(pin "HSYNC" input
 			(at 241.3 38.1 180)
+			(uuid "b269d684-48e6-449f-94cb-a9d4394e82ee")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "b269d684-48e6-449f-94cb-a9d4394e82ee")
 		)
 		(pin "RED[0..3]" input
 			(at 241.3 30.48 180)
+			(uuid "60752651-ee18-4ed9-b91c-e1c7202f4b9c")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "60752651-ee18-4ed9-b91c-e1c7202f4b9c")
 		)
 		(pin "GREEN[0..3]" input
 			(at 241.3 33.02 180)
+			(uuid "2d5508a9-4bd5-443f-910d-b5fc74c5dfb6")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "2d5508a9-4bd5-443f-910d-b5fc74c5dfb6")
 		)
 		(pin "BLUE[0..3]" input
 			(at 241.3 35.56 180)
+			(uuid "3407091f-c85b-4840-903a-1a8f80bc45c3")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "3407091f-c85b-4840-903a-1a8f80bc45c3")
 		)
 		(instances
 			(project "neotron-pico"
@@ -5057,6 +5087,10 @@
 	(sheet
 		(at 124.46 45.72)
 		(size 25.4 20.32)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(stroke
 			(width 0)
 			(type solid)
@@ -5085,103 +5119,103 @@
 		)
 		(pin "~{CS[0..7]}" output
 			(at 149.86 60.96 0)
+			(uuid "82f0d6f1-24bd-4ecd-a97d-e779cc1f75b4")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "82f0d6f1-24bd-4ecd-a97d-e779cc1f75b4")
 		)
 		(pin "~{IRQ[0..7]}" input
 			(at 149.86 58.42 0)
+			(uuid "618ae6b4-8716-4eac-ac4b-02b9fa4b1b70")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "618ae6b4-8716-4eac-ac4b-02b9fa4b1b70")
 		)
 		(pin "SPI_COPI" input
 			(at 124.46 50.8 180)
+			(uuid "2f9afba9-1bdc-4e44-a3bb-21cf7c99570e")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "2f9afba9-1bdc-4e44-a3bb-21cf7c99570e")
 		)
 		(pin "SPI_CIPO" output
 			(at 124.46 48.26 180)
+			(uuid "5418f064-61f9-469c-a1aa-d83d30b144a9")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "5418f064-61f9-469c-a1aa-d83d30b144a9")
 		)
 		(pin "~{SPI_CS}" input
 			(at 124.46 55.88 180)
+			(uuid "3394b2b1-594a-42ad-ad3e-94ca3555c51c")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "3394b2b1-594a-42ad-ad3e-94ca3555c51c")
 		)
 		(pin "~{IRQ_IO}" output
 			(at 124.46 60.96 180)
+			(uuid "e8e1c25a-c1bb-46a4-844e-dbdece1adc20")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "e8e1c25a-c1bb-46a4-844e-dbdece1adc20")
 		)
 		(pin "~{OUTPUT_EN}" input
 			(at 124.46 58.42 180)
+			(uuid "35506fd2-d4e9-4a85-b670-85dfd25a7616")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "35506fd2-d4e9-4a85-b670-85dfd25a7616")
 		)
 		(pin "SPI_CLK" input
 			(at 124.46 53.34 180)
+			(uuid "f735ae7f-2baf-4a0d-8455-586f6806a12c")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "f735ae7f-2baf-4a0d-8455-586f6806a12c")
 		)
 		(pin "~{RESET}" input
 			(at 124.46 63.5 180)
+			(uuid "4033ad92-b13f-4082-b9f6-3f5163836bc9")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "4033ad92-b13f-4082-b9f6-3f5163836bc9")
 		)
 		(pin "HDD_LED" output
 			(at 149.86 54.61 0)
+			(uuid "acf19634-5c22-4f9c-82e9-f35167668315")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "acf19634-5c22-4f9c-82e9-f35167668315")
 		)
 		(instances
 			(project "neotron-pico"
@@ -5194,6 +5228,10 @@
 	(sheet
 		(at 190.5 50.8)
 		(size 25.4 46.99)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(stroke
 			(width 0.1524)
 			(type solid)
@@ -5222,123 +5260,123 @@
 		)
 		(pin "~{CS[0..7]}" input
 			(at 190.5 60.96 180)
+			(uuid "7083feed-6039-4a91-b7e3-c7d5190072a1")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "7083feed-6039-4a91-b7e3-c7d5190072a1")
 		)
 		(pin "~{IRQ[0..7]}" output
 			(at 190.5 58.42 180)
+			(uuid "bff959e9-cf64-4937-b374-5dff7a14485f")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "bff959e9-cf64-4937-b374-5dff7a14485f")
 		)
 		(pin "SPI_COPI" input
 			(at 190.5 76.2 180)
+			(uuid "6ab88287-6958-46f6-aaaf-48f4ac794cce")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "6ab88287-6958-46f6-aaaf-48f4ac794cce")
 		)
 		(pin "SPI_CIPO" output
 			(at 190.5 73.66 180)
+			(uuid "8c5e9b31-a1ad-4ba1-8404-c0efffbd9dcd")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "8c5e9b31-a1ad-4ba1-8404-c0efffbd9dcd")
 		)
 		(pin "SPI_CLK" input
 			(at 190.5 78.74 180)
+			(uuid "97035608-586b-486d-a5df-ea3ce7b731f9")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "97035608-586b-486d-a5df-ea3ce7b731f9")
 		)
 		(pin "PICO_SDA" bidirectional
 			(at 190.5 91.44 180)
+			(uuid "2b8f843c-5477-4f7b-a90a-b594a81d19c7")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "2b8f843c-5477-4f7b-a90a-b594a81d19c7")
 		)
 		(pin "PICO_SCL" bidirectional
 			(at 190.5 93.98 180)
+			(uuid "60a29676-19a8-4940-b0dd-5af40675e216")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "60a29676-19a8-4940-b0dd-5af40675e216")
 		)
 		(pin "~{RESET}" output
 			(at 190.5 81.28 180)
+			(uuid "6b671f62-a36d-4ef6-816f-32dc4a840595")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "6b671f62-a36d-4ef6-816f-32dc4a840595")
 		)
 		(pin "BMC_SDA" bidirectional
 			(at 215.9 66.04 0)
+			(uuid "64a3860a-5dbe-4797-b64f-45d17036ee03")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "64a3860a-5dbe-4797-b64f-45d17036ee03")
 		)
 		(pin "BMC_SCL" output
 			(at 215.9 68.58 0)
+			(uuid "961f21ed-5a73-4db1-926e-330cd37a13d7")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "961f21ed-5a73-4db1-926e-330cd37a13d7")
 		)
 		(pin "DC_ON" output
 			(at 215.9 91.44 0)
+			(uuid "36fb055e-2234-4b40-b9e2-a9ee4d046e82")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "36fb055e-2234-4b40-b9e2-a9ee4d046e82")
 		)
 		(pin "HDD_LED" input
 			(at 190.5 54.61 180)
+			(uuid "e4915533-de59-404a-8ecd-0addeb355031")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "e4915533-de59-404a-8ecd-0addeb355031")
 		)
 		(instances
 			(project "neotron-pico"
@@ -5351,6 +5389,10 @@
 	(sheet
 		(at 241.3 88.9)
 		(size 25.4 5.08)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(stroke
 			(width 0)
 			(type solid)
@@ -5379,13 +5421,13 @@
 		)
 		(pin "DC_ON" input
 			(at 241.3 91.44 180)
+			(uuid "32bb77bc-6e1b-4e12-b9c9-4be5cbaecee0")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "32bb77bc-6e1b-4e12-b9c9-4be5cbaecee0")
 		)
 		(instances
 			(project "neotron-pico"
@@ -5398,6 +5440,10 @@
 	(sheet
 		(at 50.8 27.94)
 		(size 35.56 78.74)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -5427,183 +5473,183 @@
 		)
 		(pin "PICO_SDA" bidirectional
 			(at 86.36 101.6 0)
+			(uuid "420a71e6-aedf-48f7-af99-874d14fc4760")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "420a71e6-aedf-48f7-af99-874d14fc4760")
 		)
 		(pin "PICO_SCL" bidirectional
 			(at 86.36 104.14 0)
+			(uuid "4a6f5349-d675-421e-bc87-9b914f9d180a")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "4a6f5349-d675-421e-bc87-9b914f9d180a")
 		)
 		(pin "~{RESET}" input
 			(at 86.36 63.5 0)
+			(uuid "8941b289-09bb-42e8-bca0-f8696e57fe1a")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "8941b289-09bb-42e8-bca0-f8696e57fe1a")
 		)
 		(pin "I2S_DAC_DATA" output
 			(at 86.36 88.9 0)
+			(uuid "2669885f-4661-431d-aac0-d2b473ab6873")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "2669885f-4661-431d-aac0-d2b473ab6873")
 		)
 		(pin "I2S_BCLK" output
 			(at 86.36 93.98 0)
+			(uuid "df7b9e88-1456-4a5d-bd3e-3a90c13bd5f8")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "df7b9e88-1456-4a5d-bd3e-3a90c13bd5f8")
 		)
 		(pin "~{OUTPUT_EN}" output
 			(at 86.36 58.42 0)
+			(uuid "10e4e040-2972-430d-855d-d746df75333f")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "10e4e040-2972-430d-855d-d746df75333f")
 		)
 		(pin "I2S_ADC_DATA" input
 			(at 86.36 91.44 0)
+			(uuid "5ac8e3bb-b5a7-47e9-bb7f-e701688d94d2")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "5ac8e3bb-b5a7-47e9-bb7f-e701688d94d2")
 		)
 		(pin "I2S_LRCLK" output
 			(at 86.36 96.52 0)
+			(uuid "2f7148da-69ff-4ac5-b440-2324b2e820b2")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "2f7148da-69ff-4ac5-b440-2324b2e820b2")
 		)
 		(pin "SPI_COPI" output
 			(at 86.36 50.8 0)
+			(uuid "6f445d87-18a0-4140-823d-c22246826279")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "6f445d87-18a0-4140-823d-c22246826279")
 		)
 		(pin "SPI_CIPO" input
 			(at 86.36 48.26 0)
+			(uuid "51d8fc9f-ebe5-4d1a-84e1-8e8a19337687")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "51d8fc9f-ebe5-4d1a-84e1-8e8a19337687")
 		)
 		(pin "SPI_CLK" output
 			(at 86.36 53.34 0)
+			(uuid "0ee8616b-5a87-4f23-9566-d115ba850b9f")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "0ee8616b-5a87-4f23-9566-d115ba850b9f")
 		)
 		(pin "~{SPI_CS_IO}" output
 			(at 86.36 55.88 0)
+			(uuid "23d520a2-a660-4911-b49c-7bbcd02981eb")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "23d520a2-a660-4911-b49c-7bbcd02981eb")
 		)
 		(pin "~{IRQ_IO}" input
 			(at 86.36 60.96 0)
+			(uuid "e5521a93-e26c-4451-9d74-ba1177175461")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "e5521a93-e26c-4451-9d74-ba1177175461")
 		)
 		(pin "VGA_BLUE[0..3]" output
 			(at 86.36 35.56 0)
+			(uuid "5d6b5024-b0eb-4efc-b04c-34b315fd203b")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "5d6b5024-b0eb-4efc-b04c-34b315fd203b")
 		)
 		(pin "VGA_RED[0..3]" output
 			(at 86.36 30.48 0)
+			(uuid "2d3bb218-6325-472c-b52a-d893403a0c94")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "2d3bb218-6325-472c-b52a-d893403a0c94")
 		)
 		(pin "VGA_GREEN[0..3]" output
 			(at 86.36 33.02 0)
+			(uuid "dc6f5b8d-bd76-4492-afa1-2ca099d53ab5")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "dc6f5b8d-bd76-4492-afa1-2ca099d53ab5")
 		)
 		(pin "VGA_VSYNC" output
 			(at 86.36 40.64 0)
+			(uuid "ae8c0096-193d-444f-984c-842802fce618")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "ae8c0096-193d-444f-984c-842802fce618")
 		)
 		(pin "VGA_HSYNC" output
 			(at 86.36 38.1 0)
+			(uuid "c6393574-fbbc-4d41-80cb-1f0822d4bc0f")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "c6393574-fbbc-4d41-80cb-1f0822d4bc0f")
 		)
 		(instances
 			(project "neotron-pico"
@@ -5618,4 +5664,5 @@
 			(page "1")
 		)
 	)
+	(embedded_fonts no)
 )
