@@ -34,7 +34,7 @@ jobs:
           echo "{SOURCE_TAG}=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
       - name: Run Build
         run: |
-          ./build.sh
+          bash ./build.sh
       - name: Upload KiBot Output
         uses: actions/upload-artifact@v4
         if: ${{success()}}
