@@ -1,7 +1,7 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "c61b3653-8bf4-4877-a7f5-5520a9742a9d")
 	(paper "A4")
 	(title_block
@@ -10,11 +10,13 @@
 		(rev "${version}")
 		(company "https://neotron-compute.github.io")
 		(comment 1 "Licensed as CC-BY-SA")
-		(comment 2 "Copyright (c) The Neotron Developers, 2024")
+		(comment 2 "Copyright (c) The Neotron Developers, 2025")
 	)
 	(lib_symbols
 		(symbol "Device:R"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0)
 			)
@@ -133,12 +135,17 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:GND"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -229,7 +236,19 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
+	)
+	(text "This is a 4-bit R2R DAC.\n\nThe maximum output is 15/16 of the input: 3.3V * 15 / 16 = 3.09375 V\n\nWe want 700 mV into the RGB buffer.\n\nBuffer Input = 700 mV = 3.09375 V * R / (2000 + R)\n\n=> 3.09375 V * R = 700 mV * (2000 + R)\n=> ( 3.09375 V - 700mV ) * R = 700 mV * 2000\n=> R = 585 Ohm\n\nThe Buffer Input Impedance is 800k, which we can ignore.\n\n560 Ohm is a close standard value on the JLCPCB basic 0805 resistor list.\nIt drops the voltage to 676mV.\n\nDIGITAL_IN[0] is the least significant bit\nDIGITAL_IN[3] is the most significant bit\n\nEach resistor must be better than 1/32 or 3.1%.\n"
+		(exclude_from_sim no)
+		(at 24.765 160.02 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6c4c1fdc-b478-48e2-8f9b-2b33528032ce")
 	)
 	(junction
 		(at 191.77 76.2)
@@ -547,20 +566,8 @@
 		)
 		(uuid "f96146e0-d3b5-4ca2-be41-6ec641aada57")
 	)
-	(text "This is a 4-bit R2R DAC.\n\nThe maximum output is 15/16 of the input: 3.3V * 15 / 16 = 3.09375 V\n\nWe want 700 mV into the RGB buffer.\n\nBuffer Input = 700 mV = 3.09375 V * R / (2000 + R)\n\n=> 3.09375 V * R = 700 mV * (2000 + R)\n=> ( 3.09375 V - 700mV ) * R = 700 mV * 2000\n=> R = 585 Ohm\n\nThe Buffer Input Impedance is 800k, which we can ignore.\n\n560 Ohm is a close standard value on the JLCPCB basic 0805 resistor list.\nIt drops the voltage to 676mV.\n\nDIGITAL_IN[0] is the least significant bit\nDIGITAL_IN[3] is the most significant bit\n\nEach resistor must be better than 1/32 or 3.1%.\n"
-		(exclude_from_sim no)
-		(at 24.765 160.02 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "6c4c1fdc-b478-48e2-8f9b-2b33528032ce")
-	)
 	(label "DIGITAL_IN3"
 		(at 165.1 60.96 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -571,7 +578,6 @@
 	)
 	(label "DIGITAL_IN0"
 		(at 88.9 60.96 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -582,7 +588,6 @@
 	)
 	(label "DIGITAL_IN1"
 		(at 114.3 60.96 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -593,7 +598,6 @@
 	)
 	(label "DIGITAL_IN2"
 		(at 139.7 60.96 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -604,7 +608,6 @@
 	)
 	(label "DIGITAL_IN[0..3]"
 		(at 61.595 50.8 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -616,7 +619,6 @@
 	(hierarchical_label "DIGITAL_IN[0..3]"
 		(shape input)
 		(at 55.88 50.8 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -628,7 +630,6 @@
 	(hierarchical_label "ANALOG_OUT"
 		(shape output)
 		(at 204.47 76.2 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
