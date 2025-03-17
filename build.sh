@@ -42,4 +42,4 @@ zip ../neotron-pico-gerbers.zip *
 cd ..
 rm -rf gerbers
 
-kicad-cli pcb render --output neotron-pico.jpg ${ROOT_PCB}
+kicad-cli pcb render  ${DEFINES} --output neotron-pico.png --zoom 1.3 --width 2560 --height 1440 ${ROOT_PCB}
